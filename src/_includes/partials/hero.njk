@@ -1,0 +1,28 @@
+{% if hero %}
+    {% set callToAction = hero.callToAction %} 
+    <div class="hero">
+        <div class="hero-text">
+            <h1>{{hero.title}}</h1>
+            {% if callToAction %}
+                <div class="call-to-action">
+                {% for item in callToAction %}
+                    {% set type = item.type or "primary" %}
+                        <a class="action-button cta-{{type}}" href="{{item.link}}">{{item.text}}</a>
+                {% endfor %}
+                </div>
+            {% endif %}
+            {% if hero.subtitle %}
+                <p>{{hero.subtitle}}</p>
+            {%endif %}
+            {% if hero.description %}
+                <p class="description">{{hero.description}}</p>
+            {% endif %}
+        </div>
+        {% image "images/hero.jpg", "CG Guitars' Charlie playing guitar on stage" %}
+        <div class="hero-scroll-down">
+            <a aria-label="Scroll to learn more" href="#main-content">
+                {% include 'img/chevron_down.svg' %}
+            </a>
+        </div>
+    </div>
+{% endif %}

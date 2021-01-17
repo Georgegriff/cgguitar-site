@@ -1,0 +1,32 @@
+a.action-button {
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    display: inline-block;
+    border-radius: 1rem;
+    margin-top: 1.5rem;
+    background: var(--Primary);
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.4);
+    @include up-from(xxlarge) {
+        font-size: 1.5rem;
+        padding: 0.7rem 0.9rem;
+     }
+}
+
+.call-to-action {
+    display: flex;
+    a:not(:last-child) {
+        margin-right: 1rem;
+    }
+    .cta-primary {
+        color: var(--PrimaryText);
+        background: var(--Primary);
+        border: solid 2px transparent;
+    }
+
+    .cta-secondary {
+        color: var(--PrimaryText);
+        background: var(--Secondary);
+        border: solid 2px currentColor;
+    }
+}

@@ -1,0 +1,32 @@
+
+@function pixelOffset($em, $offset: 1) {
+    $default-pixel-size: 16;
+    @return (($em * $default-pixel-size) - $offset) / $default-pixel-size
+}
+
+$up-from-size: ("medium": $bp-medium, "large": $bp-large, "xlarge": $bp-xl, "xxlarge": $bp-xxl);
+$up-to-size: (
+    "small": pixelOffset($bp-small),
+    "medium": pixelOffset($bp-medium),
+    "large": pixelOffset($bp-large),
+    "xlarge":pixelOffset($bp-xl),
+    "xxlarge": pixelOffset($bp-xxl));
+
+
+@mixin up-from($size) {
+    @media (min-width: map-get($up-from-size, $size)) {
+        @content;
+    }
+}
+
+@mixin up-to($size) {
+    @media (max-width: map-get($up-to-size, $size)) {
+        @content;
+    }
+}
+
+@include up-from(xxlarge) {
+    :root {
+        --site-padding: 4rem;
+    }
+}

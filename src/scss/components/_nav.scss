@@ -1,0 +1,42 @@
+nav {
+    display: flex;
+    z-index: 2;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    height:2.5rem;
+    a {
+        text-decoration: none;
+    }
+    ul {
+        height: 100%;
+        margin: 0 0 0 6rem;
+        padding:0;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+
+        @include up-from(xxlarge) {
+            font-size: 1rem;
+        }
+    }
+
+    li {
+        margin: 0 0.5rem;
+        a {
+            border-bottom: solid 2px transparent;
+            &:hover, &:active {
+                border-bottom: solid 2px var(--Primary);
+            }
+        }
+    }
+
+    .active {
+        a {
+            color: var(--SecondaryText50);
+        }
+    }
+}

@@ -1,0 +1,20 @@
+# Misc
+*.log
+npm-debug.*
+*.scssc
+*.swp
+.DS_Store
+Thumbs.db
+.sass-cache
+.env
+.cache
+
+# Node modules and output
+node_modules
+dist
+build
+src/_includes/css
+src/_includes/fonts
+src/_includes/img
+src/_includes/scripts
+src/_includes/manifest.json

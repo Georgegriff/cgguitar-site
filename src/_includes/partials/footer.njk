@@ -1,0 +1,9 @@
+<footer>
+    <ul>
+    {%- for link in external.links %}
+        <li><a href="{{link.url | url}}">{{link.text}}</a></li>
+    {%- endfor %}
+    </ul>
+    {% block footer %}{% endblock %}
+    {% include './copyright.njk' %}
+</footer>

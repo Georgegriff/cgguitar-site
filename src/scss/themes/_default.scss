@@ -1,0 +1,12 @@
+@mixin  default-theme {
+    --Background: #{$bg};
+    --Background50: #{$bg-50};
+    --Secondary: #{$secondary};
+    --SecondaryText: #{$white};
+    --SecondaryText50: #{$text-50};
+    --Primary: #{$primary};
+    --Primary50: #{$primary-50};
+    --PrimaryText: #{$white};
+    --Text: #{$secondary};
+    --LogoAlt: #{$logo-alt};
+}

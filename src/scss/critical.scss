@@ -1,0 +1,66 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "colors";
+
+
+html {
+    font-family: "Poppins", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+    @include default-theme;
+    font-size: calc(1rem + 0.5vw);
+}
+
+/* Utilities */
+@import "./utils/visually-hidden";
+
+/* Components */
+@import "./components/header";
+@import "./components/logo";
+@import "./components/nav";
+@import "./components/video";
+@import "./components/hero";
+@import "./components/callToAction";
+
+
+body,html {
+    background: var(--Secondary);
+    color: var(--Text);
+
+}
+
+:focus {
+    outline: 1px dashed var(--Primary);
+    outline-offset: 0.3rem;
+}
+
+main:focus {
+    outline: none;
+}
+
+a, a:visited, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+.wrapper  {
+    height: 100%;
+}
+
+main {
+    background: var(--Background);
+}
+
+.skip-link {
+    position: absolute;
+    top:calc(var(--site-padding) / 3);
+    left:var(--site-padding);
+    z-index: 99;
+    margin-top:1.5rem;
+    color: inherit;
+    &:not(:focus) {
+        @extend .visually-hidden;
+    }
+}

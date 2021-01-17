@@ -1,0 +1,12 @@
+{% set pageCriticalStyles = ['css/index.css'] %}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+{{content | safe}}
+{% endblock %}
+
+{% block footer %}
+   <span>Custom Footer Content</span>
+{% endblock %}
+

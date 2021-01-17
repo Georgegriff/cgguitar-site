@@ -1,0 +1,16 @@
+a.site-logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.2rem;
+    @include up-from(xxlarge) {
+        font-size: 1.5rem;
+    }
+    svg {
+        height: 100%;
+        width: auto;
+        margin-right: 0.5rem;
+    }
+    
+}
