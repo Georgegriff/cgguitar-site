@@ -6,7 +6,6 @@ a.action-button {
     border-radius: 1rem;
     margin-top: 1.5rem;
     background: var(--Primary);
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.4);
     @include up-from(xxlarge) {
         font-size: 1.5rem;
         padding: 0.7rem 0.9rem;
@@ -19,6 +18,7 @@ a.action-button {
         margin-right: 1rem;
     }
     .cta-primary {
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.4);
         color: var(--PrimaryText);
         background: var(--Primary);
         border: solid 2px transparent;
