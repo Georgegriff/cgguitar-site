@@ -31,7 +31,7 @@
     {% endif %}
     <body>
         <div class="wrapper">
-            <header>
+            <header {% if headerClassName %} class="{{headerClassName}}" {% endif %}>
                 <a class="skip-link action-button" href="{{skipLinkAnchor}}">Skip to content</a>
                 {% include 'partials/nav.njk' %}
                 {% include 'partials/hero.njk' %}

@@ -3,11 +3,11 @@ title: 'Guitar Tuition'
 layout: 'layouts/index.njk'
 templateEngineOverride: njk,md
 eleventyNavigation:
-  key: Home
+  key: Lessons
   order: 1
 hero:
   title: Kickstart your guitar lessons today
-  subtitle: "Available Monday to Friday."
+  subtitle: "Available Monday - Friday"
   description: "Lessons held on Zoom, for the foreseeable."
   callToAction:
     - type: primary

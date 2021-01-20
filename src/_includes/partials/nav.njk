@@ -4,10 +4,11 @@
         <span>CG Guitar<span>
     </a>
     <ul>
-        {%- for entry in collections.all | eleventyNavigation %}
+        {%- for entry in collections.all | eleventyNavigation | head(4) %}
         <li class="{% if entry.url == page.url %} active{% endif %}">
             <a href="{{ entry.url | url }}">{{ entry.title }}</a>
         </li>
         {%- endfor %}
+        <li><a class="more-link" href="#more"><span>More</span>{% include 'img/chevron_down.svg' %}</a></li>
     </ul>
 </nav>

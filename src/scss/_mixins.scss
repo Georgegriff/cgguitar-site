@@ -27,6 +27,12 @@ $up-to-size: (
 
 @include up-from(xxlarge) {
     :root {
-        --site-padding: 4rem;
+        --site-padding: 3.5rem;
+    }
+}
+
+@include up-to(small) {
+    :root {
+        --site-padding: 1rem;
     }
 }

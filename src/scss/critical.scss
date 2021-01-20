@@ -23,6 +23,7 @@ html {
 @import "./components/video";
 @import "./components/hero";
 @import "./components/callToAction";
+@import "./components/footer";
 
 
 body,html {
@@ -51,6 +52,13 @@ a, a:visited, a:active {
 
 main {
     background: var(--Background);
+    position: relative;
+    z-index: 3;
+    padding: var(--site-padding);
+
+    p {
+        margin-bottom: 0.5rem;
+    }
 }
 
 .skip-link {
@@ -63,4 +71,23 @@ main {
     &:not(:focus) {
         @extend .visually-hidden;
     }
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 20ch;
+
+    @include up-from(xxlarge) {
+        font-size: 5rem;
+    }
+    @include up-to(small) {
+        /* mobiles and 100vh are fucking stupid 100vh excludes controls */
+        font-size: 2.4rem;
+    }
+}
+
+h2,h3 {
+    font-weight: 600;
 }

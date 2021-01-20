@@ -1,19 +1,9 @@
-h2 {
-    @include up-to(medium) {
-    }
-
-    @include up-from(medium) {
-    }
-
-    @include up-from(large) {
-    }
-}
-
 header {
     color: var(--SecondaryText);
-    padding: var(--site-padding);
-    position: relative;
-    height: 100vh;
     background: var(--Secondary);
-    overflow: hidden;
+}
+
+.header-hero-full {
+    position: relative;
+    min-height: 100vh;
 }

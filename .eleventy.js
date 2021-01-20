@@ -169,6 +169,11 @@ module.exports = (eleventyConfig) => {
     return array.slice(0, n);
   });
 
+  // Get the last `n` elements of a collection.
+  eleventyConfig.addFilter("skip", (array, n) => {
+    return array.slice(n)
+  });
+
   eleventyConfig.addNunjucksAsyncFilter(
     "jsmin",
     async function (code, callback) {
