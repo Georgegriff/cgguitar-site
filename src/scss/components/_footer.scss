@@ -2,6 +2,9 @@ footer {
     color: var(--SecondaryText);
     padding: var(--site-padding);
     font-size: 0.875rem;
+    svg {
+        --Secondary: var(--PrimaryText);
+    }
     p, p.description, p.subtitle {
         line-height: 1rem;
         font-size: 0.75rem;
@@ -10,6 +13,9 @@ footer {
         margin-top:0.5rem;
     }
 
+    a {
+        text-decoration: underline;
+    }
 
     p.description {
         max-width: 27ch;
@@ -40,18 +46,17 @@ footer {
         font-size: 0.65rem;
         line-height: 1.1rem;
         margin-bottom: 1rem;
-        a {
-            text-decoration: underline;
-        }
 
         .sub-info {
             margin-top: 0.5rem;
             max-width: 27ch;
+            color: var(--SecondaryText50);
         }
-
-        .sub-header {
-            margin-bottom: 1rem;
-        }
+    }
+    .sub-header {
+        margin-bottom: 2rem;
+        font-size: 0.65rem;
+        
     }
 
     .social-links {

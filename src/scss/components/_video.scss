@@ -1,8 +1,7 @@
 @import "../../node_modules/lite-youtube-embed/src/lite-yt-embed.css";
 
 .video-size {
-    max-width: 600px;
-    padding:1rem;
+    max-width:var(--video-size,  800px);
     position: relative;
     .lty-playbtn {
         display: none;
@@ -73,6 +72,6 @@
 
 @media screen and (min-width: 3000px) {
     .video-size {
-        max-width: 30em;
+        max-width: var(--video-size, 30em);
     }
   }

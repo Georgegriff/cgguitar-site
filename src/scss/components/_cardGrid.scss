@@ -1,0 +1,60 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-column-size, 300px), 1fr));
+}
+
+.grid-gap {
+    gap: var(--site-padding);
+}
+
+.grid-center {
+    align-items: center;
+}
+
+.grid-columns {
+    --min-column-size:500px;
+    @include up-to(small) {
+        --min-column-size:300px
+    }
+}
+
+.video-section {
+    --video-size: 100%;
+    lite-youtube {
+        max-width: 100%;
+    }
+}
+
+.split-50 {
+    min-width: 500px;
+}
+
+.section-title {
+    margin-bottom: 1rem;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-cl {
+    flex-direction: column;
+}
+
+.link-more {
+    position: relative;
+    display: flex;
+    flex:2;
+    margin-top:3rem;
+    a {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 0.875rem;
+        border-bottom: solid 5px transparent;
+        &:hover, &:active {
+            border-bottom: solid 5px currentColor;
+        }
+    }
+}

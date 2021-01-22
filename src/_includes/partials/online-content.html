@@ -1,0 +1,48 @@
+{%- if onlineContent %}
+{%- set items = onlineContent.items %}
+{%- set video = onlineContent.video %}
+<article class="padded-sm site-padded">
+    {%- if onlineContent.title %}
+    <h3 class="section-title">{{onlineContent.title}}</h3>
+    {%- endif %}
+    <div class="card-grid grid-center grid-gap grid-columns">
+        <section>
+            <ul class="card-grid online-content icondesc grid-icons">
+                {%- for item in items %}
+                    <li>
+                        {%- if item.link -%}
+                        <a href="{{item.link}}">
+                        {%- endif %}
+                        {%- if item.image -%}
+                            {% include item.image -%}
+                        {%- endif %}
+                        {%- if item.text -%}
+                            <p>{{item.text}}</p>
+                        {%- endif %}
+                        {%- if item.link -%}
+                        </a>
+                        {%- endif -%}
+                    </li>
+                {%- endfor -%}
+            </ul>
+    </section>
+    {%- if video -%}
+    <section class="video-section">
+        {%- if video.channel %}
+        <div class="icon-link section-title">
+            <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/{{metadata.author.youtube}}">
+            {% include 'img/youtube.svg' %}
+            <span>Subscribe to my YouTube channel.<span></a></p>
+        {%- endif %}
+        </div>
+        <div class="v-wrap">
+            {% youtube video.id %}
+        </div>
+        <div class="link-more">
+        <a href="/media/">Watch more</a>
+        </div>
+    </section>
+    {%- endif %}
+    </div>
+</article>
+{%- endif %}

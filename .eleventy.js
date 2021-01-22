@@ -196,6 +196,11 @@ module.exports = (eleventyConfig) => {
     //tip!
     console.log(...args);
     debugger;
+    return {...args};
+  });
+
+  eleventyConfig.addFilter("ariatel", (number = '') => {
+    return [...number].join(' ')
   });
 
   const YouTube = require("./src/_includes/components/youtube");

@@ -1,0 +1,90 @@
+.testimonial-levels {
+    color: var(--SecondaryText);
+    padding:0;
+    background: var(--Secondary);
+}
+
+.level {
+    padding: var(--site-padding);
+    h3 {
+        margin-bottom: 1rem;
+    }
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+ 
+
+    p.description {
+        font-size: 0.75rem;
+        margin-bottom: 4rem;
+        min-height: 4rem;
+    }
+
+    p.quote {
+        font-size: 0.55rem;
+        max-width: 25ch;
+        position: relative;
+        margin-left: 1rem;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            left:-1.5rem;
+            top:-1rem;
+            background-size: 100%;
+            background-image: url('/images/start-quote.svg');
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1.25rem;
+            height: 1.25rem;
+            bottom:-0.5rem;
+            right:-1.5rem;
+            background-size: 100%;
+            background-image: url('/images/end-quote.svg');
+        }
+    }
+
+    img {
+        object-fit: cover;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 100%;
+    }
+
+    .quote-wrap {
+       display: flex;
+       align-items: center;
+       flex-wrap: wrap;
+       /* for quotes */
+       padding-right: 2rem;
+       @include up-from(medium) {
+            justify-content: space-between;
+       }
+       @include up-to(medium) {
+        p.quote {
+            margin-left: 2rem;
+        }
+       }
+    }
+}
+
+.level-beginner {
+    background: var(--Secondary50);
+}
+
+.level-intermediate {
+    background: var(--Primary50);
+}
+
+.level-advanced {
+    background: var(--Primary);
+}

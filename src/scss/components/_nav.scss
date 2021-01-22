@@ -1,6 +1,8 @@
 nav {
+    color: var(--SecondaryText);
+    background: var(--Secondary);
     display: flex;
-    z-index: 3;
+    z-index: 4;
     position: sticky;
     top:0;
     align-items: center;
@@ -8,9 +10,7 @@ nav {
     flex-wrap: wrap;
     padding: var(--site-padding);
     background: var(--Secondary);
-    @include up-to (medium) {
-        flex-direction: column;
-    }
+    min-height: var(--site-header);
     a {
         text-decoration: none;
     }
@@ -41,18 +41,16 @@ nav {
         @include up-from(xxlarge) {
             font-size: 1rem;
         }
-        @include up-to (medium) {
-            margin-top:1rem;
-        }
 
     }
 
     li {
         margin: 0 0.5rem;
+        height: 1rem;
         a {
             border-bottom: solid 5px transparent;
             &:hover, &:active {
-                border-bottom: solid 5px var(--Primary);
+                border-bottom: solid 5px currentColor;
             }
         }
     }

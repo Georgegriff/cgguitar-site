@@ -1,0 +1,57 @@
+.icondesc {
+    padding: 4.40rem 0;
+    gap: var(--site-padding);
+    img, svg {
+        margin-bottom:1rem;
+    }
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    h2 {
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+    }
+
+    p {
+        font-size: 0.75rem;
+        max-width: 40ch;
+        margin-top:0.5rem;
+
+    }
+
+    @include up-to(medium) {
+        p {
+            max-width: initial;
+        }
+    }
+}
+
+.icon-link {
+    a {
+        display: flex;
+        align-items: center;
+    }
+    svg {
+        fill: var(--PrmaryText);
+        height: auto;
+        width: 2rem;
+        margin-right: 1rem;
+    }
+    display: flex;
+    align-items: center;
+}
+
+.grid-icons {
+    --min-column-size:150px;
+    @include up-to(small) {
+        grid-template-columns: 1f 1fr;
+        grid-template-rows: 1fr 1fr;
+        svg {
+            height: 3rem;
+        }
+    }
+}

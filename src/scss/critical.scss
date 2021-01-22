@@ -23,16 +23,19 @@ html {
 @import "./components/video";
 @import "./components/hero";
 @import "./components/callToAction";
+@import "./components/cardGrid.scss";
 @import "./components/footer";
+@import "./components/testimonials";
+@import "./components/icondesc";
 
 
 body,html {
     background: var(--Secondary);
     color: var(--Text);
-
+    scroll-padding-top: calc((var(--site-header) + var(--site-padding)));
 }
 
-:focus {
+:focus, #more:target {
     outline: 1px dashed var(--Primary);
     outline-offset: 0.3rem;
 }
@@ -54,10 +57,25 @@ main {
     background: var(--Background);
     position: relative;
     z-index: 3;
-    padding: var(--site-padding);
-
     p {
         margin-bottom: 0.5rem;
+    }
+
+    > article {
+        padding: 0 var(--site-padding);
+    }
+
+    .padded {
+        padding: 4.4rem 0
+    }
+
+    .padded-sm {
+        padding: 1rem 0
+    }
+
+    .site-padded {
+        padding-left: var(--site-padding);
+        padding-right: var(--site-padding);
     }
 }
 
@@ -88,6 +106,10 @@ h1 {
     }
 }
 
-h2,h3 {
+h2 {
+    font-weight: 600;
+}
+
+h3 {
     font-weight: 600;
 }
