@@ -2,9 +2,6 @@ footer {
     color: var(--SecondaryText);
     padding: var(--site-padding);
     font-size: 0.875rem;
-    svg {
-        --Secondary: var(--PrimaryText);
-    }
     p, p.description, p.subtitle {
         line-height: 1rem;
         font-size: 0.75rem;
@@ -57,20 +54,6 @@ footer {
         margin-bottom: 2rem;
         font-size: 0.65rem;
         
-    }
-
-    .social-links {
-       display: flex;
-       flex-wrap: wrap;
-       align-items: center;
-       
-       svg {
-           height: auto;
-           width: 1.5rem;
-       } 
-       li:not(:last-child) {
-           margin-right: 1rem;
-       }
     }
 }
 

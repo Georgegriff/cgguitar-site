@@ -1,0 +1,5 @@
+<div class="social-links">
+{%- for link in external.links %}
+<li><a rel="noopener" target="_blank" title="{{link.text}}"href="{{link.url | url}}">{% include link.icon %}</a></li>
+{%- endfor %}
+</div>

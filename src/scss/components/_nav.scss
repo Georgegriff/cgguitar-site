@@ -1,4 +1,10 @@
 nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav {
     color: var(--SecondaryText);
     background: var(--Secondary);
     display: flex;
@@ -35,7 +41,6 @@ nav {
         text-transform: uppercase;
         font-size: 0.9rem;
         @include up-to (small) {
-            margin: var(--site-padding) 0 0 0;
             justify-content: center;
         }
         @include up-from(xxlarge) {
@@ -46,7 +51,6 @@ nav {
 
     li {
         margin: 0 0.5rem;
-        height: 1rem;
         a {
             border-bottom: solid 5px transparent;
             &:hover, &:active {

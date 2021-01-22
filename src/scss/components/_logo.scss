@@ -4,6 +4,7 @@ a.site-logo {
     align-items: center;
     height: 100%;
     font-size: 1.2rem;
+    z-index: 1;
     @include up-from(xxlarge) {
         font-size: 1.5rem;
     }

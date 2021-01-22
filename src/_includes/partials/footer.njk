@@ -10,17 +10,14 @@
         <section>
             <h4>Info</h4>
             <ul class="footer-links">
-                <li><a target="_top" href="mailto:{{metadata.author.email}}"><span>Email: </span>{{metadata.author.email}}</a></li>
-                <li><a href="tel:{{metadata.author.phone}}" aria-label="Telephone number, {{metadata.author.phone | ariatel }}"><span>Tel: </span>{{metadata.author.phone}}</a></li>
+                {% include 'partials/contact-data.njk' %}
                 <li class="sub-info">I’m also available to hire for session work, please get in touch.</li>
             </ul>
             <h4>Keep Updated</h4>
             <p class="sub-header">Follow me on social media to keep up with the latest news, I post free educational content on my
             <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/{{metadata.author.youtube}}">YouTube channel.</a></p>
-            <ul class="footer-links social-links">
-            {%- for link in external.links %}
-            <li><a rel="noopener" target="_blank" title="{{link.text}}"href="{{link.url | url}}">{% include link.icon %}</a></li>
-            {%- endfor %}
+            <ul class="footer-links">
+                {% include 'partials/social.njk' %}
             </ul>
         </section>
         <section>
