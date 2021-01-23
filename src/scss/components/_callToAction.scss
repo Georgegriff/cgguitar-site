@@ -49,6 +49,7 @@ p.description {
     margin:0;
     left:0;
     font-size: 0.875rem;
+    margin-top:1rem;
     @include up-from(xxlarge) {
        font-size: 1rem;
     }

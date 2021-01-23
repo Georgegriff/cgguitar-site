@@ -17,6 +17,9 @@ hero:
   title: Kickstart your guitar lessons today
   subtitle: "Available Monday to Friday"
   description: "Lessons held on Zoom, for the foreseeable."
+  image:
+    src: images/hero.jpg
+    alt: "CG Guitars' Charlie playing guitar on stage"
   callToAction:
     - type: primary
       text: Get in touch
@@ -46,7 +49,7 @@ levels:
      text: Appropriate coaching and mentoring to study music/guitar in further education, to prepare for live performances and advice on ways to take your playing to the next level.
      image: /images/testimonials/johno.jpg
      quote: Charlie has tailored the lessons to cover advanced topics such as, playing with odd time signatures, music theory and improvisation skills.
-onlineContent:
+gridContent:
   title: Start learning today
   items:
     - text: My students have found success in both online and in person lessons.
@@ -55,7 +58,7 @@ onlineContent:
       image: img/note.svg
     - text: I provide extra value though free online demonstrations and tutorials.
       image: img/video.svg
-    - text: Don’t take my word for it, many of my students have provided testimonials.
+    - text: Many of my students have provided testimonials.
       image: img/person.svg
   video:
     id: BWN45DJCCoQ
@@ -65,5 +68,5 @@ onlineContent:
 
 {% include 'partials/enjoy-learn-achieve-perform.html' %}
 {% include 'partials/testimonial-levels.html' %}
-{% include 'partials/online-content.html' %}
+{% include 'partials/grid-content.html' %}
 

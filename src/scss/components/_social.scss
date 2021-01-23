@@ -14,8 +14,6 @@
     svg {
         height: auto;
         width: 1.5rem;
-        /* icon color fix */
-        --Secondary: var(--PrimaryText);
     } 
     li:not(:last-child) {
         margin-right: 1rem;

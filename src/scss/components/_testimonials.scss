@@ -58,6 +58,11 @@
         width: 5rem;
         height: 5rem;
         border-radius: 100%;
+        margin-bottom: 1rem;
+        @include up-from(xxlarge) {
+            width: 10rem;
+            height: 10rem;
+        }
     }
 
     .quote-wrap {
@@ -74,6 +79,11 @@
             margin-left: 2rem;
         }
        }
+       @include up-from(xxlarge) {
+            p.quote {
+                font-size: 1rem;
+            }
+        }
     }
 }
 

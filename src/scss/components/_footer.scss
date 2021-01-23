@@ -1,7 +1,13 @@
 footer {
+
     color: var(--SecondaryText);
+    --IconColor: currentColor;
+    --IconColorBg: var(--Secondary);
     padding: var(--site-padding);
     font-size: 0.875rem;
+    @include up-to(medium) {
+        min-height: calc(100vh - ((var(--site-header) + var(--site-padding))));
+    }
     p, p.description, p.subtitle {
         line-height: 1rem;
         font-size: 0.75rem;
@@ -40,9 +46,13 @@ footer {
     }
 
     .footer-links {
-        font-size: 0.65rem;
+        font-size: 0.75rem;
         line-height: 1.1rem;
         margin-bottom: 1rem;
+        a {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
 
         .sub-info {
             margin-top: 0.5rem;
@@ -52,7 +62,7 @@ footer {
     }
     .sub-header {
         margin-bottom: 2rem;
-        font-size: 0.65rem;
+        font-size: 0.75rem;
         
     }
 }

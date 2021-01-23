@@ -33,21 +33,6 @@
             opacity: 0.2;
         }
     }
-
-    .hero-scroll-down {
-        width: 100%;
-        position: absolute;
-        z-index: 2;
-        bottom:0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: calc(-1 * var(--site-padding));
-        @include up-to(small) {
-            /* mobiles and 100vh are fucking stupid 100vh excludes controls */
-            bottom: 2.5rem;
-         }
-    }
     @keyframes wiggle {
         0% {
           transform: translateY(-10px);
@@ -76,4 +61,14 @@
         transition:  opacity 0.3s ease-in-out;
         opacity: 0;
     }
+}
+
+
+.header-hero-medium {
+  img {
+    opacity: 0.2;
+    height: 80%;
+    right: -5rem;
+    top: 0;
+  }
 }

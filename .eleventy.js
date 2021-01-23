@@ -26,7 +26,7 @@ module.exports = (eleventyConfig) => {
     let stats = await Image(imgPath, {
       widths: [25, 320, 640, 960, 1200, 1800, 2400],
       formats: ["jpeg", "webp"],
-      urlPath: "images/",
+      urlPath: "/images/",
       outputDir: "./dist/images/",
     });
 

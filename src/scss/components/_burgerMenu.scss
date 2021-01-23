@@ -3,11 +3,18 @@
 }
 
 burger-menu {
+    --IconColor: var(--Primary);
+    --IconColorBg: var(--Secondary);
     color: var(--SecondaryText);
     width: 2rem;
     height: 2rem;
     [data-overflow-link] {
         visibility: hidden;
+    }
+
+    .burger-menu__panel * {
+        position: relative;
+        z-index: -666;
     }
 
     .menu-info {
@@ -23,7 +30,7 @@ body[data-menu-open] {
     overflow-y: hidden;
 }
 
-.burger-menu[enabled='true'] {
+.burger-menu[enabled='true'][status='open'] {
     [data-overflow-link] {
         visibility: visible;
     }
@@ -34,6 +41,11 @@ body[data-menu-open] {
 
     .menu-info {
         visibility: visible;
+    }
+
+    .burger-menu__panel * {
+        position: relative;
+        z-index: initial;
     }
 }
 
@@ -111,7 +123,7 @@ body[data-menu-open] {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 5rem var(--site-padding) 2rem var(--site-padding);
+    padding: calc(var(--site-header) + var(--site-padding)) var(--site-padding) 2rem var(--site-padding);
     width: 100%;
     height: 100%;
     visibility: hidden;
@@ -119,7 +131,8 @@ body[data-menu-open] {
     background: var(--Secondary);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-  }
+    clip-path: circle(3.9% at 100% 0);
+}
   
   .burger-menu[enabled='true'] .navigation ul {
     display: block;
@@ -136,7 +149,9 @@ body[data-menu-open] {
   .burger-menu[enabled='true'][status='open'] .burger-menu__panel {
     visibility: visible;
     opacity: 1;
-    transition: opacity 400ms ease;
+    transition: opacity 400ms ease, clip-path 400ms cubic-bezier(.17,.67,.83,.67);
+    transform: translateY(0);
+    clip-path: circle(149.9% at 100% 2%);
   }
   
   .burger-menu[enabled='true'][status='closed'] .burger-menu__panel > * {

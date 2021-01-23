@@ -8,6 +8,33 @@ header {
     min-height: calc(100vh - (var(--site-header) + var(--site-padding)));
 }
 
+.hero-scroll-down {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    bottom:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: calc(-1 * var(--site-padding));
+    @include up-to(small) {
+        /* mobiles and 100vh are fucking stupid 100vh excludes controls */
+        bottom: 2.5rem;
+     }
+}
+
+.header-hero-medium {
+    .hero-scroll-down {
+        top: 40vh;
+    }
+    @include up-to(small) {
+        min-height: calc(40vh - (var(--site-header) + var(--site-padding)));
+    }
+    @include up-from(large) {
+        min-height: calc(75vh - (var(--site-header) + var(--site-padding)));
+    }
+}
+
 .primary-text {
     color: var(--Primary);
 }

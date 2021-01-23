@@ -3,6 +3,8 @@
 .video-size {
     max-width:var(--video-size,  800px);
     position: relative;
+    width: 100%;
+    height: 100%;
     .lty-playbtn {
         display: none;
     }
@@ -58,6 +60,11 @@
     .video-wrapper {
         position: relative;
         padding-top: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
+        @supports(aspect-ratio: 16 / 9) {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            padding-top: initial;
+        }
       
       }
       .video {

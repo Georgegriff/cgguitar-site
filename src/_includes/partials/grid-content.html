@@ -1,9 +1,9 @@
-{%- if onlineContent %}
-{%- set items = onlineContent.items %}
-{%- set video = onlineContent.video %}
+{%- if gridContent %}
+{%- set items = gridContent.items %}
+{%- set video = gridContent.video %}
 <article class="padded-sm site-padded">
-    {%- if onlineContent.title %}
-    <h3 class="section-title">{{onlineContent.title}}</h3>
+    {%- if gridContent.title %}
+    <h3 class="section-title">{{gridContent.title}}</h3>
     {%- endif %}
     <div class="card-grid grid-center grid-gap grid-columns">
         <section>
@@ -35,11 +35,9 @@
             <span>Subscribe to my YouTube channel.<span></a></p>
         {%- endif %}
         </div>
-        <div class="v-wrap">
-            {% youtube video.id %}
-        </div>
-        <div class="link-more">
-        <a href="/media/">Watch more</a>
+        {% youtube video.id %}
+        <div class="watch-more">
+            <a class="watch-more" href="/media/">Watch more</a>
         </div>
     </section>
     {%- endif %}

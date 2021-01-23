@@ -2,7 +2,7 @@
     padding: 4.40rem 0;
     gap: var(--site-padding);
     img, svg {
-        margin-bottom:1rem;
+        flex:2;
     }
     li {
         display: flex;
@@ -20,6 +20,7 @@
         font-size: 0.75rem;
         max-width: 40ch;
         margin-top:0.5rem;
+        min-height: 2rem;
 
     }
 
@@ -47,6 +48,7 @@
 
 .grid-icons {
     --min-column-size:150px;
+
     @include up-to(small) {
         grid-template-columns: 1f 1fr;
         grid-template-rows: 1fr 1fr;
