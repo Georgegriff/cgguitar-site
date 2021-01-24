@@ -4,6 +4,9 @@
     <div class="hero{% if hero.size %} hero-{{hero.size}}{% endif %}">
         <div class="hero-text">
             <h1>{{hero.title}}</h1>
+            {% if hero.subtitle %}
+                <p class="subtitle">{{hero.subtitle}}</p>
+            {%endif %}
             {% if callToAction %}
                 <div class="call-to-action">
                 {% for item in callToAction %}
@@ -12,11 +15,8 @@
                 {% endfor %}
                 </div>
             {% endif %}
-            {% if hero.subtitle %}
-                <p class="subtitle">{{hero.subtitle}}</p>
-            {%endif %}
             {% if hero.description %}
-                <p class="description">{{hero.description}}</p>
+                <p class="description">{{hero.description | safe}}</p>
             {% endif %}
         </div>
         {% image image.src, image.alt %}

@@ -1,5 +1,7 @@
+{% set footerInfo = footer or {callToAction: true} %}
 <footer>
     <article class="footer-grid">
+        {% if footerInfo.callToAction %}
         <section class="call-to-action">
             <h2>Talk to me about lessons today</h2>
             <p class="subtitle">CG Guitar is the right place for you!</p>
@@ -7,6 +9,7 @@
             <a class="action-button cta-primary" href="/contact/">Get in touch</a>
             <p class="description">Lessons are held online via Zoom for the foreseeable.</p>
         </section>
+        {% endif %}
         <section>
             <h4>Info</h4>
             <ul class="footer-links">
@@ -24,7 +27,7 @@
         <h4 id="more">More</h4>
         <ul class="footer-links">
             <li><a href="/privacy/">Privacy Policy</a></li>
-            {%- for entry in collections.all | eleventyNavigation | skip(4) %}
+            {%- for entry in collections.all | eleventyNavigation | skip(3) %}
             <li class="{% if entry.url == page.url %} active{% endif %}">
                 <a href="{{ entry.url | url }}">{{ entry.title }}</a>
             </li>

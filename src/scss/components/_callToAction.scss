@@ -37,7 +37,7 @@ a.action-button {
 }
 
 p.subtitle {
-    margin-top:2rem;
+    margin-top:1rem;
     color: var(--SecondaryText50);
     font-size: 1.5rem;
     @include up-from(xxlarge) {
@@ -49,7 +49,8 @@ p.description {
     margin:0;
     left:0;
     font-size: 0.875rem;
-    margin-top:1rem;
+    margin-top:2rem;
+    max-width: 45ch;
     @include up-from(xxlarge) {
        font-size: 1rem;
     }

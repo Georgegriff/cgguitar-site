@@ -1,11 +1,17 @@
 {%- if gridContent %}
 {%- set items = gridContent.items %}
 {%- set video = gridContent.video %}
-<article class="padded-sm site-padded">
+<article class="padded-sm site-padded{%- if gridContent.class %} {{gridContent.class}}{%- endif%}">
     {%- if gridContent.title %}
     <h3 class="section-title">{{gridContent.title}}</h3>
     {%- endif %}
     <div class="card-grid grid-center grid-gap grid-columns">
+        {%- if video -%}
+        <section class="video-section">
+            {% youtube video.id %}
+            <a class="watch-more" href="/media/">Watch more</a>
+        </section>
+        {%- endif %}
         <section>
             <ul class="card-grid online-content icondesc grid-icons">
                 {%- for item in items %}
@@ -17,7 +23,7 @@
                             {% include item.image -%}
                         {%- endif %}
                         {%- if item.text -%}
-                            <p>{{item.text}}</p>
+                            <p>{{helpers.placeholders(item.text, GRID_TEXT_PLACEHOLDER) | safe}}</p>
                         {%- endif %}
                         {%- if item.link -%}
                         </a>
@@ -26,21 +32,6 @@
                 {%- endfor -%}
             </ul>
     </section>
-    {%- if video -%}
-    <section class="video-section">
-        {%- if video.channel %}
-        <div class="icon-link section-title">
-            <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/{{metadata.author.youtube}}">
-            {% include 'img/youtube.svg' %}
-            <span>Subscribe to my YouTube channel.<span></a></p>
-        {%- endif %}
-        </div>
-        {% youtube video.id %}
-        <div class="watch-more">
-            <a class="watch-more" href="/media/">Watch more</a>
-        </div>
-    </section>
-    {%- endif %}
     </div>
 </article>
 {%- endif %}

@@ -29,9 +29,8 @@ html {
 @import "./components/burgerMenu";
 @import "./components/social";
 
-
-
 body,html {
+    margin: 0;
     background: var(--Secondary);
     color: var(--Text);
     scroll-padding-top: calc((var(--site-header) + var(--site-padding)));
@@ -55,7 +54,16 @@ a, a:visited, a:active {
     height: 100%;
 }
 
+main.contained {
+    > * {
+        max-width: 65rem;
+        margin: 0 auto;
+    }
+}
+
 main {
+   
+
     background: var(--Background);
     position: relative;
     z-index: 3;
@@ -128,4 +136,25 @@ h2 {
 
 h3 {
     font-weight: 600;
+}
+
+
+.bottom-section {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex:2;
+    margin-top:3rem;
+    > * {
+        font-size: 0.875rem;
+        margin-bottom: 0;
+        line-height: 1rem;
+    }
+    a {
+        border-bottom: solid 5px transparent;
+        &:hover, &:active {
+            border-bottom: solid 5px currentColor;
+        }
+    }
 }

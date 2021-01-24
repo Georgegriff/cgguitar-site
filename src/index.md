@@ -50,6 +50,7 @@ levels:
      image: /images/testimonials/johno.jpg
      quote: Charlie has tailored the lessons to cover advanced topics such as, playing with odd time signatures, music theory and improvisation skills.
 gridContent:
+  class: 'video-grid'
   title: Start learning today
   items:
     - text: My students have found success in both online and in person lessons.

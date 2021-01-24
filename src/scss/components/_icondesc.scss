@@ -1,4 +1,9 @@
 .icondesc {
+    svg {
+        * {
+            fill: var(--IconColor);
+        }
+    }
     gap: var(--site-padding);
     img, svg {
         flex:2;
@@ -30,6 +35,10 @@
     }
 }
 
+.icondesc li:nth-child(odd) {
+    --IconColor: var(--Primary);
+}
+
 .icon-link {
     a {
         display: flex;
@@ -54,6 +63,37 @@
         grid-template-rows: 1fr 1fr;
         svg {
             height: 3rem;
+        }
+    }
+}
+
+.grid-small {
+    @include up-to(medium) {
+        .card-grid {
+            display: flex;
+            justify-content: center;
+        }
+        .grid-icons {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            flex-direction: column;
+            li {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    flex:1;
+                    width: 2rem;
+                    height: 2rem;
+                }
+
+                p {
+                    margin-left:1rem;
+                    flex:4;
+                    text-align: left;
+                }
+            }
         }
     }
 }

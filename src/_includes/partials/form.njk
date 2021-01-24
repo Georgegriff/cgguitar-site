@@ -1,0 +1,26 @@
+<form action="/success/" name="contact" method="POST" data-netlify="true">
+    <div class="form-grid">
+        <fieldset>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required value="flub"/>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email"/>
+            <label for="telephone">Telephone</label>
+            <input type="telephone" name="telephone" id="telephone"/>
+        </fieldset>
+        <div>
+            <label for="message">Your message</label>
+            <textarea required name="message" id="message"></textarea>
+        </div>
+    </div>
+    <fieldset>
+        <legend>How would you prefer to be contacted?</legend>
+        <label for="prefers_email">Email</label>
+        <input checked type="radio" name="prefers" id="prefers_email" value="email"/>
+        <label for="prefers_tel">Telephone</label>
+        <input type="radio" name="prefers" id="prefers_tel" value="telephone"/>
+    </fieldset>
+    <label for="accept_priv">Please confirm that you have read an accept our <a href="/privacy/">Privacy Policy</a>.</label>
+    <input required type="checkbox" name="accept_priv" id="accept_priv"/>
+    <button type="submit">Submit</button>
+</form>

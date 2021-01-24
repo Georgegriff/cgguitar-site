@@ -12,7 +12,8 @@ const isProduction = process.env.NODE_ENV === "production";
 const criticalStyles = [
   "reset.scss",
   "critical.scss",
-  "index.scss"
+  "index.scss",
+  "contact.scss"
 ];
 
 // Takes the arguments passed by `dest` and determines where the output file goes

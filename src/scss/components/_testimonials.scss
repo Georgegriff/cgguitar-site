@@ -1,7 +1,18 @@
 .testimonial-levels {
     color: var(--SecondaryText);
     padding:0;
-    background: var(--Secondary);
+    background: var(--Background50);
+    section:last-of-type {
+        @include up-from(medium) {
+            grid-column: span 2;
+        }
+        @include up-from(large) {
+            grid-column: initial;
+        }
+        @include up-to(small) {
+            grid-column: initial;
+        }
+    }
 }
 
 .level {
@@ -14,28 +25,6 @@
     display: flex;
     padding: var(--site-padding);
     flex-direction: column;
- 
-
-
-    .bottom-section {
-            position: relative;
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            flex:2;
-            margin-top:3rem;
-            > * {
-                font-size: 0.875rem;
-                margin-bottom: 0;
-                line-height: 1rem;
-            }
-            a {
-                border-bottom: solid 5px transparent;
-                &:hover, &:active {
-                    border-bottom: solid 5px currentColor;
-                }
-            }
-        }
 
     p.description {
         font-size: 0.875rem;

@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+img:-moz-loading {
+  visibility: hidden;
+}
+
 /* Remove default margin */
 body,
 h1,

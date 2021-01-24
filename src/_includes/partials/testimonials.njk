@@ -5,7 +5,7 @@
 {%- for item in testimonials %}
     <li class="testimonial brick large-img">
         <div class="quote-wrapper">
-        <p class="quote">{{item.text}}</p>
+        <p class="quote">{{item.text | safe}}</p>
         </div>
         {%- if item.image -%}
             {% image item.image, "CG Guitar student profile picture", true %}

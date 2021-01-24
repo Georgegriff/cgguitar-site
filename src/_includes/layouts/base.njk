@@ -1,8 +1,9 @@
 {% set inlineJs %}
     {% include assets.getInlinePath("inline-critical.js") %}
 {% endset %}
+{% set pageCriticalStyles = pageCriticalStyles or ['css/index.css'] %}
 {% if not pageJs %}
-    {% set pageJs = "index.js" %}
+    {% set pageJs = pageJs or "index.js" %}
 {% endif %}
 <!DOCTYPE html>
 <html data-theme="light" lang="en">
@@ -38,7 +39,7 @@
             <header {% if headerClassName %} class="{{headerClassName}}" {% endif %}>
                 {% include 'partials/hero.njk' %}
             </header>
-            <main id="main-content" tabindex="-1">
+            <main id="main-content" tabindex="-1" {% if mainClass %}class="{{mainClass}}"{% endif %}>
                 {% block content %}{% endblock %}
             </main>
             {% include 'partials/footer.njk' %}
