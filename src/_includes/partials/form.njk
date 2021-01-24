@@ -1,7 +1,7 @@
-<form  name="contact" action="/success/" netlify-honeypot="bot-field" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+<form  name="contact" action="/success/" netlify-honeypot="bot-field" method="POST" data-netlify="true">
     <div class="form-grid">
         <p class="visually-hidden">
-            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            <label>You are robot if fill this: <input name="bot-field" /></label>
         </p>
         <fieldset>
             <label for="name">Name</label>
@@ -25,6 +25,5 @@
     </fieldset>
     <label for="accept_priv">Please confirm that you have read an accept our <a href="/privacy/">Privacy Policy</a>.</label>
     <input required type="checkbox" name="accept_priv" id="accept_priv"/>
-    <div data-netlify-recaptcha="true"></div>
     <button type="submit">Submit</button>
 </form>
