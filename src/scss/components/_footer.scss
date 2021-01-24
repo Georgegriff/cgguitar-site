@@ -1,5 +1,8 @@
 footer {
-
+    ul {
+        list-style-type: none;
+        padding:0;
+    }
     color: var(--SecondaryText);
     --IconColor: currentColor;
     --IconColorBg: var(--Secondary);

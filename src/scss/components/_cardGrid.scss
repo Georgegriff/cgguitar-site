@@ -46,23 +46,6 @@
     flex-direction: column;
 }
 
-.link-more {
-    position: relative;
-    display: flex;
-    flex:2;
-    margin-top:3rem;
-    a {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        font-size: 0.875rem;
-        border-bottom: solid 5px transparent;
-        &:hover, &:active {
-            border-bottom: solid 5px currentColor;
-        }
-    }
-}
-
 .watch-more {
     margin-top:0.5rem;
     max-width: var(--video-size);

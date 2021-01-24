@@ -3,11 +3,6 @@ header {
     background: var(--Secondary);
 }
 
-.header-hero-full {
-    position: relative;
-    min-height: calc(100vh - (var(--site-header) + var(--site-padding)));
-}
-
 .hero-scroll-down {
     width: 100%;
     position: absolute;
@@ -15,7 +10,7 @@ header {
     bottom:0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     margin-left: calc(-1 * var(--site-padding));
     @include up-to(small) {
         /* mobiles and 100vh are fucking stupid 100vh excludes controls */
@@ -23,15 +18,24 @@ header {
      }
 }
 
-.header-hero-medium {
-    .hero-scroll-down {
-        top: 40vh;
+.header-hero {
+    &-medium {
+        position: relative;
+        overflow: hidden;
+        .hero-scroll-down {
+            display: none;
+        }
+        @include up-to(small) {
+            min-height: calc(40vh - (var(--site-header) + var(--site-padding)));
+        }
+        @include up-from(large) {
+            min-height: calc(75vh - (var(--site-header) + var(--site-padding)));
+        }
     }
-    @include up-to(small) {
-        min-height: calc(40vh - (var(--site-header) + var(--site-padding)));
-    }
-    @include up-from(large) {
-        min-height: calc(75vh - (var(--site-header) + var(--site-padding)));
+    &-full {
+        position: relative;
+        overflow: hidden;
+        min-height: calc(100vh - (var(--site-header) + var(--site-padding)));
     }
 }
 

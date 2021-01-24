@@ -1,5 +1,4 @@
 .icondesc {
-    padding: 4.40rem 0;
     gap: var(--site-padding);
     img, svg {
         flex:2;
@@ -48,9 +47,10 @@
 
 .grid-icons {
     --min-column-size:150px;
+    padding:0;
 
     @include up-to(small) {
-        grid-template-columns: 1f 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         svg {
             height: 3rem;

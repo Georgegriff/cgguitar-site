@@ -6,11 +6,17 @@
             <h3>{{item.title}}</h3>
             <p class="description">{{item.text}}</p>
             <div class="quote-wrap">
-                <img src="{{item.image}}" alt="CG Guitar student profile picture" />
+                {%- if item.image -%}
+                {% image item.image, "CG Guitar student profile picture", true %}
+                {%- else -%}
+                    <div class="placeholder-image">
+                        {%- include 'img/default-test.svg' %}
+                    </div>
+                {%- endif -%}
                 <p class="quote">{{item.quote}}</p>
             </div>
-            <div class="link-more">
-                <a aria-label="Read more testimonials" href="/testimonials/">Read more</a>
+            <div class="bottom-section">
+                <a aria-label="Read more testimonials" href="/testimonials/#students">Read more</a>
             </div>
         </section>
     {%- endfor %}

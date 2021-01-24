@@ -5,26 +5,52 @@
 }
 
 .level {
-    padding: var(--site-padding);
     h3 {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 }
 
 .testimonial {
     display: flex;
+    padding: var(--site-padding);
     flex-direction: column;
  
 
+
+    .bottom-section {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            flex:2;
+            margin-top:3rem;
+            > * {
+                font-size: 0.875rem;
+                margin-bottom: 0;
+                line-height: 1rem;
+            }
+            a {
+                border-bottom: solid 5px transparent;
+                &:hover, &:active {
+                    border-bottom: solid 5px currentColor;
+                }
+            }
+        }
+
     p.description {
-        font-size: 0.75rem;
-        margin-bottom: 4rem;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
         min-height: 4rem;
     }
 
+    p.author {
+        font-size: 1.1rem;
+    }
+
     p.quote {
-        font-size: 0.55rem;
-        max-width: 25ch;
+        display: inline-block;
+        font-size: 0.75rem;
+        max-width: 40ch;
         position: relative;
         margin-left: 1rem;
 
@@ -34,10 +60,15 @@
             position: absolute;
             width: 1rem;
             height: 1rem;
-            left:-1.5rem;
+            left:-1rem;
             top:-1rem;
-            background-size: 100%;
-            background-image: url('/images/start-quote.svg');
+            background-color: var(--accent-color, var(--PrimaryText));
+            mask-image: url('/images/start-quote.svg');
+            mask-size: cover;
+            -webkit-mask-image: url('/images/start-quote.svg');
+            -webkit-mask-size: cover;
+
+
         }
 
         &:after {
@@ -48,20 +79,30 @@
             height: 1.25rem;
             bottom:-0.5rem;
             right:-1.5rem;
-            background-size: 100%;
-            background-image: url('/images/end-quote.svg');
+            background-color:  var(--accent-color, var(--PrimaryText));
+            mask-image: url('/images/end-quote.svg');
+            mask-size: cover;
+            -webkit-mask-image: url('/images/end-quote.svg');
+            -webkit-mask-size: cover;
         }
     }
 
-    img {
+    img, .placeholder-image {
         object-fit: cover;
-        width: 5rem;
-        height: 5rem;
+        width: 6rem;
+        height: 6rem;
         border-radius: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         @include up-from(xxlarge) {
             width: 10rem;
             height: 10rem;
+        }
+    }
+
+    .placeholder-image {
+        svg {
+            width: 100%;
+            height: 100%;
         }
     }
 
@@ -97,4 +138,79 @@
 
 .level-advanced {
     background: var(--Primary);
+}
+
+
+#students {
+    background: var(--Background50);
+    img {
+        margin-bottom: 0s;
+    }
+}
+.testimonials {
+    padding: var(--site-padding) 0;
+}
+
+.quote-wrapper {
+    padding:2rem;
+    p.quote {
+        margin-left: auto;
+        max-width: 100%;
+    }
+}
+
+.brick:nth-child(4n - 7) {
+    --accent-color: var(--Primary);
+}
+
+.brick:nth-child(4n - 6) {
+    --accent-color: var(--Primary);
+}
+
+.brick:nth-child(4n - 5) {
+    --accent-color: var(--Primary);
+}
+
+.brick:nth-child(4n - 4) {
+    --accent-color: var(--Primary);
+}
+.brick {
+    background: var(--Background);
+    color: var(--Texts);
+    padding:1rem;
+}
+
+.masonry {
+    margin-top:0;
+    --masonry-gap: var(--site-padding);
+    --masonry-brick-width: 20rem;
+    column-gap: var(--masonry-gap);
+    column-fill: initial;
+    column-width: var(--masonry-brick-width);
+}
+
+.masonry > * {
+    break-inside: avoid;
+    margin-bottom: var(--masonry-gap);
+}
+
+@supports(grid-template-rows: masonry) {
+    .masonry {
+      display: grid;
+      gap: var(--masonry-gap);
+      grid-template-rows: masonry;
+      grid-template-columns: repeat(auto-fill, minmax(var(--masonry-brick-width), 1fr));
+      align-tracks: stretch;
+    }
+
+    .masonry > * {
+        margin-bottom: initial;
+    }
+}
+
+.large-img {
+    img, .placeholder-image{
+        width:8rem;
+        height: 8rem;
+    }
 }

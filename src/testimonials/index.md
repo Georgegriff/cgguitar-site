@@ -29,5 +29,7 @@ gridContent:
 ---
 
 {% include 'partials/grid-content.html' %}
+{% include 'partials/testimonials.njk' %}
+
 
 

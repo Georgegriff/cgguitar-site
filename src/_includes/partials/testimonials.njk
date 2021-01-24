@@ -1,0 +1,24 @@
+{% if testimonials %}
+<article id="students">
+<h2>{{title}}</h2>
+<ul class="testimonials masonry">
+{%- for item in testimonials %}
+    <li class="testimonial brick large-img">
+        <div class="quote-wrapper">
+        <p class="quote">{{item.text}}</p>
+        </div>
+        {%- if item.image -%}
+            {% image item.image, "CG Guitar student profile picture", true %}
+            {%- else -%}
+            <div class="placeholder-image">
+                {%- include 'img/default-test.svg' %}
+            </div>
+        {%- endif -%}
+        <div class="bottom-section">
+            <p class="author">{{item.name}}</p>
+        </div>
+    </li>
+{%- endfor %}
+</ul>
+</article>
+{% endif %}

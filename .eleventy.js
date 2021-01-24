@@ -20,11 +20,11 @@ module.exports = (eleventyConfig) => {
     linkify: true,
   });
 
-  const imageOptimizer = async (src, alt) => {
+  const imageOptimizer = async (src, alt, ariaHidden) => {
     const Image = require("@11ty/eleventy-img");
     const imgPath = path.join('src', src)
     let stats = await Image(imgPath, {
-      widths: [25, 320, 640, 960, 1200, 1800, 2400],
+      widths: [320, 640, 960, 1200, 1800, 2400],
       formats: ["jpeg", "webp"],
       urlPath: "/images/",
       outputDir: "./dist/images/",
@@ -57,7 +57,7 @@ module.exports = (eleventyConfig) => {
         dimensions.height / dimensions.width
       }), ${dimensions.height}px)`;
       const placeholderStyle = `background-size:cover;background-image:url('${base64Placeholder}');contain-intrinsic-size:${containSize}`
-
+      const ariaHiddenHTML = ariaHidden ? 'aria-hidden="true"': ''
       const img = `<img
         src="${lowestSrc.url}"
         width="${dimensions.width}"
@@ -68,16 +68,17 @@ module.exports = (eleventyConfig) => {
         sizes="(min-width: 1024px) 1024px, 100vw"
         srcset="${srcset["jpeg"]}"
         style="${placeholderStyle}"
+        ${ariaHiddenHTML}
         />`;
     return `<picture> ${source} ${img} </picture>`
   }
 
 
-  eleventyConfig.addNunjucksAsyncShortcode("image", async (src, alt) => {
+  eleventyConfig.addNunjucksAsyncShortcode("image", async (src, alt, ariaHidden) => {
     if (!alt) {
       throw new Error(`Missing accessibility description on image on ${src}`);
     }
-    const img = await imageOptimizer(src, alt)
+    const img = await imageOptimizer(src, alt, ariaHidden)
 
     return img
   });
