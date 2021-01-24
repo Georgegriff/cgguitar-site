@@ -19,7 +19,7 @@ gridContent:
   items:
     - text: Fill out the contact form below
       image: img/edit.svg
-    - text: <span class="visually-hidden" aria-label="or call telephone number, PHONE_PLACEHOLDER"></span><span aria-hidden="true"><b>or</b> call +447861538564</span>
+    - text: <a href="tel:+447861538564"aria-label="or call telephone number, PHONE_PLACEHOLDER"><b>or</b> call +447861538564</a>
       image: img/phone.svg
     - text: <a target="_top" href="mailto:EMAIL_PLACEHOLDER"><b>or</b> email EMAIL_PLACEHOLDER</a>
       image: img/email.svg
