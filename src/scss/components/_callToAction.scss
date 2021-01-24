@@ -1,4 +1,4 @@
-a.action-button {
+.action-button {
     font-size: 1rem;
     text-decoration: none;
     padding: 0.4rem 0.6rem;
@@ -6,23 +6,24 @@ a.action-button {
     border-radius: 1rem;
     margin-top: 1.5rem;
     background: var(--Primary);
+    font-family: inherit;
     @include up-from(xxlarge) {
         font-size: 1.5rem;
         padding: 0.7rem 0.9rem;
      }
 }
 
+.cta-primary {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.4);
+    color: var(--PrimaryText);
+    background: var(--Primary);
+    border: solid 2px transparent;
+}
+
 .call-to-action {
     display: flex;
     a:not(:last-child) {
         margin-right: 1rem;
-    }
-
-    .cta-primary {
-        box-shadow: 0px 3px 15px rgba(0,0,0,0.4);
-        color: var(--PrimaryText);
-        background: var(--Primary);
-        border: solid 2px transparent;
     }
 
     .cta-secondary {

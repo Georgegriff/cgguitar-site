@@ -54,9 +54,9 @@ a, a:visited, a:active {
     height: 100%;
 }
 
-main.contained {
+.contained {
     > * {
-        max-width: 65rem;
+        max-width: 60rem;
         margin: 0 auto;
     }
 }

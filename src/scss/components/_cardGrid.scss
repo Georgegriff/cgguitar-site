@@ -7,8 +7,8 @@
     gap: var(--site-padding);
 }
 
-.grid-center {
-    align-items: center;
+.grid-start {
+    align-items: flex-start;
 }
 
 .grid-columns {

@@ -132,8 +132,8 @@
 
 #students {
     background: var(--Background50);
-    img {
-        margin-bottom: 0s;
+    .testimonial .placeholder-image, .testimonial img {
+        margin-bottom: 0;
     }
 }
 .testimonials {
