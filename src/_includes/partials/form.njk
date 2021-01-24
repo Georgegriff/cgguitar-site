@@ -1,8 +1,8 @@
-<form action="/success/" name="contact" method="POST" data-netlify="true">
+<form action="/success/" name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
     <div class="form-grid">
         <fieldset>
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" required value="flub"/>
+            <input type="text" name="name" id="name" required/>
             <label for="email">Email</label>
             <input type="email" name="email" id="email"/>
             <label for="telephone">Telephone</label>
@@ -22,5 +22,6 @@
     </fieldset>
     <label for="accept_priv">Please confirm that you have read an accept our <a href="/privacy/">Privacy Policy</a>.</label>
     <input required type="checkbox" name="accept_priv" id="accept_priv"/>
+    <input type="hidden" name="form-name" value="name_of_my_form" />
     <button type="submit">Submit</button>
 </form>
