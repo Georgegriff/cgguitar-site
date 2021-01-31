@@ -30,9 +30,9 @@
         opacity: 0.8;
         &:focus, &:hover {
             opacity: 1;
-            transform: scale(1.2);
+            transform: scale(1.1);
             &:after {
-                animation: pulse 1s infinite;
+                animation: pulse 1s 4 ease-in-out;
             }
         }
         svg {
@@ -54,10 +54,14 @@
     }
 
     lite-youtube {
-        background-size: cover;
-        background-position: center;
+       background: none !important;
+       &::before {
+           height: 110px;
+       }
     }
     .video-wrapper {
+        background-size: cover;
+        background-position: center;
         position: relative;
         padding-top: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
         @supports(aspect-ratio: 16 / 9) {

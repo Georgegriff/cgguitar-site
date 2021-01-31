@@ -15,5 +15,17 @@ module.exports = {
       }
       return t
     }, text)
+  },
+  spread: (attrs = {}, prefix="", convertCamel = true) => {
+    const str = Object.keys(attrs).reduce((str, key)=> {
+      let keyStr = key;
+      if (convertCamel) {
+        keyStr = keyStr.replace(/[A-Z]/g, m => "-" + m.toLowerCase());
+      }
+      const newValue  = `${prefix}${keyStr}="${attrs[key]}"`
+      str += ` ${newValue}`
+      return str;
+    }, '')
+    return str;
   }
 };

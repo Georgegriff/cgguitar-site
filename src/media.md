@@ -1,22 +1,24 @@
 ---
 title: 'Media'
 layout: 'layouts/index.njk'
-templateEngineOverride: njk,md
+templateEngineOverride: md,njk
+pageCriticalStyles: ['css/media.css']
 eleventyNavigation:
   key: Media
   order: 4
+pageJs: 'media.js'
+headerClassName: 'header-hero-medium'
 hero:
-  title: Kickstart your guitar lessons today
-  subtitle: "Available Monday to Friday."
-  description: "Lessons held on Zoom, for the foreseeable."
-  callToAction:
-    - type: primary
-      text: Get in touch
-      link: /contact/
-    - type: secondary
-      text: Learn more
-      link: "#main-content"
+  title: Check out my latest videos
+  description: 'Find various demonstrations, tutorials and other educational content.'
+  image:
+    src: images/hero.jpg
+    alt: "CG Guitars' Charlie playing guitar on stage"
+videos:
+  playlists:
+    - id: "PLA0cAQ-2uoeo4d-k69kkTkekL300dFIwl"
+      title: Guitar Lessons
+      description: "Free HD Guitar Lessons by Charlie Griffiths (CG Guitar) enjoy and please share!"
 ---
 
-{% youtube "BWN45DJCCoQ" %}
-
+{% include "partials/video-playlists.njk" %}
