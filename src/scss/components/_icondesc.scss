@@ -1,10 +1,18 @@
 .icondesc {
+    --min-column-size: 18em;
+
     svg {
         * {
-            fill: var(--IconColor);
+            fill: currentColor;
         }
     }
-    gap: var(--site-padding);
+    li:first-child svg, li:last-child svg {
+        * {
+            fill: var(--Primary);
+        }
+    }
+
+    gap: 1rem;
     img, svg {
         flex:2;
     }
@@ -15,7 +23,7 @@
         text-align: center;
     }
     h2 {
-        margin-bottom: 0.5rem;
+        margin: 1rem;
         font-weight: 600;
         font-size: 0.875rem;
     }
@@ -35,10 +43,6 @@
     }
 }
 
-.icondesc li:nth-child(odd) {
-    --IconColor: var(--Primary);
-}
-
 .icon-link {
     a {
         display: flex;
@@ -55,8 +59,11 @@
 }
 
 .grid-icons {
-    --min-column-size:150px;
+    --min-column-size:15em;
     padding:0;
+    height: 100%;
+    place-items: center;
+    margin: 0;
 
     @include up-to(small) {
         grid-template-columns: 1fr 1fr;
@@ -74,6 +81,7 @@
             justify-content: center;
         }
         .grid-icons {
+            gap: 2rem;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr 1fr;
             flex-direction: column;
@@ -84,8 +92,6 @@
 
                 svg {
                     flex:1;
-                    width: 2rem;
-                    height: 2rem;
                 }
 
                 p {

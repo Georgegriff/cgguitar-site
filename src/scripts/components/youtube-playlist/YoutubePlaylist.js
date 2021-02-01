@@ -53,14 +53,14 @@ const durationIcon = () => html`<svg width="27" height="27" viewBox="0 0 27 27">
 
 const openIcon = () => html`<svg width="27" height="27" viewBox="0 0 27 27"><path d="M28.5,28.5H7.5V7.5h9.375v-3H7.5a3.008,3.008,0,0,0-3,3v21a3.008,3.008,0,0,0,3,3h21a3.008,3.008,0,0,0,3-3V19.125h-3Zm-8.25-24v3H26.4L11.25,22.65l2.1,2.1L28.5,9.6v6.15h3V4.5Z" transform="translate(-4.5 -4.5)"/></svg>`;
 
-const openLink = (id) => html`<a class="external-link" rel="noopener" title="Open in YouTube" target="_blank" href="https://youtube.com/watch?v=${id}" >${openIcon()}</a>`
+const openLink = (id) => html`<a class="external-link" rel="noopener" title="Open current video on YouTube" target="_blank" href="https://youtube.com/watch?v=${id}" >${openIcon()}</a>`
 
 
 
-const renderStats  = (stats, video) =>  html`<div class="stats">
+const renderStats  = (stats, video, renderOpen = false) =>  html`<div class="stats">
   ${stats ? html`<span aria-label="${stats.duration.str}"><span aria-hidden="true">${stats.duration.time}</span>${durationIcon()}</span>
   <p aria-label="${shortenLargeNumber(stats.views)} views" class="views"><span aria-hidden="true">${shortenLargeNumber(stats.views)}</span>${viewsIcon()}</p>` : ''}
-  ${openLink(video.id)}
+  ${renderOpen ?openLink(video.id) : ''}
  </div>`;
 
 const renderInfo = (title, channel,channelId) => html`<p  title="${title}" class="video-title">${title}</p>
@@ -81,11 +81,11 @@ const getStats = (video) => {
 }
 
 const _playlistItem = (video, _onTap, index) => {
-  const thumbnail = video.smallThumbnail;
+  const thumbnail = video.smallThumbnail.url;
   const videoTitle = video.title;
   const stats = getStats(video);
   return html`<button aria-label="Watch video ${videoTitle}, duration: ${stats ? stats.duration.str: ""}" data-index="${index}" @click="${_onTap}"><figure>
-  <div class="thumbnail"><img class="" alt="${videoTitle}" src="${thumbnail}"/></div>
+  <div class="thumbnail"><img  decoding="async" loading="lazy" width="${video.smallThumbnail.width}" height="${video.smallThumbnail.height}" alt="${videoTitle}" src="${thumbnail}"/></div>
   <figcaption>
   ${renderInfo(videoTitle,video.channelTitle, false)}
   ${renderStats(stats, video)}
@@ -112,10 +112,10 @@ const _setThumbs =(video) => {
   if ('connection' in navigator){
     if(!navigator.connection.saveData) {
       thumb = video.hqThumbnail
-      addPrefetch('preload', thumb, 'image');
+      addPrefetch('preload', thumb.url, 'image');
     }
   }
-  return `background-image: url("${thumb}")`
+  return `background-image: url("${thumb.url}")`
 }
 
 const playIcon =`<svg viewBox="0 0 32 32">
@@ -159,7 +159,7 @@ export class YoutubePlaylist extends LitElement {
       .grid {
         display: grid;
         flex-wrap: wrap;
-        grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(330px,1fr));
         place-items: center;
         gap:1rem;
       }
@@ -186,7 +186,7 @@ export class YoutubePlaylist extends LitElement {
         max-width: calc(var(--video-size));
       }
       .playlist-items {
-        margin: 1rem 0;
+        margin: 0 0 1rem 0;
         position: absolute;
         top:0;
         width: 100%;
@@ -213,7 +213,7 @@ export class YoutubePlaylist extends LitElement {
         cursor: pointer;
       }
 
-      .playlist-items button:focus {
+      :host * :focus {
         outline: 2px solid currentColor;
         outline-offset: 0.3rem;
       }
@@ -231,10 +231,12 @@ export class YoutubePlaylist extends LitElement {
         margin:0;
         padding:0;
       }
-      li:not(:last-of-type) {
+      li {
         list-style-type: none;
-        border-bottom: solid 1px var(--background-active);
         padding:1rem;
+      }
+      li:not(:last-of-type) {
+        border-bottom: solid 1px var(--background-active);
       }
       figure {
         margin:0;
@@ -260,7 +262,7 @@ export class YoutubePlaylist extends LitElement {
       }
       .video-wrapper {
           position: relative;
-          margin: 1rem;
+          margin: 0rem;
           background-size: cover;
           background-position: center;
       }
@@ -331,9 +333,9 @@ export class YoutubePlaylist extends LitElement {
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: var(--secondary-text);
+        background-color: #adadad;
         border-radius: 2px;
-        border: 4px solid var(--secondary-text);
+        border: 4px solid #adadad;
     }
     ::-webkit-scrollbar-button {
         display:none;
@@ -399,6 +401,7 @@ export class YoutubePlaylist extends LitElement {
       opacity: 0.8;
       background-color: transparent;
       border: none;
+      cursor: pointer;
     }
     .playbtn:focus, .playbtn:hover {
       opacity: 1;
@@ -531,9 +534,21 @@ export class YoutubePlaylist extends LitElement {
         channelId: videoItem.getAttribute("data-channel-id"),
         duration: videoItem.getAttribute("data-duration"),
         views: videoItem.getAttribute("data-views"),
-        defaultThumbnail: videoItem.getAttribute("data-default-thumbnail"),
-        hqThumbnail: videoItem.getAttribute("data-hq-thumbnail"),
-        smallThumbnail: videoItem.getAttribute("data-small-thumbnail"),
+        defaultThumbnail: {
+          url: videoItem.getAttribute("data-default-thumbnail-url"),
+          width: videoItem.getAttribute("data-default-thumbnail-width"),
+          height: videoItem.getAttribute("data-default-thumbnail-height")
+        },
+        smallThumbnail: {
+          url: videoItem.getAttribute("data-small-thumbnail-url"),
+          width: videoItem.getAttribute("data-small-thumbnail-width"),
+          height: videoItem.getAttribute("data-small-thumbnail-height")
+        },
+        hqThumbnail: {
+          url: videoItem.getAttribute("data-hq-thumbnail-url"),
+          width: videoItem.getAttribute("data-hq-thumbnail-width"),
+          height: videoItem.getAttribute("data-hq-thumbnail-height")
+        },
         id: videoItem.getAttribute("data-id"),
       };
      return itemData;
@@ -575,7 +590,7 @@ export class YoutubePlaylist extends LitElement {
           </div>
           <div class="current-video-info">
           ${renderInfo(videoObj.title, videoObj.channelTitle, videoObj.channelId)}
-          ${renderStats(stats, videoObj)}
+          ${renderStats(stats, videoObj, true)}
           </div>
         </div>
         <div class="playlist-scroll"><ul class="playlist-items">

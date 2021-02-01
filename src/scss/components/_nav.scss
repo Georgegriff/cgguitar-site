@@ -23,22 +23,27 @@ nav {
     a.more-link {
         display: flex;
         align-items: center;
+        margin-left: 0.3rem;
+        &:hover, &:focus {
+            border-color: transparent;
+        }
         svg {
             fill: currentColor;
             width: 0.875rem;
-            margin-left: 0.3rem;
         }
     }
     ul {
-        height: 100%;
+        text-transform: uppercase;
+        list-style-type: none;
         padding:0;
         margin: 0;
-        list-style-type: none;
+    }
+    ul.nav-links {
+        height: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        text-transform: uppercase;
         font-size: 0.9rem;
         @include up-to (small) {
             justify-content: center;
@@ -49,6 +54,13 @@ nav {
 
     }
 
+    .burger-list {
+        height: auto;
+        flex-direction: column;
+        align-items: initial;
+        justify-content: initial;
+    }
+
     li {
         margin: 0 0.5rem;
         a {
@@ -57,6 +69,9 @@ nav {
                 border-bottom: solid 5px currentColor;
             }
         }
+    }
+    li:last-of-type {
+        margin-right: 0;
     }
 
     .active {

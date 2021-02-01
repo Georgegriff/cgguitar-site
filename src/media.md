@@ -10,15 +10,23 @@ pageJs: 'media.js'
 headerClassName: 'header-hero-medium'
 hero:
   title: Check out my latest videos
-  description: 'Find various demonstrations, tutorials and other educational content.'
+  subtitle: 'Find demonstrations, tutorials and other educational content.'
   image:
     src: images/hero.jpg
     alt: "CG Guitars' Charlie playing guitar on stage"
+  callToAction:
+    - type: primary
+      text: Get in touch
+      link: /contact/
 videos:
   playlists:
     - id: "PLA0cAQ-2uoeo4d-k69kkTkekL300dFIwl"
-      title: Guitar Lessons
+      title: Guitar lessons
       description: "Free HD Guitar Lessons by Charlie Griffiths (CG Guitar) enjoy and please share!"
+    - id: "PLA0cAQ-2uoeoJoFfUz9oq9qhmlnsjFRhU"
+      title: Beginner guitar lessons
+    - id: "PLA0cAQ-2uoeq_t6PXUWYWD1QhEUY_kMIU"
+      title: Griff's Licks
 ---
 
 {% include "partials/video-playlists.njk" %}

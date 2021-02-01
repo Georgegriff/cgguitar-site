@@ -1,9 +1,10 @@
 {%- for playlist in videos.playlists | youtubePlaylists -%}
+    {% set firstVideo = playlist.videos[0] %}
    <youtube-playlist id="{{playlist.title | slug }}">
         <h2 slot="heading">{{playlist.title | safe}}</h2>
         <p slot="description">{{playlist.description | safe}}</p>
          <div class="fallback" slot="fallback">
-            <img src="{{playlist.videos[0].hqThumbnail}}" />
+            <img decoding="async" loading="lazy" width="{{firstVideo.hqThumbnailWidth}}" height="{{firstVideo.hqThumbnaillWdith}}" src="{{firstVideo.hqThumbnailUrl}}" />
             <a rel="noopener" title="Play playlist: {{playlist.title}}" class="playbtn" target="_blank" href="{{playlist.link}}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                     <g transform="translate(-339 -150.484)">
@@ -17,7 +18,7 @@
             <li {{helpers.spread(video, "data-") | safe}}></li>
         {%- endfor -%}
         {%- if playlist.hasMore -%}
-        <a slot="more-link"href="{{playlist.link}}">Watch more.</a>
+        <a slot="more-link" href="{{playlist.link}}">Watch more on YouTube.</a>
         {%- endif -%}
     </youtube-playlist>
 {%- endfor -%}

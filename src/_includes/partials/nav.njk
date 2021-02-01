@@ -1,30 +1,36 @@
 <div class="nav">
     <a class="site-logo" aria-label="Head to home" href="/">
     {% include "img/cg-logo.svg" %}
-    {% set maxLinks= 3 %}
+    {% set maxLinks= 4 %}
     <span>CG Guitar<span>
     </a>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 {%- for entry in collections.all | eleventyNavigation | head(maxLinks) %}
                 <li data-desktop-hidden class="{% if entry.url == page.url %} active{% endif %}">
                     <a href="{{ entry.url | url }}">{{ entry.title }}</a>
                 </li>
                 {%- endfor %}
-                <li data-more-trigger><a class="more-link" href="#more"><span>More</span>{% include 'img/chevron_down.svg' %}</a></li>
+                <li data-more-trigger><a class="more-link" aria-label="More" href="#more">{% include 'img/chevron_down.svg' %}</a></li>
+                <li>
                 <burger-menu max-width="800">
-                {%- for entry in collections.all | eleventyNavigation %}
-                <li data-overflow-link class="{% if entry.url == page.url %} active{% endif %}">
-                    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+                            <ul class="burger-list">
+                                {%- for entry in collections.all | eleventyNavigation %}
+                                    <li data-overflow-link class="{% if entry.url == page.url %} active{% endif %}">
+                                        <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+                                    </li>
+                                {%- endfor %}
+                            </ul>
+                            <div class="menu-info">
+                                <ul class="social-links">
+                                    {%- include 'partials/social.njk' -%}
+                                </ul>
+                                 <ul class="contact-data">
+                                    {%- include 'partials/contact-data.njk' -%}
+                                </ul>
+                            </div>
+                    </burger-menu>
                 </li>
-                {%- endfor %}
-                <div class="menu-info">
-                    {% include 'partials/social.njk' %}
-                    <div class="contact-data">
-                        {% include 'partials/contact-data.njk' %}
-                    </div>
-                </div>
-                </burger-menu>
             </ul>
         </nav>
 </div>

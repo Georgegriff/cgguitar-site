@@ -9,7 +9,7 @@ html {
 
 :root {
     @include default-theme;
-    font-size: calc(1rem + 0.5vw);
+    font-size: calc(1rem + 0.2vw);
 }
 
 /* Utilities */
@@ -116,7 +116,7 @@ main {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 600;
     line-height: 1.2;
     max-width: 20ch;

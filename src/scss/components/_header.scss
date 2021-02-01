@@ -29,7 +29,20 @@ header {
             min-height: calc(40vh - (var(--site-header) + var(--site-padding)));
         }
         @include up-from(large) {
-            min-height: calc(75vh - (var(--site-header) + var(--site-padding)));
+            min-height: calc(45vh - (var(--site-header) + var(--site-padding)));
+        }
+    }
+    &-small {
+        position: relative;
+        overflow: hidden;
+        @include up-to(small) {
+            min-height: calc(25vh - (var(--site-header) + var(--site-padding)));
+        }
+        @include up-from(large) {
+            min-height: calc(45vh - (var(--site-header) + var(--site-padding)));
+        }
+        .hero-scroll-down {
+            display: none;
         }
     }
     &-full {

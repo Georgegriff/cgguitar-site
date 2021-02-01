@@ -22,10 +22,19 @@ const getPlaylistItem = async (playlistId) => {
             const  hqThumbnail =  snippet.thumbnails.maxres || snippet.thumbnails.high || snippet.thumbnails.medium || snippet.thumbnails.default;
             const  smallThumbnail = snippet.thumbnails.medium || snippet.thumbnails.default;
             const defaultThumbnail = snippet.thumbnails.high;
+            const extract = (values, name = '') => {
+                return  Object.keys(values).reduce((acc, curr) => {
+                    const  capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1)
+                     return {
+                        ...acc,
+                        [`${name}${capitalize(curr)}`] : values[curr]
+                    }
+                }, {});
+            };
             return {
-                hqThumbnail: hqThumbnail.url,
-                smallThumbnail: smallThumbnail.url,
-                defaultThumbnail: defaultThumbnail.url,
+                ...extract(hqThumbnail, 'hqThumbnail'),
+                ...extract(smallThumbnail, 'smallThumbnail'),
+                ...extract(defaultThumbnail, 'defaultThumbnail'),
                 channelTitle: snippet.channelTitle,
                 channelId: snippet.channelId,
                 title: snippet.title,

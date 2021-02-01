@@ -1,22 +1,28 @@
 youtube-playlist {
-    --background: var(--Background);
+    background: var(--Background, #1a1a1a);
+    color: var(--Text, #fff);
     --secondary-text: var(--Text);
-    --text: var(--Text);
     --background-active: var(--Background50);
     --primary-color: var(--Primary);
     --white: var(--PrimaryText);
-    min-height: 62.25rem;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
-    margin: 0 1rem;
+    padding: 0 var(--site-padding) var(--site-padding) var(--site-padding);
+    min-width: 100%;
 
     h2 {
-        margin-top: 1rem;
+        margin-top: var(--site-padding);
+    }
+
+    p[slot="description"] {
+        margin-bottom: 1rem;
     }
 }
 
 youtube-playlist:nth-child(even) {
-    --background: var(--Secondary);
+    background: var(--Secondary, #1a1a1a);
+    color: var(--SecondaryText);
     --secondary-text: var(--SecondaryText50);
     --text: var(--SecondaryText);
     --background-active: var(--Secondary50);
@@ -39,6 +45,7 @@ youtube-playlist li {
     opacity: 0.8;
     background-color: transparent;
     border: none;
+    cursor: pointer;
   }
   .playbtn:focus, .playbtn:hover {
     opacity: 1;
@@ -70,7 +77,7 @@ youtube-playlist li {
 
   .fallback {
       max-width: 784px;
-      margin: 1rem;
+      margin: 0;
       position: relative;
       a {
           position: absolute;
