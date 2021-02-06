@@ -1,0 +1,19 @@
+{%- if aboutSection -%}
+<article class="about-section no-padding">
+    {%- for item in aboutSection.items -%}
+    <section>
+        {%- if item.type == 'card' %}
+            {%- set aboutCard = item %}
+            {%- include 'partials/about-card.njk' -%}
+        {%- elseif item.type == 'quote' %}
+            {%- set quoteCard = item %}
+            {%- include 'partials/quote-card.njk' -%}
+        {%- elseif item.type == 'playlist' %}
+            {%- set playlistItem = item -%}
+            {%- set playlist = playlistItem | fetchYouTubePlaylist -%}
+            {%- include 'partials/video-playlist.njk' -%}
+        {%- endif %}
+    </section>
+    {%- endfor -%}
+</article>
+{%- endif %}

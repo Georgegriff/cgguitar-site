@@ -15,7 +15,7 @@ hero:
     src: images/hero.jpg
     alt: "CG Guitars' Charlie playing guitar on stage"
 gridContent:
-  class: "grid-small contained"
+  class: "grid-small contained small-list"
   items:
     - text: <a href="#main-content">Fill out the contact form below</a>
       image: img/edit.svg

@@ -54,18 +54,6 @@
     flex-direction: column;
 }
 
-.watch-more {
-    margin:1rem 0;
-    color: currentColor;
-    a {
-        font-size: 1rem;
-        border-bottom: solid 5px var(--Primary);
-        &:hover, &:active {
-            border-bottom: solid 5px currentColor;
-        }
-    }
-}
-
 .video-grid {
     padding:0 !important;
     @include up-from(large) {

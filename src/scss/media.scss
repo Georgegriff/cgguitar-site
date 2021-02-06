@@ -26,6 +26,7 @@ youtube-playlist:nth-child(even) {
     --secondary-text: var(--SecondaryText50);
     --text: var(--SecondaryText);
     --background-active: var(--Secondary50);
+    --mask-color: rgba(26,26,26, 0.7);
 }
 
 youtube-playlist li {

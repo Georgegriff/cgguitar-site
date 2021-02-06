@@ -19,7 +19,7 @@
                 <p class="description">{{hero.description | safe}}</p>
             {% endif %}
         </div>
-        {% image image.src, image.alt %}
+        {%- image image.src, image.alt -%}
         <div class="hero-scroll-down">
             <a aria-label="Scroll to learn more" href="#main-content">
                 {% include 'img/chevron_down.svg' %}

@@ -2,6 +2,7 @@
     --min-column-size: 18em;
 
     svg {
+        margin-bottom:2rem;
         * {
             fill: currentColor;
         }
@@ -28,10 +29,8 @@
 
     p {
         font-size: 0.75rem;
+        margin:0;
         max-width: 40ch;
-        margin-top:2rem;
-        margin-bottom: 0;
-
     }
 
     @include up-to(medium) {
@@ -43,7 +42,7 @@
 
 .dark-grid {
     li:nth-child(4n - 7) {
-        background: var(--Secondary30);
+        background: var(--Secondary50);
     }
     
     li:nth-child(4n - 6) {
@@ -55,7 +54,7 @@
     }
     
     li:nth-child(4n - 4) {
-        background: var(--Secondary50);
+        background: var(--Secondary30);
     }
 }
 
@@ -102,8 +101,7 @@
         }
         .grid-icons {
             gap: 2rem;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             flex-direction: column;
             li {
                 flex-direction: row;
@@ -120,6 +118,20 @@
                     text-align: left;
                 }
             }
+        }
+    }
+}
+
+.small-list  {
+    .icondesc{
+        @include up-to(medium) {
+            svg {
+                margin-bottom: 0;
+                height: 30px;
+            }
+        }
+        li {
+            min-height: auto;
         }
     }
 }

@@ -1,0 +1,99 @@
+.about-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    h2 {
+        margin-bottom: var(--site-padding);
+    }
+    .content {
+        min-width: 240px;
+        margin: var(--site-padding);
+        flex:1;
+        display: flex;
+        flex-direction: column;
+
+        .flex-end {
+            display: flex;
+            height: 100%;
+            justify-content:  flex-end;
+            align-items: flex-end;
+        }
+
+        .learn-more {
+            margin:0;
+        }
+    }
+    picture {
+        width: 50%;
+        display: block;
+
+        @include up-to(small) {
+            width: 100%;
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.card-reverse {
+    flex-direction: row-reverse;
+} 
+
+
+.quote-card {
+    padding: var(--site-padding);
+    position: relative;
+    border-left:solid 4px var(--Primary);
+    background: var(--Background50);
+    blockquote {
+        max-width: 100ch;
+        position: relative;
+        margin:2rem;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            left:-2rem;
+            top:-1rem;
+            background-color: var(--accent-color, var(--Text));
+            mask-image: url('/images/start-quote.svg');
+            mask-size: cover;
+            -webkit-mask-image: url('/images/start-quote.svg');
+            -webkit-mask-size: cover;
+
+
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1.25rem;
+            height: 1.25rem;
+            bottom:-0.5rem;
+            right:-0.5rem;
+            background-color:  var(--accent-color, var(--Text));
+            mask-image: url('/images/end-quote.svg');
+            mask-size: cover;
+            -webkit-mask-image: url('/images/end-quote.svg');
+            -webkit-mask-size: cover;
+        }
+    }
+}
+
+.about-section {
+    youtube-playlist {
+        background: var(--Secondary, #1a1a1a);
+        color: var(--SecondaryText);
+        --secondary-text: var(--SecondaryText50);
+        --text: var(--SecondaryText);
+        --background-active: var(--Secondary50);
+        --mask-color: rgba(26,26,26, 0.7);
+    }
+}

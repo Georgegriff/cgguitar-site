@@ -28,12 +28,13 @@ html {
 @import "./components/icondesc";
 @import "./components/burgerMenu";
 @import "./components/social";
+@import "./components/aboutCard";
 
 body,html {
     margin: 0;
     background: var(--Secondary);
     color: var(--Text);
-    scroll-padding-top: calc((var(--site-header) + var(--site-padding)));
+    scroll-padding-top: calc((var(--site-header) + var(--site-padding)) - 5px);
 }
 
 :focus, #more:target {
@@ -77,7 +78,7 @@ main {
         }
     }
 
-    > article {
+    > article:not(.no-padding) {
         padding: 0 var(--site-padding)
     }
 
@@ -152,7 +153,17 @@ h3 {
         line-height: 1rem;
     }
     a {
-        border-bottom: solid 5px transparent;
+        padding-bottom:0.25rem;
+        border-bottom: solid 5px currentColor;
+    }
+}
+
+.learn-more {
+    margin:1rem 0;
+    color: currentColor;
+    a {
+        font-size: 1rem;
+        border-bottom: solid 5px var(--Primary);
         &:hover, &:active {
             border-bottom: solid 5px currentColor;
         }

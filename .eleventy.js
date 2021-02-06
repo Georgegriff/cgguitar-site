@@ -35,11 +35,11 @@ module.exports = (eleventyConfig) => {
     let lowestSrc = stats["jpeg"][0];
     const srcset = Object.keys(stats).reduce(
       (acc, format) => ({
-        ...acc,
-        [format]: stats[format].reduce(
-          (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-          ""
-        ),
+ ...acc,
+ [format]: stats[format].reduce(
+   (_acc, curr) => `${_acc} ${curr.srcset} ,`,
+   ""
+ ),
       }),
       {}
     );
@@ -48,29 +48,18 @@ module.exports = (eleventyConfig) => {
       .blur()
       .toBuffer();
     const base64Placeholder = `data:image/png;base64,${placeholder.toString(
-        "base64"
+ "base64"
       )}`;
       const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
       const containSize = `min(var(--main-width), ${
-        dimensions.width
+ dimensions.width
       }px) min(calc(var(--main-width) * ${
-        dimensions.height / dimensions.width
+ dimensions.height / dimensions.width
       }), ${dimensions.height}px)`;
       const placeholderStyle = `background-size:cover;background-image:url('${base64Placeholder}');contain-intrinsic-size:${containSize}`
       const ariaHiddenHTML = ariaHidden ? 'aria-hidden="true"': ''
-      const img = `<img
-        src="${lowestSrc.url}"
-        width="${dimensions.width}"
-        height="${dimensions.height}" 
-        decoding="async"
-        loading="lazy"
-        alt="${alt}"
-        sizes="(min-width: 1024px) 1024px, 100vw"
-        srcset="${srcset["jpeg"]}"
-        style="${placeholderStyle}"
-        ${ariaHiddenHTML}
-        />`;
-    return `<picture> ${source} ${img} </picture>`
+      const img = `<img src="${lowestSrc.url}" width="${dimensions.width}" height="${dimensions.height}" decoding="async" loading="lazy" alt="${alt}" sizes="(min-width: 1024px) 1024px, 100vw" srcset="${srcset["jpeg"]}" style="${placeholderStyle}" ${ariaHiddenHTML}/>`;
+    return `<picture>${source} ${img}</picture>`
   }
 
 
@@ -104,14 +93,14 @@ module.exports = (eleventyConfig) => {
     if (hrefIndex > -1) {
       const href = link.attrs[hrefIndex][1];
       const isRelativeUrl =
-        href &&
-        (href.startsWith("/") ||
-          href.startsWith("#") ||
-          href.startsWith(siteMeta.url));
+ href &&
+ (href.startsWith("/") ||
+   href.startsWith("#") ||
+   href.startsWith(siteMeta.url));
       if (isRelativeUrl) {
-        return defaultLinkRender(tokens, idx, options, env, self);
+ return defaultLinkRender(tokens, idx, options, env, self);
       } else {
-        link.attrPush(["rel", "noopener"]); // add new attribute
+ link.attrPush(["rel", "noopener"]); // add new attribute
       }
     }
     if (aIndex < 0) {
@@ -179,16 +168,16 @@ module.exports = (eleventyConfig) => {
     "jsmin",
     async function (code, callback) {
       try {
-        if (process.env.NODE_ENV === "production") {
-          const minified = await minify(code);
-          callback(null, minified.code);
-        } else {
-          callback(null, code);
-        }
+ if (process.env.NODE_ENV === "production") {
+   const minified = await minify(code);
+   callback(null, minified.code);
+ } else {
+   callback(null, code);
+ }
       } catch (err) {
-        console.error("Terser error: ", err);
-        // Fail gracefully.
-        callback(null, code);
+ console.error("Terser error: ", err);
+ // Fail gracefully.
+ callback(null, code);
       }
     }
   );
@@ -204,9 +193,19 @@ module.exports = (eleventyConfig) => {
     return [...number].join(' ')
   });
 
-  eleventyConfig.addNunjucksAsyncFilter("youtubePlaylists", async (playlists, callback) => {
+  eleventyConfig.addNunjucksAsyncFilter("fetchYouTubePlaylists", async (playlists, callback) => {
     const data = await getPlaylists(playlists);
     callback(null, data);
+  })
+
+
+  eleventyConfig.addNunjucksAsyncFilter("fetchYouTubePlaylist", async (playlist, callback) => {
+    const data = await getPlaylists([playlist]);
+    if(data && data.length) {
+      callback(null, data[0]);
+    } else {
+      callback(new Error(`No playlist found: ${JSON.stringify(playlist)}`));
+    }
   })
 
   const YouTube = require("./src/_includes/components/youtube");

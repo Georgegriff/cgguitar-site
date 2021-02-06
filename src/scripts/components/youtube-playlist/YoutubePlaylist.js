@@ -80,11 +80,11 @@ const getStats = (video) => {
   return stats;
 }
 
-const _playlistItem = (video, _onTap, index) => {
+const _playlistItem = (video, _onTap, index, viewMore) => {
   const thumbnail = video.smallThumbnail.url;
   const videoTitle = video.title;
   const stats = getStats(video);
-  return html`<button aria-label="Watch video ${videoTitle}, duration: ${stats ? stats.duration.str: ""}" data-index="${index}" @click="${_onTap}"><figure>
+  return html`<button tabindex="${viewMore ? "0" : "-1"}" aria-label="Watch video ${videoTitle}, duration: ${stats ? stats.duration.str: ""}" data-index="${index}" @click="${_onTap}"><figure>
   <div class="thumbnail"><img  decoding="async" loading="lazy" width="${video.smallThumbnail.width}" height="${video.smallThumbnail.height}" alt="${videoTitle}" src="${thumbnail}"/></div>
   <figcaption>
   ${renderInfo(videoTitle,video.channelTitle, false)}
@@ -177,14 +177,6 @@ export class YoutubePlaylist extends LitElement {
         max-width: initial;
       }
 
-      .playlist-scroll {
-        position: relative;
-        overflow: auto;
-        width: 100%;
-        min-height: calc(var(--thumbnail-size)*  3);
-        height: 100%;
-        max-width: calc(var(--video-size));
-      }
       .playlist-items {
         margin: 0 0 1rem 0;
         position: absolute;
@@ -457,6 +449,70 @@ export class YoutubePlaylist extends LitElement {
       border-bottom: solid 1px var(--background-active);
       font-size: 0.875rem;
     }
+
+    .scroll-wrap {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .view-more {
+        outline: none;
+        font-family: inherit;
+        border: none;
+        padding: 0;
+        margin:0;
+        background:transparent;
+        color: inherit;
+        cursor: pointer;
+        font-size: 1rem;
+        text-transform: uppercase;
+        display: inline-block;
+
+        text-decoration: none;
+        padding: .4rem .7rem;
+        border-radius: 1rem;
+        margin-top: 1.5rem;
+        background: var(--Primary);
+        color: #fff;
+        font-family: inherit;
+        box-shadow: 0 3px 15px rgb(0 0 0 / 40%);
+    }
+
+    .mask {
+      background-color: var(--mask-color, rgba(255,255,255, 0.5));
+      width: 100%;
+      height: 100%;
+      z-index: 90;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+
+    }
+
+    .playlist-scroll {
+        position: relative;
+        width: 100%;
+        min-height: calc(var(--thumbnail-size)*  3);
+        height: 100%;
+        max-width: calc(var(--video-size));
+        overflow: hidden;
+        opacity: 0.3;
+    }
+
+    :host([viewmore]) .mask, :host([viewmore]) .mask button {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    :host([viewmore]) .playlist-scroll {
+      opacity: 1;
+      overflow: auto;
+      pointer-events: initial;
+      
+    }
   `;
   }
 
@@ -469,7 +525,8 @@ export class YoutubePlaylist extends LitElement {
       playlistId: { String },
       currentVideo: {type: String},
       currentVideoIndex: {type: Number},
-      listNodes: {type: Array}
+      listNodes: {type: Array},
+      viewMore: {type: Boolean, reflect: true },
     };
   }
 
@@ -478,6 +535,7 @@ export class YoutubePlaylist extends LitElement {
     this.currentVideoIndex = 0;
     this.listNodes = [];
     this.videos = [];
+    this.viewMore = false;
   }
   _setCurrentVideo(index) {
     const videoObj = this.videos[index];
@@ -569,8 +627,12 @@ export class YoutubePlaylist extends LitElement {
       li.removeAttribute("aria-label");
     }
     const video = this.videos[index];
-    render(html`${_playlistItem(video, this._onTap.bind(this), index)}`, li)
+    render(html`${_playlistItem(video, this._onTap.bind(this), index, this.viewMore)}`, li)
     return li;
+  }
+
+  _onViewMore() {
+    this.viewMore = true;
   }
 
   render() {
@@ -593,10 +655,13 @@ export class YoutubePlaylist extends LitElement {
           ${renderStats(stats, videoObj, true)}
           </div>
         </div>
-        <div class="playlist-scroll"><ul class="playlist-items">
-          ${this.listNodes.map((li, index) => html `${this._renderListItem(li, index)}`)}
-          <slot name="more-link" class="bottom-of-list"></slot>
-        </ul></div>
+        <div class="scroll-wrap">
+          <div class="mask"><button aria-hidden="${this.viewMore ? "true" : "false"}" @click="${this._onViewMore}" class="view-more" aria-label="Click to load more videos from the playlist">View more</button></div>
+          <div aria-hidden="${!this.viewMore ? "true" : "false"}" class="playlist-scroll"><ul aria-hidden="${!this.viewMore ? "true" : "false"}" class="playlist-items">
+            ${this.listNodes.map((li, index) => html `${this._renderListItem(li, index)}`)}
+            <slot name="more-link" class="bottom-of-list"></slot>
+          </ul></div>
+        </div>
       `}
       </div>
     `;

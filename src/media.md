@@ -19,17 +19,16 @@ hero:
     - type: primary
       text: Get in touch
       link: /contact/
-videos:
-  playlists:
-    - id: "PLA0cAQ-2uoeo4d-k69kkTkekL300dFIwl"
-      title: Guitar lessons
-      description: "Free HD Guitar Lessons by Charlie Griffiths (CG Guitar)"
-    - id: "PLA0cAQ-2uoeoJoFfUz9oq9qhmlnsjFRhU"
-      title: Beginner guitar lessons
-    - id: "PLA0cAQ-2uoeq_t6PXUWYWD1QhEUY_kMIU"
-      title: Griff's Licks
+playlists:
+  - id: "PLA0cAQ-2uoeo4d-k69kkTkekL300dFIwl"
+    title: Guitar lessons
+    description: "Free HD Guitar Lessons by Charlie Griffiths (CG Guitar)"
+  - id: "PLA0cAQ-2uoeoJoFfUz9oq9qhmlnsjFRhU"
+    title: Beginner guitar lessons
+  - id: "PLA0cAQ-2uoeq_t6PXUWYWD1QhEUY_kMIU"
+    title: Griff's Licks
 gridContent:
-  class: "grid-small contained"
+  class: "grid-small contained small-list"
   items:
     - text: <a href="#main-content">Watch some of my videos below</a>
       image: img/video.svg

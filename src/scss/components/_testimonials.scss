@@ -39,9 +39,12 @@
     p.quote {
         display: inline-block;
         font-size: 0.75rem;
-        max-width: 40ch;
         position: relative;
         margin-left: 1rem;
+
+        @include up-from(large) {
+            max-width: 40ch;
+        }
 
         &:before {
             content: '';

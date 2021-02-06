@@ -134,6 +134,7 @@ body[data-menu-open] {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     will-change:opacity;
+    pointer-events: none;
 }
   
   .burger-menu[enabled='true'] .navigation ul {
@@ -151,8 +152,9 @@ body[data-menu-open] {
   .burger-menu[enabled='true'][status='open'] .burger-menu__panel {
     visibility: visible;
     opacity: 1;
-    transition: opacity 400ms cubic-bezier(.17,.67,.83,.67);
+    transition: opacity 300ms cubic-bezier(.17,.67,.83,.67);
     transform: translateY(0);
+    pointer-events: initial;
   }
   
   .burger-menu[enabled='true'][status='closed'] .burger-menu__panel > * {

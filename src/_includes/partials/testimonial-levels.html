@@ -1,13 +1,13 @@
 
 {% if levels %}
-<article style="--min-column-size:350px" class="card-grid testimonial-levels">
+<article style="--min-column-size:350px" class="card-grid testimonial-levels no-padding">
     {%- for item in levels %}
         <section class="testimonial level level-{{item.title | lower }}">
             <h2>{{item.title}}</h2>
             <p class="description">{{item.text}}</p>
             <div class="quote-wrap">
                 {%- if item.image -%}
-                {% image item.image, "CG Guitar student profile picture", true %}
+                {%- image item.image, "CG Guitar student profile picture", true -%}
                 {%- else -%}
                     <div class="placeholder-image">
                         {%- include 'img/default-test.svg' %}
@@ -15,9 +15,11 @@
                 {%- endif -%}
                 <p class="quote">{{item.quote}}</p>
             </div>
-            <div class="bottom-section">
-                <a aria-label="Read more testimonials" href="/testimonials/#students">Read more</a>
-            </div>
+            {%- if (loop.index == (levels.length)) -%}
+                <div class="bottom-section">
+                    <a aria-label="Read more testimonials" href="/testimonials/#students">Read more</a>
+                </div>
+            {%- endif -%}
         </section>
     {%- endfor %}
 </article>

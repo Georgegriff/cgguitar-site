@@ -71,10 +71,13 @@ const fetchMetaInfo = async (videoIds) => {
         console.error(e);
         return {}
     }
-
+p
 }
 
 module.exports.getPlaylists = async (playlists) => {
+    if(!playlists) {
+        return [];
+    }
     const lists = await Promise.all(playlists.map((async ({id, title, description}) => {
         const content = await getPlaylistItem(id);
         return {
