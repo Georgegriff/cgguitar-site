@@ -29,7 +29,7 @@
     p {
         font-size: 0.75rem;
         max-width: 40ch;
-        margin-top:0.5rem;
+        margin-top:2rem;
         margin-bottom: 0;
 
     }
@@ -75,6 +75,10 @@
 }
 
 .grid-icons {
+    svg {
+        height: 3.5rem;
+        width: auto;
+    }
     --min-column-size:15em;
     padding:0;
     height: 100%;

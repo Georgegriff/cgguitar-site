@@ -28,6 +28,17 @@ videos:
       title: Beginner guitar lessons
     - id: "PLA0cAQ-2uoeq_t6PXUWYWD1QhEUY_kMIU"
       title: Griff's Licks
+gridContent:
+  class: "grid-small contained"
+  items:
+    - text: <a href="#main-content">Watch some of my videos below</a>
+      image: img/video.svg
+    - text: <a target="_blank" href="YT_PLACEHOLDER">Subscribe to my YouTube channel</a>
+      image: img/youtube.svg
+    - text: <a target="_blank" href="INSTA_PLACEHOLDER">Follow me on Instagram</a>
+      image: img/instagram.svg
 ---
 
+{% set GRID_TEXT_PLACEHOLDER = {"YT_PLACEHOLDER": metadata.author.youtube, "INSTA_PLACEHOLDER": metadata.author.instagram } %}
+{%- include 'partials/grid-content.html' -%}
 {% include "partials/video-playlists.njk" %}

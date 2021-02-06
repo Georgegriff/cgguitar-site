@@ -26,22 +26,22 @@ module.exports = {
     {
       text: "Facebook",
       icon: "img/facebook.svg",
-      url:  `https://www.facebook.com/${siteMeta.author.facebook}`
+      url:  siteMeta.author.facebook
     },
     {
       text: "YouTube",
       icon: "img/youtube.svg",
-      url:  `https://www.youtube.com/channel/${siteMeta.author.youtube}`
+      url:  siteMeta.author.youtube
     },
     {
       text: "Instagram",
       icon: "img/instagram.svg",
-      url:  `https://instagram.com/${siteMeta.author.instagram}`
+      url:  siteMeta.author.instagram
     },
     {
       text: "Twitter",
       icon: "img/twitter.svg",
-      url:  `https://twitter.com/intent/follow?screen_name=${siteMeta.author.twitter}`
+      url:  siteMeta.author.twitter
     }
   ],
   genericShare,

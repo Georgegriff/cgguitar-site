@@ -17,7 +17,7 @@ hero:
 gridContent:
   class: "grid-small contained"
   items:
-    - text: Fill out the contact form below
+    - text: <a href="#main-content">Fill out the contact form below</a>
       image: img/edit.svg
     - text: <a href="tel:+447861538564"aria-label="or call telephone number, PHONE_PLACEHOLDER"><b>or</b> call +447861538564</a>
       image: img/phone.svg
