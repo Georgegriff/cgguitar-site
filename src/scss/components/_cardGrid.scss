@@ -15,12 +15,19 @@
     align-items: flex-start;
 }
 
-.grid-columns {
-    --min-column-size:500px;
-    @include up-to(small) {
-        --min-column-size:300px
-    }
+
+@include up-from(xsmall) {
+   .grid-columns {
+    --min-column-size:300px;
+   }
 }
+
+@include up-from(small) {
+    .grid-columns {
+     --min-column-size:35em;
+    }
+ }
+ 
 
 .video-section {
     --video-size: 100%;
