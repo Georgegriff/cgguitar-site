@@ -6,22 +6,20 @@
             fill: currentColor;
         }
     }
-    li:first-child svg, li:last-child svg {
-        * {
-            fill: var(--Primary);
-        }
-    }
 
     gap: 1rem;
-    img, svg {
-        flex:2;
-    }
     li {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        min-height: 200px;
+        padding:1rem;
     }
+
     h2 {
         margin: 1rem;
         font-weight: 600;
@@ -40,6 +38,24 @@
         p {
             max-width: initial;
         }
+    }
+}
+
+.dark-grid {
+    li:nth-child(4n - 7) {
+        background: var(--Secondary30);
+    }
+    
+    li:nth-child(4n - 6) {
+        background: var(--Secondary90);
+    }
+    
+    li:nth-child(4n - 5) {
+        background: var(--Secondary70);
+    }
+    
+    li:nth-child(4n - 4) {
+        background: var(--Secondary50);
     }
 }
 

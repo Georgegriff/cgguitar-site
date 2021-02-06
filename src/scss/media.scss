@@ -46,6 +46,7 @@ youtube-playlist li {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 2;
   }
   .playbtn:focus, .playbtn:hover {
     opacity: 1;
@@ -79,6 +80,7 @@ youtube-playlist li {
       max-width: 784px;
       margin: 0;
       position: relative;
+      height: auto;
       a {
           position: absolute;
           top:0;
@@ -89,4 +91,18 @@ youtube-playlist li {
       a:hover, a:focus {
           outline: none;
       }
+  }
+
+  .img-btn-wrapper {
+    height: auto;
+    width: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      position: absolute;
+      width: 15%;
+    }
   }

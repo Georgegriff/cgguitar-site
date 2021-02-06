@@ -3,6 +3,10 @@
     grid-template-columns: repeat(auto-fit, minmax(var(--min-column-size, 300px), 1fr));
 }
 
+.no-gap {
+    gap: 0 !important;
+}
+
 .grid-gap {
     gap: var(--site-padding);
 }
@@ -20,6 +24,7 @@
 
 .video-section {
     --video-size: 100%;
+    margin: var(--site-padding);
     display: flex;
     flex-direction: column;
     .section-title {
@@ -62,9 +67,10 @@
 }
 
 .video-grid {
+    padding:0 !important;
     @include up-from(large) {
         .card-grid {
-            grid-template-columns: 2fr 3fr;
+            grid-template-columns: 2fr 2fr;
         }
     }
 }

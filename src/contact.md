@@ -5,7 +5,7 @@ templateEngineOverride: njk,md
 eleventyNavigation:
   key: Contact
   order: 3
-headerClassName: 'header-hero-small'
+headerClassName: 'header-hero-medium'
 pageJs: 'contact.js'
 pageCriticalStyles: ['css/contact.css']
 hero:
