@@ -13,7 +13,8 @@ const criticalStyles = [
   "reset.scss",
   "critical.scss",
   "index.scss",
-  "contact.scss"
+  "contact.scss",
+  "media.scss"
 ];
 
 // Takes the arguments passed by `dest` and determines where the output file goes

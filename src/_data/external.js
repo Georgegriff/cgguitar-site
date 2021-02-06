@@ -19,6 +19,9 @@ const genericShare = {
 }
 
 module.exports = {
+  youtube: {
+    apiKey: process.env.YT_API_KEY
+  },
   links: [
     {
       text: "Facebook",

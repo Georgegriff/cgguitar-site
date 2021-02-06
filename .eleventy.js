@@ -1,6 +1,6 @@
+require('dotenv').config()
 const { DateTime, Duration } = require("luxon");
 const { promisify } = require("util");
-
 const sizeOf = promisify(require("image-size"));
 const fs = require("fs");
 const path = require('path');
@@ -9,7 +9,7 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
 const { minify } = require("terser");
-
+const {getPlaylists} = require("./src/_filters/youtube");
 const siteMeta = require("./src/_data/metadata.json");
 
 module.exports = (eleventyConfig) => {
@@ -203,6 +203,11 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter("ariatel", (number = '') => {
     return [...number].join(' ')
   });
+
+  eleventyConfig.addNunjucksAsyncFilter("youtubePlaylists", async (playlists, callback) => {
+    const data = await getPlaylists(playlists);
+    callback(null, data);
+  })
 
   const YouTube = require("./src/_includes/components/youtube");
   eleventyConfig.addShortcode("youtube", (id) => {

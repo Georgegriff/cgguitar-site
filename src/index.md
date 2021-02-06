@@ -31,7 +31,7 @@ slogan:
   - title: Enjoy
     text: Play music from the first lesson! Kick start your guitar playing with enjoyable and frustration free methods.
   - title: Learn
-    text: Coaching and mentoring to study music/guitar in further education, prepare for live performances and advice on ways to take your playing to the next level.
+    text: Coaching and mentoring to study music or guitar in further education, prepare for live performances and advice taking  your playing to the next level.
   - title: Achieve
     text: Effective practice regimes, build a solid foundation of technique and repertoire, with ways to improve your improvisation and composition skills.
   - title: Perform
@@ -50,7 +50,7 @@ levels:
      image: /images/testimonials/johno.jpg
      quote: Charlie has tailored the lessons to cover advanced topics such as, playing with odd time signatures, music theory and improvisation skills.
 gridContent:
-  class: 'video-grid'
+  class: 'video-grid secondary-bg'
   title: Start learning today
   items:
     - text: My students have found success in both online and in person lessons.
@@ -68,6 +68,6 @@ gridContent:
 ---
 
 {% include 'partials/enjoy-learn-achieve-perform.html' %}
-{% include 'partials/testimonial-levels.html' %}
 {% include 'partials/grid-content.html' %}
+{% include 'partials/testimonial-levels.html' %}
 

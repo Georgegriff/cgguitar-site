@@ -5,12 +5,12 @@ templateEngineOverride: njk,md
 eleventyNavigation:
   key: Contact
   order: 3
-headerClassName: 'header-hero-medium'
+headerClassName: 'header-hero-small'
 pageJs: 'contact.js'
 pageCriticalStyles: ['css/contact.css']
 hero:
   title: I'd love to hear from you, please get in touch
-  description: Contact me using the options below.
+  subtitle: Contact me using the options below.
   image:
     src: images/hero.jpg
     alt: "CG Guitars' Charlie playing guitar on stage"

@@ -1,0 +1,92 @@
+youtube-playlist {
+    background: var(--Background, #1a1a1a);
+    color: var(--Text, #fff);
+    --secondary-text: var(--Text);
+    --background-active: var(--Background50);
+    --primary-color: var(--Primary);
+    --white: var(--PrimaryText);
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--site-padding) var(--site-padding) var(--site-padding);
+    min-width: 100%;
+
+    h2 {
+        margin-top: var(--site-padding);
+    }
+
+    p[slot="description"] {
+        margin-bottom: 1rem;
+    }
+}
+
+youtube-playlist:nth-child(even) {
+    background: var(--Secondary, #1a1a1a);
+    color: var(--SecondaryText);
+    --secondary-text: var(--SecondaryText50);
+    --text: var(--SecondaryText);
+    --background-active: var(--Secondary50);
+}
+
+youtube-playlist li {
+    display: none;
+}
+
+
+.playbtn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    transition: opacity 250ms linear, transform 100ms ease-in-out;
+    opacity: 0.8;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .playbtn:focus, .playbtn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .playbtn:focus:after, .playbtn:hover:after {
+    animation: pulse 1s 4 ease-in-out;
+  }
+  .playbtn svg {
+    width: 15%;
+    height: auto;
+    z-index: 3;
+    border: solid 2px transparent;
+    border-radius: 50%;
+  }
+  .playbtn:focus svg {
+    border: solid 2px var(--white, #fff);
+  }
+  .playbtn:after {
+    content: "";
+    background: var(--primary-color, #7f3232);
+    position: absolute;
+    width: 15%;
+    border-radius: 50%;
+    padding-top: 15%;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .fallback {
+      max-width: 784px;
+      margin: 0;
+      position: relative;
+      a {
+          position: absolute;
+          top:0;
+          left:0;
+          bottom:0;
+          right:0;
+      }
+      a:hover, a:focus {
+          outline: none;
+      }
+  }

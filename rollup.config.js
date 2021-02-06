@@ -6,6 +6,7 @@ const entrypoints = {
   // key must match file name
   index: "src/scripts/index.js",
   contact: "src/scripts/contact.js",
+  media: "src/scripts/media.js",
   'inline-critical': 'src/scripts/inline-critical.js'
 };
 

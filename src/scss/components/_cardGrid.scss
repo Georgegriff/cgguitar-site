@@ -19,7 +19,7 @@
 }
 
 .video-section {
-    --video-size: 720px;
+    --video-size: 100%;
     display: flex;
     flex-direction: column;
     .section-title {
@@ -50,10 +50,11 @@
 }
 
 .watch-more {
-    margin-top:0.5rem;
+    margin:1rem 0;
+    color: currentColor;
     a {
-        font-size: 0.875rem;
-        border-bottom: solid 5px transparent;
+        font-size: 1rem;
+        border-bottom: solid 5px var(--Primary);
         &:hover, &:active {
             border-bottom: solid 5px currentColor;
         }
@@ -66,4 +67,9 @@
             grid-template-columns: 2fr 3fr;
         }
     }
+}
+
+.secondary-bg {
+    background: var(--Secondary);
+    color: var(--SecondaryText);
 }
