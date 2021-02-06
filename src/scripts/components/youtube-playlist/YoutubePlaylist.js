@@ -159,7 +159,7 @@ export class YoutubePlaylist extends LitElement {
       .grid {
         display: grid;
         flex-wrap: wrap;
-        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
         place-items: center;
         gap:1rem;
       }
