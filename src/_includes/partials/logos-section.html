@@ -3,7 +3,11 @@
     <ol style="--grid-ish-size: 18em;" class="grid-ish icondesc {{logosSection.class}}">
         {%- for item in logosSection.items %}
             <li class="logo-small">
-                <img src="/images/cg-logo-alt{% if (loop.index % 2) == 0 %}-black{%endif %}.svg" alt="CG Guitar logo" />
+                {%- if (loop.index % 2) == 0 %}
+                {%- Image "images/cg-logo-alt-black.svg","CG Guitar logo",true -%}
+                {%- else %}
+                {%- Image "images/cg-logo-alt.svg","CG Guitar logo",true -%}
+                {%- endif -%}
                 {%- if item.title -%}
                 <h2 {% if (loop.index % 2) != 0 %}class="primary-text"{%- endif %}>{{item.title}}</h2>
                 {%- endif -%}

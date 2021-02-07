@@ -22,48 +22,42 @@ module.exports = (eleventyConfig) => {
 
   const imageOptimizer = async (src, alt, ariaHidden) => {
     const Image = require("@11ty/eleventy-img");
-    const imgPath = path.join('src', src)
+    const formats = src.endsWith('svg') ? ["svg"] : ["jpeg", "webp"];
+    const imgPath = src.startsWith('http') ? src : path.join('src', src)
     let stats = await Image(imgPath, {
       widths: [320, 640, 960, 1200, 1800, 2400],
-      formats: ["jpeg", "webp"],
+      formats,
       urlPath: "/images/",
       outputDir: "./dist/images/",
     });
-
-    dimensions = await sizeOf(imgPath);
-
-    let lowestSrc = stats["jpeg"][0];
-    const srcset = Object.keys(stats).reduce(
-      (acc, format) => ({
- ...acc,
- [format]: stats[format].reduce(
-   (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-   ""
- ),
-      }),
-      {}
-    );
-    const placeholder = await sharp(lowestSrc.outputPath)
+    let placeholderStyle = ''
+    let lowestSrc = stats["jpeg"]?.[0];
+    if(lowestSrc) {
+      const dimensions = await sizeOf(imgPath);
+      const placeholder = await sharp(lowestSrc.outputPath)
       .resize({ fit: sharp.fit.inside })
       .blur()
       .toBuffer();
-    const base64Placeholder = `data:image/png;base64,${placeholder.toString(
- "base64"
-      )}`;
-      const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
-      const containSize = `min(var(--main-width), ${
- dimensions.width
-      }px) min(calc(var(--main-width) * ${
- dimensions.height / dimensions.width
-      }), ${dimensions.height}px)`;
-      const placeholderStyle = `background-size:cover;background-image:url('${base64Placeholder}');contain-intrinsic-size:${containSize}`
-      const ariaHiddenHTML = ariaHidden ? 'aria-hidden="true"': ''
-      const img = `<img src="${lowestSrc.url}" width="${dimensions.width}" height="${dimensions.height}" decoding="async" loading="lazy" alt="${alt}" sizes="(min-width: 1024px) 1024px, 100vw" srcset="${srcset["jpeg"]}" style="${placeholderStyle}" ${ariaHiddenHTML}/>`;
-    return `<picture>${source} ${img}</picture>`
+       const base64Placeholder = `data:image/png;base64,${placeholder.toString("base64")}`;
+      const containSize = `min(var(--main-width), ${dimensions.width}px) min(calc(var(--main-width) * ${dimensions.height / dimensions.width}), ${dimensions.height}px)`;
+      placeholderStyle = `background-size:cover;background-image:url('${base64Placeholder}');contain-intrinsic-size:${containSize}`
+    }
+   
+    const imgHtml = Image.generateHTML(stats,  {
+      alt,
+      loading: "lazy",
+      decoding: "async",
+      "aria-hidden": ariaHidden ? "true" : "false",
+      style: placeholderStyle
+    }, {
+      whitespaceMode: "inline"
+    })
+
+    return imgHtml;
   }
 
 
-  eleventyConfig.addNunjucksAsyncShortcode("image", async (src, alt, ariaHidden) => {
+  eleventyConfig.addNunjucksAsyncShortcode("Image", async (src, alt, ariaHidden) => {
     if (!alt) {
       throw new Error(`Missing accessibility description on image on ${src}`);
     }

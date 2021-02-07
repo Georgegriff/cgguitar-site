@@ -38,6 +38,6 @@ gridContent:
       image: img/instagram.svg
 ---
 
-{% set GRID_TEXT_PLACEHOLDER = {"YT_PLACEHOLDER": metadata.author.youtube, "INSTA_PLACEHOLDER": metadata.author.instagram } %}
+{%- set GRID_TEXT_PLACEHOLDER = {"YT_PLACEHOLDER": metadata.author.youtube, "INSTA_PLACEHOLDER": metadata.author.instagram} -%}
 {%- include 'partials/grid-content.html' -%}
-{% include "partials/video-playlists.njk" %}
+{%- include "partials/video-playlists.njk" -%}

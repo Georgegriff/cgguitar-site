@@ -30,8 +30,8 @@
             <li class="{% if entry.url == page.url %} active{% endif %}">
                 <a href="{{ entry.url | url }}">{{ entry.title }}</a>
             </li>
-            <li><a href="/privacy/">Privacy Policy</a></li>
             {%- endfor %}
+            <li><a href="/privacy/">Privacy Policy</a></li>
             </ul>
         </section>
         {% block footer %}{% endblock %}

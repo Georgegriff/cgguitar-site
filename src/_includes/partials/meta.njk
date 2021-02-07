@@ -1,22 +1,17 @@
-{% set pageTitle = title + ' - ' + metadata.title %}
-
+{%- set pageTitle = title + ' - ' + metadata.title -%}
 {# We don't want any duplication. This is likely for the home page. #}
-{% if metadata.name === title %}
-    {% set pageTitle = title %}
-{% endif %}
-
+{%- if metadata.name === title -%}
+    {% set pageTitle = title -%}
+{%- endif -%}
 {% set siteTitle = metadata.title %}
 {% set currentUrl = metadata.url + page.url %}
-{% if hero %}
+{%- if hero -%}
     {% set socialImage = metadata.url + '/' + hero.image.src %}
-{% endif %}
-
-{% if not socialImage %} 
-  {% set socialImage = metadata.url + '/images/default-share.jpg' %} 
-{% endif %}
-
-{% set tagline = description or metadata.description %}
-
+{%- endif -%}
+{%- if not socialImage -%}
+  {%- set socialImage = metadata.url + '/images/default-share.jpg' -%} 
+{%- endif -%}
+{%- set tagline = description or metadata.description -%}
 <title>{{ pageTitle }}</title>
 <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
 <link rel="canonical" href="{{ currentUrl }}"/>
@@ -27,7 +22,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="{{ currentUrl }}"/>
 
-{% if socialImage %}
+{%- if socialImage %}
     <meta name="twitter:card" content="summary_large_image"/>
     <meta property="og:image" content="{{ socialImage }}"/>
     <meta name="twitter:image" content="{{ socialImage }}"/>
@@ -35,7 +30,7 @@
     <meta name="twitter:image:alt" content="Page image for {{ metadata.title }}"/>
 {% endif %}
 
-{% if tagline %}
+{%- if tagline %}
     <meta name="description" content="{{ tagline }}"/>
     <meta name="twitter:description" content="{{ tagline }}"/>
     <meta property="og:description" content="{{ tagline }}"/>
