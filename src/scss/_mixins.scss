@@ -4,10 +4,11 @@
     @return (($em * $default-pixel-size) - $offset) / $default-pixel-size
 }
 
-$up-from-size: ("small": $bp-small, "medium": $bp-medium, "large": $bp-large, "xlarge": $bp-xl, "xxlarge": $bp-xxl);
+$up-from-size: ("small": $bp-small, "medium-small": $bp-medium-small, "medium": $bp-medium, "large": $bp-large, "xlarge": $bp-xl, "xxlarge": $bp-xxl);
 $up-to-size: (
     "xsmall": pixelOffset($bp-xsmall),
     "small": pixelOffset($bp-small),
+    "medium-small": pixelOffset($bp-medium-small),
     "medium": pixelOffset($bp-medium),
     "large": pixelOffset($bp-large),
     "xlarge":pixelOffset($bp-xl),
@@ -26,6 +27,13 @@ $up-to-size: (
     }
 }
 
+
+@mixin up-to-height($size) {
+    @media (max-height: $size) {
+        @content;
+    }
+}
+
 @include up-from(xxlarge) {
     :root {
         --site-padding: 3.5rem;
@@ -37,3 +45,11 @@ $up-to-size: (
         --site-padding: 1rem;
     }
 }
+
+@include up-to-height($height-small) {
+    :root {
+        --site-padding:0.75rem;
+    }
+}
+
+

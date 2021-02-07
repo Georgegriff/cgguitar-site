@@ -34,6 +34,9 @@ header {
         @include up-from(large) {
             min-height: calc(75vh - (var(--site-header) + var(--site-padding)));
         }
+        @include up-to-height($height-small) {
+            min-height: calc(100vh - (var(--site-header)));
+        }
     }
     &-small {
         position: relative;
@@ -44,6 +47,9 @@ header {
         @include up-from(large) {
             min-height: calc(45vh - (var(--site-header) + var(--site-padding)));
         }
+        @include up-to-height($height-small) {
+            min-height: calc(100vh - (var(--site-header)));
+        }
         .hero-scroll-down {
             display: none;
         }
@@ -52,7 +58,11 @@ header {
         position: relative;
         overflow: hidden;
         min-height: calc(100vh - (var(--site-header) + var(--site-padding)));
+        @include up-to-height($height-small) {
+            min-height: calc(100vh - (var(--site-header)));
+        }
     }
+
 }
 
 .primary-text {

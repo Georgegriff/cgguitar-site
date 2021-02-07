@@ -8,7 +8,7 @@ export const liteYtCss = css`lite-youtube {
   background-position: center center;
   background-size: cover;
   cursor: pointer;
-  max-width: 720px;
+  max-width: 100%;
 }
 
 /* gradient */

@@ -90,22 +90,23 @@ main {
         background: var(--Background50);
     }
 
-    .padded {
-        padding: 4.4rem 0
-    }
-
-    .padded-med {
-        padding: 2rem 0rem;
-    }
-
-    .padded-sm {
-        padding: 1rem 0
-    }
-
     .site-padded {
         padding-left: var(--site-padding);
         padding-right: var(--site-padding);
     }
+}
+
+
+.padded {
+    padding: 4.4rem 0;
+}
+
+.padded-med {
+    padding: 2rem 0rem;
+}
+
+.padded-sm {
+    padding: 1rem 0
 }
 
 .skip-link {
@@ -130,14 +131,31 @@ h1 {
         font-size: 5rem;
     }
     @include up-to(small) {
-        /* mobiles and 100vh are fucking stupid 100vh excludes controls */
         font-size: 2.4rem;
     }
 
     @include up-to(xsmall) {
-        /* mobiles and 100vh are fucking stupid 100vh excludes controls */
         font-size: 2.2rem;
     }
+}
+
+@include up-to-height($height-small) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .padded {
+        padding: 2rem 0
+    }
+
+    .padded-med {
+        padding: 1rem 0rem;
+    }
+
+    .padded-sm {
+        padding: 0.75rem 0
+    }
+
 }
 
 h2 {
@@ -171,10 +189,23 @@ h3 {
     margin:1rem 0;
     color: currentColor;
     a {
-        font-size: 1rem;
+        font-size: 0.9rem;
         border-bottom: solid 5px var(--Primary);
         &:hover, &:active {
             border-bottom: solid 5px currentColor;
         }
     }
+}
+
+.grid-ish {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-ish > * {
+    flex: 1 1 var(--grid-ish-size, 10em);
+}
+
+.justify-center {
+    justify-content: center;
 }

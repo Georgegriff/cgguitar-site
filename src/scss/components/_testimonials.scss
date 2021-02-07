@@ -2,17 +2,6 @@
     color: var(--SecondaryText);
     padding:0;
     background: var(--Background50);
-    section:last-of-type {
-        @include up-from(medium) {
-            grid-column: span 2;
-        }
-        @include up-from(large) {
-            grid-column: initial;
-        }
-        @include up-to(small) {
-            grid-column: initial;
-        }
-    }
 }
 
 .level {

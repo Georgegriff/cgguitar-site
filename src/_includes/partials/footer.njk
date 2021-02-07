@@ -26,11 +26,11 @@
         <section>
         <h3 id="more">More</h3>
         <ul class="footer-links">
-            <li><a href="/privacy/">Privacy Policy</a></li>
-            {%- for entry in collections.all | eleventyNavigation | skip(4) %}
+            {%- for entry in collections.all | eleventyNavigation | skip(3) %}
             <li class="{% if entry.url == page.url %} active{% endif %}">
                 <a href="{{ entry.url | url }}">{{ entry.title }}</a>
             </li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
             {%- endfor %}
             </ul>
         </section>

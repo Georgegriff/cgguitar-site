@@ -1,9 +1,13 @@
 {% if logosSection %}
 <article>
-    <ol class="card-grid icondesc {{logosSection.class}}">
+    <ol style="--grid-ish-size: 18em;" class="grid-ish icondesc {{logosSection.class}}">
         {%- for item in logosSection.items %}
             <li class="logo-small">
                 <img src="/images/cg-logo-alt{% if (loop.index % 2) == 0 %}-black{%endif %}.svg" alt="CG Guitar logo" />
+                {%- if item.title -%}
+                <h2 {% if (loop.index % 2) != 0 %}class="primary-text"{%- endif %}>{{item.title}}</h2>
+                {%- endif -%}
+                <p>{{item.text}}</p>
             </li>
         {%- endfor %}
     </ol>

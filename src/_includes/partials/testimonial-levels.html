@@ -5,7 +5,7 @@
         <h2>{{levels.title}}</h2>
         <p class="description">{{levels.description | safe}}</p>
     </section>
-    <div class="card-grid testimonial-levels">
+    <div style="--grid-ish-size: 18em;" class="grid-ish testimonial-levels">
     {%- for item in levels.items %}
         <section class="testimonial level level-{{item.title | lower }}">
             <h3>{{item.title}}</h3>

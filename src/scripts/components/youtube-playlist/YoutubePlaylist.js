@@ -174,7 +174,7 @@ export class YoutubePlaylist extends LitElement {
       }
 
       lite-youtube {
-        max-width: initial;
+        max-width: initial !important;
       }
 
       .playlist-items {

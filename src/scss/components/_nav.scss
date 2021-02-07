@@ -17,6 +17,9 @@ nav {
     padding: var(--site-padding);
     background: var(--Secondary);
     min-height: var(--site-header);
+    @include up-to-height($height-small) {
+        position: relative;
+    }
     a {
         text-decoration: none;
     }
@@ -78,5 +81,14 @@ nav {
         a {
             color: var(--SecondaryText50);
         }
+    }
+}
+
+.list-scroll-wrap {
+    position: relative;
+    overflow: hidden;
+    .abs-list {
+        position: absolute;
+        top:0;
     }
 }
