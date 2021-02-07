@@ -133,6 +133,11 @@ h1 {
         /* mobiles and 100vh are fucking stupid 100vh excludes controls */
         font-size: 2.4rem;
     }
+
+    @include up-to(xsmall) {
+        /* mobiles and 100vh are fucking stupid 100vh excludes controls */
+        font-size: 2.2rem;
+    }
 }
 
 h2 {

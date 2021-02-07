@@ -1,12 +1,13 @@
 .action-button {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-decoration: none;
-    padding: 0.6rem 0.8rem;
+    padding: 0.6rem 0.6rem;
     display: inline-block;
     border-radius: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     background: var(--Primary);
     font-family: inherit;
+    white-space: nowrap;
     text-transform: uppercase;
     @include up-from(xxlarge) {
         font-size: 1.5rem;
@@ -23,8 +24,9 @@
 
 .call-to-action {
     display: flex;
+    flex-wrap: wrap;
     a:not(:last-child) {
-        margin-right: 1rem;
+        margin-right: 0.5rem;
     }
 
     .cta-secondary {
