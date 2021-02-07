@@ -39,6 +39,9 @@ logosSection:
     - title: Perform
       text: Whether you’re looking to start guitar lessons for the first time or you need help on how to develop your playing, CG Guitar is the right place for you.
 levels:
+  title: CG Guitar can help, no matter your skill level
+  description: Whether you're looking to start guitar lessons for the first time or you need help and advice on how to develop your playing.<br/> CG Guitar is the right place for you! 1:1, group classes and workshops available.
+  items:
    - title: Beginner
      text: Play music from the first lesson! Kick start your guitar playing with enjoyable and frustration free methods.
      image: /images/testimonials/annep.jpg
@@ -69,7 +72,6 @@ gridContent:
 aboutSection:
   items:
     - type: card
-      direction: 'reverse'
       title: Who is CG Guitar?
       link:
         url: '/about/#a-little-bit-more'

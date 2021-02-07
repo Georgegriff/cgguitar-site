@@ -6,7 +6,7 @@
         {%- if video -%}
         <section class="video-section">
             {%- if gridContent.title %}
-            <h3 class="section-title">{{gridContent.title}}</h3>
+            <h2 class="section-title">{{gridContent.title}}</h2>
             {%- endif %}
             {% youtube video.id %}
             <div class="learn-more" ><a href="/media/">Watch some demonstrations and tutorials.</a></div>
@@ -15,7 +15,7 @@
         <section style="width: 100%; height: 100%;">
             <ul class="card-grid online-content icondesc grid-icons no-gap">
                 {%- for item in items %}
-                    <li>
+                    <li class="padded-med">
                         {%- if item.link -%}
                         <a href="{{item.link}}">
                         {%- endif %}

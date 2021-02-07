@@ -8,7 +8,7 @@
 {% set siteTitle = metadata.title %}
 {% set currentUrl = metadata.url + page.url %}
 {% if hero %}
-    {% set socialImage = metadata.url + hero.image %}
+    {% set socialImage = metadata.url + '/' + hero.image.src %}
 {% endif %}
 
 {% if not socialImage %} 

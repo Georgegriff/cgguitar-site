@@ -1,7 +1,7 @@
 .about-card {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: row-reverse;
     h2 {
         margin-bottom: var(--site-padding);
     }
@@ -33,13 +33,13 @@
     }
     img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
     }
 }
 
 .card-reverse {
-    flex-direction: row-reverse;
+    flex-direction: row;
 } 
 
 

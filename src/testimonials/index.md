@@ -14,7 +14,7 @@ hero:
       text: Get in touch
       link: /contact/
   image:
-    src: /images/sheets.png
+    src: images/sheets.png
     alt: "Examples of Sheet music provided to students"
 gridContent:
   items:

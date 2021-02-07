@@ -108,13 +108,13 @@ const _setThumbs =(video) => {
   if(!video) {
     return ''
   }
-  let thumb = video.defaultThumbnail;
+  let thumb = video.hqThumbnail;
   if ('connection' in navigator){
-    if(!navigator.connection.saveData) {
-      thumb = video.hqThumbnail
-      addPrefetch('preload', thumb.url, 'image');
+    if(navigator.connection.saveData) {
+      thumb = video.defaultThumbnail
     }
   }
+  addPrefetch('preload', thumb.url, 'image');
   return `background-image: url("${thumb.url}")`
 }
 

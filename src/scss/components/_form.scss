@@ -39,6 +39,7 @@ input, textarea {
 textarea {
     height: 100%;
     min-height: 10rem;
+    resize: vertical;
 }
 
 .field {

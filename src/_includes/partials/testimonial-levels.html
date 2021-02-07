@@ -1,9 +1,14 @@
 
 {% if levels %}
-<article style="--min-column-size:300px" class="card-grid testimonial-levels no-padding">
-    {%- for item in levels %}
+<article style="--min-column-size:300px" class="no-padding">
+    <section class="block-title">
+        <h2>{{levels.title}}</h2>
+        <p class="description">{{levels.description | safe}}</p>
+    </section>
+    <div class="card-grid testimonial-levels">
+    {%- for item in levels.items %}
         <section class="testimonial level level-{{item.title | lower }}">
-            <h2>{{item.title}}</h2>
+            <h3>{{item.title}}</h3>
             <p class="description">{{item.text}}</p>
             <div class="quote-wrap">
                 {%- if item.image -%}
@@ -15,12 +20,13 @@
                 {%- endif -%}
                 <p class="quote">{{item.quote}}</p>
             </div>
-            {%- if (loop.index == (levels.length)) -%}
+            {%- if (loop.index == (levels.items.length)) -%}
                 <div class="bottom-section">
                     <a aria-label="Read more testimonials" href="/testimonials/#students">Read more</a>
                 </div>
             {%- endif -%}
         </section>
     {%- endfor %}
+    </div>
 </article>
 {% endif %}

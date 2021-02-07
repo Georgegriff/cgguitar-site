@@ -74,3 +74,15 @@
     background: var(--Secondary);
     color: var(--SecondaryText);
 }
+
+.block-title {
+    padding: calc( 2 * var(--site-padding)) var(--site-padding);
+    h2 {
+        margin-bottom:0.5rem;
+    }
+    .description {
+        max-width: 100ch;
+        margin-top: 1rem;
+        line-height: 1.4rem;
+    }
+}

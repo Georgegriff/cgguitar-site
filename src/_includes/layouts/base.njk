@@ -48,5 +48,6 @@
             {{ inlineJs | jsmin | safe }}
           </script>
         <script src="{{ assets.getPath(pageJs) }}" type="module"></script>
+        {% include 'partials/analytics.html' %}
     </body>
 </html>
