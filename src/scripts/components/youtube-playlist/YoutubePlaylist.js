@@ -160,8 +160,8 @@ export class YoutubePlaylist extends LitElement {
         display: grid;
         flex-wrap: wrap;
         grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-        place-items: center;
         gap:1rem;
+        overflow: hidden;
       }
 
       .heading {
@@ -288,7 +288,7 @@ export class YoutubePlaylist extends LitElement {
       }
       .external-link {
         margin-left: auto;
-        margin-right:1rem;
+        margin-right:0;
       }
       .stats svg {
         stroke: currentColor;
@@ -311,7 +311,7 @@ export class YoutubePlaylist extends LitElement {
       }
 
       .current-video-info {
-        margin: 1rem;
+        margin: 1rem 0;
       }
 
       ::-webkit-scrollbar {
@@ -452,7 +452,6 @@ export class YoutubePlaylist extends LitElement {
 
     .scroll-wrap {
       width: 100%;
-      height: 100%;
       position: relative;
     }
 
