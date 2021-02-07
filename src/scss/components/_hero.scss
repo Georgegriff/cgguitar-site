@@ -31,6 +31,12 @@
         @include up-to (large) {
             opacity: 0.2;
         }
+
+        @include up-to-height($height-small) {
+          right:0;
+          left: initial;
+          height: 100%;
+        }
     }
     @keyframes wiggle {
         0% {
