@@ -13,9 +13,8 @@
 {%- endif -%}
 {%- set tagline = description or metadata.description -%}
 <title>{{ pageTitle }}</title>
-<link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
 <link rel="canonical" href="{{ currentUrl }}"/>
-
+<link rel="manifest" href="{{metadata.manifest.path}}">
 <meta name="author" content="{{author or metadata.author.name}}">
 <meta property="og:site_name" content="{{ siteTitle }}"/>
 <meta property="og:title" content="{{ pageTitle }}"/>

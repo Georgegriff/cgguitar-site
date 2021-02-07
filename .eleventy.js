@@ -3,6 +3,7 @@ const { DateTime, Duration } = require("luxon");
 const { promisify } = require("util");
 const sizeOf = promisify(require("image-size"));
 const fs = require("fs");
+const pluginPWA = require("eleventy-plugin-pwa");
 const path = require('path');
 const sharp = require('sharp');
 const pluginNavigation = require("@11ty/eleventy-navigation");
@@ -20,7 +21,7 @@ module.exports = (eleventyConfig) => {
     linkify: true,
   });
 
-  const imageOptimizer = async (src, alt, ariaHidden) => {
+  const imageOptimizer = async (src, {alt, ariaHidden, urlOnly}) => {
     const Image = require("@11ty/eleventy-img");
     const formats = src.endsWith('svg') ? ["svg"] : ["jpeg", "webp"];
     const imgPath = src.startsWith('http') ? src : path.join('src', src)
@@ -30,6 +31,10 @@ module.exports = (eleventyConfig) => {
       urlPath: "/images/",
       outputDir: "./dist/images/",
     });
+    if(urlOnly && Object.keys(stats).length) {
+      const format = Object.keys(stats)[0];
+      return stats[format][0].url;
+    }
     let placeholderStyle = ''
     let lowestSrc = stats["jpeg"]?.[0];
     if(lowestSrc) {
@@ -61,9 +66,16 @@ module.exports = (eleventyConfig) => {
     if (!alt) {
       throw new Error(`Missing accessibility description on image on ${src}`);
     }
-    const img = await imageOptimizer(src, alt, ariaHidden)
+    const img = await imageOptimizer(src, {alt, ariaHidden});
 
     return img
+  });
+
+
+  eleventyConfig.addNunjucksAsyncShortcode("ImageUrl", async (src, templateFn) => {
+    const img = await imageOptimizer(src, {urlOnly: true})
+    const val = templateFn(img);
+    return val;
   });
 
   // Remember old renderer, if overridden, or proxy to default renderer
@@ -109,9 +121,10 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  eleventyConfig.addPassthroughCopy("src/images");
-  eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
+  eleventyConfig.addPassthroughCopy("src/images/manifest");
+  //eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
   if (process.env.NODE_ENV === "production") {
+    eleventyConfig.addPlugin(pluginPWA);
     eleventyConfig.addPassthroughCopy({"build/scripts": "scripts"});
   }
 

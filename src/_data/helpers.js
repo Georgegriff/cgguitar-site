@@ -27,5 +27,12 @@ module.exports = {
       return str;
     }, '')
     return str;
-  }
+  },
+  quoteStartTemplate: (url) => {
+    return `:root { --quote-image-start: url(${url});}`;
+  },
+  quoteEndTemplate: (url) => {
+    return `:root { --quote-image-end: url(${url});}`;
+  },
+  production: process.env.NODE_ENV === "production"
 };
