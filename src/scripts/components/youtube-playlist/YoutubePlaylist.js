@@ -63,7 +63,7 @@ const renderStats  = (stats, video, renderOpen = false) =>  html`<div class="sta
   ${renderOpen ?openLink(video.id) : ''}
  </div>`;
 
-const renderInfo = (title, channel,channelId) => html`<p  title="${title}" class="video-title">${title}</p>
+const renderInfo = (title, channel,channelId, viewMore) => html`<p  title="${title}" class="video-title">${title}</p>
 ${channelId ? html`<a rel="noopener" target="_blank" href="https://youtube.com/channel/${channelId}" class="video-channel">${channel}</a>` : html`<p class="video-channel">${channel}</p>`}`;
 
 const getStats = (video) => {
@@ -84,11 +84,11 @@ const _playlistItem = (video, _onTap, index, viewMore) => {
   const thumbnail = video.smallThumbnail.url;
   const videoTitle = video.title;
   const stats = getStats(video);
-  return html`<button tabindex="${viewMore ? "0" : "-1"}" aria-label="Watch video ${videoTitle}, duration: ${stats ? stats.duration.str: ""}" data-index="${index}" @click="${_onTap}"><figure>
+  return html`<button aria-hidden="${viewMore ? false : true}" tabindex="${viewMore ? "0" : "-1"}" aria-label="Watch video ${videoTitle}, duration: ${stats ? stats.duration.str: ""}" data-index="${index}" @click="${_onTap}"><figure>
   <div class="thumbnail"><img  decoding="async" loading="lazy" width="${video.smallThumbnail.width}" height="${video.smallThumbnail.height}" alt="${videoTitle}" src="${thumbnail}"/></div>
   <figcaption>
-  ${renderInfo(videoTitle,video.channelTitle, false)}
-  ${renderStats(stats, video)}
+  ${renderInfo(videoTitle,video.channelTitle, false, viewMore)}
+  ${renderStats(stats, video, false, viewMore)}
   </figcaption>
 </figure></button>`;
 }
@@ -271,7 +271,7 @@ export class YoutubePlaylist extends LitElement {
       .video-channel {
         font-weight: 600;
         font-size: 0.875rem;
-        color: var(--secondary-text, #b9b8b8);
+        color: var(--text, #fff);
       }
       .stats {
         display: flex;
@@ -659,10 +659,11 @@ export class YoutubePlaylist extends LitElement {
           <div class="mask"><button aria-hidden="${this.viewMore ? "true" : "false"}" @click="${this._onViewMore}" class="view-more" aria-label="Click to load more videos from the playlist">View more</button></div>
           <div aria-hidden="${!this.viewMore ? "true" : "false"}" class="playlist-scroll"><ul aria-hidden="${!this.viewMore ? "true" : "false"}" class="playlist-items">
             ${this.listNodes.map((li, index) => html `${this._renderListItem(li, index)}`)}
-           <li class="bottom-of-list">
+            ${this.viewMore ? html` <li class="bottom-of-list">
            <slot name="more-link"></slot>
            </li>
-          </ul></div>
+          </ul>`: null}
+          </div>
         </div>
       `}
       </div>

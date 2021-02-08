@@ -32,7 +32,7 @@ header {
             min-height: calc(58vh - (var(--site-header) + var(--site-padding)));
         }
         @include up-from(large) {
-            min-height: calc(75vh - (var(--site-header) + var(--site-padding)));
+            min-height: calc(80vh - (var(--site-header) + var(--site-padding)));
         }
         @include up-to-height($height-small) {
             min-height: calc(100vh - (var(--site-header)));

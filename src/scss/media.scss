@@ -103,6 +103,7 @@ youtube-playlist li {
 
   a[slot="more-link"] {
     border-bottom: solid 5px var(--Primary);
+    max-width: 22ch;
     &:hover, &:active {
         border-bottom: solid 5px currentColor;
     }

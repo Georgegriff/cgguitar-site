@@ -21,10 +21,9 @@
             {% include "css/critical.css" %}
         </style>
          <style>
-            {% ImageUrl "/images/start-quote.svg", helpers.quoteStartTemplate %}
-        </style>
-        <style>
-            {% ImageUrl "/images/end-quote.svg", helpers.quoteEndTemplate %}
+            {%- ImageUrl "/images/start-quote.svg", helpers.quoteStartTemplate %}
+
+            {%- ImageUrl "/images/end-quote.svg", helpers.quoteEndTemplate %}
         </style>
 
         {# Add facility for pages to declare an array of critical styles #}
