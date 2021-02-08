@@ -20,8 +20,9 @@ const imageOptimizer = async (src, {alt, ariaHidden, urlOnly, widths = [320, 640
       return sizes[sizes.length - 1].url;
     }
     let placeholderStyle = ''
-    let lowestSrc = stats["jpeg"]?.[0];
-    if(lowestSrc) {
+    const hasJpg = stats["jpeg"]
+    if(hasJpg && hasJpg.length) {
+      let lowestSrc = hasJpg[0];
       const dimensions = await sizeOf(imgPath);
       const placeholder = await sharp(lowestSrc.outputPath)
       .resize({ fit: sharp.fit.inside })
