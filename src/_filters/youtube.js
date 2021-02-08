@@ -1,11 +1,11 @@
 const fetch = require("node-fetch");
 const Cache = require("@11ty/eleventy-cache-assets");
-
+const {imageOptimizer} = require('../../imageopt')
 const apiKey = process.env.YT_API_KEY;
 
 const getPlaylistItem = async (playlistId) => {
     const apiUrl = 'https://www.googleapis.com/youtube/v3/playlistItems';
-    const maxResults = 50;
+    const maxResults = 20;
     const order = 'viewCount';
     const url = `${apiUrl}?key=${apiKey}&part=${encodeURIComponent('snippet,contentDetails')}&type=video%2C%20playlist&maxResults=${maxResults}&playlistId=${playlistId}&order=${order}`;
 
@@ -18,7 +18,7 @@ const getPlaylistItem = async (playlistId) => {
     const videoIds = videos.items.map(({contentDetails}) => contentDetails.videoId);
     const  metaInfo = await fetchMetaInfo(videoIds);
     return {
-        videos: videos.items.map(({snippet, contentDetails}) => {
+        videos: await Promise.all(videos.items.map(async ({snippet, contentDetails}) => {
             const  hqThumbnail =  snippet.thumbnails.maxres || snippet.thumbnails.high || snippet.thumbnails.medium || snippet.thumbnails.default;
             const  smallThumbnail = snippet.thumbnails.medium || snippet.thumbnails.default;
             const defaultThumbnail = snippet.thumbnails.high;
@@ -32,19 +32,27 @@ const getPlaylistItem = async (playlistId) => {
                 }, {});
             };
             return {
-                ...extract(hqThumbnail, 'hqThumbnail'),
-                ...extract(smallThumbnail, 'smallThumbnail'),
-                ...extract(defaultThumbnail, 'defaultThumbnail'),
+                ...extract(await optimize(hqThumbnail), 'hqThumbnail'),
+                ...extract(await optimize(smallThumbnail), 'smallThumbnail'),
+                ...extract(await optimize(defaultThumbnail), 'defaultThumbnail'),
                 channelTitle: snippet.channelTitle,
                 channelId: snippet.channelId,
                 title: snippet.title,
                 id: contentDetails.videoId,
                 ...(metaInfo[contentDetails.videoId] || {}),
             }
-        }),
+        })),
         hasMore: Boolean(videos.nextPageToken)
     }
 };
+
+const optimize = async (image) => {
+    const img = await imageOptimizer(image.url, {urlOnly: true, widths: [image.width]})
+    return {
+        ...image,
+        url: img
+    }
+}
 
 const fetchMetaInfo = async (videoIds) => {
     const part = 'statistics, contentDetails';

@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixins";
+
 youtube-playlist {
     background: var(--Background, #1a1a1a);
     color: var(--Text, #fff);
@@ -78,10 +81,14 @@ youtube-playlist li {
   }
 
   .fallback {
-      max-width: 784px;
+      max-width: 49.4%;
+      @include up-to(medium) {
+        max-width: 100%;
+      }
       margin: 0;
       position: relative;
       height: auto;
+      display: flex;
       a {
           position: absolute;
           top:0;
@@ -92,6 +99,13 @@ youtube-playlist li {
       a:hover, a:focus {
           outline: none;
       }
+  }
+
+  a[slot="more-link"] {
+    border-bottom: solid 5px var(--Primary);
+    &:hover, &:active {
+        border-bottom: solid 5px currentColor;
+    }
   }
 
   .img-btn-wrapper {

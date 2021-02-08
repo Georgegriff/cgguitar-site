@@ -1,10 +1,10 @@
 ---
-title: 'Media'
+title: 'Videos'
 layout: 'layouts/index.njk'
 templateEngineOverride: md,njk
 pageCriticalStyles: ['css/media.css']
 eleventyNavigation:
-  key: Media
+  key: Videos
   order: 4
 pageJs: 'media.js'
 headerClassName: 'header-hero-medium'
@@ -37,7 +37,6 @@ gridContent:
     - text: <a target="_blank" href="INSTA_PLACEHOLDER">Follow me on Instagram</a>
       image: img/instagram.svg
 ---
-
 {%- set GRID_TEXT_PLACEHOLDER = {"YT_PLACEHOLDER": metadata.author.youtube, "INSTA_PLACEHOLDER": metadata.author.instagram} -%}
 {%- include 'partials/grid-content.html' -%}
 {%- include "partials/video-playlists.njk" -%}

@@ -260,12 +260,13 @@ export class YoutubePlaylist extends LitElement {
       }
       .video-aspect {
         padding-top: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
-
-        @supports(aspect-ratio: 16 / 9) {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            padding-top: initial;
-        }
+      }
+      @supports(aspect-ratio: 16 / 9) {
+           .video-aspect {
+              width: 100%;
+              aspect-ratio: 16 / 9;
+              padding-top: initial;
+           }
       }
       .video-channel {
         font-weight: 600;
@@ -658,7 +659,9 @@ export class YoutubePlaylist extends LitElement {
           <div class="mask"><button aria-hidden="${this.viewMore ? "true" : "false"}" @click="${this._onViewMore}" class="view-more" aria-label="Click to load more videos from the playlist">View more</button></div>
           <div aria-hidden="${!this.viewMore ? "true" : "false"}" class="playlist-scroll"><ul aria-hidden="${!this.viewMore ? "true" : "false"}" class="playlist-items">
             ${this.listNodes.map((li, index) => html `${this._renderListItem(li, index)}`)}
-            <slot name="more-link" class="bottom-of-list"></slot>
+           <li class="bottom-of-list">
+           <slot name="more-link"></slot>
+           </li>
           </ul></div>
         </div>
       `}
