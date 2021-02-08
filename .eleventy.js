@@ -84,6 +84,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
+  eleventyConfig.addPassthroughCopy("src/images/meta");
   eleventyConfig.addPassthroughCopy("src/images/manifest");
   //eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
   if (process.env.NODE_ENV === "production") {
