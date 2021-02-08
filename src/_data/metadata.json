@@ -11,5 +11,8 @@
       "facebook": "https://www.facebook.com/CGGuitar",
       "instagram":"https://instagram.com/cg_guitar",
       "youtube": "https://www.youtube.com/channel/UCReQS8UwfrhDRGTowiXqVKg"
+    },
+    "manifest": {
+      "path": "/manifest.json"
     }
 }

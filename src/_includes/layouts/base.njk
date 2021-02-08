@@ -1,3 +1,4 @@
+{% set headerClassName = headerClassName or 'header-hero-full' %}
 {% set inlineJs %}
     {% include assets.getInlinePath("inline-critical.js") %}
 {% endset %}
@@ -19,6 +20,12 @@
         <style>
             {% include "css/critical.css" %}
         </style>
+         <style>
+            {% ImageUrl "/images/start-quote.svg", helpers.quoteStartTemplate %}
+        </style>
+        <style>
+            {% ImageUrl "/images/end-quote.svg", helpers.quoteEndTemplate %}
+        </style>
 
         {# Add facility for pages to declare an array of critical styles #}
         {% if pageCriticalStyles %}
@@ -28,6 +35,13 @@
                 </style>
             {% endfor %}
         {% endif %}
+        {%- if helpers.production -%}
+        <script>
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("/service-worker.js");
+            }
+        </script>
+        {%- endif -%}
     </head>
     {% if not skipLinkAnchor %}
         {% set skipLinkAnchor = "#main-content" %}

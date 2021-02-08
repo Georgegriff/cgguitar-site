@@ -1,17 +1,25 @@
 {%- if gridContent %}
 {%- set items = gridContent.items %}
 {%- set video = gridContent.video %}
-<article class="padded-sm site-padded{%- if gridContent.class %} {{gridContent.class}}{%- endif%}">
+{%- if video %}
+{%- set youtube = {"id": video.id } %}
+{% if video.thumbnail %}
+{%- set videoImage = video.thumbnail | imgmin %}
+{% else %}
+{%- set videoImage = youtube.id | ytImg | imgmin %}
+{% endif %}
+{%- endif %}
+<article class="padded-sm site-padded{%- if gridContent.class %} {{gridContent.class}}{%- endif %}">
     <div class="card-grid grid-start grid-gap grid-columns no-gap">
-        {%- if video -%}
+{%- if video %}
         <section class="video-section">
             {%- if gridContent.title %}
-            <h2 class="section-title">{{gridContent.title}}</h2>
+                <h2 class="section-title">{{gridContent.title}}</h2>
             {%- endif %}
-            {% youtube video.id %}
-            <div class="learn-more" ><a href="/media/">Watch some demonstrations and tutorials.</a></div>
+            {%- include 'partials/youtube.njk' %}
+            <div class="learn-more" ><a href="/videos/">Watch some demonstrations and tutorials.</a></div>
         </section>
-        {%- endif %}
+{%- endif %}
         <section style="width: 100%; height: 100%;">
             <ul class="card-grid online-content icondesc grid-icons no-gap">
                 {%- for item in items %}
@@ -20,7 +28,7 @@
                         <a href="{{item.link}}">
                         {%- endif %}
                         {%- if item.image -%}
-                            {% include item.image -%}
+                            {%- include item.image -%}
                         {%- endif %}
                         {%- if item.text -%}
                             <p>{{helpers.placeholders(item.text, GRID_TEXT_PLACEHOLDER) | safe}}</p>
@@ -31,7 +39,7 @@
                     </li>
                 {%- endfor -%}
             </ul>
-    </section>
+        </section>
     </div>
 </article>
 {%- endif %}

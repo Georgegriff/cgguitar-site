@@ -1,4 +1,23 @@
 const contact = document.querySelector('form[name="contact"]');
+const contactButton = contact.querySelector('button[type="submit"]');
+const originalButtonText = contactButton.innerText;
+const youAreOffline = 'Unavailable: You are currently offline';
+if ('onLine' in navigator){
+    if(!navigator.onLine) {
+        contactButton.disabled = true;
+        contactButton.innerText = youAreOffline;
+    }
+    window.addEventListener('offline', () => {
+        contactButton.disabled = true;
+        contactButton.innerText = youAreOffline;
+    });
+
+    window.addEventListener('online', () => {
+        contactButton.disabled = false;
+        contactButton.innerText = originalButtonText;
+    });
+
+}
 
 const showValidation = (field, formValues, form) => {
     const hasValue = Boolean(formValues.get(field));

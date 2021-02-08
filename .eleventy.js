@@ -1,16 +1,15 @@
 require('dotenv').config()
 const { DateTime, Duration } = require("luxon");
-const { promisify } = require("util");
-const sizeOf = promisify(require("image-size"));
 const fs = require("fs");
-const path = require('path');
-const sharp = require('sharp');
+const pluginPWA = require("eleventy-plugin-pwa");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
 const { minify } = require("terser");
 const {getPlaylists} = require("./src/_filters/youtube");
 const siteMeta = require("./src/_data/metadata.json");
+const htmlmin = require('html-minifier');
+const {imageOptimizer} = require('./imageopt');
 
 module.exports = (eleventyConfig) => {
   /* Markdown Overrides */
@@ -20,51 +19,27 @@ module.exports = (eleventyConfig) => {
     linkify: true,
   });
 
-  const imageOptimizer = async (src, alt, ariaHidden) => {
-    const Image = require("@11ty/eleventy-img");
-    const formats = src.endsWith('svg') ? ["svg"] : ["jpeg", "webp"];
-    const imgPath = src.startsWith('http') ? src : path.join('src', src)
-    let stats = await Image(imgPath, {
-      widths: [320, 640, 960, 1200, 1800, 2400],
-      formats,
-      urlPath: "/images/",
-      outputDir: "./dist/images/",
-    });
-    let placeholderStyle = ''
-    let lowestSrc = stats["jpeg"]?.[0];
-    if(lowestSrc) {
-      const dimensions = await sizeOf(imgPath);
-      const placeholder = await sharp(lowestSrc.outputPath)
-      .resize({ fit: sharp.fit.inside })
-      .blur()
-      .toBuffer();
-       const base64Placeholder = `data:image/png;base64,${placeholder.toString("base64")}`;
-      const containSize = `min(var(--main-width), ${dimensions.width}px) min(calc(var(--main-width) * ${dimensions.height / dimensions.width}), ${dimensions.height}px)`;
-      placeholderStyle = `background-size:cover;background-image:url('${base64Placeholder}');contain-intrinsic-size:${containSize}`
-    }
-   
-    const imgHtml = Image.generateHTML(stats,  {
-      alt,
-      loading: "lazy",
-      decoding: "async",
-      "aria-hidden": ariaHidden ? "true" : "false",
-      style: placeholderStyle
-    }, {
-      whitespaceMode: "inline"
-    })
 
-    return imgHtml;
-  }
 
 
   eleventyConfig.addNunjucksAsyncShortcode("Image", async (src, alt, ariaHidden) => {
     if (!alt) {
       throw new Error(`Missing accessibility description on image on ${src}`);
     }
-    const img = await imageOptimizer(src, alt, ariaHidden)
+    const img = await imageOptimizer(src, {alt, ariaHidden});
 
     return img
   });
+
+  eleventyConfig.addNunjucksAsyncShortcode("ImageUrl", async (src, templateFn) => {
+    const img = await imageOptimizer(src, {urlOnly: true})
+    const val = templateFn ? templateFn(img) : img;
+    return val;
+  });
+
+  eleventyConfig.addFilter('ytImg', (id) => {
+    return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+  })
 
   // Remember old renderer, if overridden, or proxy to default renderer
   const defaultLinkRender =
@@ -109,9 +84,11 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  eleventyConfig.addPassthroughCopy("src/images");
-  eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
+  eleventyConfig.addPassthroughCopy("src/images/meta");
+  eleventyConfig.addPassthroughCopy("src/images/manifest");
+  //eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
   if (process.env.NODE_ENV === "production") {
+    eleventyConfig.addPlugin(pluginPWA);
     eleventyConfig.addPassthroughCopy({"build/scripts": "scripts"});
   }
 
@@ -196,16 +173,46 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksAsyncFilter("fetchYouTubePlaylist", async (playlist, callback) => {
     const data = await getPlaylists([playlist]);
     if(data && data.length) {
-      callback(null, data[0]);
+      return callback(null, data[0]);
     } else {
-      callback(new Error(`No playlist found: ${JSON.stringify(playlist)}`));
+      return callback(new Error(`No playlist found: ${JSON.stringify(playlist)}`));
     }
   })
 
-  const YouTube = require("./src/_includes/components/youtube");
-  eleventyConfig.addShortcode("youtube", (id) => {
-    return YouTube({ id });
+  eleventyConfig.addNunjucksAsyncFilter("imgmin", (src, callback) => {
+      imageOptimizer(src, {urlOnly: true})
+      .then((img) => {
+          return callback(null, img);
+      }).catch((e) => {
+        return callback(e);
+      })
   });
+
+  eleventyConfig.addNunjucksAsyncFilter("ytmax", (src, callback) => {
+    imageOptimizer(src, {urlOnly: true, widths: [1280]})
+    .then((img) => {
+        return callback(null, img);
+    }).catch((e) => {
+      return callback(e);
+    })
+});
+
+
+  if (process.env.NODE_ENV === "production") {
+    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+      // Eleventy 1.0+: use this.inputPath and this.outputPath instead
+      if( outputPath.endsWith(".html") ) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true
+        });
+        return minified;
+      }
+
+      return content;
+    });
+  }
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],

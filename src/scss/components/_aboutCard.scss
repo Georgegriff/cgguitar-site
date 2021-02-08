@@ -62,9 +62,9 @@
             left:-2rem;
             top:-1rem;
             background-color: var(--accent-color, var(--Text));
-            mask-image: url('/images/start-quote.svg');
             mask-size: cover;
-            -webkit-mask-image: url('/images/start-quote.svg');
+            mask-image: var(--quote-image-start);
+            -webkit-mask-image: var(--quote-image-start);
             -webkit-mask-size: cover;
 
 
@@ -79,9 +79,9 @@
             bottom:-0.5rem;
             right:-0.5rem;
             background-color:  var(--accent-color, var(--Text));
-            mask-image: url('/images/end-quote.svg');
             mask-size: cover;
-            -webkit-mask-image: url('/images/end-quote.svg');
+            mask-image: var(--quote-image-end);
+            -webkit-mask-image: var(--quote-image-end);
             -webkit-mask-size: cover;
         }
     }

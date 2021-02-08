@@ -13,7 +13,14 @@
         font-size: 1.5rem;
         padding: 0.7rem 0.9rem;
      }
+
+     &[disabled] {
+         background: var(--Secondary50);
+         opacity: 0.3;
+         cursor: not-allowed;
+     }
 }
+
 
 .cta-primary {
     box-shadow: 0px 3px 15px rgba(0,0,0,0.4);

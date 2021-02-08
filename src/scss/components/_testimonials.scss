@@ -44,12 +44,10 @@
             left:-1rem;
             top:-1rem;
             background-color: var(--accent-color, var(--PrimaryText));
-            mask-image: url('/images/start-quote.svg');
             mask-size: cover;
-            -webkit-mask-image: url('/images/start-quote.svg');
             -webkit-mask-size: cover;
-
-
+            mask-image: var(--quote-image-start);
+            -webkit-mask-image: var(--quote-image-start);
         }
 
         &:after {
@@ -61,10 +59,10 @@
             bottom:-0.5rem;
             right:-1.5rem;
             background-color:  var(--accent-color, var(--PrimaryText));
-            mask-image: url('/images/end-quote.svg');
             mask-size: cover;
-            -webkit-mask-image: url('/images/end-quote.svg');
             -webkit-mask-size: cover;
+            mask-image: var(--quote-image-end);
+            -webkit-mask-image: var(--quote-image-end);
         }
     }
 

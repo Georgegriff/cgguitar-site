@@ -9,13 +9,12 @@
     {% set socialImage = metadata.url + '/' + hero.image.src %}
 {%- endif -%}
 {%- if not socialImage -%}
-  {%- set socialImage = metadata.url + '/images/default-share.jpg' -%} 
+  {%- set socialImage = metadata.url + '/images/meta/default-social.jpeg' -%} 
 {%- endif -%}
 {%- set tagline = description or metadata.description -%}
 <title>{{ pageTitle }}</title>
-<link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
 <link rel="canonical" href="{{ currentUrl }}"/>
-
+<link rel="manifest" href="{{metadata.manifest.path}}">
 <meta name="author" content="{{author or metadata.author.name}}">
 <meta property="og:site_name" content="{{ siteTitle }}"/>
 <meta property="og:title" content="{{ pageTitle }}"/>
@@ -36,4 +35,4 @@
     <meta property="og:description" content="{{ tagline }}"/>
 {% endif %}
 
-<link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/images/meta/favicon.svg" type="image/svg+xml" />
