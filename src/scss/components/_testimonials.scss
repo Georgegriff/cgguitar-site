@@ -25,8 +25,8 @@
         font-size: 1.1rem;
     }
 
-    p.quote {
-        display: inline-block;
+    .quote {
+        display: sblock;
         font-size: 0.85rem;
         position: relative;
         margin-left: 1rem;
@@ -41,7 +41,7 @@
             position: absolute;
             width: 1rem;
             height: 1rem;
-            left:-1rem;
+            left:-2rem;
             top:-1rem;
             background-color: var(--accent-color, var(--PrimaryText));
             mask-size: cover;
@@ -96,12 +96,12 @@
             justify-content: space-between;
        }
        @include up-to(medium) {
-        p.quote {
+        .quote {
             margin-left: 2rem;
         }
        }
        @include up-from(xxlarge) {
-            p.quote {
+            .quote {
                 font-size: 1rem;
             }
         }
@@ -133,7 +133,7 @@
 
 .quote-wrapper {
     padding:2rem;
-    p.quote {
+    .quote {
         margin-left: auto;
         max-width: 100%;
     }

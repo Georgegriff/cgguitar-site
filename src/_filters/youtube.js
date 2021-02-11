@@ -32,9 +32,9 @@ const getPlaylistItem = async (playlistId) => {
                 }, {});
             };
             return {
-                ...extract(await optimize(hqThumbnail), 'hqThumbnail'),
-                ...extract(await optimize(smallThumbnail), 'smallThumbnail'),
-                ...extract(await optimize(defaultThumbnail), 'defaultThumbnail'),
+                ...extract(hqThumbnail, 'hqThumbnail'),
+                ...extract(smallThumbnail, 'smallThumbnail'),
+                ...extract(defaultThumbnail, 'defaultThumbnail'),
                 channelTitle: snippet.channelTitle,
                 channelId: snippet.channelId,
                 title: snippet.title,

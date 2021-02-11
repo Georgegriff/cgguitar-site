@@ -83,7 +83,6 @@
     }
 }
 
-
 .header-hero-medium {
   img {
     opacity: 0.2;
@@ -95,7 +94,7 @@
 
 .header-hero-small {
   img {
-    opacity: 0.2;
+    --hero-opacity:0.2;
     height: 140%;
     right: -5rem;
     top: 0;
@@ -106,5 +105,16 @@
 .hero {
   .description {
     margin-top:1rem;
+  }
+}
+
+.sheets {
+  img {
+    --hero-opacity:0.4;
+    right: -5rem;
+    @include up-to (medium) {
+     right:0;
+     --hero-opacity:0.1;
+    }
   }
 }

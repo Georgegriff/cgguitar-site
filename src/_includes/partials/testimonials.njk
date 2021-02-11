@@ -1,21 +1,22 @@
-{% if testimonials %}
+{%- if collections %}
+
 <article id="students">
 <h2>{{title}}</h2>
 <ul class="testimonials masonry">
-{%- for item in testimonials %}
+{%- for item in collections.testimonials | reverse %}
     <li class="testimonial brick large-img">
         <div class="quote-wrapper">
-        <p class="quote">{{item.text | safe}}</p>
+        <div class="quote">{{item.templateContent | safe}}</div>
         </div>
-        {%- if item.image -%}
-            {%- Image item.image, "CG Guitar student profile picture", true -%}
+        {%- if item.data.image -%}
+            {%- Image item.data.image, "CG Guitar student profile picture", true -%}
             {%- else -%}
             <div class="placeholder-image">
                 {%- include 'img/default-test.svg' %}
             </div>
         {%- endif -%}
         <div class="bottom-section">
-            <p class="author">{{item.name}}</p>
+            <p class="author">{{item.data.name}}</p>
         </div>
     </li>
 {%- endfor %}

@@ -5,7 +5,7 @@ templateEngineOverride: njk,md
 eleventyNavigation:
   key: Testimonials
   order: 3
-headerClassName: 'header-hero-medium'
+headerClassName: 'header-hero-medium sheets'
 hero:
   title: See what my students have to say
   description: "Lessons held on Zoom, for the foreseeable."
@@ -15,7 +15,7 @@ hero:
       link: /contact/
   image:
     src: images/sheets.png
-    alt: "Examples of Sheet music provided to students"
+    alt: "Examples of Sheet music sprovided to students"
 gridContent:
   items:
     - text: My students have found success in both online and in person lessons.
