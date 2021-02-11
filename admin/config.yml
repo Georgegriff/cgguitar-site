@@ -20,6 +20,6 @@ collections:
     folder: src/testimonials
     slug: "{{slug}}/index.md" # Filename template
     fields:
-      - { label: Name, name: name, widget: string, required: true}
-      - { label: Image, name: image, widget: image}
+      - { label: Name, name: name, widget: string}
+      - { label: Image, name: image, widget: image, required: false }
       - {label: "Body", name: "body", widget: "markdown"}
