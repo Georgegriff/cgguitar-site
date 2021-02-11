@@ -85,6 +85,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   eleventyConfig.addPassthroughCopy("src/images/meta");
+  eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("src/images/manifest");
   //eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
   if (process.env.NODE_ENV === "production") {
@@ -160,6 +161,11 @@ module.exports = (eleventyConfig) => {
     return {...args};
   });
 
+
+  eleventyConfig.addFilter("hasOutputPath", (entries) => {
+    return entries.filter(({outputPath}) => !!outputPath)
+  });
+
   eleventyConfig.addFilter("ariatel", (number = '') => {
     return [...number].join(' ')
   });
@@ -198,9 +204,12 @@ module.exports = (eleventyConfig) => {
 });
 
 
-  if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
     eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
       // Eleventy 1.0+: use this.inputPath and this.outputPath instead
+      if(!outputPath) {
+        return content;
+      }
       if( outputPath.endsWith(".html") ) {
         let minified = htmlmin.minify(content, {
           useShortDoctype: true,
@@ -212,7 +221,7 @@ module.exports = (eleventyConfig) => {
 
       return content;
     });
-  }
+}
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
