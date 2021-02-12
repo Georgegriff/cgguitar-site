@@ -1,9 +1,10 @@
 ---
 permalink: /confirm-email/
 eleventyExcludeFromCollections: true
+siteUrl: "{{ .SiteURL }}/confirmation/#confirmation_token={{ .Token }}"
 ---
-<!-- needs changing to be right site -->
-<a href="{{ .SiteURL }}/confirmation/#confirmation_token={{ .Token }}">Please click here to verify your email address.</a>
+<!-- netlify will understand this -->
+<a href="{{siteUrl}}">Please click here to verify your email address.</a>
 
 
 
