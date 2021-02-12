@@ -18,3 +18,6 @@ src/_includes/fonts
 src/_includes/img
 src/_includes/scripts
 src/_includes/manifest.json
+
+# Local Netlify folder
+.netlify
