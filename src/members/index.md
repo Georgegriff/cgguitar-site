@@ -12,3 +12,8 @@ Thats not how that works woops its html page for email!
 
 Need to have html with link to right page :) 
 
+=x-u*~fM35xrZYdj
+
+
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
