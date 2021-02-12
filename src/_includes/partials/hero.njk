@@ -10,8 +10,13 @@
             {% if callToAction %}
                 <div class="call-to-action">
                 {% for item in callToAction %}
-                    {% set type = item.type or "primary" %}
-                        <a class="action-button cta-{{type}}" href="{{item.link}}">{{item.text}}</a>
+                    {%- set type = item.type or "primary" %}
+                    {%- set btnClass = item.class or "" %}
+                    {%- if type === "js" %}
+                        <div {{item.attribute}} class="action-button cta-primary{{btnClass}}"></div>
+                    {% else %}
+                    <a {{item.attribute}} class="action-button cta-{{type}} {{btnClass}}" href="{{item.link}}">{{item.text}}</a>
+                    {%- endif -%}
                 {% endfor %}
                 </div>
             {% endif %}
