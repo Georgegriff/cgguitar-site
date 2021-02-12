@@ -1,6 +1,6 @@
 ---
 layout: layouts/index.njk
-permalink: /verify/
+permalink: /confirmation/
 title: Emailed confirmed
 eleventyExcludeFromCollections: true
 hero:
