@@ -19,7 +19,7 @@ collections:
     files:
       - label: "About page"
         name: "about"
-        file: "src/about.md"
+        file: "src/about/index.md"
         fields:
           - {label: Title, name: title, widget: string}
           - 
