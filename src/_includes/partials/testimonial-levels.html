@@ -1,26 +1,27 @@
-
-{% if levels %}
+{%- set lessons = collections.lessonsInfo[0] %}
+{%- set levels = collections.levels %}
 <article style="--min-column-size:300px" class="no-padding">
     <section class="block-title">
-        <h2>{{levels.title}}</h2>
-        <p class="description">{{levels.description | safe}}</p>
+        <h2>{{lessons.data.title}}</h2>
+        <div class="description">{{lessons.templateContent | safe}}</div>
     </section>
+{%- if levels %}
     <div style="--grid-ish-size: 18em;" class="grid-ish testimonial-levels">
-    {%- for item in levels.items %}
-        <section class="testimonial level level-{{item.title | lower }}">
-            <h3>{{item.title}}</h3>
-            <p class="description">{{item.text}}</p>
+    {%- for item in levels %}
+        <section class="testimonial level level-{{item.data.title | slug }}">
+            <h3>{{item.data.title}}</h3>
+            <p class="description">{{item.data.description}}</p>
             <div class="quote-wrap">
-                {%- if item.image -%}
-                {%- Image item.image, "CG Guitar student profile picture", true -%}
+                {%- if item.data.image -%}
+                {%- Image item.data.image, "CG Guitar student profile picture", true -%}
                 {%- else -%}
                     <div class="placeholder-image">
                         {%- include 'img/default-test.svg' %}
                     </div>
                 {%- endif -%}
-                <p class="quote">{{item.quote}}</p>
+                <p class="quote">{{item.templateContent | safe}}</p>
             </div>
-            {%- if (loop.index == (levels.items.length)) -%}
+            {%- if (loop.index == (levels.length)) -%}
                 <div class="bottom-section">
                     <a aria-label="Read more testimonials" href="/testimonials/#students">Read more</a>
                 </div>
@@ -28,5 +29,5 @@
         </section>
     {%- endfor %}
     </div>
-</article>
 {% endif %}
+</article>

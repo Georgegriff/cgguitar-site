@@ -15,13 +15,13 @@
     padding: var(--site-padding);
     flex-direction: column;
 
-    p.description {
+    .description {
         font-size: 0.875rem;
         margin-bottom: 1rem;
         min-height: 4rem;
     }
 
-    p.author {
+    .author {
         font-size: 1.1rem;
     }
 

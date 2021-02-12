@@ -38,22 +38,6 @@ logosSection:
       text: Effective practice regimes, build a solid foundation of technique and repertoire, with ways to improve your improvisation and composition skills.
     - title: Perform
       text: Whether you’re looking to start guitar lessons for the first time or you need help on how to develop your playing, CG Guitar is the right place for you.
-levels:
-  title: CG Guitar can help, no matter your skill level
-  description: Whether you're looking to start guitar lessons for the first time or you need help and advice on how to develop your playing.<br/> CG Guitar is the right place for you! 1:1, group classes and workshops available.
-  items:
-   - title: Beginner
-     text: Play music from the first lesson! Kick start your guitar playing with enjoyable and frustration free methods.
-     image: /images/testimonials/annep.jpg
-     quote: Charlie’s energy and enthusiasm are infectious, and I have been so impressed by my son’s progress.
-   - title: Intermediate
-     text: Effective practice regimes, coaching to build a solid foundation of technique and repertoire, ways to improve your improvisation and composition skills.
-     image: /images/testimonials/sepett.jpg
-     quote: Charlie has been teaching my son for about 5 years, taking him from complete novice through to playing some pretty impressive rock songs.
-   - title: Advanced
-     text: Appropriate coaching and mentoring to study music/guitar in further education, to prepare for live performances and advice on ways to take your playing to the next level.
-     image: /images/testimonials/johno.jpg
-     quote: Charlie has tailored the lessons to cover advanced topics such as, playing with odd time signatures, music theory and improvisation skills.
 gridContent:
   class: 'video-grid secondary-bg dark-grid'
   title: Start learning today

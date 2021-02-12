@@ -18,21 +18,6 @@ hero:
     - type: primary
       text: Get in touch
       link: /contact/
-gridContent:
-  class: "grid-small contained"
-  items:
-    - text: <a href="#main-content">Watch some of my videos below</a>
-      image: img/video.svg
-    - text: <a target="_blank" href="YT_PLACEHOLDER">Subscribe to my YouTube channel</a>
-      image: img/youtube.svg
-    - text: <a target="_blank" href="INSTA_PLACEHOLDER">Follow me on Instagram</a>
-      image: img/instagram.svg
-logosSection:
-  items:
-    - text: CG Guitar is the creation of guitarist Charlie Griffiths.
-    - text: Playing guitar at the age of 13, he has performed in a number of bands that have allowed him to play a variety of genres.
-    - text: His Music Performance degree and playing in a breadth of genres brings tons of experience, knowledge and advice to share.
-
 aboutSection:
   items:
     - type: card

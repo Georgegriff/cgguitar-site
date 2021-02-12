@@ -14,6 +14,67 @@ media_folder: "src/images" # Media files will be stored in the repo under images
 public_folder: "/images" # Media files will be stored in the repo under images/uploads
 
 collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About page"
+        name: "about"
+        file: "src/about.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - 
+            label: Hero Section
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              -
+                label: Title
+                name: title
+                widget: string
+              -
+                label: Description
+                name: description
+                required: false
+                widget: string
+              -
+                label: Subtitle
+                name: subtitle
+                required: false
+                widget: string
+              -
+                label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Source
+                    name: src
+                    widget: image
+                  - label: Description
+                    name: alt
+                    widget: string
+              - 
+                label: Call To Action
+                required: false
+                name: callToAction
+                max: 2
+                widget: "list"
+                fields:
+                  -
+                    name: type
+                    label: Type
+                    widget: select
+                    default: ["primary"]
+                    options: ["primary", "secondary"]
+                  -
+                    name: text
+                    label: Text
+                    widget: string
+                  -
+                    name: link
+                    label: Link
+                    widget: string
+                
   - name: "testimonial"
     label: "Testimonial"
     create: true # Allow users to create new documents in this collection
