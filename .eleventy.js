@@ -86,6 +86,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPassthroughCopy("src/images/meta");
   eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.addPassthroughCopy("_redirects")
   if (process.env.NODE_ENV !== "production") {
     eleventyConfig.addPassthroughCopy({"admin": "."});
   }
