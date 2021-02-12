@@ -2,8 +2,8 @@
 permalink: /confirm-email/
 eleventyExcludeFromCollections: true
 ---
-
-<a href="/confirmation/">Please click here to verify your email address.</a>
+<!-- needs changing to be right site -->
+<a href="https://cgguitar.netlify.app/confirmation/">Please click here to verify your email address.</a>
 
 
 
