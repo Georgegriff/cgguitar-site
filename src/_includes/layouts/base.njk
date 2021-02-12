@@ -48,10 +48,8 @@
     <body>
         <div class="wrapper">
             <a class="skip-link action-button" href="{{skipLinkAnchor}}">Skip to content</a>
-            {% include 'partials/nav.njk' %}
-            <header {% if headerClassName %} class="{{headerClassName}}" {% endif %}>
-                {% include 'partials/hero.njk' %}
-            </header>
+            {%- include 'partials/nav.njk' %}
+            {%- include 'partials/header.njk' %}
             <main id="main-content" tabindex="-1" {% if mainClass %}class="{{mainClass}}"{% endif %}>
                 {% block content %}{% endblock %}
             </main>

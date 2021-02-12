@@ -7,9 +7,9 @@
             {% if hero.subtitle %}
                 <p class="subtitle">{{hero.subtitle}}</p>
             {%endif %}
-            {% if callToAction %}
+            {% if hero.callToAction %}
                 <div class="call-to-action">
-                {% for item in callToAction %}
+                {% for item in hero.callToAction %}
                     {% set type = item.type or "primary" %}
                         <a class="action-button cta-{{type}}" href="{{item.link}}">{{item.text}}</a>
                 {% endfor %}
@@ -20,10 +20,10 @@
             {% endif %}
         </div>
         {%- Image image.src, image.alt -%}
-        <div class="hero-scroll-down">
+        {# <div class="hero-scroll-down">
             <a aria-label="Scroll to learn more" href="#main-content">
                 {% include 'img/chevron_down.svg' %}
             </a>
-        </div>
+        </div> #}
     </div>
 {% endif %}
