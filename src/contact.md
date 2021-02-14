@@ -18,11 +18,11 @@ gridContent:
   class: "grid-small contained small-list"
   items:
     - text: <a href="#main-content">Fill out the contact form below</a>
-      image: img/edit.svg
+      image: images/edit.svg
     - text: <a href="tel:+447861538564"aria-label="or call telephone number, PHONE_PLACEHOLDER"><b>or</b> call +447861538564</a>
-      image: img/phone.svg
+      image: images/phone.svg
     - text: <a target="_top" href="mailto:EMAIL_PLACEHOLDER"><b>or</b> email EMAIL_PLACEHOLDER</a>
-      image: img/email.svg
+      image: images/email.svg
 footer:
   callToAction: false
 ---

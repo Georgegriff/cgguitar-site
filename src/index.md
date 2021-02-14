@@ -43,13 +43,13 @@ gridContent:
   title: Start learning today
   items:
     - text: My students have found success in both online and in person lessons.
-      image: img/student.svg
+      image: images/student.svg
     - text: Tailored individual lessons for every students needs.
-      image: img/note.svg
+      image: images/note.svg
     - text: I provide extra value though free online demonstrations and tutorials.
-      image: img/video.svg
+      image: images/video.svg
     - text: Many of my students have provided testimonials.
-      image: img/person.svg
+      image: images/person.svg
   video:
     id: BWN45DJCCoQ
     channel: UCReQS8UwfrhDRGTowiXqVKg
