@@ -3,6 +3,9 @@
     flex-wrap: wrap;
     flex-direction: row-reverse;
     background: var(--Background);
+    ul {
+        margin:0.5rem 0;
+    }
     h2 {
         margin-bottom: var(--site-padding);
     }

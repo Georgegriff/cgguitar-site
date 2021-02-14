@@ -67,11 +67,15 @@ aboutSection:
         - CG Guitar is the creation of guitarist Charlie Griffiths.
         - Playing guitar at the age of 13, since then he has performed in a number of bands that have required him to play a variety of genres.
         - Playing in a breadth of genres, brings tons of experience, knowledge and advice to share.
-
+components:
+  - type: card
+    name: home-about-card
 ---
 
 {% include 'partials/logos-section.html' %}
 {% include 'partials/grid-content.html' %}
 {% include 'partials/testimonial-levels.html' %}
+{%- include 'partials/components.njk' -%}
+
 
 

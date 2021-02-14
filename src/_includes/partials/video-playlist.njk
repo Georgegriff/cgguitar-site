@@ -1,8 +1,9 @@
 {%- if playlist -%}
  {%- set firstVideo = playlist.videos[0] -%}
+ {%- set description = playlist.description or (playlist.templateContent | safe) %}
    <youtube-playlist id="{{playlist.title | slug }}">
         <h2 slot="heading">{{playlist.title | safe}}</h2>
-        <p slot="description">{{playlist.description | safe}}</p>
+        <p slot="description">{{description}}</p>
          <div class="fallback" slot="fallback">
             <div class="img-btn-wrapper">
                 <img decoding="async" loading="lazy" width="{{firstVideo.hqThumbnailWidth}}" height="{{firstVideo.hqThumbnaillWdith}}" src="{{firstVideo.hqThumbnailUrl}}" />

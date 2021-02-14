@@ -1,13 +1,8 @@
-{%- if collections %}
-
 <article id="students">
-<h2>{{title}}</h2>
-<ul class="testimonials masonry">
-{%- for testimonial in collections.testimonials | reverse %}
-    {%- set testimonialData = testimonial.data %}
-    {%- set testimonialContent = testimonial.templateContent %}
-    {%- include 'partials/testimonial.njk' %}
-{%- endfor %}
-</ul>
+    <h2>{{title}}</h2>
+    <ul class="testimonials masonry">
+    {%- asyncEach testimonial in collections.testimonial | reverse %}
+        {%- include "partials/components/testimonial.njk" %}
+    {%- endeach %}
+    </ul>
 </article>
-{% endif %}

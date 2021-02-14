@@ -19,9 +19,6 @@ module.exports = (eleventyConfig) => {
     linkify: true,
   });
 
-
-
-
   eleventyConfig.addNunjucksAsyncShortcode("Image", async (src, alt, ariaHidden) => {
     if (!alt) {
       throw new Error(`Missing accessibility description on image on ${src}`);
@@ -84,7 +81,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  eleventyConfig.addPassthroughCopy({"src/images": "admin/images"});
+  eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("admin");
   // cms css
   eleventyConfig.addPassthroughCopy({"src/_includes/css": "admin/css"});
@@ -109,10 +106,10 @@ module.exports = (eleventyConfig) => {
   });
 let componentCollectionObj;
 eleventyConfig.addCollection('components', (collection) => {
-  const components = collection.getFilteredByGlob("./src/components/**/*.md");
+  const components = collection.getFilteredByGlob(["./src/components/**/*.md", "./src/testimonials/**/*.md", "./src/playlists/**/*.md"]);
   componentCollectionObj =  components.reduce((componentsCollection, current) => {
       current.outputPath = false;
-      componentsCollection[current.fileSlug] = current;
+      componentsCollection[current.data.name || current.fileSlug] = current;
       return componentsCollection
   }, {})
   return componentCollectionObj;
@@ -172,7 +169,6 @@ eleventyConfig.addCollection('components', (collection) => {
   eleventyConfig.addFilter("debugger", (...args) => {
     //tip!
     console.log(...args);
-    debugger;
     return {...args};
   });
 
@@ -239,6 +235,7 @@ if (process.env.NODE_ENV === "production") {
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
+    markdownTemplateEngine: "njk",
     dir: {
       input: "src",
       output: "dist",

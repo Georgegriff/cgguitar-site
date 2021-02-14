@@ -103,6 +103,17 @@ collections:
                     search_fields: ["label"]
                     value_field: "name"
                     display_fields: ["label"]
+              - label: 'Playlist'
+                widget: 'object'
+                name: 'playlist'
+                summary: 'playlist: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "playlist"
+                    search_fields: ["title"]
+                    value_field: "name"
+                    display_fields: ["title"]
               - label: 'Testimonial'
                 widget: 'object'
                 name: 'testimonial'
@@ -115,13 +126,14 @@ collections:
                     value_field: "name"
                     display_fields: ["name"]
   - name: "card"
-    label: "Cards"
+    label: "Card"
     folder: src/components/cards
-    slug: "{{name}}.md"
+    slug: "{{name}}"
+    create: true
     fields:
-      - { label: Label, name: label, widget: string}
+      - { required: false, label: Label, name: label, widget: string}
+      - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
       - { label: Type, name: type, widget: hidden, default: 'card'}
-      - { label: Name, name: name, widget: string}
       - { label: Extends, name: extends, widget: relation, required: false,
               collapsed: false,
               multiple: false,
@@ -129,6 +141,7 @@ collections:
               search_fields: ["label"],
               value_field: "name",
               display_fields: ["label"],
+              hint: "Pull in fields from another Card"
         }
       - { required: false, label: Heading, name: heading, widget: string}
       - { required: false, label: Image position, name: direction, widget: 'select', default: 'normal', options: ["normal", "reverse"] }
@@ -164,22 +177,32 @@ collections:
         ]
       }
   - name: "quote"
-    label: "Quotes"
+    label: "Quote"
     folder: src/components/quote
-    slug: "{{name}}.md"
+    slug: "{{name}}"
     create: true
     fields:
       - { label: Label, name: label, widget: string}
       - { label: Type, name: type, widget: hidden, default: 'quote'}
-      - { label: Name, name: name, widget: string}
+      - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
       - { label: Body, name: body, widget: markdown}
   - name: "testimonial"
-    label: "Testimonials"
+    label: "Testimonial"
     create: true # Allow users to create new documents in this collection
     folder: src/testimonials
-    slug: "{{name}}.md" # Filename template
+    slug: "{{name}}" # Filename template
     fields:
-      - { label: Name, name: name, widget: string}
+      - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
       - { label: Date, name: date, widget: date}
       - { label: Image, name: image, widget: image, required: false }
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "playlist"
+    label: "Playlist"
+    folder: src/playlists
+    slug: "{{name}}"
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string}
+      - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
+      - { label: Playlist ID, name: id, widget: string}
+      - { label: Description, name: description, widget: markdown, required: false}

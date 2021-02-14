@@ -1,5 +1,5 @@
 ---
-name: Jamie Juniper (Pam’s son, age 8)
+name: Jamie Juniper (age 8)
 
 ---
 

@@ -1,0 +1,3 @@
+{%- set playlistItem = component.data or playlist.data -%}
+{%- set playlist = playlistItem | fetchYouTubePlaylist -%}
+{%- include 'partials/video-playlist.njk' -%}

@@ -37,7 +37,7 @@ module.exports = {
     return `:root { --quote-image-end: url(${url});}`;
   },
   production: process.env.NODE_ENV === "production",
-  mergeComponent: (componentOne, componentTwo) => {
+  mergeComponent(componentOne, componentTwo) {
     componentOne.templateContent =`${componentTwo.templateContent}${componentOne.templateContent}`
     componentOne.data =  {
       ...componentTwo.data,
@@ -57,5 +57,22 @@ module.exports = {
       return `${link}#${input.component}`;
     }
     return link
+  },
+  filterComponents(components, collection) {
+    return components.map(({name}) => {
+      let component = collection[name];
+      if(!component) {
+        throw new Error(`Component: ${name} not found in collection`)
+      }
+      if(component.data.extends) {
+        component = this.mergeComponent(component, collection[component.data.extends])
+      }
+      const type = component.data.type || (component.data.tags && component.data.tags[0]);
+      if(!type) {
+        throw new Error(`Type not found for: ${name} make collection or add type`)
+      }
+      component.componentPath = `partials/components/${type}.njk`
+      return component;
+    });
   }
 };

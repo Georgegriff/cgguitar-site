@@ -1,16 +1,16 @@
 import { NunjucksComponent } from "./NunjucksComponent.js";
 
-const getComponent = (type, {data, getAsset, fieldsMetaData}) => {
+const getComponent = (type, {data, getAsset, fieldsMetaData, ...passedProps} = {}) => {
   let body = '';
   if(data) {
     const {extends: hasExtends } = data.toJSON();
-    body = data.getIn(['body']) || ''
+    body = data.getIn([passedProps.bodyField || 'body']) || ''
     if(hasExtends) {
         // page vs in component
         const dataExt = fieldsMetaData.getIn(['components', 'name', type, hasExtends]) 
         || fieldsMetaData.getIn(['extends', type, hasExtends]);
         if(dataExt) {
-          const extBody = dataExt.getIn(['body']) || '';
+          const extBody = dataExt.getIn([passedProps.bodyField || 'body']) || '';
           data = dataExt.merge(data);
           if(extBody || body) {
             body =`${extBody}${body}`
@@ -26,32 +26,26 @@ const getComponent = (type, {data, getAsset, fieldsMetaData}) => {
     body,
     name,
     data: dataJson,
-    type
+    type,
+    ...passedProps
   }
   if (image) {
     const imageSrc = getAsset(image);
     props.data.image.src = imageSrc;
   }
-  let componentType = type;
-  // switch(type) {
-  // }
-  return NunjucksComponent({
-    data: dataJson,
-    body,
-    type: componentType
-  });
+  return NunjucksComponent(props);
 }
 
-export const Component = ({type}) => (props) => {
+export const Component = (passedProps = {}) => (props) => {
   const {entry} = props;
   return ComponentPreview({
-    data: entry.getIn(['data']),
-    type,
+    data: props.data || entry.getIn(['data']),
+    ...passedProps,
     ...props
   })
 };
 
-export const ComponentPreview = (props) => {
+const ComponentPreview = (props) => {
   const type = props.type;
   return getComponent(type, props)
 };

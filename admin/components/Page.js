@@ -1,4 +1,3 @@
-import {ComponentPreview} from "./Component.js"
 import {HeaderPreview} from './Header.js';
 
 export const Page = (props) => {
@@ -14,16 +13,19 @@ export const Page = (props) => {
             if(!data) {
                 return null;
             }
-            return ComponentPreview({
+            return CMS.getPreviewTemplate(type)({
                 data,
                 key: `${data.getIn(['name'])}-${index}`,
                 getAsset: props.getAsset,
                 fieldsMetaData: props.fieldsMetaData,
-                type
+                type,
+                ...props,
+                // override
+                parentComponent: 'section',
             })
         })
     }
-    const children =previewComponent || [];
+    const children = previewComponent || [];
     const main = h('main', {}, children)
     return h('div', {},  HeaderPreview(props), main)
 };

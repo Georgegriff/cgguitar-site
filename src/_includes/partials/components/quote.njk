@@ -1,5 +1,6 @@
-{%- if componentContent %}
-<div id="{{componentInfo.name}}" class="quote-card">
-    <blockquote>{{componentContent | safe}}</blockquote>
+{%- set quote = quote or component %}
+{%- if quote %}
+<div id="{{quote.data.name | slug }}" class="quote-card">
+    <blockquote>{{quote.templateContent | safe}}</blockquote>
 </div>
 {%- endif %}
