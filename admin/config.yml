@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: Georgegriff/cgguitar-site # Path to your GitHub repository
+  branch: main
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
