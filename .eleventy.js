@@ -19,9 +19,6 @@ module.exports = (eleventyConfig) => {
     linkify: true,
   });
 
-
-
-
   eleventyConfig.addNunjucksAsyncShortcode("Image", async (src, alt, ariaHidden) => {
     if (!alt) {
       throw new Error(`Missing accessibility description on image on ${src}`);
@@ -84,11 +81,13 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  eleventyConfig.addPassthroughCopy("src/images/meta");
+  eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("admin");
-  if (process.env.NODE_ENV !== "production") {
-    eleventyConfig.addPassthroughCopy({"admin": "."});
-  }
+  // cms css
+  eleventyConfig.addPassthroughCopy({"src/_includes/css": "admin/css"});
+  eleventyConfig.addPassthroughCopy({"src/_includes/partials": "admin/partials"});
+
+
   eleventyConfig.addPassthroughCopy("src/images/manifest");
   //eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
   if (process.env.NODE_ENV === "production") {
@@ -105,6 +104,16 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });
+let componentCollectionObj;
+eleventyConfig.addCollection('components', (collection) => {
+  const components = collection.getFilteredByGlob(["./src/components/**/*.md", "./src/testimonials/**/*.md", "./src/playlists/**/*.md"]);
+  componentCollectionObj =  components.reduce((componentsCollection, current) => {
+      current.outputPath = false;
+      componentsCollection[current.data.name || current.fileSlug] = current;
+      return componentsCollection
+  }, {})
+  return componentCollectionObj;
+})
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
@@ -160,7 +169,6 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter("debugger", (...args) => {
     //tip!
     console.log(...args);
-    debugger;
     return {...args};
   });
 
@@ -206,7 +214,6 @@ module.exports = (eleventyConfig) => {
     })
 });
 
-
 if (process.env.NODE_ENV === "production") {
     eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
       // Eleventy 1.0+: use this.inputPath and this.outputPath instead
@@ -228,6 +235,7 @@ if (process.env.NODE_ENV === "production") {
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
+    markdownTemplateEngine: "njk",
     dir: {
       input: "src",
       output: "dist",

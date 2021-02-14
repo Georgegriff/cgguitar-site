@@ -25,29 +25,29 @@ module.exports = {
   links: [
     {
       text: "Facebook",
-      icon: "img/facebook.svg",
+      icon: "images/facebook.svg",
       url:  siteMeta.author.facebook
     },
     {
       text: "YouTube",
-      icon: "img/youtube.svg",
+      icon: "images/youtube.svg",
       url:  siteMeta.author.youtube
     },
     {
       text: "Instagram",
-      icon: "img/instagram.svg",
+      icon: "images/instagram.svg",
       url:  siteMeta.author.instagram
     },
     {
       text: "Twitter",
-      icon: "img/twitter.svg",
+      icon: "images/twitter.svg",
       url:  siteMeta.author.twitter
     }
   ],
   genericShare,
   sharing: [
     {
-      icon: "img/twitter.svg",
+      icon: "images/twitter.svg",
       text: "Share to Twitter",
       url(title, tags = [], page) {
         const twitterUrl = "https://twitter.com/intent/tweet?text=";

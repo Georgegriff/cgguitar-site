@@ -1,0 +1,6 @@
+{%- set filteredComoponents = helpers.filterComponents(components, collections.components) %}
+{%- asyncEach component in filteredComoponents -%}
+<section>
+    {%- include component.componentPath %}
+</section>
+{%- endeach -%}

@@ -1,6 +1,6 @@
 {%- if playlists %}
-    {%- for playlist in playlists | fetchYouTubePlaylists %}
+    {%- asyncEach playlist in playlists | fetchYouTubePlaylists %}
     {%- include 'partials/video-playlist.njk' %}
-    {%- endfor %}
+    {%- endeach %}
 {%- endif %}
 

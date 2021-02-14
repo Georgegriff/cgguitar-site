@@ -1,25 +1,8 @@
-{%- if collections %}
-
 <article id="students">
-<h2>{{title}}</h2>
-<ul class="testimonials masonry">
-{%- for item in collections.testimonials | reverse %}
-    <li class="testimonial brick large-img">
-        <div class="quote-wrapper">
-        <div class="quote">{{item.templateContent | safe}}</div>
-        </div>
-        {%- if item.data.image -%}
-            {%- Image item.data.image, "CG Guitar student profile picture", true -%}
-            {%- else -%}
-            <div class="placeholder-image">
-                {%- include 'img/default-test.svg' %}
-            </div>
-        {%- endif -%}
-        <div class="bottom-section">
-            <p class="author">{{item.data.name}}</p>
-        </div>
-    </li>
-{%- endfor %}
-</ul>
+    <h2>{{title}}</h2>
+    <ul class="testimonials masonry">
+    {%- asyncEach testimonial in collections.testimonial | reverse %}
+        {%- include "partials/components/testimonial.njk" %}
+    {%- endeach %}
+    </ul>
 </article>
-{% endif %}

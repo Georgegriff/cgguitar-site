@@ -1,0 +1,6 @@
+{%- set quote = quote or component %}
+{%- if quote %}
+<div id="{{quote.data.name | slug }}" class="quote-card">
+    <blockquote>{{quote.templateContent | safe}}</blockquote>
+</div>
+{%- endif %}

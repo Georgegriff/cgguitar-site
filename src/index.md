@@ -43,13 +43,13 @@ gridContent:
   title: Start learning today
   items:
     - text: My students have found success in both online and in person lessons.
-      image: img/student.svg
+      image: images/student.svg
     - text: Tailored individual lessons for every students needs.
-      image: img/note.svg
+      image: images/note.svg
     - text: I provide extra value though free online demonstrations and tutorials.
-      image: img/video.svg
+      image: images/video.svg
     - text: Many of my students have provided testimonials.
-      image: img/person.svg
+      image: images/person.svg
   video:
     id: BWN45DJCCoQ
     channel: UCReQS8UwfrhDRGTowiXqVKg
@@ -58,7 +58,7 @@ aboutSection:
     - type: card
       title: Who is CG Guitar?
       link:
-        url: '/about/#a-little-bit-more'
+        url: '/about/#quote-about'
         text: Learn more
       image:
         src: '/images/about-alt.jpg'
@@ -67,12 +67,15 @@ aboutSection:
         - CG Guitar is the creation of guitarist Charlie Griffiths.
         - Playing guitar at the age of 13, since then he has performed in a number of bands that have required him to play a variety of genres.
         - Playing in a breadth of genres, brings tons of experience, knowledge and advice to share.
-
+components:
+  - type: card
+    name: home-about-card
 ---
 
 {% include 'partials/logos-section.html' %}
 {% include 'partials/grid-content.html' %}
 {% include 'partials/testimonial-levels.html' %}
-{% include 'partials/about-article.njk' %}
+{%- include 'partials/components.njk' -%}
+
 
 

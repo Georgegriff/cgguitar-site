@@ -1,6 +1,6 @@
 <div class="nav">
     <a class="site-logo" aria-label="Head to home" href="/">
-    {% include "img/cg-logo.svg" %}
+    {% include "images/cg-logo.svg" %}
     {% set maxLinks= 4 %}
     <span>CG Guitar<span>
     </a>
@@ -11,7 +11,7 @@
                     <a href="{{ entry.url | url }}">{{ entry.title }}</a>
                 </li>
                 {%- endfor %}
-                <li data-more-trigger><a class="more-link" aria-label="More" href="#more">{% include 'img/chevron_down.svg' %}</a></li>
+                <li data-more-trigger><a class="more-link" aria-label="More" href="#more">{% include 'images/chevron_down.svg' %}</a></li>
                 <li>
                 <burger-menu max-width="800">
                             <ul class="burger-list">

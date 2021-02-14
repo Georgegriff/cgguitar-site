@@ -31,11 +31,11 @@ gridContent:
   class: "grid-small contained small-list"
   items:
     - text: <a href="#main-content">Watch some of my videos below</a>
-      image: img/video.svg
+      image: images/video.svg
     - text: <a target="_blank" href="YT_PLACEHOLDER">Subscribe to my YouTube channel</a>
-      image: img/youtube.svg
+      image: images/youtube.svg
     - text: <a target="_blank" href="INSTA_PLACEHOLDER">Follow me on Instagram</a>
-      image: img/instagram.svg
+      image: images/instagram.svg
 ---
 {%- set GRID_TEXT_PLACEHOLDER = {"YT_PLACEHOLDER": metadata.author.youtube, "INSTA_PLACEHOLDER": metadata.author.instagram} -%}
 {%- include 'partials/grid-content.html' -%}

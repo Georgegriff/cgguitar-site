@@ -9,7 +9,7 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 publish_mode: editorial_workflow
-
+local_backend: true
 media_folder: "src/images" # Media files will be stored in the repo under images/uploads
 public_folder: "/images" # Media files will be stored in the repo under images/uploads
 
@@ -74,13 +74,135 @@ collections:
                     name: link
                     label: Link
                     widget: string
-                
+          -
+            label: "Sections"
+            name: "components"
+            widget: "list"
+            allow_add: true
+            collapsed: true
+            types:
+              - label: 'Card'
+                widget: 'object'
+                name: 'card'
+                summary: 'card: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "card"
+                    search_fields: ["label"]
+                    value_field: "name"
+                    display_fields: ["label"]
+              - label: 'Quote'
+                widget: 'object'
+                name: 'quote'
+                summary: 'quote: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "quote"
+                    search_fields: ["label"]
+                    value_field: "name"
+                    display_fields: ["label"]
+              - label: 'Playlist'
+                widget: 'object'
+                name: 'playlist'
+                summary: 'playlist: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "playlist"
+                    search_fields: ["title"]
+                    value_field: "name"
+                    display_fields: ["title"]
+              - label: 'Testimonial'
+                widget: 'object'
+                name: 'testimonial'
+                summary: 'testimonial: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "testimonial"
+                    search_fields: ["name"]
+                    value_field: "name"
+                    display_fields: ["name"]
+  - name: "card"
+    label: "Card"
+    folder: src/components/cards
+    slug: "{{name}}"
+    create: true
+    fields:
+      - { required: false, label: Label, name: label, widget: string}
+      - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
+      - { label: Type, name: type, widget: hidden, default: 'card'}
+      - { label: Extends, name: extends, widget: relation, required: false,
+              collapsed: false,
+              multiple: false,
+              collection: "card",
+              search_fields: ["label"],
+              value_field: "name",
+              display_fields: ["label"],
+              hint: "Pull in fields from another Card"
+        }
+      - { required: false, label: Heading, name: heading, widget: string}
+      - { required: false, label: Image position, name: direction, widget: 'select', default: 'normal', options: ["normal", "reverse"] }
+      - { required: false, label: Body, name: "body", widget: 'markdown' }
+      - { required: false, "label": "Image", "name": "image", "widget": "object", "fields": [
+        {
+          required: false,
+          "label": "Source",
+          "name": "src",
+          "widget": "image"
+        },
+        {
+          required: false,
+          "label": "Description",
+          "name": "alt",
+          "widget": "string"
+        }
+        ]
+      }
+      - { required: false, "label": "Link", "name": "link", "widget": "object", "fields": [
+        {
+          "label": "Url",
+          "name": "url",
+          "widget": "string",
+          required: false
+        },
+        {
+          "label": "Text",
+          "name": "text",
+          "widget": "string",
+          required: false
+        }
+        ]
+      }
+  - name: "quote"
+    label: "Quote"
+    folder: src/components/quote
+    slug: "{{name}}"
+    create: true
+    fields:
+      - { label: Label, name: label, widget: string}
+      - { label: Type, name: type, widget: hidden, default: 'quote'}
+      - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
+      - { label: Body, name: body, widget: markdown}
   - name: "testimonial"
     label: "Testimonial"
     create: true # Allow users to create new documents in this collection
     folder: src/testimonials
-    slug: "{{name}}.md" # Filename template
+    slug: "{{name}}" # Filename template
     fields:
-      - { label: Name, name: name, widget: string}
+      - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
+      - { label: Date, name: date, widget: date}
       - { label: Image, name: image, widget: image, required: false }
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "playlist"
+    label: "Playlist"
+    folder: src/playlists
+    slug: "{{name}}"
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string}
+      - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
+      - { label: Playlist ID, name: id, widget: string}
+      - { label: Description, name: description, widget: markdown, required: false}

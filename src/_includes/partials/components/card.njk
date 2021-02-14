@@ -1,0 +1,13 @@
+{%- set card = card or component %}
+{%- if card %}
+<figure id="{{card.data.name | slug}}" class="about-card card-{{card.data.direction}}">
+    <div class="content">
+        <h2>{{card.data.heading}}</h2>
+        <div>{{card.templateContent | safe}}</div>
+        {%- if card.data.link -%}
+        <div class="learn-more flex-end flex-push" ><a href="{{helpers.componentLink(card.data.link)}}">{{card.data.link.text}}</a></div>
+        {%- endif -%}
+    </div>
+    {%- if card.data.image -%}{%- Image card.data.image.src, card.data.image.alt -%}{%- endif -%}
+</figure>
+{%- endif %}
