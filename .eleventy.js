@@ -81,7 +81,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy({"src/images": "admin/images"});
   eleventyConfig.addPassthroughCopy("admin");
   // cms css
   eleventyConfig.addPassthroughCopy({"src/_includes/css": "admin/css"});
