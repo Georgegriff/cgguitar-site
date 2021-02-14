@@ -14,6 +14,11 @@ CMS.registerPreviewTemplate("card", Component({
     type: "card"
 }));
 
+
+CMS.registerPreviewTemplate("quote", Component({
+    type: "quote"
+}));
+
 CMS.registerPreviewTemplate("testimonial", Component({
     type: "testimonial"
 }));

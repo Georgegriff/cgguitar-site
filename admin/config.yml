@@ -79,26 +79,48 @@ collections:
             name: "components"
             widget: "list"
             allow_add: true
-            collapsed: false
+            collapsed: true
             types:
               - label: 'Card'
                 widget: 'object'
                 name: 'card'
+                summary: 'card: {{fields.name}}'
                 fields:
                   - widget: "relation"
-                    collapsed: false
-                    multiple: false
-                    name: 'component'
-                    collection: "components"
+                    name: 'name'
+                    collection: "card"
                     search_fields: ["label"]
                     value_field: "name"
                     display_fields: ["label"]
+              - label: 'Quote'
+                widget: 'object'
+                name: 'quote'
+                summary: 'quote: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "quote"
+                    search_fields: ["label"]
+                    value_field: "name"
+                    display_fields: ["label"]
+              - label: 'Testimonial'
+                widget: 'object'
+                name: 'testimonial'
+                summary: 'testimonial: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "testimonial"
+                    search_fields: ["name"]
+                    value_field: "name"
+                    display_fields: ["name"]
   - name: "card"
     label: "Cards"
     folder: src/components/cards
     slug: "{{name}}.md"
     fields:
       - { label: Label, name: label, widget: string}
+      - { label: Type, name: type, widget: hidden, default: 'card'}
       - { label: Name, name: name, widget: string}
       - { label: Extends, name: extends, widget: relation, required: false,
               collapsed: false,
@@ -141,6 +163,16 @@ collections:
         }
         ]
       }
+  - name: "quote"
+    label: "Quotes"
+    folder: src/components/quote
+    slug: "{{name}}.md"
+    create: true
+    fields:
+      - { label: Label, name: label, widget: string}
+      - { label: Type, name: type, widget: hidden, default: 'quote'}
+      - { label: Name, name: name, widget: string}
+      - { label: Body, name: body, widget: markdown}
   - name: "testimonial"
     label: "Testimonials"
     create: true # Allow users to create new documents in this collection

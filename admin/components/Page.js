@@ -9,8 +9,8 @@ export const Page = (props) => {
     const components = data.toJSON();
     let previewComponent;
     if(components) {
-        previewComponent = components.map((component, index) => {
-            let data = props.fieldsMetaData.getIn(['components', 'component', 'components', component]);
+        previewComponent = components.map(({name, type}, index) => {
+            let data = props.fieldsMetaData.getIn(['components', 'name', type, name]);
             if(!data) {
                 return null;
             }
@@ -19,6 +19,7 @@ export const Page = (props) => {
                 key: `${data.getIn(['name'])}-${index}`,
                 getAsset: props.getAsset,
                 fieldsMetaData: props.fieldsMetaData,
+                type
             })
         })
     }

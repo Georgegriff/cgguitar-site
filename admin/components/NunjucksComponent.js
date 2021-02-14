@@ -3,9 +3,10 @@ export const NunjucksComponent = ({data, body, type, name}) => {
     let html;
     try {
         html = window.env.render(`partials/components/${type}.njk`, {
+            // TODO standardize so works out the box with collections
             componentData: data,
             componentContent: body,
-            componentName: name
+            componentInfo: {name}
         });
     } catch(e) {
         console.error(e);

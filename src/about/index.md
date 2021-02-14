@@ -20,13 +20,13 @@ hero:
       link: /contact/
 components:
   - type: card
-    component: who-is-cg-guitar
+    name: who-is-cg-guitar
+  - type: quote
+    name: quote-about
   - type: card
-    component: quote-about
+    name: a-little-bit-more
   - type: card
-    component: a-little-bit-more
-  - type: card
-    component: home-about-card
+    name: home-about-card
 aboutSection:
   items:
     - type: playlist

@@ -7,7 +7,7 @@ const getComponent = (type, {data, getAsset, fieldsMetaData}) => {
     body = data.getIn(['body']) || ''
     if(hasExtends) {
         // page vs in component
-        const dataExt = fieldsMetaData.getIn([type, 'component',type, hasExtends]) 
+        const dataExt = fieldsMetaData.getIn(['components', 'name', type, hasExtends]) 
         || fieldsMetaData.getIn(['extends', type, hasExtends]);
         if(dataExt) {
           const extBody = dataExt.getIn(['body']) || '';
@@ -52,7 +52,6 @@ export const Component = ({type}) => (props) => {
 };
 
 export const ComponentPreview = (props) => {
-  const {data} = props;
-  const type = props.type || data.getIn(['type']);
+  const type = props.type;
   return getComponent(type, props)
 };
