@@ -84,11 +84,13 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  eleventyConfig.addPassthroughCopy("src/images/meta");
+  eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("admin");
-  if (process.env.NODE_ENV !== "production") {
-    eleventyConfig.addPassthroughCopy({"admin": "."});
-  }
+  // cms css
+  eleventyConfig.addPassthroughCopy({"src/_includes/css": "admin/css"});
+  eleventyConfig.addPassthroughCopy({"src/_includes/partials": "admin/partials"});
+
+
   eleventyConfig.addPassthroughCopy("src/images/manifest");
   //eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
   if (process.env.NODE_ENV === "production") {
@@ -105,6 +107,16 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });
+let componentCollectionObj;
+eleventyConfig.addCollection('components', (collection) => {
+  const components = collection.getFilteredByGlob("./src/components/**/*.md");
+  componentCollectionObj =  components.reduce((componentsCollection, current) => {
+      current.outputPath = false;
+      componentsCollection[current.fileSlug] = current;
+      return componentsCollection
+  }, {})
+  return componentCollectionObj;
+})
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
@@ -205,7 +217,6 @@ module.exports = (eleventyConfig) => {
       return callback(e);
     })
 });
-
 
 if (process.env.NODE_ENV === "production") {
     eleventyConfig.addTransform("htmlmin", function(content, outputPath) {

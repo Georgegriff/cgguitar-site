@@ -36,5 +36,26 @@ module.exports = {
   quoteEndTemplate: (url) => {
     return `:root { --quote-image-end: url(${url});}`;
   },
-  production: process.env.NODE_ENV === "production"
+  production: process.env.NODE_ENV === "production",
+  mergeComponent: (componentOne, componentTwo) => {
+    // dont merge the bodies
+    componentOne.data =  {
+      ...componentTwo.data,
+      ...componentOne.data
+    }
+    return componentOne;
+  },
+  componentLink: (input) => {
+    let link;
+    if(input.url) {
+      return input.url;
+    }
+    if(input.page) {
+      link = `/${input.page}/`;
+    }
+    if(input.component) {
+      return `${link}#${input.component}`;
+    }
+    return link
+  }
 };

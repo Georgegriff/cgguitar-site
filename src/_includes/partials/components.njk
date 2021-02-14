@@ -1,0 +1,23 @@
+{%- for componentName in components -%}
+{%- set component = collections.components[componentName] %}
+{%- if component %}
+{%- set componentContent = component.templateContent %}
+{%- set componentData = component.data %}
+<section>
+    {%- if componentData.extends %}
+        {%- set component = helpers.mergeComponent(component,collections.components[componentData.extends]) %}
+        {%- set componentContent = component.templateContent %}
+        {%- set componentData = component.data %}
+    {%- endif -%}
+    {%- if componentData.type == 'card' %}
+        {%- include 'partials/components/card.njk' -%}
+    {%- elseif componentData.type == 'quote' %}
+        {%- include 'partials/components/quote.njk' -%}
+    {%- elseif componentData.type == 'playlist' %}
+        {%- set playlistItem = componentData -%}
+        {%- set playlist = playlistItem | fetchYouTubePlaylist -%}
+        {%- include 'partials/video-playlist.njk' -%}
+    {%- endif -%}
+</section>
+{%- endif -%}
+{%- endfor -%}

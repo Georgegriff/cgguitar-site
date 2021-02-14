@@ -9,7 +9,7 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 publish_mode: editorial_workflow
-
+local_backend: true
 media_folder: "src/images" # Media files will be stored in the repo under images/uploads
 public_folder: "/images" # Media files will be stored in the repo under images/uploads
 
@@ -74,9 +74,72 @@ collections:
                     name: link
                     label: Link
                     widget: string
-                
+          -
+            label: "Sections"
+            name: "components"
+            widget: "list"
+            allow_add: true
+            collapsed: false
+            types:
+              - label: 'Card'
+                widget: 'object'
+                name: 'card'
+                fields:
+                  - widget: "relation"
+                    collapsed: false
+                    multiple: false
+                    name: 'component'
+                    collection: "components"
+                    search_fields: ["label"]
+                    value_field: "name"
+                    display_fields: ["label"]
+  - name: "components"
+    label: "Components"
+    folder: src/components
+    slug: "{{name}}.md"
+    fields:
+      - { label: Label, name: label, widget: string}
+      - { label: Name, name: name, widget: string}
+      - { label: Heading, name: heading, widget: string}
+      - { label: Type, name: type, widget: select, default: '', options: ['card', 'quote', 'extends'] }
+      - { label: Extends, name: extends, widget: relation, required: false,
+              collapsed: false,
+              multiple: false,
+              collection: "components",
+              search_fields: ["label"],
+              value_field: "name",
+              display_fields: ["label"],
+        }
+      - { required: false, label: Image position, name: direction, widget: 'select', default: 'normal', options: ["normal", "reverse"] }
+      - { required: false, label: Body, name: "body", widget: 'markdown' }
+      - { required: false, "label": "Image", "name": "image", "widget": "object", "fields": [
+        {
+          "label": "Source",
+          "name": "src",
+          "widget": "image"
+        },
+        {
+          "label": "Description",
+          "name": "alt",
+          "widget": "string"
+        }
+        ]
+      }
+      - { required: false, "label": "Link", "name": "link", "widget": "object", "fields": [
+        {
+          "label": "Url",
+          "name": "url",
+          "widget": "string"
+        },
+        {
+          "label": "Text",
+          "name": "text",
+          "widget": "string"
+        }
+        ]
+      }
   - name: "testimonial"
-    label: "Testimonial"
+    label: "Testimonials"
     create: true # Allow users to create new documents in this collection
     folder: src/testimonials
     slug: "{{name}}.md" # Filename template

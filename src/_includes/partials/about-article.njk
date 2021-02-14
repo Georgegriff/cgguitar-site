@@ -1,19 +1,20 @@
 {%- if aboutSection -%}
 <article class="about-section no-padding">
-    {%- for item in aboutSection.items -%}
+    {%- set item = aboutSection.items[0] -%}
+    {# {%- for item in aboutSection.items -%} #}
     <section>
         {%- if item.type == 'card' %}
             {%- set aboutCard = item %}
-            {%- include 'partials/about-card.njk' -%}
+            {%- include 'partials/components/card.njk' -%}
         {%- elseif item.type == 'quote' %}
             {%- set quoteCard = item %}
-            {%- include 'partials/quote-card.njk' -%}
+            {%- include 'partials/components/quote.njk' -%}
         {%- elseif item.type == 'playlist' %}
             {%- set playlistItem = item -%}
             {%- set playlist = playlistItem | fetchYouTubePlaylist -%}
             {%- include 'partials/video-playlist.njk' -%}
-        {%- endif %}
+        {%- endif -%}
     </section>
-    {%- endfor -%}
+    {# {%- endfor -%} #}
 </article>
 {%- endif %}

@@ -58,7 +58,7 @@ aboutSection:
     - type: card
       title: Who is CG Guitar?
       link:
-        url: '/about/#a-little-bit-more'
+        url: '/about/#quote-about'
         text: Learn more
       image:
         src: '/images/about-alt.jpg'
@@ -73,6 +73,5 @@ aboutSection:
 {% include 'partials/logos-section.html' %}
 {% include 'partials/grid-content.html' %}
 {% include 'partials/testimonial-levels.html' %}
-{% include 'partials/about-article.njk' %}
 
 
