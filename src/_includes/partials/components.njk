@@ -1,5 +1,5 @@
 {%- for componentName in components -%}
-{%- set component = collections.components[componentName] %}
+{%- set component = collections.components[componentName.component] %}
 {%- if component %}
 {%- set componentContent = component.templateContent %}
 {%- set componentData = component.data %}

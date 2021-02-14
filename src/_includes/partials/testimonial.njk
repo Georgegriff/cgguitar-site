@@ -1,0 +1,15 @@
+<li class="testimonial brick large-img">
+    <div class="quote-wrapper">
+        <div class="quote">{{testimonialContent | safe}}</div>
+    </div>
+    {%- if testimonialData.image -%}
+        {%- Image testimonialData.image, "CG Guitar student profile picture", true -%}
+        {%- else -%}
+        <div class="placeholder-image">
+            {%- include 'images/default-test.svg' %}
+        </div>
+    {%- endif -%}
+    <div class="bottom-section">
+        <p class="author">{{testimonialData.name}}</p>
+    </div>
+</li>

@@ -38,7 +38,7 @@ module.exports = {
   },
   production: process.env.NODE_ENV === "production",
   mergeComponent: (componentOne, componentTwo) => {
-    // dont merge the bodies
+    componentOne.templateContent =`${componentTwo.templateContent}${componentOne.templateContent}`
     componentOne.data =  {
       ...componentTwo.data,
       ...componentOne.data

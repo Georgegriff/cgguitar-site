@@ -93,32 +93,33 @@ collections:
                     search_fields: ["label"]
                     value_field: "name"
                     display_fields: ["label"]
-  - name: "components"
-    label: "Components"
-    folder: src/components
+  - name: "card"
+    label: "Cards"
+    folder: src/components/cards
     slug: "{{name}}.md"
     fields:
       - { label: Label, name: label, widget: string}
       - { label: Name, name: name, widget: string}
-      - { label: Heading, name: heading, widget: string}
-      - { label: Type, name: type, widget: select, default: '', options: ['card', 'quote', 'extends'] }
       - { label: Extends, name: extends, widget: relation, required: false,
               collapsed: false,
               multiple: false,
-              collection: "components",
+              collection: "card",
               search_fields: ["label"],
               value_field: "name",
               display_fields: ["label"],
         }
+      - { required: false, label: Heading, name: heading, widget: string}
       - { required: false, label: Image position, name: direction, widget: 'select', default: 'normal', options: ["normal", "reverse"] }
       - { required: false, label: Body, name: "body", widget: 'markdown' }
       - { required: false, "label": "Image", "name": "image", "widget": "object", "fields": [
         {
+          required: false,
           "label": "Source",
           "name": "src",
           "widget": "image"
         },
         {
+          required: false,
           "label": "Description",
           "name": "alt",
           "widget": "string"
@@ -129,12 +130,14 @@ collections:
         {
           "label": "Url",
           "name": "url",
-          "widget": "string"
+          "widget": "string",
+          required: false
         },
         {
           "label": "Text",
           "name": "text",
-          "widget": "string"
+          "widget": "string",
+          required: false
         }
         ]
       }
@@ -145,5 +148,6 @@ collections:
     slug: "{{name}}.md" # Filename template
     fields:
       - { label: Name, name: name, widget: string}
+      - { label: Date, name: date, widget: date}
       - { label: Image, name: image, widget: image, required: false }
       - {label: "Body", name: "body", widget: "markdown"}
