@@ -194,7 +194,7 @@ collections:
     fields:
       - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
       - { label: Date, name: date, widget: date}
-      - { label: Image, name: image, widget: image, required: false }
+      - { label: Image, name: image, widget: image, required: false, media_folder: "/src/images/testimonials", public_folder: "/images/testimonials" }
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "playlist"
     label: "Playlist"

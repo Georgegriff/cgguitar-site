@@ -5,10 +5,6 @@
     </div>
     {%- if testimonial.data.image -%}
         {%- Image testimonial.data.image, "CG Guitar student profile picture", true -%}
-        {%- else -%}
-        <div class="placeholder-image">
-            {%- include 'images/default-test.svg' %}
-        </div>
     {%- endif -%}
     <div class="bottom-section">
         <p class="author">{{testimonial.data.name}}</p>

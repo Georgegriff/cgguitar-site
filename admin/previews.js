@@ -6,23 +6,29 @@ import {Page} from "./components/Page.js";
 
 const card = Component({
     type: "card",
-    parentComponent: 'main'
+    parentComponent: 'main',
+    pathToAssets: {image: ["image", "src"]},
+    assetsPrefix: "/admin"
 })
-const playlist =Component({
+const playlist = Component({
     type: "playlist",
     templateName: "preview-playlist",
     bodyField: "description",
-    parentComponent: 'main'
+    parentComponent: 'main',
+    assetsPrefix: "/admin"
 })
 
 const testimonial = Component({
     type: "testimonial",
-    parentComponent: 'main'
+    parentComponent: 'main',
+    pathToAssets: {image: ["image"]},
+    assetsPrefix: "/admin"
 })
 
 const quote = Component({
     type: "quote",
-    parentComponent: 'main'
+    parentComponent: 'main',
+    assetsPrefix: "/admin"
 })
 const componentDefinitions = {
     playlist,
@@ -36,7 +42,9 @@ Object.keys((componentDefinitions)).forEach((name) => {
     CMS.registerPreviewTemplate(name, componentDefinitions[name]);
 })
 
-CMS.registerPreviewTemplate("about", Page);
+CMS.registerPreviewTemplate("about", Page({
+    assetsPrefix: "/admin"
+}));
 CMS.registerPreviewStyle("css/reset.css");
 CMS.registerPreviewStyle("css/critical.css");
 CMS.registerPreviewStyle("./cms-overrides.css")

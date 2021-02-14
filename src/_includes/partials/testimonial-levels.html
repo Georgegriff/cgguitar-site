@@ -19,7 +19,7 @@
                         {%- include 'images/default-test.svg' %}
                     </div>
                 {%- endif -%}
-                <p class="quote">{{item.templateContent | safe}}</p>
+                <div class="quote">{{item.templateContent | safe}}</div>
             </div>
             {%- if (loop.index == (levels.length)) -%}
                 <div class="bottom-section">

@@ -1,6 +1,6 @@
 import {HeaderPreview} from './Header.js';
 
-export const Page = (props) => {
+export const Page = (passedProps) => (props) => {
     const data = props.entry.getIn(["data", "components"])
     if(!data) {
         return null;
@@ -20,6 +20,7 @@ export const Page = (props) => {
                 fieldsMetaData: props.fieldsMetaData,
                 type,
                 ...props,
+                ...passedProps,
                 // override
                 parentComponent: 'section',
             })

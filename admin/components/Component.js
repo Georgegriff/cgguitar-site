@@ -1,6 +1,6 @@
 import { NunjucksComponent } from "./NunjucksComponent.js";
 
-const getComponent = (type, {data, getAsset, fieldsMetaData, ...passedProps} = {}) => {
+const getComponent = (type, {data, getAsset, fieldsMetaData, pathToAssets ={}, assetsPrefix= '', ...passedProps} = {}) => {
   let body = '';
   if(data) {
     const {extends: hasExtends } = data.toJSON();
@@ -19,19 +19,30 @@ const getComponent = (type, {data, getAsset, fieldsMetaData, ...passedProps} = {
     }
   }
 
+  const name =  data.getIn(['name']);
+  const fileAssetKeys = Object.keys(pathToAssets)
+  if(fileAssetKeys.length) {
+    fileAssetKeys.forEach((dataKey) => {
+      const pathTo = pathToAssets[dataKey];
+      const images = passedProps.entry.getIn(['mediaFiles']).toJS();
+      if(images && images.length) {
+        const img = passedProps.entry.getIn(['data',...pathTo]);
+        const image = images.find(({name}) => img.endsWith(name));
+        if(image && image.draft) {
+          data = data.setIn(pathTo,image.url);
+        } else if (img && img.startsWith("/")){
+          data = data.setIn(pathTo, `${assetsPrefix}${img}`);
+        }
+      }
+    });
+  }
   const dataJson = data.toJSON();
-  const name =  data.getIn(['name'])
-  const image = data.getIn(['image', 'src']);
   const props = {
     body,
     name,
     data: dataJson,
     type,
     ...passedProps
-  }
-  if (image) {
-    const imageSrc = getAsset(image);
-    props.data.image.src = imageSrc;
   }
   return NunjucksComponent(props);
 }

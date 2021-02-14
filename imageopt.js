@@ -21,7 +21,7 @@ const imageOptimizer = async (src, {alt, ariaHidden, urlOnly, widths = [320, 640
     }
     let placeholderStyle = ''
     const hasJpg = stats["jpeg"]
-    if(hasJpg && hasJpg.length) {
+    if(hasJpg && hasJpg.length && !src.startsWith('http')) {
       let lowestSrc = hasJpg[0];
       const dimensions = await sizeOf(imgPath);
       const placeholder = await sharp(lowestSrc.outputPath)
