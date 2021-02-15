@@ -3,6 +3,7 @@ export const NunjucksComponent = ({data, body, type, name, templateName = type, 
     let html;
     try {
         html = window.env.render(`partials/components/${templateName}.njk`, {
+            // todo find if data is markdown or not
             [type]: {
                 data,
                 templateContent: marked(body)

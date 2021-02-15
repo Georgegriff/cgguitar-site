@@ -29,7 +29,7 @@ playlists:
     title: Griff's Licks
 gridContent:
   class: "grid-small contained small-list"
-  items:
+  icons:
     - text: <a href="#main-content">Watch some of my videos below</a>
       image: images/video.svg
     - text: <a target="_blank" href="YT_PLACEHOLDER">Subscribe to my YouTube channel</a>

@@ -4,8 +4,12 @@ window.env.addFilter('slug', (value) => {
   // good enough
   return value.toLowerCase();
 })
+window.env.addFilter('imgmin', (value) => {
+  return value;
+})
 window.env.addGlobal('helpers', {
-    // todo see if can reduce duplication, precompile?
+  // todo see if can reduce duplication, precompile?
+    placeholders:(str) => str,
     componentLink: (input) => {
         let link;
         if(input.url) {

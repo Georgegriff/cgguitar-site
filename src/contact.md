@@ -16,7 +16,7 @@ hero:
     alt: "CG Guitars' Charlie playing guitar on stage"
 gridContent:
   class: "grid-small contained small-list"
-  items:
+  icons:
     - text: <a href="#main-content">Fill out the contact form below</a>
       image: images/edit.svg
     - text: <a href="tel:+447861538564"aria-label="or call telephone number, PHONE_PLACEHOLDER"><b>or</b> call +447861538564</a>

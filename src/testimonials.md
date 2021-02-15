@@ -17,7 +17,7 @@ hero:
     src: images/sheets.png
     alt: "Examples of Sheet music sprovided to students"
 gridContent:
-  items:
+  icons:
     - text: My students have found success in both online and in person lessons.
       image: images/student.svg
     - text: Tailored individual lessons for every students needs.

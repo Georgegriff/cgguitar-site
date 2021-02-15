@@ -1,12 +1,13 @@
 {%- if gridContent %}
-{%- set items = gridContent.items %}
+{%- set items = gridContent.icons %}
 {%- set video = gridContent.video %}
 {%- if video %}
 {%- set youtube = {"id": video.id } %}
 {% if video.thumbnail %}
 {%- set videoImage = video.thumbnail | imgmin %}
 {% else %}
-{%- set videoImage = youtube.id | ytImg | imgmin %}
+{%- set ytImg = "https://i.ytimg.com/vi/" + youtube.id + "/maxresdefault.jpg"%}
+{%- set videoImage = ytImg | imgmin %}
 {% endif %}
 {%- endif %}
 <article class="padded-sm site-padded{%- if gridContent.class %} {{gridContent.class}}{%- endif %}">
@@ -17,7 +18,9 @@
                 <h2 class="section-title">{{gridContent.title}}</h2>
             {%- endif %}
             {%- include 'partials/youtube.njk' %}
-            <div class="learn-more" ><a href="/videos/">Watch some demonstrations and tutorials.</a></div>
+            {%- if video.link %}
+            <div class="learn-more"><a href="{{video.link.url}}">{{video.link.text}}</a></div>
+            {%- endif %}
         </section>
 {%- endif %}
         <section style="width: 100%; height: 100%;">

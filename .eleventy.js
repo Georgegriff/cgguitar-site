@@ -34,10 +34,6 @@ module.exports = (eleventyConfig) => {
     return val;
   });
 
-  eleventyConfig.addFilter('ytImg', (id) => {
-    return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
-  })
-
   // Remember old renderer, if overridden, or proxy to default renderer
   const defaultLinkRender =
     markdownLibrary.renderer.rules.link_open ||

@@ -43,13 +43,20 @@ const levels = Component({
     assetsPrefix: "/admin"
 })
 
+const gridCard = Component({
+    type: "gridCard",
+    parentComponent: 'main',
+    assetsPrefix: "/admin"
+})
+
 const componentDefinitions = {
     playlist,
     card,
     testimonial,
     quote,
     slogan,
-    levels
+    levels,
+    gridCard
 }
 
 // register all  preview components for stand alone previews

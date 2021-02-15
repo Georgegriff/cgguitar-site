@@ -131,7 +131,7 @@ collections:
                 summary: '{{fields.name}}'
                 fields:
                   - widget: "relation"
-                    name: 'slogan'
+                    name: 'name'
                     collection: "slogan"
                     search_fields: ["name"]
                     value_field: "name"
@@ -142,8 +142,19 @@ collections:
                 summary: '{{fields.name}}'
                 fields:
                   - widget: "relation"
-                    name: 'levels'
+                    name: 'name'
                     collection: "levels"
+                    search_fields: ["name"]
+                    value_field: "name"
+                    display_fields: ["name"]
+              - label: 'Media Cards'
+                widget: 'object'
+                name: 'gridCard'
+                summary: '{{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "gridCard"
                     search_fields: ["name"]
                     value_field: "name"
                     display_fields: ["name"]
@@ -355,10 +366,33 @@ collections:
             fields: [
               { label: Name, name: name, widget: string, hint: "Don't change name once created" },
               { label: Description, name: description, widget: string },
-              { label: Date, name: date, widget: hidden },
               { label: Image, name: image, widget: image },
-              { label: Link, name: link, widget: "boolean", default: false },
-              { label: Quote, name: quote, widget: "string" }
-              ] 
+              { required: false, label: Link, name: link, widget: "boolean", default: false },
+              { label: Quote, name: quote, widget: "markdown" }
+              ]
           }
-         
+  - name: "gridCard"
+    label: "Media Cards"
+    create: true
+    folder: "src/components/grid-cards"
+    slug: "{{name}}"
+    fields:
+      - { label: Title, name: title, widget: string}
+      - { label: Class, name: class, widget: string, required: false}
+      - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
+      - { required: false, label: Icons, name: icons, widget: list, max: 4,
+        fields: [
+          { label: Text, name: text, widget: string },
+          { label: Image, name: image, widget: image },
+        ]
+      }
+      - { required: false, label: Video, name: video, widget: "object",
+        fields: [
+          {required: false, label: "Channel ID", name: "channel"},
+          {required: false,label: "Video ID", name: "id",},
+          {required: false,label: "link", name: "link", "widget": "object", "fields": [
+            {required: false, label: "Text", name: "text"},
+            {required: false,label: "Url", name: "url",},
+            ]},
+        ]
+      }
