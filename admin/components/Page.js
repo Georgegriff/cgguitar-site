@@ -1,4 +1,5 @@
 import {HeaderPreview} from './Header.js';
+import { NunjucksComponent } from './NunjucksComponent.js';
 
 export const Page = (passedProps) => (props) => {
     const data = props.entry.getIn(["data", "components"])
@@ -9,13 +10,25 @@ export const Page = (passedProps) => (props) => {
     let previewComponent;
     if(components) {
         previewComponent = components.map(({name, type}, index) => {
-            let data = props.fieldsMetaData.getIn(['components', 'name', type, name]);
+            let data;
+            let key;
+            if(type === "custom") {
+                return NunjucksComponent({
+                    body: `${type}: ${name}`,
+                    name,
+                    data: "",
+                    type,
+                    ...passedProps
+                  });
+            }
+            data = props.fieldsMetaData.getIn(['components', 'name', type, name]);
             if(!data) {
                 return null;
             }
+            key = `${data.getIn(['name'])}-${index}`;
             return CMS.getPreviewTemplate(type)({
                 data,
-                key: `${data.getIn(['name'])}-${index}`,
+                key: key,
                 getAsset: props.getAsset,
                 fieldsMetaData: props.fieldsMetaData,
                 type,

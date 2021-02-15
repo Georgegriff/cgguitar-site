@@ -1,5 +1,7 @@
+<section>
 {%- set gridCard = gridCard or component %}
 {%- ifAsync gridCard -%}
 {%- set gridContent = gridCard.data %}
 {%- include "partials/grid-content.html" -%}
 {%- endif %}
+</section>

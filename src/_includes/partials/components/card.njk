@@ -1,3 +1,4 @@
+<section>
 {%- set card = card or component %}
 {%- if card %}
 <figure id="{{card.data.name | slug}}" class="content-card card-{{card.data.direction}}">
@@ -11,3 +12,4 @@
     {%- if card.data.image -%}{%- Image card.data.image.src, card.data.image.alt -%}{%- endif -%}
 </figure>
 {%- endif %}
+</section>

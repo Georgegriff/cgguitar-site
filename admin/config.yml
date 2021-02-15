@@ -160,7 +160,7 @@ collections:
                     display_fields: ["name"]
       - label: "About page"
         name: "about"
-        file: "src/about/index.md"
+        file: "src/about.md"
         fields:
           - {label: Title, name: title, widget: string}
           - 
@@ -255,17 +255,256 @@ collections:
                     search_fields: ["title"]
                     value_field: "name"
                     display_fields: ["title"]
-              - label: 'Testimonial'
+      - label: "Testimonial page"
+        name: "testimonials"
+        file: "src/testimonials.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - 
+            label: Hero Section
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              -
+                label: Title
+                name: title
+                widget: string
+              -
+                label: Description
+                name: description
+                required: false
+                widget: string
+              -
+                label: Subtitle
+                name: subtitle
+                required: false
+                widget: string
+              -
+                label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Source
+                    name: src
+                    widget: image
+                  - label: Description
+                    name: alt
+                    widget: string
+              - 
+                label: Call To Action
+                required: false
+                name: callToAction
+                max: 2
+                widget: "list"
+                fields:
+                  -
+                    name: type
+                    label: Type
+                    widget: select
+                    default: ["primary"]
+                    options: ["primary", "secondary"]
+                  -
+                    name: text
+                    label: Text
+                    widget: string
+                  -
+                    name: link
+                    label: Link
+                    widget: string
+          -
+            label: "Sections"
+            name: "components"
+            widget: "list"
+            allow_add: true
+            collapsed: true
+            types:
+              - label: 'Media Cards'
                 widget: 'object'
-                name: 'testimonial'
-                summary: 'testimonial: {{fields.name}}'
+                name: 'gridCard'
+                summary: '{{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
-                    collection: "testimonial"
+                    collection: "gridCard"
                     search_fields: ["name"]
                     value_field: "name"
                     display_fields: ["name"]
+              - label: Custom
+                widget: "object"
+                name: "custom"
+                summary: 'testimonial: {{fields.name}}'
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Component Path", name: "componentPath", widget: "string" }
+      - label: "Contact page"
+        name: "contact"
+        file: "src/contact.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - 
+            label: Hero Section
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              -
+                label: Title
+                name: title
+                widget: string
+              -
+                label: Description
+                name: description
+                required: false
+                widget: string
+              -
+                label: Subtitle
+                name: subtitle
+                required: false
+                widget: string
+              -
+                label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Source
+                    name: src
+                    widget: image
+                  - label: Description
+                    name: alt
+                    widget: string
+              - 
+                label: Call To Action
+                required: false
+                name: callToAction
+                max: 2
+                widget: "list"
+                fields:
+                  -
+                    name: type
+                    label: Type
+                    widget: select
+                    default: ["primary"]
+                    options: ["primary", "secondary"]
+                  -
+                    name: text
+                    label: Text
+                    widget: string
+                  -
+                    name: link
+                    label: Link
+                    widget: string
+          -
+            label: "Sections"
+            name: "components"
+            widget: "list"
+            allow_add: true
+            collapsed: true
+            types:
+              - label: 'Media Cards'
+                widget: 'object'
+                name: 'gridCard'
+                summary: '{{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "gridCard"
+                    search_fields: ["name"]
+                    value_field: "name"
+                    display_fields: ["name"]
+      - label: "Videos page"
+        name: "videos"
+        file: "src/videos.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - 
+            label: Hero Section
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              -
+                label: Title
+                name: title
+                widget: string
+              -
+                label: Description
+                name: description
+                required: false
+                widget: string
+              -
+                label: Subtitle
+                name: subtitle
+                required: false
+                widget: string
+              -
+                label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Source
+                    name: src
+                    widget: image
+                  - label: Description
+                    name: alt
+                    widget: string
+              - 
+                label: Call To Action
+                required: false
+                name: callToAction
+                max: 2
+                widget: "list"
+                fields:
+                  -
+                    name: type
+                    label: Type
+                    widget: select
+                    default: ["primary"]
+                    options: ["primary", "secondary"]
+                  -
+                    name: text
+                    label: Text
+                    widget: string
+                  -
+                    name: link
+                    label: Link
+                    widget: string
+          -
+            label: "Sections"
+            name: "components"
+            widget: "list"
+            allow_add: true
+            collapsed: true
+            types:
+              - label: 'Playlist'
+                widget: 'object'
+                name: 'playlist'
+                summary: 'playlist: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "playlist"
+                    search_fields: ["title"]
+                    value_field: "name"
+                    display_fields: ["title"]
+              - label: 'Media Cards'
+                widget: 'object'
+                name: 'gridCard'
+                summary: '{{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "gridCard"
+                    search_fields: ["name"]
+                    value_field: "name"
+                    display_fields: ["name"]
+      - label: "Privacy policy"
+        name: "privacy"
+        file: "src/privacy.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: "markdown"}
+      
   - name: "card"
     label: "Card"
     folder: src/components/cards

@@ -134,4 +134,7 @@
      --hero-opacity:0.1;
     }
   }
+  @include up-from(large) {
+      min-height: calc(73vh - (var(--site-header) + var(--site-padding)));
+  }
 }

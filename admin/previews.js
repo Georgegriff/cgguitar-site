@@ -13,6 +13,7 @@ const card = Component({
 const playlist = Component({
     type: "playlist",
     templateName: "preview-playlist",
+    element: "youtube-playlist",
     bodyField: "description",
     parentComponent: 'main',
     assetsPrefix: "/admin"
@@ -49,6 +50,13 @@ const gridCard = Component({
     assetsPrefix: "/admin"
 })
 
+const custom = Component({
+    type: "custom",
+    parentComponent: 'main',
+    pathToAssets: {image: ["image"]},
+    assetsPrefix: "/admin"
+})
+
 const componentDefinitions = {
     playlist,
     card,
@@ -56,7 +64,8 @@ const componentDefinitions = {
     quote,
     slogan,
     levels,
-    gridCard
+    gridCard,
+    custom
 }
 
 // register all  preview components for stand alone previews
@@ -70,8 +79,22 @@ CMS.registerPreviewTemplate("about", Page({
 CMS.registerPreviewTemplate("home", Page({
     assetsPrefix: "/admin"
 }));
+
+CMS.registerPreviewTemplate("testimonials", Page({
+    assetsPrefix: "/admin"
+}));
+
+CMS.registerPreviewTemplate("contact", Page({
+    assetsPrefix: "/admin"
+}));
+
+CMS.registerPreviewTemplate("videos", Page({
+    assetsPrefix: "/admin"
+}));
+
 CMS.registerPreviewStyle("css/reset.css");
 CMS.registerPreviewStyle("css/critical.css");
+CMS.registerPreviewStyle("css/media.css");
 CMS.registerPreviewStyle("./cms-overrides.css")
 
 

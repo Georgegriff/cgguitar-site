@@ -1,6 +1,7 @@
 ---
 title: 'Privacy Policy'
 layout: 'layouts/plain.njk'
+headerClassName: 'none'
 ---
 
 ## Privacy Policy

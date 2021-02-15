@@ -1,4 +1,4 @@
-export const NunjucksComponent = ({data, body, type, name, templateName = type, parentComponent = 'div'}) => {
+export const NunjucksComponent = ({data, body, type, name, element,templateName = type, parentComponent = 'div'}) => {
     // nunjucks auto fetches partials which i copy into admin dir
     let html;
     try {
@@ -13,7 +13,7 @@ export const NunjucksComponent = ({data, body, type, name, templateName = type, 
         console.error(e);
         html = `<div>${body}, data: ${JSON.stringify(data)}</div>`
     }
-    const component = h(parentComponent, {
+    const component = h(element || parentComponent, {
       // YOLO
       dangerouslySetInnerHTML: {__html:html}
     });

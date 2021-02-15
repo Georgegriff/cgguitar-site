@@ -16,20 +16,15 @@ hero:
   image:
     src: images/sheets.png
     alt: "Examples of Sheet music sprovided to students"
-gridContent:
-  icons:
-    - text: My students have found success in both online and in person lessons.
-      image: images/student.svg
-    - text: Tailored individual lessons for every students needs.
-      image: images/note.svg
-    - text: I provide extra value though free online demonstrations and tutorials.
-      image: images/video.svg
-    - text: Many of my students have provided testimonials.
-      image: images/person.svg
+components:
+   - type: gridCard
+     name: testimonials-icons
+   - type: custom
+     name: testimonials
+     componentPath: 'partials/testimonials.njk'
 ---
 
-{% include 'partials/grid-content.html' %}
-{% include 'partials/testimonials.njk' %}
+{%- include 'partials/components.njk' -%}
 
 
 

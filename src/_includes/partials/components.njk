@@ -1,6 +1,8 @@
-{%- set filteredComoponents = helpers.filterComponents(components, collections.components) %}
-{%- asyncEach component in filteredComoponents -%}
-<section>
-    {%- include component.componentPath %}
-</section>
+{%- set filteredComponents = helpers.filterComponents(components, collections.components) %}
+{%- asyncEach component in filteredComponents -%}
+    {%- ifAsync component.type === "custom" -%}
+        {%- include component.componentPath -%}
+    {%-else -%}
+        {%- include component.componentPath -%}
+    {%- endif -%}
 {%- endeach -%}

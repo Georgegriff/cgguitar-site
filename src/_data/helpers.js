@@ -66,7 +66,14 @@ module.exports = {
     return component
   },
   filterComponents(components, collection) {
-    return components.map(({name, type}) => {
+    if(!components) {
+      return []
+    }
+    return components.map((componentData) => {
+        const {name, type} = componentData;
+        if(type === "custom") {
+          return componentData;
+        }
         const component = this.getComponent(collection, name, type);
         const componentType = component.data.type || (component.data.tags && component.data.tags[0]);
         if(!type) {
