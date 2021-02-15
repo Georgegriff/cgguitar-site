@@ -2,7 +2,10 @@ import "https://mozilla.github.io/nunjucks/files/nunjucks.js";
 window.env = nunjucks.configure('/admin')
 window.env.addFilter('slug', (value) => {
   // good enough
-  return value.toLowerCase();
+  if(!value) {
+    return;
+  }
+  return `${value}`.toLowerCase();
 })
 window.env.addFilter('imgmin', (value) => {
   return value;
