@@ -1,7 +1,8 @@
-{% if logosSection %}
+{%- set slogan = component.data or slogan.data %}
+{% if slogan %}
 <article>
-    <ol style="--grid-ish-size: 18em;" class="grid-ish icondesc {{logosSection.class}}">
-        {%- for item in logosSection.items %}
+    <ol style="--grid-ish-size: 16em;" class="grid-ish icondesc padded">
+        {%- for item in slogan.items %}
             <li class="logo-small">
                 {%- if (loop.index % 2) == 0 %}
                 {%- Image "images/cg-logo-alt-black.svg","CG Guitar logo",true -%}

@@ -81,6 +81,26 @@
         transition:  opacity 0.3s ease-in-out;
         opacity: 0;
     }
+
+    p.subtitle {
+      margin-top:1rem;
+      color: var(--SecondaryText50);
+      font-size: 1.5rem;
+      @include up-from(xxlarge) {
+          font-size: 1.6rem;
+      }
+  }
+  
+  p.description {
+      margin:0;
+      left:0;
+      font-size: 1.2rem;
+      margin-top:0rem;
+      max-width: 45ch;
+      @include up-from(xxlarge) {
+         font-size: 1rem;
+      }
+  }
 }
 
 .header-hero-medium {

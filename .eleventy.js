@@ -106,10 +106,17 @@ module.exports = (eleventyConfig) => {
   });
 let componentCollectionObj;
 eleventyConfig.addCollection('components', (collection) => {
-  const components = collection.getFilteredByGlob(["./src/components/**/*.md", "./src/testimonials/**/*.md", "./src/playlists/**/*.md"]);
+  // potential for clashes with names. may need to type prefix.
+  const components = collection.getFilteredByGlob([
+  "./src/components/**/*.md",
+  "./src/testimonials/**/*.md",
+  "./src/playlists/**/*.md",
+  "./src/lessons/levels/**/*.md"
+]);
   componentCollectionObj =  components.reduce((componentsCollection, current) => {
       current.outputPath = false;
-      componentsCollection[current.data.name || current.fileSlug] = current;
+      const componentType = current.data.type || (current.data.tags && current.data.tags[0]);
+      componentsCollection[`${componentType}__${current.data.name || current.fileSlug}`] = current;
       return componentsCollection
   }, {})
   return componentCollectionObj;

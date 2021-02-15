@@ -30,10 +30,10 @@ components:
     name: musical-works
   - type: card
     name: about-band-and-session
-  - type: quote
-    name: about-session-work-quote
   - type: playlist
     name: session-work-playlist
+  - type: quote
+    name: about-session-work-quote
 ---
 
 <article class="about-section no-padding">

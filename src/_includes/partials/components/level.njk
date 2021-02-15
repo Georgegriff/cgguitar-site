@@ -1,0 +1,20 @@
+{%- set level = level %}
+ <section class="testimonial level level-{{level.name | slug }}">
+    <h3>{{level.name}}</h3>
+    <p class="description">{{level.description}}</p>
+    <div class="quote-wrap">
+        {%- if level.image -%}
+        {%- Image level.image, "CG Guitar student profile picture", true -%}
+        {%- else -%}
+            <div class="placeholder-image">
+                {%- include 'images/default-test.svg' %}
+            </div>
+        {%- endif -%}
+        <div class="quote">{{level.quote | safe}}</div>
+    </div>
+    {%- if (level.link) -%}
+        <div class="bottom-section">
+            <a aria-label="Read more testimonials" href="/testimonials/#students">Learn more</a>
+        </div>
+    {%- endif -%}
+</section>

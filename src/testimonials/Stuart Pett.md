@@ -1,6 +1,6 @@
 ---
 name: Stuart Pett
-image: /images/testimonials/sepett.jpg
+image: images/testimonials/sepett.jpg
 ---
 
 Charlie has been teaching my son for about 5 years, taking him from complete novice through to playing some pretty impressive rock songs as well as a couple of music gradings.

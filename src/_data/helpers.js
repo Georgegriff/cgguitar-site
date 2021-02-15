@@ -58,21 +58,22 @@ module.exports = {
     }
     return link
   },
+  getComponent(collection, name, type) {
+    let component = collection[`${type}__${name}`];
+    if(!component) {
+      throw new Error(`Component: ${name} not found in collection for type: ${type}`)
+    }
+    return component
+  },
   filterComponents(components, collection) {
-    return components.map(({name}) => {
-      let component = collection[name];
-      if(!component) {
-        throw new Error(`Component: ${name} not found in collection`)
-      }
-      if(component.data.extends) {
-        component = this.mergeComponent(component, collection[component.data.extends])
-      }
-      const type = component.data.type || (component.data.tags && component.data.tags[0]);
-      if(!type) {
-        throw new Error(`Type not found for: ${name} make collection or add type`)
-      }
-      component.componentPath = `partials/components/${type}.njk`
-      return component;
+    return components.map(({name, type}) => {
+        const component = this.getComponent(collection, name, type);
+        const componentType = component.data.type || (component.data.tags && component.data.tags[0]);
+        if(!type) {
+          throw new Error(`Type not found for: ${name} make collection or add type`)
+        }
+        component.componentPath = `partials/components/${componentType}.njk`
+        return component;
     });
   }
 };

@@ -1,6 +1,6 @@
 ---
 name: Victoria Hicks
-image: /images/testimonials/vhicks.jpg
+image: images/testimonials/vhicks.jpg
 ---
 
 Charlie has been teaching my son Joe for 5 years(!), so I can vouch for his stamina, as well as his ambition for his students.

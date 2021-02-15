@@ -30,11 +30,26 @@ const quote = Component({
     parentComponent: 'main',
     assetsPrefix: "/admin"
 })
+
+const slogan = Component({
+    type: "slogan",
+    parentComponent: 'main',
+    assetsPrefix: "/admin"
+})
+
+const levels = Component({
+    type: "levels",
+    parentComponent: 'main',
+    assetsPrefix: "/admin"
+})
+
 const componentDefinitions = {
     playlist,
     card,
     testimonial,
-    quote
+    quote,
+    slogan,
+    levels
 }
 
 // register all  preview components for stand alone previews
@@ -43,6 +58,9 @@ Object.keys((componentDefinitions)).forEach((name) => {
 })
 
 CMS.registerPreviewTemplate("about", Page({
+    assetsPrefix: "/admin"
+}));
+CMS.registerPreviewTemplate("home", Page({
     assetsPrefix: "/admin"
 }));
 CMS.registerPreviewStyle("css/reset.css");

@@ -1,6 +1,6 @@
 ---
 name: Anne Poulter
-image: /images/testimonials/annep.jpg
+image: images/testimonials/annep.jpg
 ---
 
 Since he started taking lessons from Charlie, my son's love of the guitar and music, in general, has grown and grown. Charlie's energy and enthusiasm are infectious, and I have been so impressed by my son's progress.

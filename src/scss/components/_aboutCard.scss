@@ -1,4 +1,4 @@
-.about-card {
+.content-card {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
@@ -10,6 +10,9 @@
         margin-bottom: var(--site-padding);
     }
     .content {
+        * {
+            max-width: 75ch;
+        }
         min-width: 240px;
         margin: var(--site-padding);
         flex:1;

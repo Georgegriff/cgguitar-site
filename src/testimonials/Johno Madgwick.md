@@ -1,6 +1,6 @@
 ---
 name: Johno Madgwick
-image: /images/testimonials/johno.jpg
+image: images/testimonials/johno.jpg
 date: 2021-02-12
 ---
 

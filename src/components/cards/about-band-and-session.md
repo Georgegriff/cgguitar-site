@@ -1,11 +1,11 @@
 ---
-label: About Card - Band and Session Work
+label: About page - Band and Session Work
 name: about-band-and-session
 type: card
 heading: Band & Session Work
 direction: reverse
 image:
-  src: /images/session.jpg
+  src: images/session.jpg
   alt: Charlie on stage with his function band
 ---
 I’m available to hire for Session Work.

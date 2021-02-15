@@ -26,10 +26,10 @@
     }
 
     .quote {
-        display: sblock;
+        display: block;
         font-size: 0.85rem;
         position: relative;
-        margin-left: 1rem;
+        margin-left: 1.5rem;
 
         @include up-from(large) {
             max-width: 40ch;
@@ -41,7 +41,7 @@
             position: absolute;
             width: 1rem;
             height: 1rem;
-            left:-2rem;
+            left:-1.5rem;
             top:-1rem;
             background-color: var(--accent-color, var(--PrimaryText));
             mask-size: cover;

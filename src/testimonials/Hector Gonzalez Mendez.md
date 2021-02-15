@@ -1,6 +1,6 @@
 ---
 name: Hector Gonzalez Mendez
-image: /images/testimonials/hectorg.jpg
+image: images/testimonials/hectorg.jpg
 ---
 
 Charlie is an amazing teacher. He is very passionate about music and it really feels like he enjoys doing it. It's been almost a year since I started having guitar lessons with him and, as a foreigner, he has made it extremely easy for me.

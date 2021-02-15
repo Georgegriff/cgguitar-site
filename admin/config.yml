@@ -17,6 +17,136 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - label: "Home page"
+        name: "home"
+        file: "src/index.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - 
+            label: Hero Section
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              -
+                label: Title
+                name: title
+                widget: string
+              -
+                label: Description
+                name: description
+                required: false
+                widget: string
+              -
+                label: Subtitle
+                name: subtitle
+                required: false
+                widget: string
+              -
+                label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Source
+                    name: src
+                    widget: image
+                  - label: Description
+                    name: alt
+                    widget: string
+              - 
+                label: Call To Action
+                required: false
+                name: callToAction
+                max: 2
+                widget: "list"
+                fields:
+                  -
+                    name: type
+                    label: Type
+                    widget: select
+                    default: ["primary"]
+                    options: ["primary", "secondary"]
+                  -
+                    name: text
+                    label: Text
+                    widget: string
+                  -
+                    name: link
+                    label: Link
+                    widget: string
+          -
+            label: "Sections"
+            name: "components"
+            widget: "list"
+            allow_add: true
+            collapsed: true
+            types:
+              - label: 'Card'
+                widget: 'object'
+                name: 'card'
+                summary: 'card: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "card"
+                    search_fields: ["label"]
+                    value_field: "name"
+                    display_fields: ["label"]
+              - label: 'Quote'
+                widget: 'object'
+                name: 'quote'
+                summary: 'quote: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "quote"
+                    search_fields: ["label"]
+                    value_field: "name"
+                    display_fields: ["label"]
+              - label: 'Playlist'
+                widget: 'object'
+                name: 'playlist'
+                summary: 'playlist: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "playlist"
+                    search_fields: ["title"]
+                    value_field: "name"
+                    display_fields: ["title"]
+              - label: 'Testimonial'
+                widget: 'object'
+                name: 'testimonial'
+                summary: 'testimonial: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "testimonial"
+                    search_fields: ["name"]
+                    value_field: "name"
+                    display_fields: ["name"]
+              - label: 'Slogan'
+                widget: 'object'
+                name: 'slogan'
+                summary: '{{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'slogan'
+                    collection: "slogan"
+                    search_fields: ["name"]
+                    value_field: "name"
+                    display_fields: ["name"]
+              - label: 'Levels'
+                widget: 'object'
+                name: 'levels'
+                summary: '{{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'levels'
+                    collection: "levels"
+                    search_fields: ["name"]
+                    value_field: "name"
+                    display_fields: ["name"]
       - label: "About page"
         name: "about"
         file: "src/about/index.md"
@@ -134,18 +264,9 @@ collections:
       - { required: false, label: Label, name: label, widget: string}
       - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
       - { label: Type, name: type, widget: hidden, default: 'card'}
-      - { label: Extends, name: extends, widget: relation, required: false,
-              collapsed: false,
-              multiple: false,
-              collection: "card",
-              search_fields: ["label"],
-              value_field: "name",
-              display_fields: ["label"],
-              hint: "Pull in fields from another Card"
-        }
       - { required: false, label: Heading, name: heading, widget: string}
-      - { required: false, label: Image position, name: direction, widget: 'select', default: 'normal', options: ["normal", "reverse"] }
       - { required: false, label: Body, name: "body", widget: 'markdown' }
+      - { required: false, label: Image position, name: direction, widget: 'select', default: 'normal', options: ["normal", "reverse"] }
       - { required: false, "label": "Image", "name": "image", "widget": "object", "fields": [
         {
           required: false,
@@ -206,3 +327,38 @@ collections:
       - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
       - { label: Playlist ID, name: id, widget: string}
       - { label: Description, name: description, widget: markdown, required: false}
+  - name: "slogan"
+    label: "Slogan"
+    create: false
+    files:
+      - label: "Slogan"
+        file: "src/components/slogan.md"
+        name: "slogan"
+        fields:
+          - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
+          - { label: Items, name: items, widget: list,
+              fields: [
+                { label: "Title", "name": "title", "widget": "string"},
+                { label: "Text", "name": "text", "widget": "string"}
+              ]
+          }
+  - name: "levels"
+    label: "Levels"
+    create: false
+    files:
+      - label: "Levels"
+        file: "src/lessons/levels/index.md"
+        name: "levels"
+        fields:
+          - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
+          - { label: Levels, name: items, widget: list, max: 3,
+            fields: [
+              { label: Name, name: name, widget: string, hint: "Don't change name once created" },
+              { label: Description, name: description, widget: string },
+              { label: Date, name: date, widget: hidden },
+              { label: Image, name: image, widget: image },
+              { label: Link, name: link, widget: "boolean", default: false },
+              { label: Quote, name: quote, widget: "string" }
+              ] 
+          }
+         

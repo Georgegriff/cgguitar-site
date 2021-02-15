@@ -1,7 +1,8 @@
 import "https://mozilla.github.io/nunjucks/files/nunjucks.js";
 window.env = nunjucks.configure('/admin')
 window.env.addFilter('slug', (value) => {
-  return value;
+  // good enough
+  return value.toLowerCase();
 })
 window.env.addGlobal('helpers', {
     // todo see if can reduce duplication, precompile?
