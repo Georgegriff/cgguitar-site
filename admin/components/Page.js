@@ -45,6 +45,7 @@ export const Page = (passedProps) => {
                         ...passedProps,
                         // override
                         parentComponent: 'section',
+                        debouncedRender: this.debouncedRender
                     })
                 })
             }
