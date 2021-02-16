@@ -5,8 +5,8 @@ items:
     description: Play music from the first lesson! Kick start your guitar playing
       with enjoyable and   frustration free methods.
     image: images/testimonials/annep.jpg
-    quote: Charlie’s energy and enthusiasm are infectious, and I have been so
-      impressed by my son’s progress.
+    quote: "Charlie’s energy and enthusiasm are infectious, and I have been so
+      impressed by my son’s progress."
   - name: Intermediate
     description: Effective practice regimes, coaching to build a solid foundation of
       technique and repertoire, ways to improve your improvisation and

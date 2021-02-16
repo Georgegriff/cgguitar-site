@@ -1,0 +1,45 @@
+{% set footerSettings = footerSettings or {callToAction: true} %}
+{%- set footerData = footer or collections.footerData[0] -%}
+<footer>
+    <article class="footer-grid">
+        {%- if footerSettings.callToAction %}
+        <section class="call-to-action">
+            <h2>{{footerData.data.callToAction.title}}</h2>
+            {%- for sub in footerData.data.callToAction.subtitle -%}
+            <p class="subtitle">{{sub | safe}}</p>
+            {%- endfor -%}
+            <a class="action-button cta-primary" href="{{footerData.data.callToAction.link.url}}">{{footerData.data.callToAction.link.text}}</a>
+            <p class="description">{{footerData.data.callToAction.description}}</p>
+        </section>
+        {%- endif -%}
+        <section>
+            <h3>Info</h3>
+            <ul class="footer-links">
+                {% include 'partials/contact-data.njk' %}
+                {%- for info in footerData.data.info %}
+                <li class="sub-info">{{info.text}}</li>
+                {%- endfor %}
+            </ul>
+            <h3>Keep Updated</h3>
+            <div class="sub-header">{{footerData.templateContent | safe}}</div>
+            <ul class="footer-links social-links">
+                {% include 'partials/social.njk' %}
+            </ul>
+        </section>
+        <section>
+        <h3 id="more">More</h3>
+        <ul class="footer-links">
+            {%- for entry in collections.all | eleventyNavigation | skip(2) %}
+            <li class="{% if entry.url == page.url %} active{% endif %}">
+                <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+            </li>
+            {%- endfor %}
+            {%- for link in footerData.data.links -%}
+            <li><a href="{{link.url}}">{{link.text}}</a></li>
+            {%- endfor -%}
+            </ul>
+        </section>
+        {% block footer %}{% endblock %}
+    </article>
+    {% include 'partials/copyright.njk' %}
+</footer>

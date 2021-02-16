@@ -10,6 +10,18 @@ window.env.addFilter('slug', (value) => {
 window.env.addFilter('imgmin', (value) => {
   return value;
 })
+
+window.env.addFilter('ariatel', (value) => {
+  return value;
+})
+
+window.env.addFilter('skip', (value) => {
+  return value;
+})
+
+window.env.addFilter('eleventyNavigation', (value) => {
+  return value;
+})
 window.env.addGlobal('helpers', {
   // todo see if can reduce duplication, precompile?
     placeholders:(str) => str,

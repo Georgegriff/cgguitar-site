@@ -11,14 +11,14 @@ pageJs: contact.js
 title: Contact
 eleventyNavigation:
   key: Contact
-  order: 3
+  order: 2
 hero:
   title: I'd love to hear from you, please get in touch
   subtitle: Contact me using the options below.
   image:
     src: images/hero.jpg
     alt: CG Guitars' Charlie playing guitar on stage
-footer:
+footerSettings:
   callToAction: false
 ---
 {% set GRID_TEXT_PLACEHOLDER = {"PHONE_PLACEHOLDER": metadata.author.phone | ariatel, "EMAIL_PLACEHOLDER": metadata.author.email } %}

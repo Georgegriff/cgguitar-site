@@ -57,6 +57,13 @@ const custom = Component({
     assetsPrefix: "/admin"
 })
 
+const footer = Component({
+    type: "footer",
+    parentComponent: 'div',
+    pathToAssets: {image: ["image"]},
+    assetsPrefix: "/admin"
+})
+
 const componentDefinitions = {
     playlist,
     card,
@@ -65,7 +72,8 @@ const componentDefinitions = {
     slogan,
     levels,
     gridCard,
-    custom
+    custom,
+    footer
 }
 
 // register all  preview components for stand alone previews

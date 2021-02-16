@@ -53,7 +53,7 @@
             <main id="main-content" tabindex="-1" {% if mainClass %}class="{{mainClass}}"{% endif %}>
                 {% block content %}{% endblock %}
             </main>
-            {% include 'partials/footer.njk' %}
+            {% include 'partials/components/footer.njk' %}
         </div>
         <script type="module">
             {{ inlineJs | jsmin | safe }}

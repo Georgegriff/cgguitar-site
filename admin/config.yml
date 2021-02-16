@@ -11,7 +11,7 @@ backend:
 publish_mode: editorial_workflow
 local_backend: true
 media_folder: "src/images" # Media files will be stored in the repo under images/uploads
-public_folder: "/images" # Media files will be stored in the repo under images/uploads
+public_folder: "images" # Media files will be stored in the repo under images/uploads
 
 collections:
   - name: "pages"
@@ -22,6 +22,10 @@ collections:
         file: "src/index.md"
         fields:
           - {label: Title, name: title, widget: string}
+          - { label: "Navigation", name: "eleventyNavigation", "hint": "Navigation bar info", widget: "object", fields: [
+                { label: "Text", name: "key", widget: "string"},
+                { label: "Order", name: "order", widget: "number"},
+          ]}
           - 
             label: Hero Section
             name: hero
@@ -163,6 +167,10 @@ collections:
         file: "src/about.md"
         fields:
           - {label: Title, name: title, widget: string}
+          - { label: "Navigation", name: "eleventyNavigation", "hint": "Navigation bar info", widget: "object", fields: [
+                { label: "Text", name: "key", widget: "string"},
+                { label: "Order", name: "order", widget: "number"},
+          ]}
           - 
             label: Hero Section
             name: hero
@@ -260,6 +268,10 @@ collections:
         file: "src/testimonials.md"
         fields:
           - {label: Title, name: title, widget: string}
+          - { label: "Navigation", name: "eleventyNavigation", "hint": "Navigation bar info", widget: "object", fields: [
+                { label: "Text", name: "key", widget: "string"},
+                { label: "Order", name: "order", widget: "number"},
+          ]}
           - 
             label: Hero Section
             name: hero
@@ -342,6 +354,10 @@ collections:
         file: "src/contact.md"
         fields:
           - {label: Title, name: title, widget: string}
+          - { label: "Navigation", name: "eleventyNavigation", "hint": "Navigation bar info", widget: "object", fields: [
+                { label: "Text", name: "key", widget: "string"},
+                { label: "Order", name: "order", widget: "number"},
+          ]}
           - 
             label: Hero Section
             name: hero
@@ -417,6 +433,10 @@ collections:
         file: "src/videos.md"
         fields:
           - {label: Title, name: title, widget: string}
+          - { label: "Navigation", name: "eleventyNavigation", "hint": "Navigation bar info", widget: "object", fields: [
+                { label: "Text", name: "key", widget: "string"},
+                { label: "Order", name: "order", widget: "number"},
+          ]}
           - 
             label: Hero Section
             name: hero
@@ -635,3 +655,49 @@ collections:
             ]},
         ]
       }
+  - label: "Globals"
+    name: "globals"
+    files:
+      - label: "Site Data"
+        name: "metadata"
+        delete: false
+        file: "src/_data/metadata.json"
+        fields:
+          - {label: "Site Name", name: "title", widget: "string"}
+          - {label: "Site Url", name: "url", widget: "string"}
+          - {label: "Site SEO Description", name: "description", widget: "string"}
+          - {label: "Author", "name": "author", "widget": "object",
+            fields: [
+              {label: "Name", name: "name", widget: "string"},
+              {label: "Email", name: "email", widget: "string"},
+              {label: "Phone", name: "phone", widget: "string"},
+              {label: "Url", name: "url", widget: "string"},
+              {label: "Twitter", name: "twitter", widget: "string"},
+              {label: "Facebook", name: "facebook", widget: "string"},
+              {label: "Instagram", name: "instagram", widget: "string"},
+              {label: "YouTube", name: "youtube", widget: "string"}
+            ]
+          }
+      - label: "Footer"
+        name: "footer"
+        delete: false
+        file: "src/footerData.md"
+        fields:
+          - {label: "Call to Action", name: "callToAction", widget: "object",
+            fields: [
+              {label: "Title", name: "title", widget: "string"},
+              {label: "Description", name: "description", widget: "string"},
+              {label: "Subtitle", name: "subtitle", widget: "list"},
+              {label: "Link", name: "link", widget: "object", fields: [
+                  { label: "Url", name: url, widget: "string"},
+                { label: "Text", name: text, widget: "string"},
+              ]}
+            ]
+          }
+          - {label: "Info", name: "info", widget: "list", allow_add: true, fields: [
+            { label: "Text", name: "text", widget: "string"}
+          ]}
+          - {label: "Additional links", name: "links", widget: "list", fields: [
+            { label: "Text", name: text, widget: "string"},
+            { label: "Url", name: url, widget: "string"}
+          ]}

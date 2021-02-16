@@ -8,6 +8,9 @@
         position: relative;
         z-index: 2;
     }
+    .call-to-action {
+      margin-top:1.5rem;
+    }
     img {
 
       @keyframes fadein {
@@ -94,6 +97,7 @@
   p.description {
       font-size: 1.2rem;
       max-width: 45ch;
+      margin-top:1rem;
       @include up-from(xxlarge) {
          font-size: 1rem;
       }
@@ -116,12 +120,6 @@
     right: -5rem;
     top: 0;
     left: auto;
-  }
-}
-
-.hero {
-  .description {
-    margin-top:1rem;
   }
 }
 

@@ -7,15 +7,16 @@ footer {
     --IconColor: currentColor;
     --IconColorBg: var(--Secondary);
     padding: var(--site-padding);
+    background: var(--Secondary);
     font-size: 0.875rem;
     @include up-to(medium) {
         min-height: calc(100vh - ((var(--site-header) + var(--site-padding))));
     }
-    p, p.description, p.subtitle {
+    p, p.description, .subtitle {
         line-height: 1rem;
         font-size: 0.85rem;
     }
-    p.subtitle {
+    .subtitle {
         margin-top:0.5rem;
     }
 
@@ -34,6 +35,13 @@ footer {
         flex-direction: column;
        * {
         max-width: max-content;
+       }
+       .action-button {
+         margin:1.5rem 0 1rem 0;
+       }
+
+       .description {
+           color: var(--SecondaryText50);
        }
     }
 

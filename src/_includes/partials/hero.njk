@@ -1,3 +1,4 @@
+{%- set hero = heros[heroName] or hero -%}
 {% if hero %}
     {% set image = hero.image or {src: "images/hero.jpg", "alt": "CG Guitars' Charlie playing guitar on stage"} %}
     {% set callToAction = hero.callToAction %}

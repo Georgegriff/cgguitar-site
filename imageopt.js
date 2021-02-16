@@ -2,10 +2,10 @@ const { promisify } = require("util");
 const sizeOf = promisify(require("image-size"));
 const path = require('path');
 const sharp = require('sharp');
+const Image = require("@11ty/eleventy-img");
 
 
 const imageOptimizer = async (src, {alt, ariaHidden, urlOnly, widths = [320, 640, 960, 1200, 1800, 2400]}) => {
-    const Image = require("@11ty/eleventy-img");
     const formats = src.endsWith('svg') ? ["svg"] : ["jpeg", "webp"];
     const imgPath = src.startsWith('http') ? src : path.join('src', src)
     let stats = await Image(imgPath, {

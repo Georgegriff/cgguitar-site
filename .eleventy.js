@@ -20,8 +20,10 @@ module.exports = (eleventyConfig) => {
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("Image", async (src, alt, ariaHidden) => {
-    if (!alt) {
-      throw new Error(`Missing accessibility description on image on ${src}`);
+    if (!alt && !ariaHidden) {
+      // work around until netlify-cms supports required fields inside of optional object
+      console.error(`Missing alt on image: ${src}, setting default so build doesn't fail`);
+      alt = `Uploaded image for CG Guitar`;
     }
     const img = await imageOptimizer(src, {alt, ariaHidden});
 
@@ -87,7 +89,12 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy("src/images/manifest");
   //eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
   if (process.env.NODE_ENV === "production") {
-    eleventyConfig.addPlugin(pluginPWA);
+    eleventyConfig.addPlugin(pluginPWA, {
+      globIgnores: ["admin/**"],
+      globPatterns: [
+        "**/*.{html,css,js,mjs,map,avif,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}",
+      ],
+    });
     eleventyConfig.addPassthroughCopy({"build/scripts": "scripts"});
   }
 
@@ -171,6 +178,7 @@ eleventyConfig.addCollection('components', (collection) => {
 
   eleventyConfig.addFilter("debugger", (...args) => {
     //tip!
+    debugger;
     console.log(...args);
     return {...args};
   });
