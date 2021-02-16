@@ -88,7 +88,7 @@ collections:
               - label: 'Card'
                 widget: 'object'
                 name: 'card'
-                summary: 'card: {{fields.name}}'
+                summary: 'Card: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -99,7 +99,7 @@ collections:
               - label: 'Quote'
                 widget: 'object'
                 name: 'quote'
-                summary: 'quote: {{fields.name}}'
+                summary: 'Quote: {{fields.title}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -110,7 +110,7 @@ collections:
               - label: 'Playlist'
                 widget: 'object'
                 name: 'playlist'
-                summary: 'playlist: {{fields.name}}'
+                summary: 'Playlist: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -118,21 +118,10 @@ collections:
                     search_fields: ["title"]
                     value_field: "name"
                     display_fields: ["title"]
-              - label: 'Testimonial'
-                widget: 'object'
-                name: 'testimonial'
-                summary: 'testimonial: {{fields.name}}'
-                fields:
-                  - widget: "relation"
-                    name: 'name'
-                    collection: "testimonial"
-                    search_fields: ["name"]
-                    value_field: "name"
-                    display_fields: ["name"]
               - label: 'Slogan'
                 widget: 'object'
                 name: 'slogan'
-                summary: '{{fields.name}}'
+                summary: 'Slogan {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -143,7 +132,7 @@ collections:
               - label: 'Levels'
                 widget: 'object'
                 name: 'levels'
-                summary: '{{fields.name}}'
+                summary: 'Levels: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -154,7 +143,7 @@ collections:
               - label: 'Media Cards'
                 widget: 'object'
                 name: 'gridCard'
-                summary: '{{fields.name}}'
+                summary: 'Media Card: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -233,7 +222,7 @@ collections:
               - label: 'Card'
                 widget: 'object'
                 name: 'card'
-                summary: 'card: {{fields.name}}'
+                summary: 'Card: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -244,7 +233,7 @@ collections:
               - label: 'Quote'
                 widget: 'object'
                 name: 'quote'
-                summary: 'quote: {{fields.name}}'
+                summary: 'Quote: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -255,7 +244,7 @@ collections:
               - label: 'Playlist'
                 widget: 'object'
                 name: 'playlist'
-                summary: 'playlist: {{fields.name}}'
+                summary: 'Playlist: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -334,7 +323,7 @@ collections:
               - label: 'Media Cards'
                 widget: 'object'
                 name: 'gridCard'
-                summary: '{{fields.name}}'
+                summary: 'Media Card: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -345,7 +334,7 @@ collections:
               - label: Custom
                 widget: "object"
                 name: "custom"
-                summary: 'testimonial: {{fields.name}}'
+                summary: 'custom: {{fields.name}}'
                 fields:
                   - { label: "Name", name: "name", widget: "string" }
                   - { label: "Component Path", name: "componentPath", widget: "string" }
@@ -420,7 +409,7 @@ collections:
               - label: 'Media Cards'
                 widget: 'object'
                 name: 'gridCard'
-                summary: '{{fields.name}}'
+                summary: 'Media Card: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -499,7 +488,7 @@ collections:
               - label: 'Playlist'
                 widget: 'object'
                 name: 'playlist'
-                summary: 'playlist: {{fields.name}}'
+                summary: 'Playlist: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
@@ -510,7 +499,7 @@ collections:
               - label: 'Media Cards'
                 widget: 'object'
                 name: 'gridCard'
-                summary: '{{fields.name}}'
+                summary: 'Media Card: {{fields.name}}'
                 fields:
                   - widget: "relation"
                     name: 'name'
