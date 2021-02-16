@@ -1,11 +1,11 @@
 import { nunjucksRender } from "./nunjucks-render.js";
 
 
-export const NunjucksComponent = ({data, body, type, name, element,templateName = type, parentComponent = 'div', debouncedRender}) => {
+export const NunjucksComponent = ({data, body, type, name, element,templateName = type, parentComponent = 'div'}) => {
     // nunjucks auto fetches partials which i copy into admin dir
     let html;
     try {
-        let render = debouncedRender ? debouncedRender : nunjucksRender;
+        let render = nunjucksRender;
         html = render(templateName, type, data, body)
     } catch(e) {
         console.error(e);

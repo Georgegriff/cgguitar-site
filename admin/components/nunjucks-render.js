@@ -1,11 +1,24 @@
-const debounce = (fn, delay) => {
+export function throttle(callback, wait, immediate = false) {
+    let timeout = null 
+    let initialCall = true
+    
     return function() {
-        fn.args = arguments
-        fn.timeout_id && clearTimeout(fn.timeout_id)
-        fn.timeout_id = setTimeout(function() { return fn.apply(fn, fn.args) }, delay)
+      const callNow = immediate && initialCall
+      const next = () => {
+        callback.apply(this, arguments)
+        timeout = null
+      }
+      
+      if (callNow) { 
+        initialCall = false
+        next()
+      }
+  
+      if (!timeout) {
+        timeout = setTimeout(next, wait)
+      }
     }
-};
-
+  }
 export const nunjucksRender = (templateName, type, data, body) => {
     return window.env.render(`partials/components/${templateName}.njk`, {
         // todo find if data is markdown or not
@@ -17,4 +30,4 @@ export const nunjucksRender = (templateName, type, data, body) => {
 }
 
 
-export const debouncedRender = () => debounce(nunjucksRender, 300);
+export const debouncedRender = () => throttle(nunjucksRender, 300);

@@ -1,14 +1,23 @@
+import { debounce } from './debounce.js';
 import {HeaderPreview} from './Header.js';
-import { debouncedRender } from './nunjucks-render.js';
 import { NunjucksComponent } from './NunjucksComponent.js';
 
 export const Page = (passedProps) => {
     return createClass({
         getInitialState() {
-            this.debouncedRender = debouncedRender();
+            this.updateDebounced = debounce(this.forceUpdate, 300);
             return {}
         },
-        render() {
+
+        shouldComponentUpdate() {
+            this.updateDebounced();
+            return false;
+        },
+
+        componentWillUnmount() {
+         this.updateDebounced.cancel();
+        },
+        _renderUpdate() {
             const props = this.props;
             const data = props.entry.getIn(["data", "components"])
             if(!data) {
@@ -26,8 +35,7 @@ export const Page = (passedProps) => {
                             name,
                             data: "",
                             type,
-                            ...passedProps,
-                            debouncedRender: this.debouncedRender
+                            ...passedProps
                           });
                     }
                     data = props.fieldsMetaData.getIn(['components', 'name', type, name]);
@@ -44,14 +52,16 @@ export const Page = (passedProps) => {
                         ...props,
                         ...passedProps,
                         // override
-                        parentComponent: 'section',
-                        debouncedRender: this.debouncedRender
+                        parentComponent: 'section'
                     })
                 })
             }
             const children = previewComponent || [];
-            const main = h('main', {}, children)
-            return h('div', {},  HeaderPreview(props), main)
+            return children;
+        },
+        render() {
+            const main = h('main', {}, this._renderUpdate())
+            return h('div', {},  HeaderPreview(this.props), main)
         }
     })
 };
