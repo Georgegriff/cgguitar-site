@@ -7,7 +7,6 @@ const debounce = (fn, delay) => {
 };
 
 export const nunjucksRender = (templateName, type, data, body) => {
-    console.log('rendering')
     return window.env.render(`partials/components/${templateName}.njk`, {
         // todo find if data is markdown or not
         [type]: {
