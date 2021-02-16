@@ -16,9 +16,9 @@ components:
 mypages:
   - lessons
   - ./
-title: Guitar Tuitions
+title: Guitar Tuition
 eleventyNavigation:
-  key: Lessons
+  key: Lessonsg
   order: 1
 pagination:
   data: mypages
