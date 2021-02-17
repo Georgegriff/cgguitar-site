@@ -37,5 +37,6 @@ window.env.addGlobal('helpers', {
           return `${link}#${input.component}`;
         }
         return link
-      }
+      },
+      isExternalLink: () => false
 })

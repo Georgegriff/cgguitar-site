@@ -1,5 +1,7 @@
 const tagFilters = ["all", "nav",];
 const {encode} = require('html-entities');
+const siteMeta = require("../_data/metadata.json");
+
 module.exports = {
   filterCollectionTags: (tag) => !tagFilters.includes(tag),
   get year() {
@@ -82,5 +84,8 @@ module.exports = {
         component.componentPath = `partials/components/${componentType}.njk`
         return component;
     });
+  },
+  isExternalLink(href) {
+    return href.startsWith("https") && !href.startsWith(siteMeta.url);
   }
 };

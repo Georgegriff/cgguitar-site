@@ -92,6 +92,11 @@ CMS.registerPreviewTemplate("testimonials", Page({
     assetsPrefix: "/admin"
 }));
 
+CMS.registerPreviewTemplate("success", Page({
+    assetsPrefix: "/admin"
+}));
+
+
 CMS.registerPreviewTemplate("contact", Page({
     assetsPrefix: "/admin"
 }));

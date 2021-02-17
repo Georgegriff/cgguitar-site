@@ -10,7 +10,7 @@ hero:
     src: images/hero.jpg
     alt: "CG Guitars' Charlie playing guitar on stage"
   callToAction:
-    - type: secondary
-      text: Head to home
+    - type: primary
+      text: Confirm
       link: /
 ---

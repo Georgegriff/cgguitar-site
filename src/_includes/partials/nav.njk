@@ -8,7 +8,7 @@
             <ul class="nav-links">
                 {%- for entry in collections.all | eleventyNavigation | head(maxLinks) %}
                 <li data-desktop-hidden class="{% if entry.url == page.url %} active{% endif %}">
-                    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+                    <a {%- if helpers.isExternalLink(entry.url) -%}target="_blank"{%-endif%} href="{{ entry.url | url }}">{{ entry.title }}</a>
                 </li>
                 {%- endfor %}
                 <li data-more-trigger><a class="more-link" aria-label="More" href="#more">{% include 'images/chevron_down.svg' %}</a></li>
@@ -17,7 +17,7 @@
                             <ul class="burger-list">
                                 {%- for entry in collections.all | eleventyNavigation %}
                                     <li data-overflow-link class="{% if entry.url == page.url %} active{% endif %}">
-                                        <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+                                        <a {% if helpers.isExternalLink(entry.url) -%}target="_blank"{%-endif%} href="{{ entry.url | url }}">{{ entry.title }}</a>
                                     </li>
                                 {%- endfor %}
                             </ul>

@@ -4,7 +4,11 @@ form {
     .action-button {
         margin-top:0;
         padding: 0.8rem 1.5rem;
-      }
+    }
+    a {
+      color: var(--Primary) !important;
+      font-weight: 600;
+    }
 }
 
 .form-grid {

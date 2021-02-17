@@ -513,7 +513,63 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: "markdown"}
-      
+      - label: "Contact success page"
+        name: "success"
+        file: "src/success.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - 
+            label: Hero Section
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              -
+                label: Title
+                name: title
+                widget: string
+              -
+                label: Description
+                name: description
+                required: false
+                widget: string
+              -
+                label: Subtitle
+                name: subtitle
+                required: false
+                widget: string
+              -
+                label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Source
+                    name: src
+                    widget: image
+                  - label: Description
+                    name: alt
+                    widget: string
+              - 
+                label: Call To Action
+                required: false
+                name: callToAction
+                max: 2
+                widget: "list"
+                fields:
+                  -
+                    name: type
+                    label: Type
+                    widget: select
+                    default: ["primary"]
+                    options: ["primary", "secondary"]
+                  -
+                    name: text
+                    label: Text
+                    widget: string
+                  -
+                    name: link
+                    label: Link
+                    widget: string
   - name: "card"
     label: "Card"
     folder: src/components/cards

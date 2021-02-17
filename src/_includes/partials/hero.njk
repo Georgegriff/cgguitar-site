@@ -12,7 +12,7 @@
                 <div class="call-to-action">
                 {% for item in hero.callToAction %}
                     {% set type = item.type or "primary" %}
-                        <a class="action-button cta-{{type}}" href="{{item.link}}">{{item.text}}</a>
+                        <a {% if helpers.isExternalLink(item.link) -%}target="_blank"{%-endif -%} class="action-button cta-{{type}}" href="{{item.link}}">{{item.text}}</a>
                 {% endfor %}
                 </div>
             {% endif %}

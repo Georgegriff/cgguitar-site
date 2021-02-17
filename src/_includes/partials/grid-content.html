@@ -10,7 +10,7 @@
 {%- set videoImage = ytImg | imgmin %}
 {% endif %}
 {%- endif %}
-<article class="padded-sm site-padded{%- if gridContent.class %} {{gridContent.class}}{%- endif %}">
+<article class="padded-sm site-padded{%- if gridContent.class %} {{gridContent.class}}{%- endif -%}">
     <div class="card-grid grid-start grid-gap grid-columns no-gap">
 {%- if video %}
         <section class="video-section">
@@ -19,7 +19,7 @@
             {%- endif %}
             {%- include 'partials/youtube.njk' %}
             {%- if video.link %}
-            <div class="learn-more"><a href="{{video.link.url}}">{{video.link.text}}</a></div>
+            <div class="learn-more"><a {% if helpers.isExternalLink(video.link.url) == true %} target="_blank"{%- endif %} href="{{video.link.url}}">{{video.link.text}}</a></div>
             {%- endif %}
         </section>
 {%- endif %}
