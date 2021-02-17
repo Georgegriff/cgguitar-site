@@ -90,7 +90,8 @@ module.exports = (eleventyConfig) => {
   //eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
   if (process.env.NODE_ENV === "production") {
     eleventyConfig.addPlugin(pluginPWA, {
-      globIgnores: ["admin/**"],
+      // service worker breaks contact form
+      globIgnores: ["admin/**", "success/**"],
       globPatterns: [
         "**/*.{html,css,js,mjs,map,avif,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}",
       ],
