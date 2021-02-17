@@ -30,6 +30,8 @@ components:
     name: griffs-licks
   - type: playlist
     name: musical-works
+  - type: playlist
+    name: Interviews
 pageJs: media.js
 ---
 
