@@ -16,12 +16,13 @@
         text-align: center;
         height: 100%;
         width: 100%;
-        min-height: 200px;
+        min-height: 180px;
         padding:1rem;
+        justify-content: space-evenly;
     }
 
     h2 {
-        margin: 1rem;
+        margin: 0.75rem;
         font-weight: 600;
         font-size: 0.875rem;
     }
@@ -36,6 +37,13 @@
         p {
             max-width: initial;
         }
+    }
+}
+
+.slogan {
+    --grid-ish-size: 15em;
+    @include up-to(large) {
+        --grid-ish-size: 21em;
     }
 }
 
@@ -77,7 +85,7 @@
         height: 3.5rem;
         width: auto;
     }
-    --min-column-size:15em;
+    --min-column-size:11em;
     padding:0;
     height: 100%;
     place-items: center;
@@ -131,6 +139,7 @@
         }
         li {
             min-height: auto;
+            padding: 1rem;
         }
     }
 }

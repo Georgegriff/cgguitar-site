@@ -98,7 +98,7 @@ main {
 
 
 .padded {
-    padding: 4.4rem 0;
+    padding: 3.4rem 0;
 }
 
 .padded-med {
@@ -124,7 +124,7 @@ main {
 h1 {
     font-size: 4rem;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.1;
     max-width: 20ch;
 
     @include up-from(xxlarge) {
@@ -174,6 +174,7 @@ h3 {
     align-items: flex-end;
     flex:2;
     margin-top:3rem;
+    margin-bottom: 0.5rem;
     > * {
         font-size: 0.875rem;
         margin-bottom: 0;

@@ -12,9 +12,11 @@ header {
     justify-content: center;
     align-items: flex-end;
     margin-left: calc(-1 * var(--site-padding));
+    margin-bottom: var(--site-padding);
     @include up-to(small) {
         /* mobiles and 100vh are fucking stupid 100vh excludes controls */
         bottom: 2.5rem;
+        margin-bottom: 0;
      }
 }
 

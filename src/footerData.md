@@ -19,5 +19,6 @@ links:
     text: Privacy policy
 ---
 
-Follow me on social media to keep up with the latest news,
+Follow me on social media to keep up with the latest news.
+
 I post free educational content on my [YouTube channel]({{metadata.author.youtube}}).

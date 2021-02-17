@@ -526,6 +526,7 @@ collections:
       - { required: false, label: Heading, name: heading, widget: string}
       - { required: false, label: Body, name: "body", widget: 'markdown' }
       - { required: false, label: Image position, name: direction, widget: 'select', default: 'normal', options: ["normal", "reverse"] }
+      - { required: false, label: Class, name: class, widget: string}
       - { required: false, "label": "Image", "name": "image", "widget": "object", "fields": [
         {
           required: false,
@@ -626,7 +627,7 @@ collections:
     slug: "{{name}}"
     fields:
       - { label: Title, name: title, widget: string}
-      - { label: Class, name: class, widget: string, required: false}
+      - { label: Class, name: f, widget: string, required: false}
       - { label: Name, name: name, widget: string, hint: "Don't change name once created"}
       - { required: false, label: Icons, name: icons, widget: list, max: 4,
         fields: [

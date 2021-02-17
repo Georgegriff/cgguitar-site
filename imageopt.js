@@ -30,7 +30,7 @@ const imageOptimizer = async (src, {alt, ariaHidden, urlOnly, widths = [320, 640
       .toBuffer();
        const base64Placeholder = `data:image/png;base64,${placeholder.toString("base64")}`;
       const containSize = `min(var(--main-width), ${dimensions.width}px) min(calc(var(--main-width) * ${dimensions.height / dimensions.width}), ${dimensions.height}px)`;
-      placeholderStyle = `background-size:cover;background-image:url('${base64Placeholder}');contain-intrinsic-size:${containSize}`
+      placeholderStyle = `background-position:center;background-size:cover;background-image:url('${base64Placeholder}')`
     }
    
     const imgHtml = Image.generateHTML(stats,  {

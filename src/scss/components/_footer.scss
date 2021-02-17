@@ -13,8 +13,11 @@ footer {
         min-height: calc(100vh - ((var(--site-header) + var(--site-padding))));
     }
     p, p.description, .subtitle {
-        line-height: 1rem;
-        font-size: 0.85rem;
+        line-height: 1.2rem;
+        font-size: 0.95rem;
+    }
+    p {
+        margin-bottom: 0.5rem;
     }
     .subtitle {
         margin-top:0.5rem;
@@ -87,8 +90,9 @@ footer {
 
 .footer-grid {
     display: grid;
+    gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     section {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 }

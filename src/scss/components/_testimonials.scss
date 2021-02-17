@@ -5,6 +5,7 @@
 }
 
 .level {
+    padding:calc(2 * var(--site-padding)) var(--site-padding) !important;
     h3 {
         margin-bottom: 0.5rem;
     }
@@ -27,9 +28,10 @@
 
     .quote {
         display: block;
-        font-size: 0.85rem;
+        font-size: 0.95rem;
         position: relative;
         margin-left: 1.5rem;
+        margin-bottom: var(--site-padding);
 
         @include up-from(large) {
             max-width: 40ch;
@@ -132,7 +134,7 @@
 }
 
 .quote-wrapper {
-    padding:2rem;
+    padding:1.5rem 2rem;
     .quote {
         margin-left: auto;
         max-width: 100%;

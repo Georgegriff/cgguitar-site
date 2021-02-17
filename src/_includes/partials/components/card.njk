@@ -1,7 +1,7 @@
 <section>
 {%- set card = card or component %}
 {%- if card %}
-<figure id="{{card.data.name | slug}}" class="content-card card-{{card.data.direction}}">
+<figure id="{{card.data.name | slug}}" class="content-card card-{{card.data.direction}} {{card.data.class}}">
     <div class="content">
         <h2>{{card.data.heading}}</h2>
         <div>{{card.templateContent | safe}}</div>

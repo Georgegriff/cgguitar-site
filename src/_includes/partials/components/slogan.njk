@@ -1,7 +1,7 @@
 {%- set slogan = component.data or slogan.data %}
 {% if slogan %}
 <article>
-    <ol style="--grid-ish-size: 16em;" class="grid-ish icondesc padded">
+    <ol class="grid-ish icondesc padded slogan">
         {%- for item in slogan.items %}
             <li class="logo-small">
                 {%- if (loop.index % 2) == 0 %}

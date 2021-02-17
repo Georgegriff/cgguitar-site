@@ -145,6 +145,7 @@ export class YoutubePlaylist extends LitElement {
         --thumbnail-size: 4rem;
         padding-bottom:1rem;
         min-height: 638px;
+        font-family: inherit;
       }
 
       h1 {
@@ -270,7 +271,7 @@ export class YoutubePlaylist extends LitElement {
       }
       .video-channel {
         font-weight: 600;
-        font-size: 0.875rem;
+        font-size: 0.95rem;
         color: var(--text, #fff);
       }
       .stats {
@@ -299,7 +300,7 @@ export class YoutubePlaylist extends LitElement {
         margin-left: 0.25rem;
       }
       .video-title {
-        font-size: 0.875rem;
+        font-size: 0.95rem;
         margin-bottom:0.2rem;
       }
 
@@ -448,7 +449,7 @@ export class YoutubePlaylist extends LitElement {
 
     .bottom-of-list {
       border-bottom: solid 1px var(--background-active);
-      font-size: 0.875rem;
+      font-size: 0.95rem;
     }
 
     .scroll-wrap {
@@ -626,6 +627,12 @@ export class YoutubePlaylist extends LitElement {
       li.classList.remove("playlist-item-active")
       li.removeAttribute("aria-label");
     }
+    if(index === this.currentVideoIndex + 1) {
+      const scroller = this.shadowRoot.querySelector('.playlist-scroll');
+      if(scroller) {
+        scroller.scrollTop = li.offsetTop;
+      }
+    }
     const video = this.videos[index];
     render(html`${_playlistItem(video, this._onTap.bind(this), index, this.viewMore)}`, li)
     return li;
@@ -656,7 +663,7 @@ export class YoutubePlaylist extends LitElement {
           </div>
         </div>
         <div class="scroll-wrap">
-          <div class="mask"><button aria-hidden="${this.viewMore ? "true" : "false"}" @click="${this._onViewMore}" class="view-more" aria-label="Click to load more videos from the playlist">View more</button></div>
+          <div class="mask"><button aria-hidden="${this.viewMore ? "true" : "false"}" @click="${this._onViewMore}" class="view-more" aria-label="Click to load more videos from the playlist">Watch next</button></div>
           <div aria-hidden="${!this.viewMore ? "true" : "false"}" class="playlist-scroll"><ul aria-hidden="${!this.viewMore ? "true" : "false"}" class="playlist-items">
             ${this.listNodes.map((li, index) => html `${this._renderListItem(li, index)}`)}
             ${this.viewMore ? html` <li class="bottom-of-list">
