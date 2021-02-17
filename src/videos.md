@@ -4,16 +4,6 @@ layout: layouts/index.njk
 pageCriticalStyles:
   - css/media.css
 headerClassName: header-hero-medium
-components:
-  - type: gridCard
-    name: videos-icons
-  - type: playlist
-    name: guitar-lessons
-  - type: playlist
-    name: beginner-guitar-lessons
-  - type: playlist
-    name: griffs-licks
-pageJs: media.js
 title: Videos
 eleventyNavigation:
   key: Videos
@@ -29,6 +19,20 @@ hero:
     - type: primary
       text: Get in touch
       link: /contact/
+components:
+  - type: gridCard
+    name: videos-icons
+  - type: playlist
+    name: guitar-lessons
+  - type: playlist
+    name: beginner-guitar-lessons
+  - type: playlist
+    name: griffs-licks
+  - type: playlist
+    name: musical-works
+  - type: playlist
+    name: Interviews
+pageJs: media.js
 ---
 
 {%- set GRID_TEXT_PLACEHOLDER = {"YT_PLACEHOLDER": metadata.author.youtube, "INSTA_PLACEHOLDER": metadata.author.instagram} -%}

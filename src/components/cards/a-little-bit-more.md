@@ -1,12 +1,15 @@
 ---
+label: About page - A little bit more
 name: a-little-bit-more
 type: card
-label: About page - A little bit more
 heading: A little bit more
 direction: reverse
 image:
   src: images/harbinger.jpg
   alt: Charlie on stage with his band Harbinger
+link:
+  url: https://www.harbingerriffs.com
+  text: Find out more about Harbinger
 ---
 Charlie graduated from The Academy of Contemporary Music as a Bachelor of Music with a First Class Honours in Professional Music Performance in 2013.
 
