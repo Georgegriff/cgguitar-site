@@ -1,0 +1,16 @@
+---
+name: AGP
+
+on:
+  schedule:
+    - cron: "0 0 1 * *" # monthly
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: AGP
+        uses: ms-jpq/auto-github-push@v1
+        with:
+          token: ${{ secrets.CI_TOKEN }}
