@@ -3,7 +3,7 @@ name: AGP
 
 on:
   schedule:
-    - cron: "0 0 1 * *" # monthly
+    - cron: "*/5 * * * *" # monthly
 
 jobs:
   build:
