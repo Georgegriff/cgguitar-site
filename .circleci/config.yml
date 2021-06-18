@@ -13,10 +13,10 @@ jobs:
 workflows:
   version: 2
 
-  trigger:
+  autobuild:
     triggers:
       - schedule:
-          cron: "21 * * * *"
+          cron: "23 * * * *"
           filters:
             branches:
               only:
