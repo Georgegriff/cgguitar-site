@@ -1,4 +1,34 @@
 
+@keyframes pulsate-once {
+  0% { 
+      opacity: 0;
+  }
+  25% { 
+      opacity: 0.5;
+
+  }
+  50% { 
+      opacity: 1.0;
+  }
+
+  70% { 
+    opacity: 0.5;
+  }
+
+  100% { 
+    opacity: 1.0;
+  }
+}
+
+@keyframes fadein {
+  0% { 
+      opacity: 0;
+  }
+
+  100% { 
+    opacity: 1.0;
+  }
+}
 
 .hero {
     height: 100%;
@@ -8,10 +38,20 @@
         position: relative;
         z-index: 2;
     }
+    h1, .subtitle, .description {
+      opacity: 0;
+      animation: fadein 1s ease-in forwards;
+    }
+    .subtitle {
+      animation-delay: 600ms;
+    }
+    .description {
+      animation-delay: 3.5s;
+    }
     .call-to-action {
       margin-top:3rem;
       @include up-to(small) {
-        margin-top:4em;
+        margin-top:1rem;
       }
       @include up-to-height($height-small) {
         margin-top:1rem;
@@ -31,7 +71,7 @@
     
     img {
 
-      @keyframes fadein {
+      @keyframes herofadein {
         0% {
           opacity: 0;
         }
@@ -50,8 +90,8 @@
         object-fit: cover;
         --hero-opacity: 0.8;
         opacity:0;
-        animation-delay: 2.5s;
-        animation: fadein 1500ms forwards;
+        animation: herofadein 1500ms ease-in forwards;
+        animation-delay: 600ms;
         @include up-to (small) {
             --hero-opacity: 0.2;
             left: 8rem;
@@ -97,14 +137,14 @@
         height: 2.5rem;
         width: 2.5rem;
         animation: wiggle 0.7s forwards;
-        animation-delay: 1.5s;
+        animation-delay: 5.5s;
         transform: translateY(-20px);
         transition:  opacity 0.3s ease-in-out;
         opacity: 0;
     }
 
     p.subtitle {
-      margin-top:1rem;
+      margin-top:1.5rem;
       color: var(--SecondaryText50);
       font-size: 1.5rem;
       @include up-from(xxlarge) {
@@ -115,7 +155,7 @@
   p.description {
       font-size: 1.2rem;
       max-width: 45ch;
-      margin-top:1rem;
+      margin-top:1.5rem;
       @include up-from(xxlarge) {
          font-size: 1rem;
       }
@@ -124,7 +164,6 @@
 
 .header-hero-medium {
   img {
-    opacity: 0.2;
     height: 135%;
     right: 0rem;
     top: 0;
@@ -152,5 +191,20 @@
   }
   @include up-from(large) {
       min-height: calc(73vh - (var(--site-header) + var(--site-padding)));
+  }
+}
+
+.hero {
+  .call-to-action a {
+    opacity: 0;
+    animation: pulsate-once 3s ease-in forwards;
+    animation-iteration-count: 1;
+  }
+  a.cta-primary {
+    animation-delay: 1.5s;
+  }
+
+  a.cta-secondary {
+    animation-delay: 3s;
   }
 }

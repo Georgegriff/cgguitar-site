@@ -9,7 +9,7 @@ html {
 
 :root {
     @include default-theme;
-    font-size: calc(1rem + 0.3vw);
+    font-size: calc(1rem + 0.25vw);
 }
 
 /* Utilities */
@@ -29,6 +29,19 @@ html {
 @import "./components/burgerMenu";
 @import "./components/social";
 @import "./components/aboutCard";
+
+@keyframes pulsate {
+    0% { 
+        opacity: 1.0;
+    }
+    50% { 
+        opacity: 0.5;
+
+    }
+    100% { 
+        opacity: 1.0;
+    }
+}
 
 body,html {
     margin: 0;
@@ -75,6 +88,7 @@ main {
     article {
         &> h2 {
             padding-top:var(--site-padding);
+            margin-bottom: calc(var(--site-padding));
         }
     }
 
@@ -187,7 +201,7 @@ h3 {
 }
 
 .learn-more {
-    margin:1rem 0;
+    margin:2rem 0 1rem 0;
     color: currentColor;
     a {
         font-size: 0.9rem;

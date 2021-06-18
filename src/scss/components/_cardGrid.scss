@@ -49,7 +49,7 @@
 }
 
 .section-title {
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .flex {
@@ -84,5 +84,23 @@
         max-width: 100ch;
         margin-top: 1rem;
         line-height: 1.4rem;
+    }
+}
+
+.pulsate {
+    ul {
+        > li {
+            animation: pulsate 1.5s ease-out;
+            animation-iteration-count: 1;
+        }
+        > li:nth-child(1) {
+            animation-delay: 2.5s;
+        }
+            li:nth-child(2) {
+            animation-delay: 4s;
+        }
+        > li:nth-child(3) {
+            animation-delay: 5.5s;
+        }
     }
 }

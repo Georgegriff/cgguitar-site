@@ -1,7 +1,7 @@
 ---
 title: Contact Icons
 name: contact-icons
-class: "grid-small contained small-list"
+class: "grid-small contained small-list pulsate"
 icons:
   - text: <a href="#main-content">Fill out the contact form below</a>
     image: images/edit.svg

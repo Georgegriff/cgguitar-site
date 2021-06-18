@@ -7,7 +7,7 @@
         margin:0.5rem 0;
     }
     h2 {
-        margin-bottom: var(--site-padding);
+        margin-bottom: calc(var(--site-padding) * 2);
     }
     .content {
         * {

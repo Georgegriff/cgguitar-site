@@ -2,6 +2,7 @@
 templateEngineOverride: md,njk
 layout: layouts/index.njk
 permalink: "{{ myurl }}/index.html"
+headerClassName: 'header-hero-full'
 components:
   - type: slogan
     name: slogan

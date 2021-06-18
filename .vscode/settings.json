@@ -6,5 +6,10 @@
         "markdown",
         "latex"
     ],
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#222922",
+        "titleBar.activeBackground": "#2F392F",
+        "titleBar.activeForeground": "#FAFBFA"
+    }
 }

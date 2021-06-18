@@ -15,7 +15,7 @@ youtube-playlist {
     min-width: 100%;
 
     h2 {
-        margin-top: var(--site-padding);
+        margin: var(--site-padding) 0;
     }
 
     p[slot="description"] {

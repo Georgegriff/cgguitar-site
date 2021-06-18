@@ -1,7 +1,7 @@
 ---
 title: Videos page Icons
 name: videos-icons
-class: "grid-small contained small-list"
+class: "grid-small contained small-list pulsate"
 icons:
   - text: <a href="#main-content">Watch some of my videos below</a>
     image: images/video.svg
