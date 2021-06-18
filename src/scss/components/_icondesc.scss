@@ -20,6 +20,11 @@
         padding:1rem;
         justify-content: space-evenly;
     }
+    @include up-to(small) {
+        li {
+            padding: 0 0 1rem 0;
+        }
+    }
 
     h2 {
         margin: 0.75rem 0.75rem 1.5rem 0.75rem;
@@ -140,10 +145,7 @@
         li {
             min-height: auto;
             padding: 1rem;
-            
         }
-        @include up-to(small) {
-            padding: 0.25rem;
-        }
+        
     }
 }
