@@ -13,13 +13,13 @@ jobs:
 workflows:
   version: 2
 
-  auto-build:
+  autobuild:
     triggers:
-        - schedule:
-              cron: "*/5 * * * *"
-              filters:
-                branches:
-                  only:
-                    - main
+      - schedule:
+          cron: "19 * * * *"
+          filters:
+            branches:
+              only:
+                - main
     jobs:
       - docker
