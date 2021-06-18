@@ -13,7 +13,7 @@ jobs:
 workflows:
   version: 2
 
-  autobuild:
+  trigger:
     triggers:
       - schedule:
           cron: "19 * * * *"
