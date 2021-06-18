@@ -140,6 +140,10 @@
         li {
             min-height: auto;
             padding: 1rem;
+            
+        }
+        @include up-to(small) {
+            padding: 0.25rem;
         }
     }
 }
