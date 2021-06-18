@@ -16,7 +16,7 @@ workflows:
   autobuild:
     triggers:
       - schedule:
-          cron: "26 * * * *"
+          cron: "0 14 * * *"
           filters:
             branches:
               only:
