@@ -1,18 +1,18 @@
 {
-    "title": "CG Guitar",
-    "url": "https://cgguitar.co.uk",
-    "description": "Guitar Lessons Cranleigh, Godalming, Guildford",
-    "author": {
-      "name": "CG Guitar",
-      "email": "charlie@cgguitar.co.uk",
-      "phone": "+447861538564",
-      "url": "https://www.cgguitar.co.uk/about/",
-      "twitter": "https://twitter.com/intent/follow?screen_name=cg_guitar",
-      "facebook": "https://www.facebook.com/CGGuitar",
-      "instagram":"https://instagram.com/cg_guitar",
-      "youtube": "https://www.youtube.com/channel/UCReQS8UwfrhDRGTowiXqVKg"
-    },
-    "manifest": {
-      "path": "/manifest.json"
-    }
+  "title": "CG Guitar",
+  "url": "https://cgguitar.co.uk",
+  "description": "Online Guitar Lessons on Zoom Cranleigh, Godalming, Guildford",
+  "author": {
+    "name": "CG Guitar",
+    "email": "charlie@cgguitar.co.uk",
+    "phone": "+447861538564",
+    "url": "https://www.cgguitar.co.uk/about/",
+    "twitter": "https://twitter.com/intent/follow?screen_name=cg_guitar",
+    "facebook": "https://www.facebook.com/CGGuitar",
+    "instagram": "https://instagram.com/cg_guitar",
+    "youtube": "https://www.youtube.com/channel/UCReQS8UwfrhDRGTowiXqVKg"
+  },
+  "manifest": {
+    "path": "/manifest.json"
+  }
 }
