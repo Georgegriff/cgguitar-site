@@ -47,12 +47,12 @@ nav {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        font-size: 0.9rem;
+        font-size: 1.2rem;
         @include up-to (small) {
             justify-content: center;
         }
         @include up-from(xxlarge) {
-            font-size: 1rem;
+            font-size: 1.5rem;
         }
 
     }
