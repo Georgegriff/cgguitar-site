@@ -12,11 +12,8 @@ video:
 direction: null
 ---
 
-<h2 style="margin:0 0 1rem 0;">5-Star rated guitar tuition</h2>
-{%- include 'images/star.svg' %}
-<div class="learn-more">
-    <a target="_blank" rel="nopener" href="https://search.google.com/local/reviews?placeid=ChIJLWGHwJHEdUgR9lSrCaHDa-c">As seen on Google reviews.</a>
-</div>
+<h2 style="margin:0;">5-Star rated guitar tuition</h2>
+{%- include "partials/star-rating.njk"%}
 <div style="margin-top:1rem">
 
 CG Guitar can help no matter your skill level.

@@ -236,3 +236,19 @@ h3 {
 .justify-center {
     justify-content: center;
 }
+
+.star-rating {
+    font-weight: 600;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    color: var(--Primary);
+    span {
+        padding-top:0.25rem;
+    }
+    svg {
+        height: auto;
+        flex-basis: 11rem;
+        margin-left: 0.5rem;
+    }
+}
