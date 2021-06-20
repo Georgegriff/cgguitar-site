@@ -142,7 +142,7 @@ h1 {
     max-width: 20ch;
 
     @include up-from(xxlarge) {
-        font-size: 5rem;
+        font-size: 7rem;
     }
     @include up-to(small) {
         font-size: 2.4rem;
