@@ -15,7 +15,7 @@ header {
     margin-bottom: var(--site-padding);
     @include up-to(small) {
         /* mobiles and 100vh are fucking stupid 100vh excludes controls */
-        bottom: 2.5rem;
+        bottom: 3.5rem;
         margin-bottom: 0;
      }
 }
@@ -59,10 +59,7 @@ header {
     &-full {
         position: relative;
         overflow: hidden;
-        min-height: calc(100vh - (var(--site-header) + var(--site-padding)));
-        @include up-to-height($height-small) {
-            min-height: calc(100vh - (var(--site-header)));
-        }
+        min-height: calc(100vh - (var(--site-header)));
     }
 
 }

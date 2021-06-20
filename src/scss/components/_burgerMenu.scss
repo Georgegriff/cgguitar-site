@@ -125,7 +125,7 @@ body[data-menu-open] {
     position: fixed;
     top: 0;
     left: 0;
-    margin: calc(var(--site-header) + var(--site-padding) - 5px) 0;
+    margin: calc(var(--site-header) + var(--site-padding) - 10px) 0;
     padding: 0 var(--site-padding) calc(var(--site-header) + var(--site-padding) + 2rem) var(--site-padding);
     width: 100%;
     height: 100%;

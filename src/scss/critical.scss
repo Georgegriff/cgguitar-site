@@ -47,7 +47,7 @@ body,html {
     margin: 0;
     background: var(--Secondary);
     color: var(--Text);
-    scroll-padding-top: calc((var(--site-header) + var(--site-padding)) - 5px);
+    scroll-padding-top: calc((var(--site-header) + var(--site-padding)) - 10px);
 }
 
 :focus, #more:target {
