@@ -387,6 +387,7 @@ export class YoutubePlaylist extends LitElement {
       width: 100%;
       height: 100%;
       display: flex;
+      outline: none !important;
       position: absolute;
       justify-content: center;
       align-items: center;

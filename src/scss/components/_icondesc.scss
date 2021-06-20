@@ -14,15 +14,13 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        height: 100%;
         width: 100%;
         min-height: 180px;
-        padding:1rem;
         justify-content: space-evenly;
     }
     @include up-to(small) {
         li {
-            padding: 0 0 1rem 0;
+            padding: 1rem 0;
         }
     }
 
@@ -46,9 +44,22 @@
 }
 
 .slogan {
+    background: var(--Background50);
+    color: var(--Text);
     --grid-ish-size: 15em;
     @include up-to(large) {
         --grid-ish-size: 21em;
+    }
+    padding: 0 var(--site-padding) var(--site-padding) var(--site-padding);
+
+    ol {
+        margin:0;
+        padding:0;
+        gap:var(--site-padding);
+    }
+
+    li {
+        background: var(--Background);
     }
 }
 
@@ -90,7 +101,7 @@
         height: 3.5rem;
         width: auto;
     }
-    --min-column-size:11em;
+    --min-column-size:14em;
     padding:0;
     height: 100%;
     place-items: center;

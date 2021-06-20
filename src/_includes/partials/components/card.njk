@@ -1,9 +1,21 @@
-<section>
 {%- set card = card or component %}
+{%- set video = card.data.video %}
+<section class="card-grid {{card.data.class}}">
+{%- if video %}
+    {%- set youtube = {"id": video.id } %}
+        {% if video.thumbnail %}
+        {%- set videoImage = video.thumbnail | imgmin %}
+        {% else %}
+        {%- set ytImg = "https://i.ytimg.com/vi/" + youtube.id + "/maxresdefault.jpg"%}
+        {%- set videoImage = ytImg | imgmin %}
+    {% endif %}
+{%- endif %}
 {%- if card %}
-<figure id="{{card.data.name | slug}}" class="content-card card-{{card.data.direction}} {{card.data.class}}">
+<figure id="{{card.data.name | slug}}" class="content-card card-{{card.data.direction}}">
     <div class="content">
+        {%- if card.data.heading -%}
         <h2>{{card.data.heading}}</h2>
+        {%-endif %}
         <div>{{card.templateContent | safe}}</div>
         {%- if card.data.link -%}
         <div class="learn-more flex-end flex-push" ><a {% if helpers.isExternalLink(card.data.link.url) -%}target="_blank"{%-endif%} href="{{helpers.componentLink(card.data.link)}}">{{card.data.link.text}}</a></div>
@@ -12,4 +24,12 @@
     {%- if card.data.image -%}{%- Image card.data.image.src, card.data.image.alt -%}{%- endif -%}
 </figure>
 {%- endif %}
+{%- if video %}
+    <div class="video-section">
+        {%- include 'partials/youtube.njk' %}
+        {%- if video.link %}
+        <div class="learn-more"><a {% if helpers.isExternalLink(video.link.url) == true %} target="_blank"{%- endif %} href="{{video.link.url}}">{{video.link.text}}</a></div>
+        {%- endif %}
+    </div>
+{%- endif -%}
 </section>

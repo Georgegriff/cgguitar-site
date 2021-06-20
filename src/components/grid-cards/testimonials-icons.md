@@ -8,6 +8,6 @@ icons:
     image: images/cg-logo-alt-black.svg
   - text: I provide extra value though free online demonstrations and tutorials.
     image: images/video.svg
-  - text: Many of my students have provided testimonials.
+  - text: Improve your practical ability or increase your understanding of music theory.
     image: images/default-test.svg
 ---

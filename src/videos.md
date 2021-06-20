@@ -10,7 +10,7 @@ eleventyNavigation:
   order: 4
 hero:
   title: Check out my latest videos
-  description: Find demonstrations, tutorials and other educational content.
+  description: Find demonstrations, tutorials and other musical content.
   subtitle: Enjoy and please share!
   image:
     src: images/hero.jpg

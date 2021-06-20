@@ -3,10 +3,18 @@ title: Videos page Icons
 name: videos-icons
 class: "grid-small contained small-list pulsate"
 icons:
-  - text: <a href="#main-content">Watch some of my videos below</a>
+  - text: Watch some of my videos below
     image: images/video.svg
-  - text: <a target="_blank" href="YT_PLACEHOLDER">Subscribe to my YouTube channel</a>
+    link:
+      href: '#main-content'
+  - text: Subscribe to my YouTube channel
     image: images/youtube.svg
-  - text: <a target="_blank" href="INSTA_PLACEHOLDER">Follow me on Instagram</a>
+    link:
+      href: YT_PLACEHOLDER
+      target: _blank
+  - text: Follow me on Instagram
     image: images/instagram.svg
+    link:
+      href: INSTA_PLACEHOLDER
+      target: _blank
 ---

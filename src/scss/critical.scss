@@ -112,7 +112,7 @@ main {
 
 
 .padded {
-    padding: 3.4rem 0;
+    padding: 1.4rem 0;
 }
 
 .padded-med {
@@ -194,22 +194,34 @@ h3 {
         margin-bottom: 0;
         line-height: 1rem;
     }
-    a {
-        padding-bottom:0.25rem;
-        border-bottom: solid 5px currentColor;
-    }
 }
 
 .learn-more {
     margin:2rem 0 1rem 0;
     color: currentColor;
+    position: relative;
     a {
         font-size: 0.9rem;
-        border-bottom: solid 5px var(--Primary);
+        color: inherit;
+        display: inline-flex;
+        flex-direction: column;
+        gap:0.35rem;
+        
+        &::after {
+            content: '';
+            display: inline-block;
+            margin-bottom: 10px;;
+            width:90%;
+            height:5px;
+            background: var(--Primary);
+        }
         &:hover, &:active {
-            border-bottom: solid 5px currentColor;
+            &::after {
+                background: currentColor;
+            }
         }
     }
+
 }
 
 .grid-ish {

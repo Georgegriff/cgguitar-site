@@ -17,15 +17,17 @@ const serve11tyAssets = ({dist = "_site"} = {}) => {
                 context.url = `/${dist}${pathName}`
             }
             return next();
-        } catch  {
+        } catch(e)  {
             return next();
         }
     }
 }
 module.exports = {
-  port: 3100,
+  port: 8080,
+  hostname: "0.0.0.0",
   watch: true,
   rootDir: ".",
   middleware: [serve11tyAssets({ dist: "dist" })],
   nodeResolve: true,
+  http2: true
 };

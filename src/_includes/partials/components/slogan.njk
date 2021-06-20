@@ -1,9 +1,9 @@
 {%- set slogan = component.data or slogan.data %}
 {% if slogan %}
-<article>
-    <ol class="grid-ish icondesc padded slogan">
+<article class="slogan no-padding">
+    <ol class="grid-ish icondesc">
         {%- for item in slogan.items %}
-            <li class="logo-small">
+            <li class="logo-small padded">
                 {%- if (loop.index % 2) == 0 %}
                 {%- Image "images/cg-logo-alt-black.svg","CG Guitar logo",true -%}
                 {%- else %}

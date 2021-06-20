@@ -6,7 +6,7 @@ items:
   - title: Enjoy
     text: Play music from the first lesson!
   - title: Learn
-    text: Enjoyable and frustration free methods.
+    text: Learn contemporary songs and techniques through personalised lesson plans.
   - title: Achieve
     text: Improve your technique, improvisation and composition skills.
   - title: Perform

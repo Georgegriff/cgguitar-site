@@ -4,6 +4,7 @@
 youtube-playlist {
     background: var(--Background, #1a1a1a);
     color: var(--Text, #fff);
+    --text: var(--Text);
     --secondary-text: var(--Text);
     --background-active: var(--Background50);
     --primary-color: var(--Primary);
@@ -51,6 +52,7 @@ youtube-playlist li {
     border: none;
     cursor: pointer;
     z-index: 2;
+    outline: none;
   }
   .playbtn:focus, .playbtn:hover {
     opacity: 1;

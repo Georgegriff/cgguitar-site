@@ -4,12 +4,14 @@ layout: layouts/index.njk
 permalink: "{{ myurl }}/index.html"
 headerClassName: 'header-hero-full'
 components:
+  - type: card
+    name: 5-star-guitar
   - type: slogan
     name: slogan
-  - type: gridCard
-    name: home-page-video-card
   - type: card
-    name: cg-guitar-can-help
+    name: more-info
+  - type: gridCard
+    name: icon-info-card
   - type: levels
     name: levels
   - type: card
@@ -17,7 +19,7 @@ components:
 mypages:
   - lessons
   - ./
-title: Guitar Tuition
+title: Guitar tuition
 eleventyNavigation:
   key: Lessons
   order: 1

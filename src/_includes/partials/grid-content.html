@@ -12,23 +12,12 @@
 {%- endif %}
 <article class="grid-content padded-sm site-padded{%- if gridContent.class %} {{gridContent.class}}{%- endif -%}">
     <div class="card-grid grid-start grid-gap grid-columns no-gap">
-{%- if video %}
-        <section class="video-section">
-            {%- if gridContent.title %}
-                <h2 class="section-title">{{gridContent.title}}</h2>
-            {%- endif %}
-            {%- include 'partials/youtube.njk' %}
-            {%- if video.link %}
-            <div class="learn-more"><a {% if helpers.isExternalLink(video.link.url) == true %} target="_blank"{%- endif %} href="{{video.link.url}}">{{video.link.text}}</a></div>
-            {%- endif %}
-        </section>
-{%- endif %}
         <section style="width: 100%; height: 100%;">
             <ul class="card-grid online-content icondesc grid-icons no-gap">
                 {%- for item in items %}
                     <li class="padded-med">
                         {%- if item.link -%}
-                        <a href="{{item.link}}">
+                        <a class="card-icon-link" {% if item.link.label -%} aria-label="{{helpers.placeholders(item.link.label, GRID_TEXT_PLACEHOLDER)}}" {% endif %} target="{{item.link.target}}" href="{{helpers.placeholders(item.link.href, GRID_TEXT_PLACEHOLDER)}}">
                         {%- endif %}
                         {%- if item.image -%}
                             {%- include item.image -%}
