@@ -31,7 +31,7 @@ export const Page = (passedProps) => {
                     let key;
                     if(type === "custom") {
                         return NunjucksComponent({
-                            body: `${type}: ${name}`,
+                            body: `{%- include "partials/components/mocks/${name}.njk" -%}`,
                             name,
                             data: "",
                             type,

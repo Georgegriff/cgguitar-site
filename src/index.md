@@ -5,7 +5,7 @@ permalink: "{{ myurl }}/index.html"
 headerClassName: 'header-hero-full'
 components:
   - type: card
-    name: 5-star-guitar
+    name: home-page-video-and-info
   - type: slogan
     name: slogan
   - type: card

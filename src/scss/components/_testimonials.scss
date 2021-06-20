@@ -33,8 +33,8 @@
         background-color: currentColor;
         mask-size: cover;
         -webkit-mask-size: cover;
-        mask-image: var(--quote-image-start);
-        -webkit-mask-image: var(--quote-image-start);
+        mask-image: var(--quote-image-start, url(../images/start-quote.svg));
+        -webkit-mask-image: var(--quote-image-start, url(../images/start-quote.svg));
     }
 
     &:after {
@@ -48,8 +48,8 @@
         background-color:  currentColor;
         mask-size: cover;
         -webkit-mask-size: cover;
-        mask-image: var(--quote-image-end);
-        -webkit-mask-image: var(--quote-image-end);
+        mask-image: var(--quote-image-end, url(../images/end-quote.svg));
+        -webkit-mask-image: var(--quote-image-end, url(../images/end-quote.svg));
     }
 }
 

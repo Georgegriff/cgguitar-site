@@ -1,0 +1,8 @@
+{%- set starRating = starRating or collections.starRating[0] -%}
+<div class="star-rating">
+{%- include 'images/star.svg' -%}
+<h2 style="margin:0;">{{starRating.data.title}}</h2>
+</div>
+<div class="star-link learn-more">
+    <a target="_blank" rel="nopener" href="{{starRating.data.link.url}}">{{starRating.data.link.text}}</a>
+</div>

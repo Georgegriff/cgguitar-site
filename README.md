@@ -53,3 +53,8 @@ npm run build
 
 Sitemap: replace `YOUR_SITE_URL` in netlify.toml
 
+
+# Netlify cms
+
+Run `npm run netlify`
+

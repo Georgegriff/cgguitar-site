@@ -64,6 +64,13 @@ const footer = Component({
     assetsPrefix: "/admin"
 })
 
+const starRating = Component({
+    type: "starRating",
+    parentComponent: 'div',
+    pathToAssets: {image: ["image"]},
+    assetsPrefix: "/admin"
+})
+
 const componentDefinitions = {
     playlist,
     card,
@@ -73,7 +80,8 @@ const componentDefinitions = {
     levels,
     gridCard,
     custom,
-    footer
+    footer,
+    starRating
 }
 
 // register all  preview components for stand alone previews
@@ -108,6 +116,5 @@ CMS.registerPreviewTemplate("videos", Page({
 CMS.registerPreviewStyle("css/reset.css");
 CMS.registerPreviewStyle("css/critical.css");
 CMS.registerPreviewStyle("css/media.css");
-CMS.registerPreviewStyle("./cms-overrides.css")
-
+CMS.registerPreviewStyle("./cms-overrides.css");
 

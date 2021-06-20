@@ -1,7 +1,7 @@
 ---
-label: Home page - CG Guitar can help
+label: Home page - Video and Info
 class: star-card
-name: 5-star-guitar
+name: home-page-video-and-info
 type: card
 video:
   id: BWN45DJCCoQ
@@ -11,7 +11,7 @@ video:
     url: /videos/#main-content
 direction: null
 ---
-{%- include "partials/star-rating.njk" -%}
+{%- include "partials/components/starRating.njk" -%}
 <div>
 
 Whether you're looking to start guitar lessons for the first time or you need help and advice on how to take your playing to the next level.

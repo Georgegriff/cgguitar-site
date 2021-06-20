@@ -689,6 +689,10 @@ collections:
         fields: [
           { label: Text, name: text, widget: string },
           { label: Image, name: image, widget: image },
+          { label: Link, name: link, widget: object, fields: [
+              {required: false,label: "Url", name: "href",},
+              {required: false, label: "Label", name: "label"}
+          ] },
         ]
       }
       - { required: false, label: Video, name: video, widget: "object",
@@ -747,3 +751,15 @@ collections:
             { label: "Text", name: text, widget: "string"},
             { label: "Url", name: url, widget: "string"}
           ]}
+      - label: "5 Star rating"
+        name: "starRating"
+        delete: false
+        file: "src/starRating.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Link", name: "link", widget: "object", fields:
+              [
+                  { label: "Url", name: url, widget: "string"},
+                  { label: "Text", name: text, widget: "string"},
+              ]
+            }

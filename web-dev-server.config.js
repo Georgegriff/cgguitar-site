@@ -23,7 +23,7 @@ const serve11tyAssets = ({dist = "_site"} = {}) => {
     }
 }
 module.exports = {
-  port: 8080,
+  port: 8090,
   hostname: "0.0.0.0",
   watch: true,
   rootDir: ".",

@@ -24,7 +24,7 @@ export const nunjucksRender = (templateName, type, data, body) => {
         // todo find if data is markdown or not
         [type]: {
             data,
-            templateContent: marked(body)
+            templateContent: marked(window.env.renderString(body))
         }
     });
 }

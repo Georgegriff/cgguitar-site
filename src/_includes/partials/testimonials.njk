@@ -1,7 +1,8 @@
+{%- set testimonials = testimonials or collections.testimonial -%}
 <article style="padding-top:var(--site-padding);" id="students">
-    {%- include "partials/star-rating.njk" -%}
+    {%- include "partials/components/starRating.njk" -%}
     <ul class="testimonials masonry">
-    {%- asyncEach testimonial in collections.testimonial | reverse %}
+    {%- asyncEach testimonial in testimonials | reverse %}
         {%- include "partials/components/testimonial.njk" %}
     {%- endeach %}
     </ul>
