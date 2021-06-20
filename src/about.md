@@ -4,6 +4,25 @@ layout: layouts/index.njk
 pageCriticalStyles:
   - css/media.css
 headerClassName: header-hero-small
+components:
+  - type: card
+    name: who-is-cg-guitar
+  - type: quote
+    name: quote-about
+  - type: card
+    name: a-little-bit-more
+  - type: playlist
+    name: musical-works
+  - type: playlist
+    name: vlogs
+  - type: quote
+    name: about-session-work-quote
+  - type: card
+    name: about-band-and-session
+  - type: playlist
+    name: session-work-playlist
+  - type: playlist
+    name: Interviews
 pageJs: media.js
 title: About
 eleventyNavigation:
@@ -19,21 +38,6 @@ hero:
     - type: primary
       text: Get in touch
       link: /contact/
-components:
-  - type: card
-    name: who-is-cg-guitar
-  - type: quote
-    name: quote-about
-  - type: card
-    name: a-little-bit-more
-  - type: playlist
-    name: musical-works
-  - type: card
-    name: about-band-and-session
-  - type: playlist
-    name: session-work-playlist
-  - type: quote
-    name: about-session-work-quote
 ---
 
 <article class="about-section no-padding">

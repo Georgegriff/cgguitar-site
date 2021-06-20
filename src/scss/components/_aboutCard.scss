@@ -93,14 +93,3 @@
         }
     }
 }
-
-.about-section {
-    youtube-playlist {
-        background: var(--Secondary, #1a1a1a);
-        color: var(--SecondaryText);
-        --secondary-text: var(--SecondaryText50);
-        --text: var(--SecondaryText);
-        --background-active: var(--Secondary50);
-        --mask-color: rgba(26,26,26, 0.7);
-    }
-}

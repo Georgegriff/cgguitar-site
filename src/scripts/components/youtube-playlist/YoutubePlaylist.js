@@ -164,12 +164,21 @@ export class YoutubePlaylist extends LitElement {
         text-decoration: none;
       }
 
-      .grid {
-        display: grid;
+      .flex {
+        display: flex;
         flex-wrap: wrap;
-        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
         gap:1rem;
         overflow: hidden;
+      }
+
+      .scroll-wrap {
+        flex: 6;
+        min-width: 286px;
+      }
+
+      .video-item {
+        flex:5;
+        min-width: 286px;
       }
 
       .heading {
@@ -463,6 +472,7 @@ export class YoutubePlaylist extends LitElement {
     .scroll-wrap {
       width: 100%;
       position: relative;
+      flex: 6;
     }
 
     .view-more {
@@ -657,7 +667,7 @@ export class YoutubePlaylist extends LitElement {
       <slot @slotchange=${this._onVideosSlotChange}></slot>
       <div class="heading"><slot name="heading"></slot></div>
       <div class="description"><slot name="description"></slot></div>
-      <div class="grid">
+      <div class="flex">
       ${!videoObj ? html`<slot name="fallback"></slot>` :
       html`
         <div class="video-size video-item">
