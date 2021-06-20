@@ -46,7 +46,7 @@
       animation-delay: 600ms;
     }
     .description {
-      animation-delay: 3.5s;
+      animation-delay: 2.5s;
     }
     .call-to-action {
       margin-top:3rem;
@@ -137,7 +137,7 @@
         height: 2.5rem;
         width: 2.5rem;
         animation: wiggle 0.7s forwards;
-        animation-delay: 5.5s;
+        animation-delay: 4.5s;
         transform: translateY(-20px);
         transition:  opacity 0.3s ease-in-out;
         opacity: 0;
@@ -201,10 +201,10 @@
     animation-iteration-count: 1;
   }
   a.cta-primary {
-    animation-delay: 1.5s;
+    animation-delay: 1s;
   }
 
   a.cta-secondary {
-    animation-delay: 2.5s;
+    animation-delay: 2s;
   }
 }

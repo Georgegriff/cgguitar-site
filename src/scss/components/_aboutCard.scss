@@ -7,10 +7,10 @@
         margin:0.5rem 0;
     }
     h2 {
-        margin-bottom: calc(var(--site-padding) * 2);
+        margin-bottom: 2rem;
     }
     .content {
-        * {
+        blockquote {
             max-width: 75ch;
         }
         min-width: 240px;

@@ -137,7 +137,7 @@ export class YoutubePlaylist extends LitElement {
     return css`
       ${liteYtCss}
       :host {
-        --video-size:100%;
+        --video-size:82%;
         display: flex;
         flex-direction: column;
         background: var(--background, #1a1a1a);
@@ -146,6 +146,13 @@ export class YoutubePlaylist extends LitElement {
         padding-bottom:1rem;
         min-height: 638px;
         font-family: inherit;
+        outline: none !important;
+      }
+
+      @media (max-width: 40em) {
+        :host {
+          --video-size: 100%;
+        }
       }
 
       h1 {
@@ -499,7 +506,6 @@ export class YoutubePlaylist extends LitElement {
         width: 100%;
         min-height: calc(var(--thumbnail-size)*  3);
         height: 100%;
-        max-width: calc(var(--video-size));
         overflow: hidden;
         opacity: 0.3;
     }
@@ -628,7 +634,7 @@ export class YoutubePlaylist extends LitElement {
       li.classList.remove("playlist-item-active")
       li.removeAttribute("aria-label");
     }
-    if(index === this.currentVideoIndex + 1) {
+    if(index === this.currentVideoIndex) {
       const scroller = this.shadowRoot.querySelector('.playlist-scroll');
       if(scroller) {
         scroller.scrollTop = li.offsetTop;

@@ -9,7 +9,7 @@ html {
 
 :root {
     @include default-theme;
-    font-size: calc(1rem + 0.25vw);
+    font-size: calc(0.875rem + 0.2vw);
 }
 
 /* Utilities */
@@ -178,6 +178,7 @@ h2 {
 
 h3 {
     font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 
@@ -188,7 +189,6 @@ h3 {
     align-items: flex-end;
     flex:2;
     margin-top:3rem;
-    margin-bottom: 0.5rem;
     > * {
         font-size: 0.875rem;
         margin-bottom: 0;
@@ -197,7 +197,6 @@ h3 {
 }
 
 .learn-more {
-    margin:2rem 0 1rem 0;
     color: currentColor;
     position: relative;
     a {
@@ -238,17 +237,32 @@ h3 {
 }
 
 .star-rating {
-    font-weight: 600;
-    font-size: 1.75rem;
-    display: flex;
-    align-items: center;
-    color: var(--Primary);
-    span {
-        padding-top:0.25rem;
-    }
     svg {
         height: auto;
-        flex-basis: 11rem;
-        margin-left: 0.5rem;
+        width: 7rem;
+    }
+}
+
+@include up-from(xxlarge) {
+    .star-rating {
+        svg {
+            width: 15rem;
+        }
+    }
+    .star-link.learn-more {
+        a {
+            font-size: 1.5rem;
+        }
+    }
+
+}
+
+.content-card .content .star-link.learn-more {
+    margin: 0.25rem 0 1.5rem 0;
+}
+
+@include up-from(xxlarge) {
+    h2 {
+        font-size: 2.5rem;
     }
 }

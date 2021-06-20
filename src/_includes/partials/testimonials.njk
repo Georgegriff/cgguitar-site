@@ -1,6 +1,5 @@
-<article id="students">
-    <h2 style="margin:0;">{{title}}</h2>
-    {%- include "partials/star-rating.njk"%}
+<article style="padding-top:var(--site-padding);" id="students">
+    {%- include "partials/star-rating.njk" -%}
     <ul class="testimonials masonry">
     {%- asyncEach testimonial in collections.testimonial | reverse %}
         {%- include "partials/components/testimonial.njk" %}

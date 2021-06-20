@@ -29,7 +29,7 @@ youtube-playlist:nth-child(even) {
     color: var(--SecondaryText);
     --secondary-text: var(--SecondaryText50);
     --text: var(--SecondaryText);
-    --background-active: var(--Secondary50);
+    --background-active: var(--Secondary30);
     --mask-color: rgba(26,26,26, 0.7);
 }
 
@@ -83,11 +83,11 @@ youtube-playlist li {
   }
 
   .fallback {
-      max-width: 49.4%;
+      max-width: 40.5%;
       @include up-to(medium) {
         max-width: 100%;
       }
-      margin: 0;
+      margin: 0 0 2rem 0;
       position: relative;
       height: auto;
       display: flex;

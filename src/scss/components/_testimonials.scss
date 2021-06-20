@@ -54,8 +54,8 @@
 }
 
 blockquote {
-    @include up-to(small) {
-        max-width: 48ch !important;
+    @include up-from(xxlarge) {
+        font-size: 1.5rem;
     }
     &:after {
         right:1rem;
@@ -173,7 +173,7 @@ blockquote {
 .brick {
     background: var(--Background);
     color: var(--Texts);
-    padding:1rem;
+    padding:2rem;
 }
 
 .masonry {
@@ -219,7 +219,7 @@ blockquote {
             }
             &:hover, &:active {
                 &::after {
-                    background: var(--Secondary);
+                    background: var(--Primary50);
                 }
             }
         }

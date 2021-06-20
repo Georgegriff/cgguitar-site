@@ -8,18 +8,21 @@ video:
   channel: UCReQS8UwfrhDRGTowiXqVKg
   link:
     text: Watch some demonstrations and tutorials.
-    url: /videos/
+    url: /videos/#main-content
 direction: null
 ---
+{%- include "partials/star-rating.njk" -%}
+<div>
 
-<h2 style="margin:0;">5-Star rated guitar tuition</h2>
-{%- include "partials/star-rating.njk"%}
-<div style="margin-top:1rem">
+Whether you're looking to start guitar lessons for the first time or you need help and advice on how to take your playing to the next level.
 
-CG Guitar can help no matter your skill level.
-Whether you're looking to start guitar lessons for the first time or you need help and advice on how to develop your playing.
+<br/>
 
-1:1, group classes and workshops available.
+### CG Guitar can help, no matter your skill level.
+
+1:1, group classes and workshops available Monday to Friday.
+
+Lessons held on Zoom, for the foreseeable.
 
 
 

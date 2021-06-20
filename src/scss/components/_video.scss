@@ -5,6 +5,7 @@ lite-youtube {
 }
 
 .video-size {
+    margin-bottom: 2rem;
     max-width:var(--video-size,  100%);
     @include up-to-height($height-small) {
         --video-size: 400px;
@@ -35,6 +36,7 @@ lite-youtube {
         transform: scale(1);
         transition: opacity 250ms linear, transform  100ms ease-in-out;
         opacity: 0.8;
+        --play-button-size: 15%;
         &:focus, &:hover {
             opacity: 1;
             transform: scale(1.1);
@@ -43,7 +45,7 @@ lite-youtube {
             }
         }
         svg {
-            width: 20%;
+            width: var(--play-button-size);
             height:auto;
             z-index:3;
         }
@@ -51,9 +53,9 @@ lite-youtube {
             content: "";
             background: var(--Primary50);
             position: absolute;
-            width: 20%;
+            width:var(--play-button-size);
             border-radius: 50%;
-            padding-top:20%;
+            padding-top:var(--play-button-size);
             z-index: 1;
             opacity: 0;
         }

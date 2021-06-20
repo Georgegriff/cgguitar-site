@@ -1,5 +1,5 @@
 ---
-title: '5-Star rated guitar tuition'
+title: '5-star rated guitar tuition'
 layout: 'layouts/index.njk'
 templateEngineOverride: njk,md
 eleventyNavigation:

@@ -50,7 +50,7 @@
     @include up-to(large) {
         --grid-ish-size: 21em;
     }
-    padding: 0 var(--site-padding) var(--site-padding) var(--site-padding);
+    padding: var(--site-padding);
 
     ol {
         margin:0;
