@@ -2,7 +2,7 @@
 label: About page - Band and Session Work
 name: about-band-and-session
 type: card
-heading: Band & Session Work
+heading: Band & session work
 direction: reverse
 image:
   src: images/session.jpg

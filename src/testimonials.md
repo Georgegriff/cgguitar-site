@@ -2,6 +2,9 @@
 title: '5-star rated guitar tuition'
 layout: 'layouts/index.njk'
 templateEngineOverride: njk,md
+pageCriticalStyles:
+  - css/media.css
+pageJs: media.js
 eleventyNavigation:
   key: Testimonials
   order: 3
@@ -22,6 +25,12 @@ components:
    - type: custom
      name: testimonials
      componentPath: 'partials/testimonials.njk'
+   - type: playlist
+     name: student-performance-2019
+   - type: playlist
+     name: student-performance-night-2018
+   - type: playlist
+     name: student-spotlight
 ---
 
 {%- include 'partials/components.njk' -%}

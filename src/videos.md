@@ -4,6 +4,42 @@ layout: layouts/index.njk
 pageCriticalStyles:
   - css/media.css
 headerClassName: header-hero-medium
+components:
+  - type: gridCard
+    name: videos-icons
+  - type: playlist
+    name: guitar-lessons
+  - type: playlist
+    name: beginner-guitar-lessons
+  - type: playlist
+    name: rock-school-debut
+  - type: playlist
+    name: rock-school-grade-1
+  - type: playlist
+    name: rock-school-acoustic-grade-1
+  - type: playlist
+    name: rock-school-grade-2
+  - type: playlist
+    name: rock-school-grade-3
+  - type: playlist
+    name: rock-school-grade-6
+  - type: playlist
+    name: rock-school-grade-8
+  - type: playlist
+    name: guitar-demonstrations
+  - type: playlist
+    name: student-performance-2019
+  - type: playlist
+    name: student-performance-night-2018
+  - type: playlist
+    name: student-spotlight
+  - type: playlist
+    name: griffs-licks
+  - type: playlist
+    name: Interviews
+  - type: playlist
+    name: musical-works
+pageJs: media.js
 title: Videos
 eleventyNavigation:
   key: Videos
@@ -19,20 +55,6 @@ hero:
     - type: primary
       text: Get in touch
       link: /contact/
-components:
-  - type: gridCard
-    name: videos-icons
-  - type: playlist
-    name: guitar-lessons
-  - type: playlist
-    name: beginner-guitar-lessons
-  - type: playlist
-    name: griffs-licks
-  - type: playlist
-    name: musical-works
-  - type: playlist
-    name: Interviews
-pageJs: media.js
 ---
 
 {%- set GRID_TEXT_PLACEHOLDER = {"YT_PLACEHOLDER": metadata.author.youtube, "INSTA_PLACEHOLDER": metadata.author.instagram} -%}

@@ -338,6 +338,17 @@ collections:
                 fields:
                   - { label: "Name", name: "name", widget: "string" }
                   - { label: "Component Path", name: "componentPath", widget: "string" }
+              - label: 'Playlist'
+                widget: 'object'
+                name: 'playlist'
+                summary: 'Playlist: {{fields.name}}'
+                fields:
+                  - widget: "relation"
+                    name: 'name'
+                    collection: "playlist"
+                    search_fields: ["title"]
+                    value_field: "name"
+                    display_fields: ["title"]
       - label: "Contact page"
         name: "contact"
         file: "src/contact.md"

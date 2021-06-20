@@ -24,6 +24,8 @@ Whether you're looking to start guitar lessons for the first time or you need he
 
 Lessons held on Zoom, for the foreseeable.
 
+<br/>
 
+[Check out the student spotlight](/videos/#student-spotlight-performance-night-2019) to watch some of CG Guitar students showing off their skills!
 
 </div>

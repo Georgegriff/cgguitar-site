@@ -243,6 +243,12 @@ h3 {
     }
 }
 
+.star-link {
+    a {
+        color: var(--Primary);
+    }
+}
+
 @include up-from(xxlarge) {
     .star-rating {
         svg {
@@ -265,4 +271,8 @@ h3 {
     h2 {
         font-size: 2.5rem;
     }
+}
+
+p a:not([class]) {
+    color: var(--Primary);
 }
