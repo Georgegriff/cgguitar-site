@@ -5,9 +5,6 @@
 {%- endif -%}
 {% set siteTitle = metadata.title %}
 {% set currentUrl = metadata.url + page.url %}
-{%- if hero -%}
-    {% set socialImage = hero.image.src %}
-{%- endif -%}
 {%- if not socialImage -%}
   {%- set socialImage = 'images/meta/default-social.jpeg' -%} 
 {%- endif -%}
