@@ -6,11 +6,13 @@
 {% set siteTitle = metadata.title %}
 {% set currentUrl = metadata.url + page.url %}
 {%- if hero -%}
-    {% set socialImage = metadata.url + '/' + hero.image.src %}
+    {% set socialImage = hero.image.src %}
 {%- endif -%}
 {%- if not socialImage -%}
-  {%- set socialImage = metadata.url + '/images/meta/default-social.jpeg' -%} 
+  {%- set socialImage = 'images/meta/default-social.jpeg' -%} 
 {%- endif -%}
+{%- set socialImage = socialImage | imgmin -%} 
+{%- set socialImage = metadata.url + socialImage -%} 
 {%- set tagline = description or metadata.description -%}
 <title>{{ pageTitle }}</title>
 <link rel="canonical" href="{{ currentUrl }}"/>
