@@ -19,6 +19,8 @@ components:
     name: about-session-work-quote
   - type: card
     name: about-band-and-session
+  - type: quote
+    name: Professionalism-Quote-William-Kitchener
   - type: playlist
     name: session-work-playlist
   - type: playlist
