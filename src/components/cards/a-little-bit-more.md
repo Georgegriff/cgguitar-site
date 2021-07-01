@@ -13,6 +13,6 @@ link:
 ---
 Charlie graduated from The Academy of Contemporary Music as a Bachelor of Music with a First Class Honours in Professional Music Performance in 2013.
 
-During his degree in 2012 he started teaching at Goodall Guitar School in which has now led him on to running his own teaching business, CG Guitar.
+During his degree in 2012 he started teaching at Goodall Guitar School and other educational organisations, in which has now led him on to running his own teaching business, CG Guitar.
 
-As well as running CG Guitar he is an active member of the band Harbinger.
+As well as running CG Guitar he is an active member of the UK metal band Harbinger.
