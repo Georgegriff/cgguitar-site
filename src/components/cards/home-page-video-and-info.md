@@ -1,8 +1,8 @@
 ---
 label: Home page - Video and Info
-class: star-card
 name: home-page-video-and-info
 type: card
+class: star-card
 video:
   id: BWN45DJCCoQ
   channel: UCReQS8UwfrhDRGTowiXqVKg
@@ -12,6 +12,7 @@ video:
 direction: null
 ---
 {%- include "partials/components/starRating.njk" -%}
+
 <div>
 
 Whether you're looking to start guitar lessons for the first time or you need help and advice on how to take your playing to the next level.
@@ -22,10 +23,10 @@ Whether you're looking to start guitar lessons for the first time or you need he
 
 1:1, group classes and workshops available Monday to Friday.
 
-Lessons held on Zoom, for the foreseeable.
+Lessons held on online, for the foreseeable.
 
 <br/>
 
-[Check out the student spotlight](/videos/#student-spotlight-performance-night-2019) to watch some of CG Guitar students showing off their skills!
+[Check out the student spotlights](/videos/#student-spotlight-performance-night-2019) to watch some CG Guitar students showing off their skills!
 
 </div>
