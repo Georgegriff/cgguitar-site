@@ -1,6 +1,6 @@
 ---
 title: Start learning today
-class: ''
+class: ""
 name: icon-info-card
 icons:
   - text: My students have found success in both online and in person lessons.
@@ -9,6 +9,7 @@ icons:
     image: images/video.svg
   - text: Tailored individual lessons for every students needs.
     image: images/cg-logo-alt-black.svg
-  - text: Improve your practical ability or increase your understanding of music theory.
+  - text: Improve your practical ability and increase your understanding of music
+      theory.
     image: images/default-test.svg
 ---
