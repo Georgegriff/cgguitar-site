@@ -12,6 +12,18 @@ components:
   - type: playlist
     name: beginner-guitar-lessons
   - type: playlist
+    name: student-performance-night-2018
+  - type: playlist
+    name: student-performance-2019
+  - type: playlist
+    name: griffs-licks
+  - type: playlist
+    name: guitar-demonstrations
+  - type: playlist
+    name: Interviews
+  - type: playlist
+    name: musical-works
+  - type: playlist
     name: rock-school-debut
   - type: playlist
     name: rock-school-grade-1
@@ -26,19 +38,7 @@ components:
   - type: playlist
     name: rock-school-grade-8
   - type: playlist
-    name: guitar-demonstrations
-  - type: playlist
-    name: student-performance-2019
-  - type: playlist
-    name: student-performance-night-2018
-  - type: playlist
     name: student-spotlight
-  - type: playlist
-    name: griffs-licks
-  - type: playlist
-    name: Interviews
-  - type: playlist
-    name: musical-works
 pageJs: media.js
 title: Videos
 eleventyNavigation:

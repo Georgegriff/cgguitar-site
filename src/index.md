@@ -2,7 +2,7 @@
 templateEngineOverride: md,njk
 layout: layouts/index.njk
 permalink: "{{ myurl }}/index.html"
-headerClassName: 'header-hero-full'
+headerClassName: header-hero-full
 components:
   - type: card
     name: home-page-video-and-info
@@ -28,12 +28,12 @@ pagination:
   alias: myurl
   size: 1
 hero:
-  title: Kickstart your guitar lessons today
+  title: Kick-Start Your Guitar Lessons Today
   subtitle: Available Monday to Friday
-  description: Lessons held on Zoom, for the foreseeable.
+  description: Lessons held on online, for the foreseeable.
   image:
     src: images/hero.jpg
-    alt: CG Guitars' Charlie playing guitar on stage
+    alt: CG Guitars' Charlie Griffiths playing guitar on stage
   callToAction:
     - type: primary
       text: Get in touch
