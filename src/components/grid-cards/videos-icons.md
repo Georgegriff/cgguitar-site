@@ -17,4 +17,10 @@ icons:
     link:
       href: INSTA_PLACEHOLDER
       target: _blank
+  - text: Like my page on Facebook
+    image: images/facebook.svg
+    link:
+      href: FB_PLACEHOLDER
+      target: _blank
+
 ---

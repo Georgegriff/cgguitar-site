@@ -57,5 +57,5 @@ hero:
       link: /contact/
 ---
 
-{%- set GRID_TEXT_PLACEHOLDER = {"YT_PLACEHOLDER": metadata.author.youtube, "INSTA_PLACEHOLDER": metadata.author.instagram} -%}
+{%- set GRID_TEXT_PLACEHOLDER = {"YT_PLACEHOLDER": metadata.author.youtube, "INSTA_PLACEHOLDER": metadata.author.instagram, "FB_PLACEHOLDER": metadata.author.facebook} -%}
 {%- include 'partials/components.njk' -%}

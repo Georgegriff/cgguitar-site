@@ -702,6 +702,7 @@ collections:
           { label: Image, name: image, widget: image },
           { label: Link, name: link, widget: object, fields: [
               {required: false,label: "Url", name: "href",},
+              {required: false,label: "Url Target", name: "target",},
               {required: false, label: "Label", name: "label"}
           ] },
         ]
