@@ -30,7 +30,7 @@ pagination:
 hero:
   title: Kick-Start Your Guitar Lessons Today
   subtitle: Available Monday to Friday
-  description: Lessons held on Zoom, for the foreseeable.
+  description: Lessons held on online, for the foreseeable.
   image:
     src: images/hero.jpg
     alt: CG Guitars' Charlie Griffiths playing guitar on stage
