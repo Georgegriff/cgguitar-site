@@ -116,6 +116,12 @@
     }
 }
 
+.grid {
+   .card-grid {
+       display: grid;
+   }
+}
+
 .grid-small {
     @include up-to(medium) {
         .card-grid {

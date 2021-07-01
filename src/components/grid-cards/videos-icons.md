@@ -1,7 +1,7 @@
 ---
 title: Videos page Icons
 name: videos-icons
-class: "grid-small contained small-list pulsate"
+class: "contained small-list pulsate grid"
 icons:
   - text: Watch some of my videos below
     image: images/video.svg
