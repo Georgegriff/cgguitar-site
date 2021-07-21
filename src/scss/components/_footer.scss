@@ -7,7 +7,7 @@ footer {
     --IconColor: currentColor;
     padding: var(--site-padding);
     background: var(--Secondary);
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     @include up-to(medium) {
         min-height: calc(100vh - ((var(--site-header) + var(--site-padding))));
     }

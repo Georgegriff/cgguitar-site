@@ -293,7 +293,7 @@ export class YoutubePlaylist extends LitElement {
       .stats {
         display: flex;
         color: inherit;
-        font-size:0.875rem;
+        font-size:0.95rem;
         margin-top:0.5rem;
       }
       .duration {
