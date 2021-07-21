@@ -14,7 +14,7 @@ html {
 
 @include up-from(xxlarge) {
     :root {
-        font-size: calc(1rem + 0.3vw);
+        font-size: calc(1rem + 0.1vw);
     }
 }
 
