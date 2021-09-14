@@ -34,7 +34,7 @@
     "image-size": "^0.9.3",
     "luxon": "^1.25.0",
     "markdown-it": "^12.0.4",
-    "markdown-it-anchor": "^7.0.0",
+    "markdown-it-anchor": "^7.1.0",
     "node-fetch": "^2.6.1",
     "nunjucks": "^3.2.2",
     "rollup": "^2.36.2",

@@ -1,7 +1,15 @@
 ---
-title: 'Privacy Policy'
+title: 'Terms & Policies'
 layout: 'layouts/plain.njk'
 headerClassName: 'none'
+permalink: "{{ myurl }}/index.html"
+mypages:
+  - privacy
+  - policies
+pagination:
+  data: mypages
+  alias: myurl
+  size: 1
 ---
 
 ## Privacy Policy

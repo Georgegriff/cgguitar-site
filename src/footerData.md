@@ -15,8 +15,8 @@ callToAction:
 info:
   - text: I’m also available to hire for session work, please get in touch.
 links:
-  - url: /privacy/
-    text: Privacy policy
+  - url: /policies/
+    text: Terms & Policies
 ---
 
 Follow me on social media to keep up with the latest news.

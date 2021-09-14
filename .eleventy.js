@@ -5,11 +5,12 @@ const pluginPWA = require("eleventy-plugin-pwa");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 const { minify } = require("terser");
-const {getPlaylists} = require("./src/_filters/youtube");
+const { getPlaylists } = require("./src/_filters/youtube");
 const siteMeta = require("./src/_data/metadata.json");
 const htmlmin = require('html-minifier');
-const {imageOptimizer} = require('./imageopt');
+const { imageOptimizer } = require('./imageopt');
 
 module.exports = (eleventyConfig) => {
   /* Markdown Overrides */
@@ -17,7 +18,7 @@ module.exports = (eleventyConfig) => {
     html: true,
     breaks: true,
     linkify: true,
-  });
+  }).use(markdownItAnchor, { permalink: false });
 
   eleventyConfig.addNunjucksAsyncShortcode("Image", async (src, alt, ariaHidden) => {
     if (!alt && !ariaHidden) {
@@ -25,13 +26,13 @@ module.exports = (eleventyConfig) => {
       console.error(`Missing alt on image: ${src}, setting default so build doesn't fail`);
       alt = `Uploaded image for CG Guitar`;
     }
-    const img = await imageOptimizer(src, {alt, ariaHidden});
+    const img = await imageOptimizer(src, { alt, ariaHidden });
 
     return img
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("ImageUrl", async (src, templateFn) => {
-    const img = await imageOptimizer(src, {urlOnly: true})
+    const img = await imageOptimizer(src, { urlOnly: true })
     const val = templateFn ? templateFn(img) : img;
     return val;
   });
@@ -57,14 +58,14 @@ module.exports = (eleventyConfig) => {
     if (hrefIndex > -1) {
       const href = link.attrs[hrefIndex][1];
       const isRelativeUrl =
- href &&
- (href.startsWith("/") ||
-   href.startsWith("#") ||
-   href.startsWith(siteMeta.url));
+        href &&
+        (href.startsWith("/") ||
+          href.startsWith("#") ||
+          href.startsWith(siteMeta.url));
       if (isRelativeUrl) {
- return defaultLinkRender(tokens, idx, options, env, self);
+        return defaultLinkRender(tokens, idx, options, env, self);
       } else {
- link.attrPush(["rel", "noopener"]); // add new attribute
+        link.attrPush(["rel", "noopener"]); // add new attribute
       }
     }
     if (aIndex < 0) {
@@ -79,11 +80,11 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  eleventyConfig.addPassthroughCopy({"src/images": "admin/images"});
+  eleventyConfig.addPassthroughCopy({ "src/images": "admin/images" });
   eleventyConfig.addPassthroughCopy("admin");
   // cms css
-  eleventyConfig.addPassthroughCopy({"src/_includes/css": "admin/css"});
-  eleventyConfig.addPassthroughCopy({"src/_includes/partials": "admin/partials"});
+  eleventyConfig.addPassthroughCopy({ "src/_includes/css": "admin/css" });
+  eleventyConfig.addPassthroughCopy({ "src/_includes/partials": "admin/partials" });
 
 
   eleventyConfig.addPassthroughCopy("src/images/manifest");
@@ -97,7 +98,7 @@ module.exports = (eleventyConfig) => {
         "**/*.{html,css,js,mjs,map,avif,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}",
       ],
     });
-    eleventyConfig.addPassthroughCopy({"build/scripts": "scripts"});
+    eleventyConfig.addPassthroughCopy({ "build/scripts": "scripts" });
   }
 
   eleventyConfig.setUseGitIgnore(false);
@@ -109,23 +110,23 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });
-let componentCollectionObj;
-eleventyConfig.addCollection('components', (collection) => {
-  // potential for clashes with names. may need to type prefix.
-  const components = collection.getFilteredByGlob([
-  "./src/components/**/*.md",
-  "./src/testimonials/**/*.md",
-  "./src/playlists/**/*.md",
-  "./src/lessons/levels/**/*.md"
-]);
-  componentCollectionObj =  components.reduce((componentsCollection, current) => {
+  let componentCollectionObj;
+  eleventyConfig.addCollection('components', (collection) => {
+    // potential for clashes with names. may need to type prefix.
+    const components = collection.getFilteredByGlob([
+      "./src/components/**/*.md",
+      "./src/testimonials/**/*.md",
+      "./src/playlists/**/*.md",
+      "./src/lessons/levels/**/*.md"
+    ]);
+    componentCollectionObj = components.reduce((componentsCollection, current) => {
       current.outputPath = false;
       const componentType = current.data.type || (current.data.tags && current.data.tags[0]);
       componentsCollection[`${componentType}__${current.data.name || current.fileSlug}`] = current;
       return componentsCollection
-  }, {})
-  return componentCollectionObj;
-})
+    }, {})
+    return componentCollectionObj;
+  })
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
@@ -164,16 +165,16 @@ eleventyConfig.addCollection('components', (collection) => {
     "jsmin",
     async function (code, callback) {
       try {
- if (process.env.NODE_ENV === "production") {
-   const minified = await minify(code);
-   callback(null, minified.code);
- } else {
-   callback(null, code);
- }
+        if (process.env.NODE_ENV === "production") {
+          const minified = await minify(code);
+          callback(null, minified.code);
+        } else {
+          callback(null, code);
+        }
       } catch (err) {
- console.error("Terser error: ", err);
- // Fail gracefully.
- callback(null, code);
+        console.error("Terser error: ", err);
+        // Fail gracefully.
+        callback(null, code);
       }
     }
   );
@@ -182,12 +183,12 @@ eleventyConfig.addCollection('components', (collection) => {
     //tip!
     debugger;
     console.log(...args);
-    return {...args};
+    return { ...args };
   });
 
 
   eleventyConfig.addFilter("hasOutputPath", (entries) => {
-    return entries.filter(({outputPath}) => !!outputPath)
+    return entries.filter(({ outputPath }) => !!outputPath)
   });
 
   eleventyConfig.addFilter("ariatel", (number = '') => {
@@ -202,7 +203,7 @@ eleventyConfig.addCollection('components', (collection) => {
 
   eleventyConfig.addNunjucksAsyncFilter("fetchYouTubePlaylist", async (playlist, callback) => {
     const data = await getPlaylists([playlist]);
-    if(data && data.length) {
+    if (data && data.length) {
       return callback(null, data[0]);
     } else {
       return callback(new Error(`No playlist found: ${JSON.stringify(playlist)}`));
@@ -210,30 +211,30 @@ eleventyConfig.addCollection('components', (collection) => {
   })
 
   eleventyConfig.addNunjucksAsyncFilter("imgmin", (src, callback) => {
-      imageOptimizer(src, {urlOnly: true})
+    imageOptimizer(src, { urlOnly: true })
       .then((img) => {
-          return callback(null, img);
+        return callback(null, img);
       }).catch((e) => {
         return callback(e);
       })
   });
 
   eleventyConfig.addNunjucksAsyncFilter("ytmax", (src, callback) => {
-    imageOptimizer(src, {urlOnly: true, widths: [1280]})
-    .then((img) => {
+    imageOptimizer(src, { urlOnly: true, widths: [1280] })
+      .then((img) => {
         return callback(null, img);
-    }).catch((e) => {
-      return callback(e);
-    })
-});
+      }).catch((e) => {
+        return callback(e);
+      })
+  });
 
-if (process.env.NODE_ENV === "production") {
-    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+  if (process.env.NODE_ENV === "production") {
+    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
       // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-      if(!outputPath) {
+      if (!outputPath) {
         return content;
       }
-      if( outputPath.endsWith(".html") ) {
+      if (outputPath.endsWith(".html")) {
         let minified = htmlmin.minify(content, {
           useShortDoctype: true,
           removeComments: true,
@@ -244,7 +245,7 @@ if (process.env.NODE_ENV === "production") {
 
       return content;
     });
-}
+  }
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],

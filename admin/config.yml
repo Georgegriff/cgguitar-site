@@ -518,9 +518,9 @@ collections:
                     search_fields: ["name"]
                     value_field: "name"
                     display_fields: ["name"]
-      - label: "Privacy policy"
-        name: "privacy"
-        file: "src/privacy.md"
+      - label: "Terms & Policies"
+        name: "policies"
+        file: "src/policies.md"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: "markdown"}

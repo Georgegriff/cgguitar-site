@@ -1,7 +1,6 @@
 ---
 templateEngineOverride: md,njk
 layout: layouts/index.njk
-permalink: "{{ myurl }}/index.html"
 headerClassName: header-hero-full
 components:
   - type: card
@@ -16,13 +15,14 @@ components:
     name: levels
   - type: card
     name: home-about-card
-mypages:
-  - lessons
-  - ./
 title: Guitar tuition
 eleventyNavigation:
   key: Lessons
   order: 1
+permalink: "{{ myurl }}/index.html"
+mypages:
+  - lessons
+  - ./
 pagination:
   data: mypages
   alias: myurl
