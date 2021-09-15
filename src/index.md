@@ -14,6 +14,8 @@ components:
   - type: levels
     name: levels
   - type: card
+    name: sign-up
+  - type: card
     name: home-about-card
 title: Guitar tuition
 eleventyNavigation:
@@ -36,8 +38,8 @@ hero:
     alt: CG Guitars' Charlie Griffiths playing guitar on stage
   callToAction:
     - type: primary
-      text: Get in touch
-      link: /contact/
+      text: Book a lesson
+      link: '#sign-up'
     - type: secondary
       text: Learn more
       link: "#main-content"

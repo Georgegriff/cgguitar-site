@@ -77,6 +77,14 @@
     flex-direction: column;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
 .video-grid {
     padding:0 !important;
     @include up-from(large) {

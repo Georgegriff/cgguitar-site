@@ -14,6 +14,9 @@ hero:
   description: "Lessons held on Zoom, for the foreseeable."
   callToAction:
     - type: primary
+      text: Book a lesson
+      link: /#sign-up
+    - type: secondary
       text: Get in touch
       link: /contact/
   image:

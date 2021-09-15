@@ -38,6 +38,9 @@ hero:
     alt: CG Guitars' Charlie playing guitar on stage
   callToAction:
     - type: primary
+      text: Book a lesson
+      link: /#sign-up
+    - type: secondary
       text: Get in touch
       link: /contact/
 ---

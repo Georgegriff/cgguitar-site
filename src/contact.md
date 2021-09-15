@@ -13,8 +13,12 @@ eleventyNavigation:
   key: Contact
   order: 2
 hero:
-  title: I'd love to hear from you, please get in touch
-  subtitle: Contact me using the options below.
+  callToAction:
+    - type: primary
+      text: Book a lesson
+      link: /#sign-up
+  title: I'd love to hear from you, please get in touch!
+  description: Contact me using the options below.
   image:
     src: images/hero.jpg
     alt: CG Guitars' Charlie playing guitar on stage

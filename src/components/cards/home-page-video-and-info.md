@@ -19,10 +19,6 @@ Whether you're looking to start guitar lessons for the first time or you need he
 
 <br/>
 
-Already a member? [Sign in here](/login/).
-
-<br/>
-
 ### CG Guitar can help, no matter your skill level.
 
 1:1, group classes and workshops available Monday to Friday.

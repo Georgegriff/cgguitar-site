@@ -238,10 +238,6 @@ h3 {
     flex: 1 1 var(--grid-ish-size, 10em);
 }
 
-.justify-center {
-    justify-content: center;
-}
-
 .star-rating {
     svg {
         height: auto;
@@ -281,6 +277,12 @@ h3 {
 
 p a:not([class]) {
     color: var(--Primary);
+}
+
+a.dark-link {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--Primary);
 }
 
 /* if this gets big move it */
