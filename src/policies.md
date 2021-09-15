@@ -12,6 +12,8 @@ pagination:
   size: 1
 ---
 
+<section class="padded-around">
+
 ## Privacy Policy
 
 Any contact details I acquire from my clients and student records will be stored in a safe location and password protected.
@@ -22,3 +24,5 @@ The reason for collecting this data and storing it is so I can keep in touch wit
 For example, workshops, new opportunities for my students, and activities alike.
 
 If lessons are permanently terminated and you no longer wish me to keep your details on record then please inform me when doing so.
+
+</section>

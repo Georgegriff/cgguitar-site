@@ -102,7 +102,7 @@ main {
         padding: 0 var(--site-padding)
     }
 
-    article.padded-around {
+    .padded-around {
         padding: var(--site-padding);
     }
 
@@ -281,4 +281,34 @@ h3 {
 
 p a:not([class]) {
     color: var(--Primary);
+}
+
+/* if this gets big move it */
+.login-wrapper {
+    background: var(--Secondary); 
+    color: var(--SecondaryText);
+    @include up-from(medium) {
+    } 
+}
+.login-widget {
+    padding-top: 13vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    & > * {
+        flex: 1;
+    }
+
+    .login-container {
+        min-width: 300px;
+        min-height: 350px;
+    }
+
+    img {
+        height: auto;
+        width: 100%;
+        min-width: 350px;
+    }
 }
