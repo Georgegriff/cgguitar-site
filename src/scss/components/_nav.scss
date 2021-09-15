@@ -22,7 +22,32 @@ nav {
     }
     a {
         text-decoration: none;
+        display: inline-flex;
+        align-items: center;
     }
+
+    a[data-link-key="members"] {
+        &::after {
+            background-image: url(/images/person-nav.svg);
+            margin-left: 0.5rem;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 1.3rem;
+            width: 1.3rem;
+            display: inline-block;
+            content: "";
+        }
+    }
+
+    li.active {
+        a[data-link-key="members"] {
+            &::after {
+                opacity: 0.4;
+            }
+        }
+    }
+
     a.more-link {
         display: flex;
         align-items: center;

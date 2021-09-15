@@ -1,7 +1,10 @@
 ---
-title: 'Member login'
+title: 'Member Log in'
 layout: 'layouts/plain.njk'
 headerClassName: 'none'
+eleventyNavigation:
+  key: Members
+  order: 5
 ---
 {% set image = hero.image or {src: "images/hero.jpg", "alt": "CG Guitars' Charlie playing guitar on stage"} %}
 <div class="login-wrapper">

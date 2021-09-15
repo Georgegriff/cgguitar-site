@@ -1,14 +1,14 @@
 <div class="nav">
     <a class="site-logo" aria-label="Head to home" href="/">
     {% include "images/cg-logo.svg" %}
-    {% set maxLinks= 4 %}
+    {% set maxLinks= 5 %}
     <span>CG Guitar<span>
     </a>
         <nav>
             <ul class="nav-links">
                 {%- for entry in collections.all | eleventyNavigation | head(maxLinks) %}
                 <li data-desktop-hidden class="{% if entry.url == page.url %} active{% endif %}">
-                    <a {%- if helpers.isExternalLink(entry.url) -%}target="_blank"{%-endif%} href="{{ entry.url | url }}">{{ entry.title }}</a>
+                    <a data-link-key="{{ entry.title | slug }}" {%- if helpers.isExternalLink(entry.url) -%}target="_blank"{%-endif%} href="{{ entry.url | url }}">{{ entry.title }}</a>
                 </li>
                 {%- endfor %}
                 <li data-more-trigger><a class="more-link" aria-label="More" href="#more">{% include 'images/chevron_down.svg' %}</a></li>
@@ -17,7 +17,7 @@
                             <ul class="burger-list">
                                 {%- for entry in collections.all | eleventyNavigation %}
                                     <li data-overflow-link class="{% if entry.url == page.url %} active{% endif %}">
-                                        <a {% if helpers.isExternalLink(entry.url) -%}target="_blank"{%-endif%} href="{{ entry.url | url }}">{{ entry.title }}</a>
+                                        <a data-link-key="{{ entry.title | slug }}" {% if helpers.isExternalLink(entry.url) -%}target="_blank"{%-endif%} href="{{ entry.url | url }}">{{ entry.title }}</a>
                                     </li>
                                 {%- endfor %}
                             </ul>
