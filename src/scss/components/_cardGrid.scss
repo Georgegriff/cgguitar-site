@@ -145,3 +145,16 @@
         color: var(--Primary);
     }
 }
+
+
+#sign-up .content {
+    margin: 0;
+
+    p {
+        margin: 0 var(--site-padding);
+    }
+
+    h2 {
+        margin: var(--site-padding);
+    }
+}
