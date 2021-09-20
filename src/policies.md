@@ -13,51 +13,60 @@ pagination:
 ---
 ***Terms & Conditions***\
 \
-**CG Guitar** is committed to your success on the guitar. To ensure your success, consistency is a critical component. This means attending your lessons as scheduled and playing guitar most days. Below I have outlined some terms and conditions that are designed to keep you focused and on track. Please take some time to read these and if you have any questions please don’t hesitate to ask.\
+**CG Guitar** is committed to your success on the guitar. To ensure your success, consistency is a critical component. This means attending your lessons as scheduled and playing guitar most days. Below I have outlined some terms and conditions that are designed to keep you focused and on track. Please take some time to read these and if you have any questions please don’t hesitate to ask.\
 \
 **\*Booking a lesson acts as an agreement to these terms & conditions\***\
 \
-**Lesson Payment –** *All lessons must be paid for in advance or on the day of your first lesson. See payment policy for more details. Most major credit & debit cards are accepted.*\
+**Lesson Payment –** *All lessons must be paid for in advance or on the day of your first lesson. See payment policy for more details. Most major credit & debit cards are accepted.*\
 \
-**Cancellations:** – If you are unable to attend any kind of lesson and I am notified, a video lesson will be supplied to cover that week and you'll be assigned? practice tasks to keep you on track. Please see the Refund Policy for more details.\
+**Cancellations:** – If you are unable to attend any kind of lesson and I am notified, a video lesson will be supplied to cover that week and you'll be assigned practice tasks to keep you on track. Please see the Refund Policy for more details.\
 \
 ***1:1's***
 
 * Once the lessons have been scheduled and paid for, you are fully committed to the scheduled time and this is non-refundable.
-* However, you can try to reschedule your lesson via the weekly schedule on your student/parent TeacherZone account if before 24 hours of your allocated lesson time. Available slots are subject to demand. If there is not a suitable slot available then you will have to cancel your lesson and receive a video lesson to study.\
+* However, you can try to reschedule your lesson via the weekly schedule on your student/parent TeacherZone account if before 24 hours of your allocated lesson time. Available slots are subject to demand. If there is not a suitable slot available then you will have to cancel your lesson and you will receive a video lesson to study.\
   \
   ***Group Lessons, 2:1's & Workshops***
-* Once the lessons have been scheduled and paid for, you are fully committed to the term/dates and this is non-refundable and you are unable to reschedule.\
-  \
-  **Stopping Lessons –** A month's notice is required if a student wishes to stop or put their lessons on hold.
+* Once the lessons have been scheduled and paid for, you are fully committed to the term/dates and this is non-refundable and you are unable to reschedule.
 
-***Holidays***
-
+**Stopping Lessons –** A month's notice is required if a student wishes to stop or put their lessons on hold.\
+\
+***Holidays***\
+\
 There are no lessons on bank holidays.\
 \
+There is usually 2 week's break from lessons over the Christmas Holidays.\
+\
+Please give a month's notice if you have any planned vacations or dates that will effect you attending your lesson. You can either inform CG Guitar to be taken out of the schedule (no charge) or you can reschedule or cancel your lesson/s yourself via your student or parent account (this way will count as an attended lesson. If cancelled yourself, you will receive a video lesson and educational materials to cover that period).\
+\
 ***1:1 & 2:1***
+
+
 
 * These types of lessons continue as usual all year round. If you require an alternative slot or you will not be attending lessons during the holidays then you must notify CG Guitar or cancel?/reschedule your lesson via your student or parent TeacherZone account.
 
 ***Group Lessons***
 
-* These run during term time only. 1:1's and workshops are available to supplement them in the holidays. So either contact CG Guitar about booking a lesson in the holidays or go ahead and buy a one off or a holiday lesson plan in the Payment/Billing section on your TeacherZone account and chose an available lesson date/time.\
-  \
-  **Progress** – Consistent practice is critical to your progress on guitar, but so is happiness and enjoyment! To encourage this, students will be provided with practice assignments each week within their TeacherZone profile. Please use the website or the app to log in and utilise the practice button at the start and end of each practice session. You can gain points and rewards for doing so and accessing your practice assignment and completing it.
 
+
+* These run during term time only. 1:1's and workshops are available to supplement them in the holidays. So either contact CG Guitar about booking a lesson in the holidays or go ahead and buy a one off or a holiday lesson plan in the Payment/Billing section on your TeacherZone account and chose an available lesson date/time.
+
+**Progress -** Consistent practice is critical to your progress on guitar, but so is happiness and enjoyment! To encourage this, students will be provided with practice assignments each week within their TeacherZone profile. Please use the website or the app to log in and utilise the practice button at the start and end of each practice session. You can gain points and rewards for doing so and accessing your practice assignment and completing it.\
+\
 Regular practice is a habit and desire that is developed over time through enjoyment of the learning process. So it may take some time to develop, but this will happen after the student has attended their lessons consistently for awhile and has been enjoying them. If you have any concerns please contact me about it so I can help. It's always a case by case scenario with this and treat every student individually.\
 \
-**Student Folder** – You are required to supply a folder and bring it to every lesson with the necessary materials enclosed. Please bring all current sheets to every lesson in a folder. Please use a folder that can be opened like a book. Your materials can be found inside your TeacherZone account too in the Practice Files & Links of each practice assignment.\
+**Student Folder** – You are required to supply a folder and bring it to every lesson with the necessary materials enclosed. Please bring all current sheets to every lesson in a folder. Please use a folder that can be opened like a book. Your materials can be found inside your TeacherZone account too in the Practice Files & Links of each practice assignment.\
 \
-**Guitar** – You will need your own guitar, tuner and plectrums for every lesson. Please ensure your guitar is in tune before every lesson. If you break a string I can provide contact details for my guitar tech to fix it. Please contact me if you require these details.\
+**Guitar** – You will need your own guitar, tuner and plectrums for every lesson. Please ensure your guitar is in tune before every lesson. If you break a string I can provide contact details for my guitar tech to fix it. Please contact me if you require these details.\
 \
-**Parents** – For children under the age 13 I may require at least one parent or guardian to attend a lesson every now and again. This is to help parents understand what materials the student is studying and how parents can support students through their learning. I am always here to offer advice and ideas to use at home. From time to time we can schedule a parents evening style meeting to discuss the students progress and learning.\
+**Parents** – For children under the age 13 I may require at least one parent or guardian to attend a lesson every now and again. This is to help parents understand what materials the student is studying and how parents can support students through their learning. I am always here to offer advice and ideas to use at home. From time to time we can schedule a parents evening style meeting to discuss the students progress and learning.\
 \
-**Questions** – If you have any questions at all please feel free to contact me via the instant chat on TeacherZone or email at any time. Your lessons include unlimited support. Please be aware though that my office hours are limited to the time I have outside of teaching lessons Monday to Friday.\
+**Questions** – If you have any questions at all please feel free to contact me via the instant chat on TeacherZone or email at any time. Your lessons include unlimited support. Please be aware though that my office hours are limited to the time I have outside of teaching lessons Monday to Friday.\
 \
 [You can download PDFs of all Policies and Information here](https://drive.google.com/drive/folders/1wDXw6238KgipDSuiOBxFLEsNDAQXqiuj?usp=sharing).\
 \
 **Thank you for taking the time to read these through. I look forward to our lessons together!**\
+\
 \
 ***Privacy Disclaimer and Terms Of Use***\
 \
