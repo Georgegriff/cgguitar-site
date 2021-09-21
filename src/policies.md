@@ -41,15 +41,11 @@ Please give a month's notice if you have any planned vacations or dates that wil
 \
 ***1:1 & 2:1***
 
-
-
 * These types of lessons continue as usual all year round. If you require an alternative slot or you will not be attending lessons during the holidays then you must notify CG Guitar or cancel?/reschedule your lesson via your student or parent TeacherZone account.
 
-***Group Lessons***
+***Group Lessons & 2:1's***
 
-
-
-* These run during term time only. 1:1's and workshops are available to supplement them in the holidays. So either contact CG Guitar about booking a lesson in the holidays or go ahead and buy a one off or a holiday lesson plan in the Payment/Billing section on your TeacherZone account and chose an available lesson date/time.
+* These run during term time only. 1:1's and workshops are available to supplement them in the holidays. So either contact CG Guitar about booking a lesson in the holidays or go ahead and buy a one off or a holiday lesson plan in the Payment/Billing section under "Buy Plan" on your TeacherZone account and chose an available lesson date/time.
 
 **Progress -** Consistent practice is critical to your progress on guitar, but so is happiness and enjoyment! To encourage this, students will be provided with practice assignments each week within their TeacherZone profile. Please use the website or the app to log in and utilise the practice button at the start and end of each practice session. You can gain points and rewards for doing so and accessing your practice assignment and completing it.\
 \
