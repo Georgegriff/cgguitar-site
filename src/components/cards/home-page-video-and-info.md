@@ -33,6 +33,10 @@ Multi-Cam set up, lighting rig and HD Professional Audio - *"It sounds like Char
 
 <br/>
 
+Exclusive access to an amazing online learning management system and app!
+
+<br/>
+
 Super convenient as well as effective - Have your guitar lesson from the comfort of your own home.
 
 <br/>
