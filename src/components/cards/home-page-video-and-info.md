@@ -23,7 +23,17 @@ Whether you're looking to start guitar lessons for the first time or you need he
 
 1:1, group classes and workshops available Monday to Friday.
 
-Lessons held on online, for the foreseeable.
+<br/>
+
+HD Guitar Lessons - Like You've Never Experienced Before!
+
+<br/>
+
+Multi-Cam set up, lighting rig and HD Professional Audio - "It sounds like Charlie and his guitar are in the room with you!"
+
+<br/>
+
+Convenience - Have your guitar lesson from the comfort of your own home.
 
 <br/>
 
