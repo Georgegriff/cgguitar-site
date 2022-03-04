@@ -29,7 +29,7 @@ pageJs: media.js
 title: About
 eleventyNavigation:
   key: About
-  order: 6
+  order: 7
 hero:
   title: A little about CG Guitar
   subtitle: Continue reading if you'd like to know more

@@ -19,6 +19,12 @@
             {% if hero.description %}
                 <p class="description">{{hero.description | safe}}</p>
             {% endif %}
+            {% if hero.heroLink %}
+                <p class="hero-link description">
+                    <span>{{hero.heroLink.description | safe}}</span>
+                    <a href="{{hero.heroLink.href}}">{{hero.heroLink.text}}</a>
+                </p>
+            {% endif %}
         </div>
         {%- Image image.src, image.alt -%}
         <div class="hero-scroll-down">

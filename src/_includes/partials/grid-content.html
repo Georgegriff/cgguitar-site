@@ -1,6 +1,8 @@
 {%- if gridContent %}
 {%- set items = gridContent.icons %}
 {%- set video = gridContent.video %}
+{%- set heading = gridContent.heading %}
+{%- set quote = gridContent.quote %}
 {%- if video %}
 {%- set youtube = {"id": video.id } %}
 {% if video.thumbnail %}
@@ -11,6 +13,12 @@
 {% endif %}
 {%- endif %}
 <article class="grid-content padded-sm site-padded{%- if gridContent.class %} {{gridContent.class}}{%- endif -%}">
+    {%- if heading %}
+    <h2 style="padding-top:1rem">{{heading}}</h2>
+    {%- endif %}
+    {%- if quote %}
+    <blockquote>{{quote}}</blockquote>
+    {%- endif %}
     <div class="card-grid grid-start grid-gap grid-columns no-gap">
         <section style="width: 100%; height: 100%;">
             <ul class="card-grid online-content icondesc grid-icons no-gap">

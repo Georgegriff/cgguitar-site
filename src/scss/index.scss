@@ -13,3 +13,35 @@
         --min-column-size:480px;
     }
 }
+
+.embed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &::after {
+        content: "";
+        display: inline-block;
+        margin-bottom: 1rem;
+        width: 90%;
+        height: 5px;
+        background: var(--Primary);
+    }
+}
+
+.signup-card {
+    .learn-more {
+        margin-right: 1rem !important;
+    }
+    --min-column-size:480px;
+
+    background: var(--Secondary50);
+    .grid-content {
+        color: var(--SecondaryText);
+    }
+    a.action-button.cta-primary {
+        color: var(--SecondaryText);
+    }
+
+
+}

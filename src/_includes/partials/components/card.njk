@@ -1,5 +1,6 @@
 {%- set card = card or component %}
 {%- set video = card.data.video %}
+{%- set gridContent = card.data.gridContent %}
 <section class="card-grid {{card.data.class}}">
 {%- if video %}
     {%- set youtube = {"id": video.id } %}
@@ -32,4 +33,12 @@
         {%- endif %}
     </div>
 {%- endif -%}
+
+{% if gridContent %}
+<div>
+    {% include "partials/grid-content.html" %}
+</div>
+{% endif %}
+
 </section>
+
