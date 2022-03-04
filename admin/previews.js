@@ -113,6 +113,14 @@ CMS.registerPreviewTemplate("videos", Page({
     assetsPrefix: "/admin"
 }));
 
+CMS.registerPreviewTemplate("book", Page({
+    assetsPrefix: "/book"
+}));
+
+// CMS.registerPreviewTemplate("login", Page({
+//     assetsPrefix: "/login"
+// }));
+
 CMS.registerPreviewStyle("css/reset.css");
 CMS.registerPreviewStyle("css/critical.css");
 CMS.registerPreviewStyle("css/media.css");
