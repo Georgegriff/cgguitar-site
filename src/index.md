@@ -1,6 +1,7 @@
 ---
 templateEngineOverride: md,njk
 layout: layouts/index.njk
+permalink: "{{ myurl }}/index.html"
 headerClassName: header-hero-full
 components:
   - type: card
@@ -17,14 +18,13 @@ components:
     name: sign-up
   - type: card
     name: home-about-card
+mypages:
+  - lessons
+  - ./
 title: Guitar tuition
 eleventyNavigation:
   key: Lessons
   order: 1
-permalink: "{{ myurl }}/index.html"
-mypages:
-  - lessons
-  - ./
 pagination:
   data: mypages
   alias: myurl
@@ -32,7 +32,7 @@ pagination:
 hero:
   title: Kick-Start Your Guitar Lessons Today
   subtitle: Available Monday to Friday
-  description: Lessons held on online, for the foreseeable.
+  description: HD Online Guitar Lessons - Like you've never experienced before!
   image:
     src: images/hero.jpg
     alt: CG Guitars' Charlie Griffiths playing guitar on stage
