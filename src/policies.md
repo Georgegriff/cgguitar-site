@@ -12,9 +12,10 @@ pagination:
   size: 1
 ---
 
-<section class="padded-around">
+<section class="padded-around document">
 
-**_Terms & Conditions_**\
+# Terms & Conditions
+
 \
 **CG Guitar** is committed to your success on the guitar. To ensure your success, consistency is a critical component. This means attending your lessons as scheduled and playing guitar most days. Below I have outlined some terms and conditions that are designed to keep you focused and on track. Please take some time to read these and if you have any questions please don’t hesitate to ask.\
 \
