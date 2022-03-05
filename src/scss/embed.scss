@@ -1,0 +1,40 @@
+
+
+body {
+    font-family: "Poppins", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif !important;
+    .tz-plan-widget-frm .wg-info .btn-primary {
+        box-shadow: 0 3px 15px rgb(0 0 0 / 40%);
+        color: var(--PrimaryText);
+        border: solid 2px transparent;
+        color: var(--SecondaryText);
+        font-size: 1rem;
+        text-decoration: none;
+        padding: 0.6rem 0.6rem;
+        display: inline-block;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        background: var(--Primary);
+        font-family: inherit;
+        white-space: nowrap;
+        text-transform: uppercase;
+        height: 3rem;
+        margin-right: 0.5rem;;
+    }
+    .wg-info {
+        box-shadow: none !important;
+
+        label {
+            color: var(--Primary) !important;
+        }
+    }
+  
+    .wg-intro {
+        display: none !important;
+    }
+    .wp-signup-open {
+        > * {
+            width: 100% !important;
+        }
+    }
+}

@@ -30,10 +30,10 @@ link:
 Check for lesson pricing and availability.
 
 Signing up also provides you with access to the online CG Guitar member community.
-<div class="embed">
-<iframe loading='lazy' name='{"wgId":2267,"gaId":"G-SE9WYT1TS6","gaS":"SignUp(CG Guitar Sign Up)","gaSCate":"Widget","gaSLb":"CG Guitar Sign Up"}' src='https://app.teacherzone.com/widget/PlanWidgetIFrame?n=2267' height='580' width='400' title='teacherzone.com' style='border:none;margin: 2rem 0;align-self: center;' scrolling='no'></iframe>
-</div>
 
+<div class="iframe-container embed">
+<iframe src="/teacher-zone-embed/" class="iframe" scrolling="auto" frameborder="0"></iframe>
+</div>
 
 Want to have a chat first?
 <a class="action-button cta-primary" href="/contact/">Get in touch</a>

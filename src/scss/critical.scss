@@ -322,3 +322,34 @@ a.dark-link {
     min-width: 350px;
   }
 }
+
+/* teacher zone crap */
+.iframe-container {
+  overflow: hidden;
+  position: relative;
+  @media screen and (max-width: 40em) {
+    padding-top: 100%;
+
+  }
+  @media screen and (max-width: 80em) {
+    padding-top: 50%;
+
+  }
+  @media screen and (max-width: 60em) {
+    padding-top: 60%;
+
+  }
+  @media screen and (max-width: 50em) {
+    padding-top: 80%;
+
+  }
+  padding-top: 80%;
+}
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
