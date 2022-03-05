@@ -8,6 +8,7 @@
     paths = [
       ".cache" # Remote Asset Cache
     ]
+[[plugins]]
   package = "netlify-plugin-submit-sitemap"
 	[plugins.inputs]
 
