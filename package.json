@@ -41,7 +41,7 @@
     "rollup-plugin-output-manifest": "^1.0.2",
     "sass": "^1.32.4",
     "sharp": "^0.27.0",
-    "terser": "^5.5.1"
+    "terser": "^5.14.2"
   },
   "dependencies": {
     "lit-element": "^2.4.0",
