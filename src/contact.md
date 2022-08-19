@@ -21,7 +21,7 @@ hero:
 footerSettings:
   callToAction: false
 ---
-{% set GRID_TEXT_PLACEHOLDER = {"PHONE_ARIA_PLACEHOLDER": metadata.author.phone | ariatel, "PHONE_PLACEHOLDER": metadata.author.phone, "EMAIL_PLACEHOLDER": metadata.author.email } %}
+{% set GRID_TEXT_PLACEHOLDER = {"EMAIL_PLACEHOLDER": metadata.author.email } %}
 {%- include 'partials/components.njk' -%}
 <div class="contained secondary-article">
 {%- include 'partials/form.njk' -%}
