@@ -3,7 +3,7 @@ templateEngineOverride: njk,md
 layout: layouts/index.njk
 pageCriticalStyles:
   - css/contact.css
-headerClassName: header-hero-medium
+headerClassName: header-hero-small
 components:
   - type: gridCard
     name: contact-icons
