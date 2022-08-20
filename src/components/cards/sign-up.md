@@ -34,7 +34,7 @@ Signing up also provides you with access to the online CG Guitar member communit
 
 
 <div class="iframe-container embed">
-<iframe src="/teacher-zone-embed/" class="iframe" scrolling="auto" frameborder="0"></iframe>
+<iframe src="/book-a-lesson/" class="iframe" scrolling="auto" frameborder="0"></iframe>
 </div>
 
 <div class="card-footer">
