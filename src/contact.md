@@ -16,7 +16,7 @@ hero:
   callToAction:
     - type: primary
       text: Book a lesson
-      link: /#sign-up
+      link: /book/#sign-up
   title: I'd love to hear from you, please get in touch!
   description: Contact me using the options below.
   image:

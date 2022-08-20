@@ -15,7 +15,7 @@ hero:
   callToAction:
     - type: primary
       text: Book a lesson
-      link: /#sign-up
+      link: /book/#sign-up
     - type: secondary
       text: Get in touch
       link: /contact/
