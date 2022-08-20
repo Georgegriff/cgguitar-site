@@ -25,19 +25,24 @@ link:
   url: /policies/
   text: Terms & policies
 ---
-<div class="flex flex-cl">
 
 Check for lesson pricing and availability.
 
 Signing up also provides you with access to the online CG Guitar member community.
 
+<div class="flex flex-cl">
+
+
 <div class="iframe-container embed">
 <iframe src="/teacher-zone-embed/" class="iframe" scrolling="auto" frameborder="0"></iframe>
 </div>
 
-Want to have a chat first?
-<a class="action-button cta-primary" href="/contact/">Get in touch</a>
-<br/>
-Already a member? [Log in here](/login/).
+<div class="card-footer">
+
+  Want to have a chat first?
+  <a class="action-button cta-primary" href="/contact/">Get in touch</a>
+  <br/>
+  Already a member? [Log in here](/login/).
+</div>
 
 </div>

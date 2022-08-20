@@ -14,6 +14,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
         {% include 'partials/meta.njk' %}
         {% include 'partials/fonts.njk' %}
+        {% if preload %}
+            {% for item in preload %}
+                <link rel="preload" as="{{item.as}}" href="{{item.href}}" crossorigin="anonymous"/>
+            {% endfor %}
+        {% endif %}
         <style>
             {% include "css/reset.css" %}
         </style>

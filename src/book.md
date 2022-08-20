@@ -27,6 +27,6 @@ components:
     name: sign-up
 ---
 
-<article class="about-section no-padding">
+<article class="about-section no-padding book-page">
 {%- include 'partials/components.njk' -%}
 </article>

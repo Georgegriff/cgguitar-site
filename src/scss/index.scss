@@ -29,8 +29,34 @@
     }
 }
 
-.signup-card {
+.book-page .signup-card {
+    display: flex;
+    flex-direction: column;
 
+    h2 {
+        display: none;
+    }
+
+    .content {
+        margin-top: var(--site-padding) !important;
+    }
+
+    .content p {
+        margin-bottom: 1rem;
+    }
+}
+
+.signup-card {
+    background: var(--Secondary70);
+    blockquote:after, blockquote:before {
+        background-color: var(--SecondaryText);
+    }
+    h2 {
+        margin-bottom: 2rem;
+    }
+    .card-grid {
+        margin-top: 2rem;
+    }
     /* teacher zone crap */
 .iframe-container {
     overflow: hidden;
@@ -42,6 +68,7 @@
 
     @media screen and (min-width: 40em) {
       margin: var(--site-padding);
+      margin-top:0;
   
     }
   }
@@ -62,7 +89,6 @@
         --min-column-size: 300px;
     
       }
-    background: var(--Secondary50);
     .grid-content {
         color: var(--SecondaryText);
     }

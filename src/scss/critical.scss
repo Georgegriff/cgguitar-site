@@ -314,6 +314,9 @@ a.dark-link {
   .login-container {
     min-width: 300px;
     min-height: 350px;
+    .tz-form-login-admin * {
+      font-family: Poppins,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
+    }
   }
 
   img {

@@ -2,6 +2,11 @@
 title: 'Member Log in'
 layout: 'layouts/plain.njk'
 headerClassName: 'none'
+preload:
+  - as: "style"
+    href: "https://app.teacherzone.com/Assets/widget/tz-form-login.css"
+  - as: "script"
+    href: "https://app.teacherzone.com/Assets/widget/tz-form-login.js"
 eleventyNavigation:
   key: Members
   order: 5
