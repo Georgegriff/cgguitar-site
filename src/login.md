@@ -12,6 +12,9 @@ eleventyNavigation:
   order: 5
 ---
 {% set image = hero.image or {src: "images/hero.jpg", "alt": "CG Guitars' Charlie playing guitar on stage"} %}
+
+<h1 class="visually-hidden">Members</h1>
+<h2 class="visually-hidden">Sign in or register below</h2>
 <div class="login-wrapper">
     <div class="login-widget">
     <div class="login-container">

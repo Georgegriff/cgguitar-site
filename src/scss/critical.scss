@@ -143,7 +143,7 @@ main {
   }
 }
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 600;
   line-height: 1.1;
   max-width: 20ch;
@@ -316,6 +316,21 @@ a.dark-link {
     min-height: 350px;
     .tz-form-login-admin * {
       font-family: Poppins,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
+    }
+
+    .tz-form-login-admin {
+
+      .btn-primary {
+        border-radius: 1rem;
+        font-weight: normal;
+        font-style:normal;
+        text-transform: uppercase;
+      }
+
+      h3.title span {
+        font-weight: normal;
+        font-style:normal;
+      }
     }
   }
 
