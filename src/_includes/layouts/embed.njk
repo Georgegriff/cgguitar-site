@@ -1,4 +1,7 @@
 {% set pageCriticalStyles = pageCriticalStyles or ['css/index.css'] %}
+{% if not pageJs %}
+    {% set pageJs = pageJs or "index.js" %}
+{% endif %}
 <!DOCTYPE html>
 <html data-theme="light" lang="en">
     <head>
@@ -26,5 +29,8 @@
     </head> 
     <body>
         {{content | safe}}
+        {% if pageJs %}
+        <script src="{{ assets.getPath(pageJs) }}" type="module"></script>
+        {% endif %}
     </body>
 </html>
