@@ -699,8 +699,8 @@ collections:
         name: "policies"
         file: "src/policies.md"
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Body, name: body, widget: "markdown" }
+          - {  label: Title, name: title, widget: string  }
+          - {  label: Body, name: body, widget: "markdown"  }
       - label: "Contact success page"
         name: "success"
         file: "src/success.md"
@@ -852,40 +852,62 @@ collections:
     slug: "{{name}}" # Filename template
     fields:
       - {
+         
           label: Name,
+         
           name: name,
+         
           widget: string,
+         
           hint: "Don't change name once created",
+        ,
         }
-      - { label: Date, name: date, widget: date }
+      - { label: Date, name: date, widget: date  }
       - {
+         
           label: Image,
+         
           name: image,
+         
           widget: image,
+         
           required: false,
+         
           media_folder: "/src/images/testimonials",
+         
           public_folder: "/images/testimonials",
+       ,
         }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - {  label: "Body", name: "body", widget: "markdown"  }
   - name: "playlist"
     label: "Playlist"
     folder: src/playlists
     slug: "{{name}}"
     create: true
     fields:
-      - { label: Title, name: title, widget: string }
+      - { label: Title, name: title, widget: string  }
       - {
+         
           label: Name,
+         
           name: name,
+         
           widget: string,
+         
           hint: "Don't change name once created",
+        ,
         }
-      - { label: Playlist ID, name: id, widget: string }
+      - { label: Playlist ID, name: id, widget: string  }
       - {
+         
           label: Description,
+         
           name: description,
+         
           widget: markdown,
+         
           required: false,
+        ,
         }
   - name: "slogan"
     label: "Slogan"
@@ -1032,7 +1054,6 @@ collections:
                 [
                   { label: "Name", name: "name", widget: "string" },
                   { label: "Email", name: "email", widget: "string" },
-                  { label: "Phone", name: "phone", widget: "string" },
                   { label: "Url", name: "url", widget: "string" },
                   { label: "Twitter", name: "twitter", widget: "string" },
                   { label: "Facebook", name: "facebook", widget: "string" },
@@ -1103,3 +1124,4 @@ collections:
                   { label: "Text", name: text, widget: "string" },
                 ],
             }
+
