@@ -6,10 +6,10 @@
 
 <section class="image-carousel" aria-label="Gallery">
   <div class="carousel-container">
-    <div class="carousel">
+    <div class="carousel" role="list">
     {%- for item in items %}
       {%- set slide = loop.index %}
-      <div id="carousel__slide{{slide}}" class="carousel__item">
+      <div id="carousel__slide{{slide}}" class="carousel__item" role="list-item">
         {%- Image item.src, item.alt -%}
       </div>
     {%- endfor %}
