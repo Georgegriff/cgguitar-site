@@ -8,10 +8,10 @@ pageJs: media.js
 eleventyNavigation:
   key: Testimonials
   order: 3
-headerClassName: 'header-hero-medium sheets'
+headerClassName: 'header-hero-small'
 hero:
-  title: See what my students have to say
-  description: "Lessons held on Zoom, for the foreseeable."
+  title: HD Online Guitar Lessons
+  subtitle: "Like you've never experienced before!"
   callToAction:
     - type: primary
       text: Book a lesson

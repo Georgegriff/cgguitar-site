@@ -10,8 +10,8 @@ callToAction:
     - CG Guitar is ready to help you!
     - 1:1 - Group Classes - Workshops
   link:
-    text: Get in touch
-    url: /contact/
+    text: Book a lesson
+    url: /book/
 info:
   - text: I’m also available to hire for session work, please get in touch.
 links:
