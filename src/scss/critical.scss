@@ -35,6 +35,7 @@ html {
 @import "./components/burgerMenu";
 @import "./components/social";
 @import "./components/aboutCard";
+@import "./components//imageCarousel";
 
 @keyframes pulsate {
   0% {
@@ -340,4 +341,3 @@ a.dark-link {
     min-width: 350px;
   }
 }
-

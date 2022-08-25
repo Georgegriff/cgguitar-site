@@ -4,26 +4,20 @@ name: sign-up
 type: card
 heading: Book a lesson today!
 class: "signup-card"
-gridContent:
-  title: Start learning today
-  class: ""
-  name: icon-info-card
-  heading: Enjoyable and frustration free methods.
-  quote: "Charlie is extremely patient and has a great temperament for teaching, offering so much energy and enthusiasm to each lesson."
-  icons:
-    - text: My students have found success in both online and in person lessons.
-      image: images/student.svg
-    - text: I provide extra value though free online demonstrations and tutorials.
-      image: images/video.svg
-    - text: Tailored individual lessons for every students needs.
-      image: images/cg-logo-alt-black.svg
-    - text:
-        Improve your practical ability and increase your understanding of music
-        theory.
-      image: images/default-test.svg
 link:
   url: /policies/
   text: Terms & policies
+carousel:
+  heading: Enjoyable and frustration free methods.
+  quote: "Charlie is extremely patient and has a great temperament for teaching, offering so much energy and enthusiasm to each lesson."
+  caption: "Experience multi-cam HD Guitar lessons"
+  items:
+    - src: images/full-shot.png
+      alt: "Charlie showing his multi-cam HD Guitar lessons setup"
+    - src: images/fretting-hand.png
+      alt: "Charlie showing his fretting hand for his multi-cam HD Guitar lessons setup"
+    - src: images/picking-hand.png
+      alt: "Charlie showing his picking hand for his multi-cam HD Guitar lessons setup"
 ---
 
 Check for lesson pricing and availability.

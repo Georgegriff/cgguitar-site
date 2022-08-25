@@ -12,6 +12,7 @@ headerClassName: 'header-hero-small'
 hero:
   title: HD Online Guitar Lessons
   subtitle: "Like you've never experienced before!"
+  description: "See what my students have to say"
   callToAction:
     - type: primary
       text: Book a lesson

@@ -158,3 +158,18 @@
         margin: var(--site-padding);
     }
 }
+
+.card-dark {
+    background-color: var(--Secondary);
+    color: var(--SecondaryText);
+    blockquote:after, blockquote:before {
+        background-color: var(--Primary);
+    }
+    h2 {
+        margin-bottom: 2rem;
+    }
+}
+
+.icons-card {
+    padding: var(--site-padding) !important;
+}

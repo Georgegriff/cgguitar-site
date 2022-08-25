@@ -2,6 +2,7 @@
 @import "mixins";
 
 .star-card {
+    padding: calc(2 * var(--site-padding)) 0;
     .content-card {
         background: transparent;
     }
@@ -37,8 +38,8 @@
         display: none;
     }
 
-    .content {
-        margin-top: var(--site-padding) !important;
+    .carousel-container {
+        margin: var(--site-padding) var(--site-padding) 0 var(--site-padding);
     }
 
     .content p {
@@ -47,17 +48,22 @@
 }
 
 .signup-card {
-    background: var(--Secondary70);
+    .image-carousel {
+        flex-basis: 60%;
+        flex-grow: 1;
+    }
     blockquote:after, blockquote:before {
         background-color: var(--SecondaryText);
     }
     h2 {
         margin-bottom: 2rem;
     }
-    .card-grid {
-        margin-top: 2rem;
+    .content {
+        flex-basis: min(100vw, 400px);
+        flex-shrink: 0;
+        flex-grow: 1;
     }
-    /* teacher zone crap */
+    /* teacher zone stuff */
 .iframe-container {
     overflow: hidden;
     position: relative;

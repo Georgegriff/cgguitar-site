@@ -10,6 +10,8 @@ components:
     name: slogan
   - type: card
     name: sign-up
+  - type: card
+    name: icons-grid
   - type: levels
     name: levels
   - type: card
