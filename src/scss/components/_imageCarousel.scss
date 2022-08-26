@@ -6,11 +6,13 @@
     flex-direction: column;
     justify-content: space-evenly;
     & > h3 {
-      margin: var(--site-padding) var(--site-padding) 0 var(--site-padding);
-    }
+margin: var(--site-padding);
+     } 
     @include up-from(medium) {
       & > h3 {
         display: none;
+         margin: var(--site-padding) var(--site-padding) 0 var(--site-padding);
+    
       }
    }
   
