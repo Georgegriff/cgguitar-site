@@ -13,6 +13,7 @@
         display: none;
       }
    }
+  
 .carousel-container {
     position: relative;
     max-height: 800px;
@@ -92,6 +93,39 @@
     left: 0;
     text-align: center;
   }
+
+  .carousel__next_prev {  
+    align-items: center;
+    position: absolute;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  
+    button {
+      cursor: pointer;
+      font: inherit;
+      background: transparent;
+      border: none;
+      height: 2rem;
+      width: auto;
+      color: var(--SecondaryText);
+      svg {
+        height: 100%;
+        width: auto;
+        fill: currentColor;
+      }
+    }
+
+    .carousel__prev {
+      transform: rotate(90deg);
+    }
+
+    .carousel__next {
+      transform: rotate(-90deg);
+    }
+  } 
   
   .controls__dot {
     display: inline-block;
@@ -109,7 +143,7 @@
     &:not(:first-child) {
       margin-left: 0.5em;
     }
-  
+    &[aria-current="true"],
     &:hover,
     &:focus {
       opacity: 1;
