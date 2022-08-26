@@ -29,7 +29,7 @@ pageJs: media.js
 title: About
 eleventyNavigation:
   key: About
-  order: 5
+  order: 7
 hero:
   title: A little about CG Guitar
   subtitle: Continue reading if you'd like to know more
@@ -38,6 +38,9 @@ hero:
     alt: CG Guitars' Charlie playing guitar on stage
   callToAction:
     - type: primary
+      text: Book a lesson
+      link: /book/#sign-up
+    - type: secondary
       text: Get in touch
       link: /contact/
 ---

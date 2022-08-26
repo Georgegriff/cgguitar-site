@@ -1,5 +1,8 @@
 export const HeaderPreview = ({entry, getAsset}) => {
     const heroEntry = entry.getIn(['data', 'hero']);
+    if(!heroEntry) {
+      return;
+    }
     const hero = heroEntry.toJSON();
     const image = heroEntry.getIn(['image', 'src']);
     const heroImage = getAsset(image);

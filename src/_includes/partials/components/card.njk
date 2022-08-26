@@ -1,5 +1,7 @@
 {%- set card = card or component %}
 {%- set video = card.data.video %}
+{%- set gridContent = card.data.gridContent %}
+{%- set carousel = card.data.carousel %}
 <section class="card-grid {{card.data.class}}">
 {%- if video %}
     {%- set youtube = {"id": video.id } %}
@@ -10,7 +12,7 @@
         {%- set videoImage = ytImg | imgmin %}
     {% endif %}
 {%- endif %}
-{%- if card %}
+{% if card and (card.data.heading or card.data.link or card.data.image or card.templateContent) %}
 <figure id="{{card.data.name | slug}}" class="content-card card-{{card.data.direction}}">
     <div class="content">
         {%- if card.data.heading -%}
@@ -21,6 +23,7 @@
         <div class="learn-more flex-end flex-push" ><a {% if helpers.isExternalLink(card.data.link.url) -%}target="_blank"{%-endif%} href="{{helpers.componentLink(card.data.link)}}">{{card.data.link.text}}</a></div>
         {%- endif -%}
     </div>
+    {% include "partials/components/image-carousel.njk" %}
     {%- if card.data.image -%}{%- Image card.data.image.src, card.data.image.alt -%}{%- endif -%}
 </figure>
 {%- endif %}
@@ -32,4 +35,11 @@
         {%- endif %}
     </div>
 {%- endif -%}
+
+{% if gridContent %}
+<div>
+    {% include "partials/grid-content.html" %}
+</div>
+{% endif %}
+
 </section>

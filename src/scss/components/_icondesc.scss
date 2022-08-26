@@ -51,6 +51,7 @@
         --grid-ish-size: 21em;
     }
     padding: var(--site-padding);
+    padding-bottom: calc(3 * var(--site-padding));
 
     ol {
         margin:0;

@@ -6,6 +6,12 @@
         "markdown",
         "latex"
     ],
+    "files.associations": {
+        "*.njk": "njk"
+    },
+    "[njk]": {
+        "editor.formatOnSave": false
+    },
     "liveServer.settings.port": 5501,
     "workbench.colorCustomizations": {
         "activityBar.background": "#222922",

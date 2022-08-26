@@ -89,6 +89,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPassthroughCopy("src/images/manifest");
   eleventyConfig.addPassthroughCopy("src/images/meta");
+  eleventyConfig.addPassthroughCopy("src/images/person-nav.svg");
   //eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
   if (process.env.NODE_ENV === "production") {
     eleventyConfig.addPlugin(pluginPWA, {

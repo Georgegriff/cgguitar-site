@@ -49,6 +49,20 @@ collections:
                 name: subtitle
                 required: false
                 widget: string
+              - label: Hero Link
+                name: heroLink
+                widget: object
+                required: false
+                fields:
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
               - label: Image
                 name: image
                 widget: object
@@ -180,6 +194,20 @@ collections:
                 name: subtitle
                 required: false
                 widget: string
+              - label: Hero Link
+                name: heroLink
+                widget: object
+                required: false
+                fields:
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
               - label: Image
                 name: image
                 widget: object
@@ -246,6 +274,124 @@ collections:
                     search_fields: ["title"]
                     value_field: "name"
                     display_fields: ["title"]
+      - label: "Book a lesson page"
+        name: "book"
+        file: "src/book.md"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - {
+              label: "Navigation",
+              name: "eleventyNavigation",
+              "hint": "Navigation bar info",
+              widget: "object",
+              fields:
+                [
+                  { label: "Text", name: "key", widget: "string" },
+                  { label: "Order", name: "order", widget: "number" },
+                ],
+            }
+          - label: Hero Section
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                required: false
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                required: false
+                widget: string
+              - label: Hero Link
+                name: heroLink
+                widget: object
+                required: false
+                fields:
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Source
+                    name: src
+                    widget: image
+                  - label: Description
+                    name: alt
+                    widget: string
+              - label: Call To Action
+                required: false
+                name: callToAction
+                max: 2
+                widget: "list"
+                fields:
+                  - name: type
+                    label: Type
+                    widget: select
+                    default: ["primary"]
+                    options: ["primary", "secondary"]
+                  - name: text
+                    label: Text
+                    widget: string
+                  - name: link
+                    label: Link
+                    widget: string
+          - label: "Sections"
+            name: "components"
+            widget: "list"
+            allow_add: true
+            collapsed: true
+            types:
+              - label: "Card"
+                widget: "object"
+                name: "card"
+                summary: "Card: {{fields.name}}"
+                fields:
+                  - widget: "relation"
+                    name: "name"
+                    collection: "card"
+                    search_fields: ["label"]
+                    value_field: "name"
+                    display_fields: ["label"]
+              - label: "Quote"
+                widget: "object"
+                name: "quote"
+                summary: "Quote: {{fields.name}}"
+                fields:
+                  - widget: "relation"
+                    name: "name"
+                    collection: "quote"
+                    search_fields: ["label"]
+                    value_field: "name"
+                    display_fields: ["label"]
+              - label: "Playlist"
+                widget: "object"
+                name: "playlist"
+                summary: "Playlist: {{fields.name}}"
+                fields:
+                  - widget: "relation"
+                    name: "name"
+                    collection: "playlist"
+                    search_fields: ["title"]
+                    value_field: "name"
+                    display_fields: ["title"]
+      - label: "Login"
+        name: "login"
+        file: "src/login.md"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: "markdown" }
       - label: "Testimonial page"
         name: "testimonials"
         file: "src/testimonials.md"
@@ -278,6 +424,20 @@ collections:
                 name: subtitle
                 required: false
                 widget: string
+              - label: Hero Link
+                name: heroLink
+                widget: object
+                required: false
+                fields:
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
               - label: Image
                 name: image
                 widget: object
@@ -376,6 +536,20 @@ collections:
                 name: subtitle
                 required: false
                 widget: string
+              - label: Hero Link
+                name: heroLink
+                widget: object
+                required: false
+                fields:
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
               - label: Image
                 name: image
                 widget: object
@@ -452,6 +626,20 @@ collections:
                 name: subtitle
                 required: false
                 widget: string
+              - label: Hero Link
+                name: heroLink
+                widget: object
+                required: false
+                fields:
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
               - label: Image
                 name: image
                 widget: object
@@ -511,8 +699,8 @@ collections:
         name: "policies"
         file: "src/policies.md"
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Body, name: body, widget: "markdown" }
+          - {  label: Title, name: title, widget: string  }
+          - {  label: Body, name: body, widget: "markdown"  }
       - label: "Contact success page"
         name: "success"
         file: "src/success.md"
@@ -534,6 +722,20 @@ collections:
                 name: subtitle
                 required: false
                 widget: string
+              - label: Hero Link
+                name: heroLink
+                widget: object
+                required: false
+                fields:
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
               - label: Image
                 name: image
                 widget: object
@@ -650,40 +852,62 @@ collections:
     slug: "{{name}}" # Filename template
     fields:
       - {
+         
           label: Name,
+         
           name: name,
+         
           widget: string,
+         
           hint: "Don't change name once created",
+        ,
         }
-      - { label: Date, name: date, widget: date }
+      - { label: Date, name: date, widget: date  }
       - {
+         
           label: Image,
+         
           name: image,
+         
           widget: image,
+         
           required: false,
+         
           media_folder: "/src/images/testimonials",
+         
           public_folder: "/images/testimonials",
+       ,
         }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - {  label: "Body", name: "body", widget: "markdown"  }
   - name: "playlist"
     label: "Playlist"
     folder: src/playlists
     slug: "{{name}}"
     create: true
     fields:
-      - { label: Title, name: title, widget: string }
+      - { label: Title, name: title, widget: string  }
       - {
+         
           label: Name,
+         
           name: name,
+         
           widget: string,
+         
           hint: "Don't change name once created",
+        ,
         }
-      - { label: Playlist ID, name: id, widget: string }
+      - { label: Playlist ID, name: id, widget: string  }
       - {
+         
           label: Description,
+         
           name: description,
+         
           widget: markdown,
+         
           required: false,
+        ,
         }
   - name: "slogan"
     label: "Slogan"
@@ -900,3 +1124,4 @@ collections:
                   { label: "Text", name: text, widget: "string" },
                 ],
             }
+

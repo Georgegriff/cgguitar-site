@@ -11,27 +11,31 @@ pagination:
   alias: myurl
   size: 1
 ---
-***Terms & Conditions***\
+
+<section class="padded-around document">
+
+# Terms & Conditions
+
 \
 **CG Guitar** is committed to your success on the guitar. To ensure your success, consistency is a critical component. This means attending your lessons as scheduled and playing guitar most days. Below I have outlined some terms and conditions that are designed to keep you focused and on track. Please take some time to read these and if you have any questions please don’t hesitate to ask.\
 \
 **\*Booking a lesson acts as an agreement to these terms & conditions\***\
 \
-**Lesson Payment –** *All lessons must be paid for in advance or on the day of your first lesson. See payment policy for more details. Most major credit & debit cards are accepted.*\
+**Lesson Payment –** _All lessons must be paid for in advance or on the day of your first lesson. See payment policy for more details. Most major credit & debit cards are accepted._\
 \
 **Cancellations:** – If you are unable to attend any kind of lesson and I am notified, a video lesson will be supplied to cover that week and you'll be assigned practice tasks to keep you on track. Please see the Refund Policy for more details.\
 \
-***1:1's***
+**_1:1's_**
 
-* Once the lessons have been scheduled and paid for, you are fully committed to the scheduled time and this is non-refundable.
-* However, you can try to reschedule your lesson via the weekly schedule on your student/parent TeacherZone account if before 24 hours of your allocated lesson time. Available slots are subject to demand. If there is not a suitable slot available then you will have to cancel your lesson and you will receive a video lesson to study.\
+- Once the lessons have been scheduled and paid for, you are fully committed to the scheduled time and this is non-refundable.
+- However, you can try to reschedule your lesson via the weekly schedule on your student/parent TeacherZone account if before 24 hours of your allocated lesson time. Available slots are subject to demand. If there is not a suitable slot available then you will have to cancel your lesson and you will receive a video lesson to study.\
   \
-  ***Group Lessons, 2:1's & Workshops***
-* Once the lessons have been scheduled and paid for, you are fully committed to the term/dates and this is non-refundable and you are unable to reschedule.
+  **_Group Lessons, 2:1's & Workshops_**
+- Once the lessons have been scheduled and paid for, you are fully committed to the term/dates and this is non-refundable and you are unable to reschedule.
 
 **Stopping Lessons –** A month's notice is required if a student wishes to stop or put their lessons on hold.\
 \
-***Holidays***\
+**_Holidays_**\
 \
 There are no lessons on bank holidays.\
 \
@@ -39,13 +43,13 @@ There is usually 2 week's break from lessons over the Christmas Holidays.\
 \
 Please give a month's notice if you have any planned vacations or dates that will effect you attending your lesson. You can either inform CG Guitar to be taken out of the schedule (no charge) or you can reschedule or cancel your lesson/s yourself via your student or parent account (this way will count as an attended lesson. If cancelled yourself, you will receive a video lesson and educational materials to cover that period).\
 \
-***1:1 & 2:1***
+**_1:1 & 2:1_**
 
-* These types of lessons continue as usual all year round. If you require an alternative slot or you will not be attending lessons during the holidays then you must notify CG Guitar or cancel?/reschedule your lesson via your student or parent TeacherZone account.
+- These types of lessons continue as usual all year round. If you require an alternative slot or you will not be attending lessons during the holidays then you must notify CG Guitar or cancel?/reschedule your lesson via your student or parent TeacherZone account.
 
-***Group Lessons & 2:1's***
+**_Group Lessons & 2:1's_**
 
-* These run during term time only. 1:1's and workshops are available to supplement them in the holidays. So either contact CG Guitar about booking a lesson in the holidays or go ahead and buy a one off or a holiday lesson plan in the Payment/Billing section under "Buy Plan" on your TeacherZone account and chose an available lesson date/time.
+- These run during term time only. 1:1's and workshops are available to supplement them in the holidays. So either contact CG Guitar about booking a lesson in the holidays or go ahead and buy a one off or a holiday lesson plan in the Payment/Billing section under "Buy Plan" on your TeacherZone account and chose an available lesson date/time.
 
 **Progress -** Consistent practice is critical to your progress on guitar, but so is happiness and enjoyment! To encourage this, students will be provided with practice assignments each week within their TeacherZone profile. Please use the website or the app to log in and utilise the practice button at the start and end of each practice session. You can gain points and rewards for doing so and accessing your practice assignment and completing it.\
 \
@@ -64,17 +68,17 @@ Regular practice is a habit and desire that is developed over time through enjoy
 **Thank you for taking the time to read these through. I look forward to our lessons together!**\
 \
 \
-***Privacy Disclaimer and Terms Of Use***\
+**_Privacy Disclaimer and Terms Of Use_**\
 \
 CG Guitar is committed to maintaining your confidence and trust, and accordingly maintains the following privacy policy to protect personal information you provide online.\
 \
 It is CG Guitar’s policy that personal information, such as your name, postal and e-mail address or telephone number, is private and confidential. Accordingly, the personal information you provide is stored in a secure location, is accessible only by designated staff, and is used only for the purposes for which you provide the information.\
 \
-*No Release of Information to Third Parties*\
+_No Release of Information to Third Parties_\
 \
 Personal information will not be released to third parties. There are no circumstances under which CG Guitar will provide or sell personal information to third parties.\
 \
-*No Computer Tracking of Identifiable Information*\
+_No Computer Tracking of Identifiable Information_\
 \
 CG Guitar's server is not set up to track, collect or distribute personal information about its visitors. It does recognise the referring server of visitors, but not e-mail addresses or any personal information. For example, we can tell which Internet Service Provider our visitors use, or what site they clicked in from, but not the names, addresses or other information about our visitors that would allow us to identify the particular visitors to our site.\
 \
@@ -91,7 +95,7 @@ The CG Guitar Learning Management, Billing and Scheduling Portal is hosted on Te
 Please contact Charlie at [charlie@cgguitar.co.uk](mailto:charlie@cgguitar.co.uk) or 07861538564 if you have any questions.
 
 \
-***Refund Policy***\
+**_Refund Policy_**\
 \
 Once you are booked in the schedule and lessons are paid they are non-refundable and you are committed to honouring the time you requested for your lessons.\
 \
@@ -101,15 +105,15 @@ Under special circumstances a refund may be actioned but this will be at the dis
 \
 Please contact Charlie at [charlie@cgguitar.co.uk](mailto:charlie@cgguitar.co.uk) or 07861538564 if you have any questions.\
 \
-***Payment Policy***\
+**_Payment Policy_**\
 \
 CG Guitar accepts the following forms of payment:
 
-* Visa
-* Visa Electron
-* Mastercard
-* Maestro
-* Plus most other major credit and debit cards.
+- Visa
+- Visa Electron
+- Mastercard
+- Maestro
+- Plus most other major credit and debit cards.
 
 You are required to purchase or pay for a lesson plan to access CG Guitar's professional lesson services. You agree to provide current, complete, and accurate purchase and account information for all purchases made via the CG Guitar portal and site. You further agree to promptly update account and payment information, including email address, payment method, and payment card expiration date, so that CG Guitar can complete your transactions and contact you as needed. CG Guitar bills you through an online billing account for purchases made via the CG Guitar portal and site. Sales tax will be added to the price of purchases as deemed required by CG Guitar. We may change prices at any time. But will give you 30 days notice via email before doing so. All payments shall be in British Pound Sterling.\
 \
@@ -120,3 +124,5 @@ CG Guitar reserves the right to correct any errors or mistakes in pricing, even 
 Please contact Charlie at [charlie@cgguitar.co.uk](mailto:charlie@cgguitar.co.uk) or 07861538564 if you have any questions or would like to cancel lessons or adjust your lesson payment plan.\
 \
 Please see [PCI Compliant Documentation here](https://drive.google.com/drive/folders/1wDXw6238KgipDSuiOBxFLEsNDAQXqiuj?usp=sharing).
+
+</section>

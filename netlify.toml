@@ -3,8 +3,13 @@
   command = "npm run build"
   publish = "dist"
 [[plugins]]
+  package = "netlify-plugin-cache"
+    [plugins.inputs]
+    paths = [
+      ".cache" # Remote Asset Cache
+    ]
+[[plugins]]
   package = "netlify-plugin-submit-sitemap"
-
 	[plugins.inputs]
 
 	# The base url of your site (optional, default = main URL set in Netlify)

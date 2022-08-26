@@ -1,0 +1,152 @@
+@import "variables";
+@import "mixins";
+
+.image-carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    & > h3 {
+      margin: var(--site-padding) var(--site-padding) 0 var(--site-padding);
+    }
+    @include up-from(medium) {
+      & > h3 {
+        display: none;
+      }
+   }
+  
+.carousel-container {
+    position: relative;
+    max-height: 800px;
+    margin: 0 var(--site-padding);
+    @include up-to(medium) {
+        margin: 0;
+    }
+    picture {
+        display: block;
+        height: 100% !important;
+        width: 100% !important;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+   
+  }
+  .carousel-after-content {
+    margin: var(--site-padding);
+    blockquote:after, blockquote:before {
+        background-color: var(--Primary);
+    }
+
+    h3 {
+      padding-bottom: 1rem;
+    }
+ }
+ .caption {
+     background: var(--Background);
+     color: var(--Text);
+     width: min(60%, 100vw);
+     margin: 0 auto;
+     border-radius: 1rem;
+     padding: 0.5rem 1rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 1rem;
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+      }
+      @include up-to(medium) {
+        display: none;
+        
+     }
+ }
+  
+  .carousel {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    // Hide scrollbar in IE.
+    -ms-overflow-style: none;
+    height: 100%;
+  }
+  
+  // Hide scrollbar in WebKit and Blink powered Browsers.
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .carousel__item {
+    width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+  
+  .controls {
+    position: absolute;
+    right: 0;
+    bottom: 1em;
+    left: 0;
+    text-align: center;
+  }
+
+  .carousel__next_prev {  
+    align-items: center;
+    position: absolute;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  
+    button {
+      cursor: pointer;
+      font: inherit;
+      background: transparent;
+      border: none;
+      height: 2rem;
+      width: auto;
+      color: var(--SecondaryText);
+      svg {
+        height: 100%;
+        width: auto;
+        fill: currentColor;
+      }
+    }
+
+    .carousel__prev {
+      transform: rotate(90deg);
+    }
+
+    .carousel__next {
+      transform: rotate(-90deg);
+    }
+  } 
+  
+  .controls__dot {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    outline: none;
+    background-color: var(--Primary);
+    border: solid 2px var(--PrimaryText);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.4);
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    
+    &:not(:first-child) {
+      margin-left: 0.5em;
+    }
+    &[aria-current="true"],
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}

@@ -183,18 +183,39 @@
 .sheets {
   img {
     --hero-opacity:0.4;
-    right: -5rem;
     @include up-to (medium) {
-     right:0;
      --hero-opacity:0.1;
     }
-  }
-  @include up-from(large) {
-      min-height: calc(73vh - (var(--site-header) + var(--site-padding)));
   }
 }
 
 .hero {
+  .hero-link {
+    a {
+      color: var(--SecondaryText);
+      font-weight: 600;
+      position: relative;
+      &::after {
+        content: "";
+        display: inline-block;
+        margin-bottom: 10px;
+        width: 90%;
+        height: 5px;
+        background: var(--Primary);
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        z-index: -1;
+    }
+    &:hover {
+      font-weight: normal;
+      &::after {
+        background: currentColor;
+      }
+    }
+    }
+  
+  }
   .call-to-action a {
     opacity: 0;
     animation: pulsate-once 3s ease-in forwards;

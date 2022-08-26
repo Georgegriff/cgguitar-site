@@ -43,4 +43,5 @@ Super convenient as well as effective - Have your guitar lesson from the comfort
 
 [Check out the student spotlights](/videos/#student-spotlight-performance-night-2019) to watch some CG Guitar students showing off their skills!
 
+
 </div>

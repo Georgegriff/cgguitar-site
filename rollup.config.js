@@ -7,7 +7,8 @@ const entrypoints = {
   index: "src/scripts/index.js",
   contact: "src/scripts/contact.js",
   media: "src/scripts/media.js",
-  'inline-critical': 'src/scripts/inline-critical.js'
+  'inline-critical': 'src/scripts/inline-critical.js',
+  'book-widget': "src/scripts/book-widget.js"
 };
 
 const baseConfig = createBasicConfig({

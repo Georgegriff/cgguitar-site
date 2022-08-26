@@ -2,20 +2,20 @@
 @import "mixins";
 @import "colors";
 
-
 html {
-    font-family: "Poppins", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Poppins", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
 }
 
 :root {
-    @include default-theme;
-    font-size: calc(0.875rem + 0.2vw);
+  @include default-theme;
+  font-size: calc(0.875rem + 0.2vw);
 }
 
 @include up-from(xxlarge) {
-    :root {
-        font-size: calc(1rem + 0.1vw);
-    }
+  :root {
+    font-size: calc(1rem + 0.1vw);
+  }
 }
 
 /* Utilities */
@@ -35,250 +35,309 @@ html {
 @import "./components/burgerMenu";
 @import "./components/social";
 @import "./components/aboutCard";
+@import "./components//imageCarousel";
 
 @keyframes pulsate {
-    0% { 
-        opacity: 1.0;
-    }
-    50% { 
-        opacity: 0.5;
-
-    }
-    100% { 
-        opacity: 1.0;
-    }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-body,html {
-    margin: 0;
-    background: var(--Secondary);
-    color: var(--Text);
-    scroll-padding-top: calc((var(--site-header) + (2*var(--site-padding))) - 15px);
+body,
+html {
+  margin: 0;
+  background: var(--Secondary);
+  color: var(--Text);
+  scroll-padding-top: calc(
+    (var(--site-header) + (2 * var(--site-padding))) - 15px
+  );
 }
 
-:focus, #more:target {
-    outline: 1px dashed var(--Primary);
-    outline-offset: 0.3rem;
+:focus,
+#more:target {
+  outline: 1px dashed var(--Primary);
+  outline-offset: 0.3rem;
 }
 
 main:focus {
-    outline: none;
+  outline: none;
 }
 
-a, a:visited, a:active {
-    color: inherit;
-    text-decoration: none;
+a,
+a:visited,
+a:active {
+  color: inherit;
+  text-decoration: none;
 }
 
-.wrapper  {
-    height: 100%;
+.wrapper {
+  height: 100%;
 }
 
 .contained {
-    > * {
-        max-width: 60rem;
-        margin: 0 auto;
-    }
+  > * {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
 }
 
 main {
-   
+  background: var(--Background);
+  position: relative;
+  z-index: 3;
+  p {
+    margin-bottom: 0.5rem;
+  }
 
-    background: var(--Background);
-    position: relative;
-    z-index: 3;
-    p {
-        margin-bottom: 0.5rem;
+  article {
+    & > h2 {
+      padding-top: var(--site-padding);
+      margin-bottom: calc(var(--site-padding));
     }
+  }
 
-    article {
-        &> h2 {
-            padding-top:var(--site-padding);
-            margin-bottom: calc(var(--site-padding));
-        }
-    }
+  > article:not(.no-padding) {
+    padding: 0 var(--site-padding);
+  }
 
-    > article:not(.no-padding) {
-        padding: 0 var(--site-padding)
-    }
+  .padded-around {
+    padding: var(--site-padding);
+  }
 
-    article.padded-around {
-        padding: var(--site-padding);
-    }
+  .secondary-article {
+    background: var(--Background50);
+  }
 
-    .secondary-article {
-        background: var(--Background50);
-    }
-
-    .site-padded {
-        padding-left: var(--site-padding);
-        padding-right: var(--site-padding);
-    }
+  .site-padded {
+    padding-left: var(--site-padding);
+    padding-right: var(--site-padding);
+  }
 }
 
-
 .padded {
-    padding: 1.4rem 0;
+  padding: 1.4rem 0;
 }
 
 .padded-med {
-    padding: 2rem 0rem;
+  padding: 2rem 0rem;
 }
 
 .padded-sm {
-    padding: 1rem 0
+  padding: 1rem 0;
 }
 
 .skip-link {
-    position: absolute;
-    top:calc(var(--site-padding) / 3);
-    left:var(--site-padding);
-    z-index: 99;
-    margin-top:1.5rem;
-    color: inherit;
-    &:not(:focus) {
-        @extend .visually-hidden;
-    }
+  position: absolute;
+  top: calc(var(--site-padding) / 3);
+  left: var(--site-padding);
+  z-index: 99;
+  margin-top: 1.5rem;
+  color: inherit;
+  &:not(:focus) {
+    @extend .visually-hidden;
+  }
 }
-
 h1 {
-    font-size: 5rem;
-    font-weight: 600;
-    line-height: 1.1;
-    max-width: 20ch;
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.1;
+  max-width: 20ch;
 
-    @include up-from(xxlarge) {
-        font-size: 7rem;
-    }
-    @include up-to(small) {
-        font-size: 2.4rem;
-    }
+  @include up-from(xxlarge) {
+    font-size: 7rem;
+  }
+  @include up-to(small) {
+    font-size: 2.4rem;
+  }
 
-    @include up-to(xsmall) {
-        font-size: 2.2rem;
-    }
+  @include up-to(xsmall) {
+    font-size: 2.2rem;
+  }
 }
 
 @include up-to-height($height-small) {
-    h1 {
-        font-size: 2rem;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    .padded {
-        padding: 2rem 0
-    }
+  .padded {
+    padding: 2rem 0;
+  }
 
-    .padded-med {
-        padding: 1rem 0rem;
-    }
+  .padded-med {
+    padding: 1rem 0rem;
+  }
 
-    .padded-sm {
-        padding: 0.75rem 0
-    }
+  .padded-sm {
+    padding: 0.75rem 0;
+  }
+}
 
+.document {
+  h1 {
+    font-size: 3rem;
+  }
 }
 
 h2 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 h3 {
-    font-weight: 600;
-    margin-bottom: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-
 .bottom-section {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex:2;
-    margin-top:3rem;
-    > * {
-        font-size: 0.95rem;
-        margin-bottom: 0;
-        line-height: 1rem;
-    }
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 2;
+  margin-top: 3rem;
+  > * {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    line-height: 1rem;
+  }
 }
 
 .learn-more {
-    color: currentColor;
-    position: relative;
-    a {
-        font-size: 0.9rem;
-        color: inherit;
-        display: inline-flex;
-        flex-direction: column;
-        gap:0.35rem;
-        
-        &::after {
-            content: '';
-            display: inline-block;
-            margin-bottom: 10px;;
-            width:90%;
-            height:5px;
-            background: var(--Primary);
-        }
-        &:hover, &:active {
-            &::after {
-                background: currentColor;
-            }
-        }
-    }
+  color: currentColor;
+  position: relative;
+  a {
+    font-size: 0.9rem;
+    color: inherit;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.35rem;
 
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-bottom: 10px;
+      width: 90%;
+      height: 5px;
+      background: var(--Primary);
+    }
+    &:hover,
+    &:active {
+      &::after {
+        background: currentColor;
+      }
+    }
+  }
 }
 
 .grid-ish {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .grid-ish > * {
-    flex: 1 1 var(--grid-ish-size, 10em);
+  flex: 1 1 var(--grid-ish-size, 10em);
 }
 
 .justify-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .star-rating {
-    svg {
-        height: auto;
-        width: 7rem;
-    }
+  svg {
+    height: auto;
+    width: 7rem;
+  }
 }
 
 .star-link {
-    a {
-        color: var(--Primary);
-    }
+  a {
+    color: var(--Primary);
+  }
 }
 
 @include up-from(xxlarge) {
-    .star-rating {
-        svg {
-            width: 15rem;
-        }
+  .star-rating {
+    svg {
+      width: 15rem;
     }
-    .star-link.learn-more {
-        a {
-            font-size: 1.5rem;
-        }
+  }
+  .star-link.learn-more {
+    a {
+      font-size: 1.5rem;
     }
-
+  }
 }
 
 .content-card .content .star-link.learn-more {
-    margin: 0.25rem 0 1.5rem 0;
+  margin: 0.25rem 0 1.5rem 0;
 }
 
 @include up-from(xxlarge) {
-    h2 {
-        font-size: 2.5rem;
-    }
+  h2 {
+    font-size: 2.5rem;
+  }
 }
 
 p a:not([class]) {
-    color: var(--Primary);
+  color: var(--Primary);
+}
+
+a.dark-link {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--Primary);
+}
+
+/* if this gets big move it */
+.login-wrapper {
+  background: var(--Secondary);
+  color: var(--SecondaryText);
+  @include up-from(medium) {
+  }
+}
+.login-widget {
+  padding-top: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & > * {
+    flex: 1;
+  }
+
+  .login-container {
+    min-width: 300px;
+    min-height: 350px;
+    .tz-form-login-admin * {
+      font-family: Poppins,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
+    }
+
+    .tz-form-login-admin {
+
+      .btn-primary {
+        border-radius: 1rem;
+        font-weight: normal;
+        font-style:normal;
+        text-transform: uppercase;
+      }
+
+      h3.title span {
+        font-weight: normal;
+        font-style:normal;
+      }
+    }
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+    min-width: 350px;
+  }
 }

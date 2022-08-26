@@ -9,9 +9,9 @@ components:
   - type: slogan
     name: slogan
   - type: card
-    name: more-info
-  - type: gridCard
-    name: icon-info-card
+    name: sign-up
+  - type: card
+    name: icons-grid
   - type: levels
     name: levels
   - type: card
@@ -31,19 +31,20 @@ hero:
   title: Kick-Start Your Guitar Lessons Today
   subtitle: Available Monday to Friday
   description: HD Online Guitar Lessons - Like you've never experienced before!
+  heroLink:
+    description: Already a member? 
+    text: Log in here.
+    href: /login/
   image:
     src: images/hero.jpg
     alt: CG Guitars' Charlie Griffiths playing guitar on stage
   callToAction:
     - type: primary
-      text: Get in touch
-      link: /contact/
+      text: Book a lesson
+      link: "#sign-up"
     - type: secondary
       text: Learn more
       link: "#main-content"
 ---
 
 {%- include 'partials/components.njk' -%}
-
-
-

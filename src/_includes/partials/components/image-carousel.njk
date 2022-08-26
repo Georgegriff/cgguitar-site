@@ -1,0 +1,49 @@
+{%- if carousel -%}
+{%- set items = carousel.items %}
+{%- set caption = carousel.caption %}
+{%- set quote = carousel.quote %}
+{%- set heading = carousel.heading %}
+
+<section class="image-carousel" aria-label="Gallery">
+  <h3>{{caption}}</h3>
+  <div class="carousel-container">
+    <div class="carousel" role="list">
+    {%- for item in items %}
+      {%- set slide = loop.index %}
+      <div id="carousel__slide{{slide}}" class="carousel__item" role="list-item">
+        {%- Image item.src, item.alt -%}
+      </div>
+    {%- endfor %}
+    </div>
+    <div class="carousel__next_prev">
+      <button aria-label="Previous image" class="carousel__prev">
+            {% include 'images/chevron_down.svg' %}          
+      </button>
+       <button aria-label="Next image" class="carousel__next">
+            {% include 'images/chevron_down.svg' %}          
+      </button>
+    </div>
+    <div id="controls" class="controls">
+    <div class="caption">
+        <h3>{{caption}}</h3>
+    </div>
+    <span class="link-wrapper">
+    {%- for item in items %}
+      {%- set slide = loop.index %}
+      <a {% if loop.index == 1 %}aria-current="true"{%- endif %} href="#carousel__slide{{slide}}" class="controls__dot">
+        <span class="visually-hidden">{{item.alt}}</span>
+      </a>
+    {%- endfor %}
+    </span>
+    </div>
+  </div>
+  <div class="carousel-after-content">
+    {%- if heading %}
+    <h3 style="padding-top:1rem">{{heading}}</h3>
+{%- endif %}
+{%- if quote %}
+    <blockquote>{{quote}}</blockquote>
+{%- endif %}
+  </div>
+</section>
+{%- endif %}
