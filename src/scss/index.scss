@@ -63,6 +63,11 @@
         flex-shrink: 0;
         flex-grow: 1;
     }
+    @include up-to(medium) {
+        .content-card {
+            flex-wrap: wrap-reverse;
+        }
+     }
     /* teacher zone stuff */
 .iframe-container {
     overflow: hidden;
