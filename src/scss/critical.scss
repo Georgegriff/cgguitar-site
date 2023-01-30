@@ -298,11 +298,24 @@ a.dark-link {
 .login-wrapper {
   background: var(--Secondary);
   color: var(--SecondaryText);
-  @include up-from(medium) {
+  padding: 1rem var(--site-padding);
+  h2 {
+    font-size: 3rem;
   }
 }
+h2 + .login-widget {
+  padding-top: 0rem;
+}
 .login-widget {
-  padding-top: 13vh;
+
+  .subtitle {
+    margin-top: 1rem;
+    color: var(--SecondaryText50);
+  }
+  padding-top: 3rem;
+  @include up-from(medium) {
+    padding-top: 10vh ;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -311,7 +324,32 @@ a.dark-link {
   & > * {
     flex: 1;
   }
+  .login-title-wrap {
+    margin-bottom: 1rem;
+  }
+  .flex-widget-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include up-to(medium) {
+      align-items: center;
+    }
+    > * {
+      /* teacher zone hardcoded max width */
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 400px;
+    }
+    .tz-form-singup {
+      width: 100%;
+      background: var(--Secondary) !important;
+      min-height: 500px;
+      @include up-from(medium) {
+        margin:0;
+      }
+    }
 
+  }
   .login-container {
     min-width: 300px;
     min-height: 350px;
@@ -335,9 +373,42 @@ a.dark-link {
     }
   }
 
-  img {
+  [class*="tz-"] img {
+    display: inline;
+    max-width: initial;
+  }
+
+  picture img {
     height: auto;
     width: 100%;
     min-width: 350px;
   }
 }
+
+.tz-form-login-admin {
+  min-height: 341px;
+}
+
+.relative {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  picture {
+    flex: initial;
+    img {
+      position: absolute;
+      object-fit: cover;
+      right:0;
+      top:0;
+      bottom:0;
+      width: 68%;
+      z-index: -1;
+      @include up-to(medium) {
+        width: auto;
+        height: 150%;
+        opacity:0.5;
+      }
+    }
+  }
+}
+
