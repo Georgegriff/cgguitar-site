@@ -43,7 +43,7 @@ pageJs: media.js
 title: Videos
 eleventyNavigation:
   key: Videos
-  order: 4
+  order: 7
 hero:
   title: Check out my latest videos
   description: Find demonstrations, tutorials and other musical content.
