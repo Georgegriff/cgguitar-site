@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config();
 const { DateTime, Duration } = require("luxon");
 const fs = require("fs");
 const pluginPWA = require("eleventy-plugin-pwa");
@@ -9,8 +9,8 @@ const markdownItAnchor = require("markdown-it-anchor");
 const { minify } = require("terser");
 const { getPlaylists } = require("./src/_filters/youtube");
 const siteMeta = require("./src/_data/metadata.json");
-const htmlmin = require('html-minifier');
-const { imageOptimizer } = require('./imageopt');
+const htmlmin = require("html-minifier");
+const { imageOptimizer } = require("./imageopt");
 
 module.exports = (eleventyConfig) => {
   /* Markdown Overrides */
@@ -20,22 +20,30 @@ module.exports = (eleventyConfig) => {
     linkify: true,
   }).use(markdownItAnchor, { permalink: false });
 
-  eleventyConfig.addNunjucksAsyncShortcode("Image", async (src, alt, ariaHidden) => {
-    if (!alt && !ariaHidden) {
-      // work around until netlify-cms supports required fields inside of optional object
-      console.error(`Missing alt on image: ${src}, setting default so build doesn't fail`);
-      alt = `Uploaded image for CG Guitar`;
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "Image",
+    async (src, alt, ariaHidden) => {
+      if (!alt && !ariaHidden) {
+        // work around until netlify-cms supports required fields inside of optional object
+        console.error(
+          `Missing alt on image: ${src}, setting default so build doesn't fail`
+        );
+        alt = `Uploaded image for CG Guitar`;
+      }
+      const img = await imageOptimizer(src, { alt, ariaHidden });
+
+      return img;
     }
-    const img = await imageOptimizer(src, { alt, ariaHidden });
+  );
 
-    return img
-  });
-
-  eleventyConfig.addNunjucksAsyncShortcode("ImageUrl", async (src, templateFn) => {
-    const img = await imageOptimizer(src, { urlOnly: true })
-    const val = templateFn ? templateFn(img) : img;
-    return val;
-  });
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "ImageUrl",
+    async (src, templateFn) => {
+      const img = await imageOptimizer(src, { urlOnly: true });
+      const val = templateFn ? templateFn(img) : img;
+      return val;
+    }
+  );
 
   // Remember old renderer, if overridden, or proxy to default renderer
   const defaultLinkRender =
@@ -84,8 +92,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy("admin");
   // cms css
   eleventyConfig.addPassthroughCopy({ "src/_includes/css": "admin/css" });
-  eleventyConfig.addPassthroughCopy({ "src/_includes/partials": "admin/partials" });
-
+  eleventyConfig.addPassthroughCopy({
+    "src/_includes/partials": "admin/partials",
+  });
 
   eleventyConfig.addPassthroughCopy("src/images/manifest");
   eleventyConfig.addPassthroughCopy("src/images/meta");
@@ -112,22 +121,28 @@ module.exports = (eleventyConfig) => {
     dynamicPartials: true,
   });
   let componentCollectionObj;
-  eleventyConfig.addCollection('components', (collection) => {
+  eleventyConfig.addCollection("components", (collection) => {
     // potential for clashes with names. may need to type prefix.
     const components = collection.getFilteredByGlob([
       "./src/components/**/*.md",
       "./src/testimonials/**/*.md",
       "./src/playlists/**/*.md",
-      "./src/lessons/levels/**/*.md"
+      "./src/lessons/levels/**/*.md",
     ]);
-    componentCollectionObj = components.reduce((componentsCollection, current) => {
-      current.outputPath = false;
-      const componentType = current.data.type || (current.data.tags && current.data.tags[0]);
-      componentsCollection[`${componentType}__${current.data.name || current.fileSlug}`] = current;
-      return componentsCollection
-    }, {})
+    componentCollectionObj = components.reduce(
+      (componentsCollection, current) => {
+        current.outputPath = false;
+        const componentType =
+          current.data.type || (current.data.tags && current.data.tags[0]);
+        componentsCollection[
+          `${componentType}__${current.data.name || current.fileSlug}`
+        ] = current;
+        return componentsCollection;
+      },
+      {}
+    );
     return componentCollectionObj;
-  })
+  });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
@@ -159,7 +174,7 @@ module.exports = (eleventyConfig) => {
 
   // Get the last `n` elements of a collection.
   eleventyConfig.addFilter("skip", (array, n) => {
-    return array.slice(n)
+    return array.slice(n);
   });
 
   eleventyConfig.addNunjucksAsyncFilter(
@@ -187,46 +202,58 @@ module.exports = (eleventyConfig) => {
     return { ...args };
   });
 
-
   eleventyConfig.addFilter("hasOutputPath", (entries) => {
-    return entries.filter(({ outputPath }) => !!outputPath)
+    return entries.filter(({ outputPath }) => !!outputPath);
   });
 
-  eleventyConfig.addFilter("ariatel", (number = '') => {
-    return [...number].join(' ')
+  eleventyConfig.addFilter("ariatel", (number = "") => {
+    return [...number].join(" ");
   });
 
-  eleventyConfig.addNunjucksAsyncFilter("fetchYouTubePlaylists", async (playlists, callback) => {
-    const data = await getPlaylists(playlists);
-    callback(null, data);
-  })
-
-
-  eleventyConfig.addNunjucksAsyncFilter("fetchYouTubePlaylist", async (playlist, callback) => {
-    const data = await getPlaylists([playlist]);
-    if (data && data.length) {
-      return callback(null, data[0]);
-    } else {
-      return callback(new Error(`No playlist found: ${JSON.stringify(playlist)}`));
+  eleventyConfig.addNunjucksAsyncFilter(
+    "fetchYouTubePlaylists",
+    async (playlists, callback) => {
+      try {
+        const data = await getPlaylists(playlists);
+        callback(null, data);
+      } catch (e) {
+        callback(e, data);
+      }
     }
-  })
+  );
+
+  eleventyConfig.addNunjucksAsyncFilter(
+    "fetchYouTubePlaylist",
+    async (playlist, callback) => {
+      const data = await getPlaylists([playlist]);
+      if (data && data.length) {
+        return callback(null, data[0]);
+      } else {
+        return callback(
+          new Error(`No playlist found: ${JSON.stringify(playlist)}`)
+        );
+      }
+    }
+  );
 
   eleventyConfig.addNunjucksAsyncFilter("imgmin", (src, callback) => {
     imageOptimizer(src, { urlOnly: true })
       .then((img) => {
         return callback(null, img);
-      }).catch((e) => {
-        return callback(e);
       })
+      .catch((e) => {
+        return callback(e);
+      });
   });
 
   eleventyConfig.addNunjucksAsyncFilter("ytmax", (src, callback) => {
     imageOptimizer(src, { urlOnly: true, widths: [1280] })
       .then((img) => {
         return callback(null, img);
-      }).catch((e) => {
-        return callback(e);
       })
+      .catch((e) => {
+        return callback(e);
+      });
   });
 
   if (process.env.NODE_ENV === "production") {
@@ -239,7 +266,7 @@ module.exports = (eleventyConfig) => {
         let minified = htmlmin.minify(content, {
           useShortDoctype: true,
           removeComments: true,
-          collapseWhitespace: true
+          collapseWhitespace: true,
         });
         return minified;
       }
