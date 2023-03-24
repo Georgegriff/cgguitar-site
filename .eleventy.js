@@ -217,7 +217,7 @@ module.exports = (eleventyConfig) => {
         const data = await getPlaylists(playlists);
         callback(null, data);
       } catch (e) {
-        callback(e, data);
+        callback(e);
       }
     }
   );
@@ -225,13 +225,17 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksAsyncFilter(
     "fetchYouTubePlaylist",
     async (playlist, callback) => {
-      const data = await getPlaylists([playlist]);
-      if (data && data.length) {
-        return callback(null, data[0]);
-      } else {
-        return callback(
-          new Error(`No playlist found: ${JSON.stringify(playlist)}`)
-        );
+      try {
+        const data = await getPlaylists([playlist]);
+        if (data && data.length) {
+          return callback(null, data[0]);
+        } else {
+          return callback(
+            new Error(`No playlist found: ${JSON.stringify(playlist)}`)
+          );
+        }
+      } catch (e) {
+        callback(e);
       }
     }
   );
