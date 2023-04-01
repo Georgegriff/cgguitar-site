@@ -860,7 +860,6 @@ collections:
           widget: string,
          
           hint: "Don't change name once created",
-        ,
         }
       - { label: Date, name: date, widget: date  }
       - {
