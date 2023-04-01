@@ -92,6 +92,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({ "src/_includes/scripts": "scripts" });
   eleventyConfig.addPassthroughCopy({ "src/_includes/scss": "css" });
   eleventyConfig.addPassthroughCopy({ "src/_includes/images": "images" });
+  eleventyConfig.addWatchTarget("./src/includes/scripts/");
+  eleventyConfig.addWatchTarget("./src/includes/scss/");
+  eleventyConfig.addWatchTarget("./src/includes/images/");
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addPlugin(pluginRss);

@@ -16,14 +16,14 @@
     {%- endfor %}
     </div>
     <div class="carousel__next_prev">
-      <button aria-label="Previous image" class="carousel__prev">
+      <button aria-label="Previous image" class="carousel__prev" onclick="imageCarousel.onPrevious(event)">
             {% include 'images/chevron_down.svg' %}          
       </button>
-       <button aria-label="Next image" class="carousel__next">
+       <button aria-label="Next image" class="carousel__next" onclick="imageCarousel.onNext(event)">
             {% include 'images/chevron_down.svg' %}          
       </button>
     </div>
-    <div id="controls" class="controls">
+    <div id="controls" class="controls" onclick="imageCarousel.onControls(event)">
     <div class="caption">
         <h3>{{caption}}</h3>
     </div>

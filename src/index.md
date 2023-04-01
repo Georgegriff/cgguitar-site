@@ -16,6 +16,7 @@ components:
     name: levels
   - type: card
     name: home-about-card
+pageJs: /scripts/index.js
 mypages:
   - lessons
   - ./
@@ -32,7 +33,7 @@ hero:
   subtitle: Available Monday to Friday
   description: HD Online Guitar Lessons - Like you've never experienced before!
   heroLink:
-    description: Already a member? 
+    description: Already a member?
     text: Log in here.
     href: /login/
   image:

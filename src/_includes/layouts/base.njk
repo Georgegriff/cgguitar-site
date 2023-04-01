@@ -4,7 +4,7 @@
 {% endset %}
 {% set pageCriticalStyles = pageCriticalStyles or['/css/index.scss'] %}
 {% if not pageJs %}
-    {% set pageJs = pageJs or "/scripts/index.js" %}
+    {% set pageJs = pageJs or "/scripts/shared.js" %}
 {% endif %}
 <!DOCTYPE html>
 <html data-theme="light" lang="en">
@@ -51,6 +51,8 @@
                 }
             </script>
         {%- endif -%}
+       
+        <script src="{{ pageJs }}" type="module"></script>
     </head>
     {% if not skipLinkAnchor %}
         {% set skipLinkAnchor = "#main-content" %}
@@ -65,10 +67,9 @@
             </main>
             {% include 'partials/components/footer.njk' %}
         </div>
-        <script type="module">
+         <script>
             {{ inlineJs | jsmin | safe }}
         </script>
-        <script src="{{ pageJs }}" type="module"></script>
         {% include 'partials/analytics.html' %}
     </body>
 </html>
