@@ -1,8 +1,8 @@
 require("dotenv").config();
-const { DateTime, Duration } = require("luxon");
-const fs = require("fs");
+const { DateTime } = require("luxon");
 const pluginPWA = require("eleventy-plugin-pwa");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const { minify } = require("terser");
@@ -112,6 +112,7 @@ module.exports = (eleventyConfig) => {
   }
 
   eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginNavigation);
 
   eleventyConfig.setDataDeepMerge(true);
