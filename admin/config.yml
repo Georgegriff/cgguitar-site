@@ -876,7 +876,6 @@ collections:
           media_folder: "/src/_includes/images/testimonials",
          
           public_folder: "/images/testimonials",
-       ,
         }
       - {  label: "Body", name: "body", widget: "markdown"  }
   - name: "playlist"
