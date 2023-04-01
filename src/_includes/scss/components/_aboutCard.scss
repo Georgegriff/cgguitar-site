@@ -70,8 +70,8 @@
             top:-1rem;
             background-color: var(--accent-color, var(--Text));
             mask-size: cover;
-            mask-image: var(--quote-image-start, url(../images/start-quote.svg));
-            -webkit-mask-image: var(--quote-image-start, url(../images/start-quote.svg));
+            mask-image: var(--quote-image-start, url(/images/start-quote.svg));
+            -webkit-mask-image: var(--quote-image-start, url(/images/start-quote.svg));
             -webkit-mask-size: cover;
 
 
@@ -87,8 +87,8 @@
             right:-0.5rem;
             background-color:  var(--accent-color, var(--Text));
             mask-size: cover;
-            mask-image: var(--quote-image-end, url(../images/end-quote.svg));
-            -webkit-mask-image: var(--quote-image-end, url(../images/end-quote.svg));
+            mask-image: var(--quote-image-end, url(/images/end-quote.svg));
+            -webkit-mask-image: var(--quote-image-end, url(/images/end-quote.svg));
             -webkit-mask-size: cover;
         }
     }

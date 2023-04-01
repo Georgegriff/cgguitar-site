@@ -2,7 +2,7 @@
 templateEngineOverride: md,njk
 layout: layouts/index.njk
 pageCriticalStyles:
-  - css/media.css
+  - /css/media.scss
 headerClassName: header-hero-medium
 components:
   - type: gridCard
@@ -39,7 +39,7 @@ components:
     name: rock-school-grade-8
   - type: playlist
     name: student-spotlight
-pageJs: media.js
+pageJs: /scripts/media.js
 title: Videos
 eleventyNavigation:
   key: Videos

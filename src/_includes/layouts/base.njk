@@ -1,10 +1,10 @@
 {% set headerClassName = headerClassName or 'header-hero-full' %}
 {% set inlineJs %}
-    {% include assets.getInlinePath("inline-critical.js") %}
+    {% include "scripts/inline-critical.js"%}
 {% endset %}
-{% set pageCriticalStyles = pageCriticalStyles or ['css/index.css'] %}
+{% set pageCriticalStyles = pageCriticalStyles or['/css/index.scss'] %}
 {% if not pageJs %}
-    {% set pageJs = pageJs or "index.js" %}
+    {% set pageJs = pageJs or "/scripts/shared.js" %}
 {% endif %}
 <!DOCTYPE html>
 <html data-theme="light" lang="en">
@@ -19,13 +19,9 @@
                 <link rel="preload" as="{{item.as}}" href="{{item.href}}" crossorigin="anonymous"/>
             {% endfor %}
         {% endif %}
+        <link rel="stylesheet" href="/css/reset.scss" />
+        <link rel="stylesheet" href="/css/critical.scss" />
         <style>
-            {% include "css/reset.css" %}
-        </style>
-        <style>
-            {% include "css/critical.css" %}
-        </style>
-         <style>
             {%- ImageUrl "/images/start-quote.svg", helpers.quoteStartTemplate %}
 
             {%- ImageUrl "/images/end-quote.svg", helpers.quoteEndTemplate %}
@@ -34,18 +30,29 @@
         {# Add facility for pages to declare an array of critical styles #}
         {% if pageCriticalStyles %}
             {% for item in pageCriticalStyles %}
-                <style>
-                    {% include item %}
-                </style>
+                 <link rel="stylesheet" href="{{ item }}" />
             {% endfor %}
         {% endif %}
         {%- if helpers.production -%}
-        <script>
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("/service-worker.js");
-            }
-        </script>
+            <script>
+                /* just wasn't worth the effort, removed it. */
+                if ("serviceWorker" in navigator) {
+                    navigator
+                        .serviceWorker
+                        .getRegistrations()
+                        .then(function (registrations) {
+                            for (let registration of registrations) {
+                                registration
+                                    .unregister()
+                                    .catc((e) => console.error("Failed to unregisted service worker", e));
+                                console.log("Unregistered service worker")
+                            }
+                        });
+                }
+            </script>
         {%- endif -%}
+       
+        <script src="{{ pageJs }}" type="module"></script>
     </head>
     {% if not skipLinkAnchor %}
         {% set skipLinkAnchor = "#main-content" %}
@@ -60,10 +67,9 @@
             </main>
             {% include 'partials/components/footer.njk' %}
         </div>
-        <script type="module">
+         <script>
             {{ inlineJs | jsmin | safe }}
-          </script>
-        <script src="{{ assets.getPath(pageJs) }}" type="module"></script>
+        </script>
         {% include 'partials/analytics.html' %}
     </body>
 </html>

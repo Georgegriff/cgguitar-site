@@ -1,4 +1,5 @@
 ---
+permalink: false
 tags:
   - slogan
 name: slogan

@@ -1,7 +1,6 @@
 require("dotenv").config();
-const { DateTime, Duration } = require("luxon");
-const fs = require("fs");
-const pluginPWA = require("eleventy-plugin-pwa");
+const path = require("path");
+const { DateTime } = require("luxon");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
@@ -10,6 +9,8 @@ const { minify } = require("terser");
 const { getPlaylists } = require("./src/_filters/youtube");
 const siteMeta = require("./src/_data/metadata.json");
 const htmlmin = require("html-minifier");
+const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
+
 const { imageOptimizer } = require("./imageopt");
 
 module.exports = (eleventyConfig) => {
@@ -88,28 +89,12 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  eleventyConfig.addPassthroughCopy({ "src/images": "admin/images" });
-  eleventyConfig.addPassthroughCopy("admin");
-  // cms css
-  eleventyConfig.addPassthroughCopy({ "src/_includes/css": "admin/css" });
-  eleventyConfig.addPassthroughCopy({
-    "src/_includes/partials": "admin/partials",
-  });
-
-  eleventyConfig.addPassthroughCopy("src/images/manifest");
-  eleventyConfig.addPassthroughCopy("src/images/meta");
-  eleventyConfig.addPassthroughCopy("src/images/person-nav.svg");
-  //eleventyConfig.addPassthroughCopy({ "src/**/images/*.*": "images" });
-  if (process.env.NODE_ENV === "production") {
-    eleventyConfig.addPlugin(pluginPWA, {
-      // service worker breaks contact form
-      globIgnores: ["admin/**", "success/**"],
-      globPatterns: [
-        "**/*.{html,css,js,mjs,map,avif,jpg,png,gif,webp,ico,svg,woff2,woff,eot,ttf,otf,ttc,json}",
-      ],
-    });
-    eleventyConfig.addPassthroughCopy({ "build/scripts": "scripts" });
-  }
+  eleventyConfig.addPassthroughCopy({ "src/_includes/scripts": "scripts" });
+  eleventyConfig.addPassthroughCopy({ "src/_includes/scss": "css" });
+  eleventyConfig.addPassthroughCopy({ "src/_includes/images": "images" });
+  eleventyConfig.addWatchTarget("./src/includes/scripts/");
+  eleventyConfig.addWatchTarget("./src/includes/scss/");
+  eleventyConfig.addWatchTarget("./src/includes/images/");
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addPlugin(pluginRss);
@@ -235,6 +220,7 @@ module.exports = (eleventyConfig) => {
           );
         }
       } catch (e) {
+        console.error("Failed to fetch playlist", e);
         callback(e);
       }
     }
@@ -261,12 +247,11 @@ module.exports = (eleventyConfig) => {
   });
 
   if (process.env.NODE_ENV === "production") {
-    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-      // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-      if (!outputPath) {
+    eleventyConfig.addTransform("htmlmin", function (content) {
+      if (!this.outputPath) {
         return content;
       }
-      if (outputPath.endsWith(".html")) {
+      if (this.outputPath.endsWith(".html")) {
         let minified = htmlmin.minify(content, {
           useShortDoctype: true,
           removeComments: true,
@@ -278,6 +263,37 @@ module.exports = (eleventyConfig) => {
       return content;
     });
   }
+
+  // order matters
+  eleventyConfig.addPlugin(EleventyVitePlugin, {
+    viteOptions: {
+      resolve: {
+        alias: {
+          images: path.resolve(__dirname, "src/_includes/images"),
+        },
+      },
+    },
+  });
+
+  // cms css - public important. is needed so vite doesn't delete the files.
+  eleventyConfig.addPassthroughCopy({
+    admin: "public/admin",
+  });
+  eleventyConfig.addPassthroughCopy({
+    "src/_includes/images": "public/admin/images",
+  });
+  eleventyConfig.addPassthroughCopy({
+    "src/_includes/css": "public/admin/css",
+  });
+  eleventyConfig.addPassthroughCopy({
+    "src/_includes/partials": "public/admin/partials",
+  });
+  eleventyConfig.addPassthroughCopy({
+    "src/_includes/images/manifest": "public/images/manifest",
+  });
+  eleventyConfig.addPassthroughCopy({
+    "src/_includes/images": "public/images",
+  });
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],

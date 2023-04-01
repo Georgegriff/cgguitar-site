@@ -10,7 +10,7 @@ backend:
     deleteMedia: "[skip ci] Delete “{{path}}”"
 publish_mode: editorial_workflow
 local_backend: true
-media_folder: "src/images" # Media files will be stored in the repo under images/uploads
+media_folder: "src/_includes/images" # Media files will be stored in the repo under images/uploads
 public_folder: "images" # Media files will be stored in the repo under images/uploads
 
 collections:
@@ -860,7 +860,6 @@ collections:
           widget: string,
          
           hint: "Don't change name once created",
-        ,
         }
       - { label: Date, name: date, widget: date  }
       - {
@@ -873,10 +872,9 @@ collections:
          
           required: false,
          
-          media_folder: "/src/images/testimonials",
+          media_folder: "/src/_includes/images/testimonials",
          
           public_folder: "/images/testimonials",
-       ,
         }
       - {  label: "Body", name: "body", widget: "markdown"  }
   - name: "playlist"
@@ -894,8 +892,7 @@ collections:
          
           widget: string,
          
-          hint: "Don't change name once created",
-        ,
+          hint: "Don't change name once created"
         }
       - { label: Playlist ID, name: id, widget: string  }
       - {
@@ -906,8 +903,7 @@ collections:
          
           widget: markdown,
          
-          required: false,
-        ,
+          required: false
         }
   - name: "slogan"
     label: "Slogan"

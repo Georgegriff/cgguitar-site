@@ -33,8 +33,8 @@
         background-color: currentColor;
         mask-size: cover;
         -webkit-mask-size: cover;
-        mask-image: var(--quote-image-start, url(../images/start-quote.svg));
-        -webkit-mask-image: var(--quote-image-start, url(../images/start-quote.svg));
+        mask-image: var(--quote-image-start, url(/images/start-quote.svg));
+        -webkit-mask-image: var(--quote-image-start, url(/images/start-quote.svg));
     }
 
     &:after {
@@ -48,8 +48,8 @@
         background-color:  currentColor;
         mask-size: cover;
         -webkit-mask-size: cover;
-        mask-image: var(--quote-image-end, url(../images/end-quote.svg));
-        -webkit-mask-image: var(--quote-image-end, url(../images/end-quote.svg));
+        mask-image: var(--quote-image-end, url(/images/end-quote.svg));
+        -webkit-mask-image: var(--quote-image-end, url(/images/end-quote.svg));
     }
 }
 
@@ -179,10 +179,12 @@ blockquote {
 .masonry {
     margin-top:0;
     --masonry-gap: var(--site-padding);
-    --masonry-brick-width: 20rem;
+    --masonry-brick-width: 34rem;
     column-gap: var(--masonry-gap);
     column-fill: initial;
     column-width: var(--masonry-brick-width);
+    max-width: 125rem;
+    margin:0 auto;
 }
 
 .masonry > * {

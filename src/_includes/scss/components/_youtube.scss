@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import "../variables";
+@import "../mixins";
 
 youtube-playlist {
     background: var(--Background, #1a1a1a);

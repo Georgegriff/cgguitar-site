@@ -13,7 +13,7 @@
     {% endif %}
 {%- endif %}
 {% if card and (card.data.heading or card.data.link or card.data.image or card.templateContent) %}
-<figure id="{{card.data.name | slug}}" class="content-card card-{{card.data.direction}}">
+<figure id="{{card.data.name | slugify}}" class="content-card card-{{card.data.direction}}">
     <div class="content">
         {%- if card.data.heading -%}
         <h2>{{card.data.heading}}</h2>
