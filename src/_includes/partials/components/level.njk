@@ -1,5 +1,5 @@
 {%- set level = level %}
- <section class="testimonial level level-{{level.name | slug }}">
+ <section class="testimonial level level-{{level.name | slugify }}">
     <h3>{{level.name}}</h3>
     <p class="description">{{level.description}}</p>
     <div class="quote-wrap">

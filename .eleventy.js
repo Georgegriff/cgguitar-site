@@ -10,6 +10,7 @@ const { minify } = require("terser");
 const { getPlaylists } = require("./src/_filters/youtube");
 const siteMeta = require("./src/_data/metadata.json");
 const htmlmin = require("html-minifier");
+
 const { imageOptimizer } = require("./imageopt");
 
 module.exports = (eleventyConfig) => {
@@ -235,6 +236,7 @@ module.exports = (eleventyConfig) => {
           );
         }
       } catch (e) {
+        console.error("Failed to fetch playlist", e);
         callback(e);
       }
     }
