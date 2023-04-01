@@ -2,7 +2,7 @@
 templateEngineOverride: njk,md
 layout: layouts/index.njk
 pageCriticalStyles:
-  - css/media.css
+  - /css/media.scss
 headerClassName: header-hero-small
 components:
   - type: card
@@ -25,7 +25,7 @@ components:
     name: session-work-playlist
   - type: playlist
     name: Interviews
-pageJs: media.js
+pageJs: /scripts/media.js
 title: About
 eleventyNavigation:
   key: About
@@ -48,6 +48,3 @@ hero:
 <article class="about-section no-padding">
 {%- include 'partials/components.njk' -%}
 </article>
-
-
-

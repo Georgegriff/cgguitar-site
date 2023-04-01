@@ -1,7 +1,9 @@
 
+@use "sass:math";
+
 @function pixelOffset($em, $offset: 1) {
     $default-pixel-size: 16;
-    @return (($em * $default-pixel-size) - $offset) / $default-pixel-size
+    @return math.div((($em * $default-pixel-size) - $offset),$default-pixel-size)
 }
 
 $up-from-size: ("small": $bp-small, "medium-small": $bp-medium-small, "medium": $bp-medium, "large": $bp-large, "xlarge": $bp-xl, "xxlarge": $bp-xxl);

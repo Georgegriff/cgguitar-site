@@ -12,12 +12,7 @@ Thumbs.db
 # Node modules and output
 node_modules
 dist
-build
-src/_includes/css
 src/_includes/fonts
-src/_includes/img
-src/_includes/images
-src/_includes/scripts
 src/_includes/manifest.json
 admin/partials
 admin/css

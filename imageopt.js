@@ -7,7 +7,9 @@ const imageOptimizer = async (
   { alt, ariaHidden, urlOnly, widths = [320, 640, 960, 1200, 1800, 2400] }
 ) => {
   const formats = src.endsWith("svg") ? ["svg"] : ["jpeg", "webp"];
-  const imgPath = src.startsWith("http") ? src : path.join("src", src);
+  const imgPath = src.startsWith("http")
+    ? src
+    : path.join("src/_includes", src);
   let stats = await Image(imgPath, {
     widths,
     formats,

@@ -10,7 +10,7 @@ backend:
     deleteMedia: "[skip ci] Delete “{{path}}”"
 publish_mode: editorial_workflow
 local_backend: true
-media_folder: "src/images" # Media files will be stored in the repo under images/uploads
+media_folder: "src/_includes/images" # Media files will be stored in the repo under images/uploads
 public_folder: "images" # Media files will be stored in the repo under images/uploads
 
 collections:
@@ -873,7 +873,7 @@ collections:
          
           required: false,
          
-          media_folder: "/src/images/testimonials",
+          media_folder: "/src/_includes/images/testimonials",
          
           public_folder: "/images/testimonials",
        ,
@@ -883,7 +883,7 @@ collections:
     label: "Playlist"
     folder: src/playlists
     slug: "{{name}}"
-    create: true
+    create: truecg-logo-al
     fields:
       - { label: Title, name: title, widget: string  }
       - {

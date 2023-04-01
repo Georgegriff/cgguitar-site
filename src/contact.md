@@ -2,12 +2,12 @@
 templateEngineOverride: njk,md
 layout: layouts/index.njk
 pageCriticalStyles:
-  - css/contact.css
+  - /css/contact.scss
 headerClassName: header-hero-small
 components:
   - type: gridCard
     name: contact-icons
-pageJs: contact.js
+pageJs: /scripts/contact.js
 title: Contact
 eleventyNavigation:
   key: Contact
@@ -25,8 +25,10 @@ hero:
 footerSettings:
   callToAction: false
 ---
+
 {% set GRID_TEXT_PLACEHOLDER = {"EMAIL_PLACEHOLDER": metadata.author.email } %}
 {%- include 'partials/components.njk' -%}
+
 <div class="contained secondary-article">
 {%- include 'partials/form.njk' -%}
 </div>

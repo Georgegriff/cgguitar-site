@@ -1,42 +1,37 @@
-const {dest, src} = require('gulp');
-const GetGoogleFonts = require('get-google-fonts');
+import GetGoogleFonts from "get-google-fonts";
 
-const font = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap';
+const font =
+  "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap";
 
 const fonts = async () => {
   // Setup of the library instance by setting where we want
   // the output to go. CSS is relative to output font directory
   const instance = new GetGoogleFonts({
-    outputDir: './dist/fonts',
+    outputDir: "./dist/fonts",
     overwriting: true,
-    cssFile: './fonts.css'
+    cssFile: "./fonts.css",
   });
 
   const instanceCssFile = new GetGoogleFonts({
-    outputDir: './src/_includes/fonts',
+    outputDir: "./src/_includes/fonts",
     path: "/fonts/",
     overwriting: true,
-    cssFile: './fonts.css'
+    cssFile: "./fonts.css",
   });
 
-
-  try  {
+  try {
     // Grabs fonts and CSS from google and puts in the dist folder
     await instance.download(
       // add new weights as needed
       font
-      
     );
     await instanceCssFile.download(
       // add new weights as needed
       font
-      
     );
-  } catch(e) {
-    return  null;
+  } catch (e) {
+    return null;
   }
- 
-
 };
 
-module.exports = fonts;
+await fonts();

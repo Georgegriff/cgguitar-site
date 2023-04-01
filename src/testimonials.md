@@ -1,14 +1,14 @@
 ---
-title: '5-star rated guitar tuition'
-layout: 'layouts/index.njk'
+title: "5-star rated guitar tuition"
+layout: "layouts/index.njk"
 templateEngineOverride: njk,md
 pageCriticalStyles:
-  - css/media.css
-pageJs: media.js
+  - /css/media.scss
+pageJs: /scripts/media.js
 eleventyNavigation:
   key: Testimonials
   order: 3
-headerClassName: 'header-hero-small'
+headerClassName: "header-hero-small"
 hero:
   title: HD Online Guitar Lessons
   subtitle: "Like you've never experienced before!"
@@ -24,20 +24,17 @@ hero:
     src: images/sheets.png
     alt: "Examples of Sheet music sprovided to students"
 components:
-   - type: gridCard
-     name: testimonials-icons
-   - type: custom
-     name: testimonials
-     componentPath: 'partials/testimonials.njk'
-   - type: playlist
-     name: student-performance-2019
-   - type: playlist
-     name: student-performance-night-2018
-   - type: playlist
-     name: student-spotlight
+  - type: gridCard
+    name: testimonials-icons
+  - type: custom
+    name: testimonials
+    componentPath: "partials/testimonials.njk"
+  - type: playlist
+    name: student-performance-2019
+  - type: playlist
+    name: student-performance-night-2018
+  - type: playlist
+    name: student-spotlight
 ---
 
 {%- include 'partials/components.njk' -%}
-
-
-
