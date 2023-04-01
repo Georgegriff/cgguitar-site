@@ -44,7 +44,7 @@
                             for (let registration of registrations) {
                                 registration
                                     .unregister()
-                                    .catc((e) => console.error("Failed to unregisted service worker", e));
+                                    .catch((e) => console.error("Failed to unregisted service worker", e));
                                 console.log("Unregistered service worker")
                             }
                         });
