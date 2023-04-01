@@ -3,3 +3,7 @@
 
 /* Components */
 @import "./components/form";
+
+.invalid {
+    border: solid var(--Primary) 2px;
+}
