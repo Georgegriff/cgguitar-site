@@ -277,6 +277,9 @@ module.exports = (eleventyConfig) => {
 
   // cms css - public important. is needed so vite doesn't delete the files.
   eleventyConfig.addPassthroughCopy({
+    admin: "public/admin",
+  });
+  eleventyConfig.addPassthroughCopy({
     "src/_includes/images": "public/admin/images",
   });
   eleventyConfig.addPassthroughCopy({
