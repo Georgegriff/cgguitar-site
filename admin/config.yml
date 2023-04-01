@@ -882,7 +882,7 @@ collections:
     label: "Playlist"
     folder: src/playlists
     slug: "{{name}}"
-    create: truecg-logo-al
+    create: true
     fields:
       - { label: Title, name: title, widget: string  }
       - {
