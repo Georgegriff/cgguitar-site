@@ -892,8 +892,7 @@ collections:
          
           widget: string,
          
-          hint: "Don't change name once created",
-        ,
+          hint: "Don't change name once created"
         }
       - { label: Playlist ID, name: id, widget: string  }
       - {
@@ -904,8 +903,7 @@ collections:
          
           widget: markdown,
          
-          required: false,
-        ,
+          required: false
         }
   - name: "slogan"
     label: "Slogan"
