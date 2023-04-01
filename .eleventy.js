@@ -294,6 +294,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     "src/_includes/images": "public/images",
   });
+  eleventyConfig.addPassthroughCopy({
+    "src/_includes/scripts/service-worker.js": "public/service-worker.js",
+  });
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
