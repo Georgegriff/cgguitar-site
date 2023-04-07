@@ -50,6 +50,9 @@
 .signup-card {
   .image-carousel {
     flex-basis: 60%;
+    @include up-to(medium) {
+      flex-basis: 100%;
+    }
     flex-grow: 1;
   }
   blockquote:after,
@@ -64,6 +67,7 @@
     flex-shrink: 0;
     flex-grow: 1;
   }
+
   @include up-to(medium) {
     .content-card {
       flex-wrap: wrap-reverse;

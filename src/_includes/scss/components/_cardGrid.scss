@@ -150,13 +150,19 @@
   .content-card {
     align-items: flex-start;
   }
+  @include up-from(medium) {
+    .content {
+      border-left: solid 2px var(--Primary50);
+    }
+  }
 }
 .card-footer {
   margin: 0 var(--site-padding);
 }
 
 #sign-up .content {
-  margin: 0 0 1rem 0;
+  margin: 0;
+  padding-bottom: 1rem;
 
   p {
     margin: var(--site-padding);

@@ -51,6 +51,9 @@
     }
   }
   .caption {
+    h3 {
+      margin: 0;
+    }
     background: var(--Background);
     color: var(--Text);
     width: min(60%, 100vw);
