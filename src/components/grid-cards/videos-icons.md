@@ -3,10 +3,10 @@ title: Videos page Icons
 name: videos-icons
 class: "contained small-list pulsate grid"
 icons:
-  - text: Watch some of my videos below
+  - text: Watch some of my videos
     image: images/video.svg
     link:
-      href: '#main-content'
+      href: "#main-content"
   - text: Subscribe to my YouTube channel
     image: images/youtube.svg
     link:
@@ -22,5 +22,4 @@ icons:
     link:
       href: FB_PLACEHOLDER
       target: _blank
-
 ---

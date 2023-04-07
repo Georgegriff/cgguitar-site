@@ -2,6 +2,7 @@
 label: Home page - Icons
 name: icons-grid
 type: card
+class: "card-dark-wrapper"
 gridContent:
   class: "card-dark icons-card"
   title: Start learning today

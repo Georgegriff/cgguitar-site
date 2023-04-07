@@ -1,69 +1,68 @@
 header {
-    color: var(--SecondaryText);
-    background: var(--Secondary);
+  color: var(--SecondaryText);
+  background: var(--Secondary);
 }
 
 .hero-scroll-down {
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    bottom:0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin-left: calc(-1 * var(--site-padding));
-    margin-bottom: calc(2* var(--site-padding));
-    @include up-to(small) {
-        /* mobiles and 100vh are fucking stupid 100vh excludes controls */
-        bottom: 3.5rem;
-        margin-bottom: 0;
-     }
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-left: calc(-1 * var(--site-padding));
+  margin-bottom: calc(2 * var(--site-padding));
+  @include up-to(small) {
+    /* mobiles and 100vh are fucking stupid 100vh excludes controls */
+    bottom: 3.5rem;
+    margin-bottom: 0;
+  }
 }
 
 .header-hero {
-    &-medium {
-        position: relative;
-        overflow: hidden;
-        .hero-scroll-down {
-            display: none;
-        }
-        @include up-to(small) {
-            min-height: calc(45vh - (var(--site-header) + var(--site-padding)));
-        }
-        @include up-to(medium) {
-            min-height: calc(58vh - (var(--site-header) + var(--site-padding)));
-        }
-        @include up-from(large) {
-            min-height: calc(80vh - (var(--site-header) + var(--site-padding)));
-        }
-        @include up-to-height($height-small) {
-            min-height: calc(100vh - (var(--site-header)));
-        }
+  &-medium {
+    position: relative;
+    overflow: hidden;
+    .hero-scroll-down {
+      display: none;
     }
-    &-small {
-        position: relative;
-        overflow: hidden;
-        @include up-to(small) {
-            min-height: calc(25vh - (var(--site-header) + var(--site-padding)));
-        }
-        @include up-from(large) {
-            min-height: calc(45vh - (var(--site-header) + var(--site-padding)));
-        }
-        @include up-to-height($height-small) {
-            min-height: calc(100vh - (var(--site-header)));
-        }
-        .hero-scroll-down {
-            display: none;
-        }
+    @include up-to(small) {
+      min-height: calc(45vh - (var(--site-header) + var(--site-padding)));
     }
-    &-full {
-        position: relative;
-        overflow: hidden;
-        min-height: calc(100vh - (var(--site-header)));
+    @include up-to(medium) {
+      min-height: calc(58vh - (var(--site-header) + var(--site-padding)));
     }
-
+    @include up-from(large) {
+      min-height: calc(80vh - (var(--site-header) + (var(--site-padding) * 2)));
+    }
+    @include up-to-height($height-small) {
+      min-height: calc(100vh - (var(--site-header)));
+    }
+  }
+  &-small {
+    position: relative;
+    overflow: hidden;
+    @include up-to(small) {
+      min-height: calc(25vh - (var(--site-header) + var(--site-padding)));
+    }
+    @include up-from(large) {
+      min-height: calc(45vh - (var(--site-header) + var(--site-padding)));
+    }
+    @include up-to-height($height-small) {
+      min-height: calc(100vh - (var(--site-header)));
+    }
+    .hero-scroll-down {
+      display: none;
+    }
+  }
+  &-full {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100vh - (var(--site-header)));
+  }
 }
 
 .primary-text {
-    color: var(--Primary);
+  color: var(--Primary);
 }

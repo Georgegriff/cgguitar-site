@@ -1,95 +1,98 @@
 .content-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  background: var(--Background);
+  ul {
+    margin: 0.5rem 0;
+  }
+  h2 {
+    margin-bottom: 2rem;
+  }
+  .content {
+    blockquote {
+      max-width: 75ch;
+    }
+    min-width: 240px;
+    margin: var(--site-padding);
+    flex: 1;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    background: var(--Background);
-    ul {
-        margin:0.5rem 0;
-    }
-    h2 {
-        margin-bottom: 2rem;
-    }
-    .content {
-        blockquote {
-            max-width: 75ch;
-        }
-        min-width: 240px;
-        margin: var(--site-padding);
-        flex:1;
-        display: flex;
-        flex-direction: column;
+    flex-direction: column;
 
-        .flex-end {
-            display: flex;
-            height: 100%;
-            justify-content:  flex-end;
-            align-items: flex-end;
-        }
+    .flex-end {
+      display: flex;
+      height: 100%;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
 
-        .learn-more {
-            margin:1rem 0 0 0;
-        }
+    .learn-more {
+      margin: 1rem 0 0 0;
     }
-    picture {
-        width: 50%;
-        display: block;
+  }
+  picture {
+    width: 50%;
+    display: block;
 
-        @include up-to(small) {
-            width: 100%;
-        }
+    @include up-to(small) {
+      width: 100%;
     }
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .card-reverse {
-    flex-direction: row;
-} 
-
+  flex-direction: row;
+}
 
 .quote-card {
-    padding: var(--site-padding);
+  padding: var(--site-padding);
+  position: relative;
+  border-left: solid 4px var(--Primary);
+  background: var(--Background50);
+  blockquote {
+    max-width: 100ch;
     position: relative;
-    border-left:solid 4px var(--Primary);
-    background: var(--Background50);
-    blockquote {
-        max-width: 100ch;
-        position: relative;
-        margin:2rem;
+    margin: 2rem;
 
-        &:before {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 1rem;
-            height: 1rem;
-            left:-2rem;
-            top:-1rem;
-            background-color: var(--accent-color, var(--Text));
-            mask-size: cover;
-            mask-image: var(--quote-image-start, url(/images/start-quote.svg));
-            -webkit-mask-image: var(--quote-image-start, url(/images/start-quote.svg));
-            -webkit-mask-size: cover;
-
-
-        }
-
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 1.25rem;
-            height: 1.25rem;
-            bottom:-0.5rem;
-            right:-0.5rem;
-            background-color:  var(--accent-color, var(--Text));
-            mask-size: cover;
-            mask-image: var(--quote-image-end, url(/images/end-quote.svg));
-            -webkit-mask-image: var(--quote-image-end, url(/images/end-quote.svg));
-            -webkit-mask-size: cover;
-        }
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      left: -2rem;
+      top: -1rem;
+      background-color: var(--accent-color, var(--Text));
+      mask-size: cover;
+      mask-image: var(--quote-image-start, url(/images/svg/start-quote.svg));
+      -webkit-mask-image: var(
+        --quote-image-start,
+        url(/images/svg/start-quote.svg)
+      );
+      -webkit-mask-size: cover;
     }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1.25rem;
+      height: 1.25rem;
+      bottom: -0.5rem;
+      right: -0.5rem;
+      background-color: var(--accent-color, var(--Text));
+      mask-size: cover;
+      mask-image: var(--quote-image-end, url(/images/svg/end-quote.svg));
+      -webkit-mask-image: var(
+        --quote-image-end,
+        url(/images/svg/end-quote.svg)
+      );
+      -webkit-mask-size: cover;
+    }
+  }
 }

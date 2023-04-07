@@ -2,71 +2,74 @@
 @import "../mixins";
 
 .image-carousel {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  & > h3 {
+    margin: var(--site-padding);
+  }
+  @include up-from(medium) {
     & > h3 {
-margin: var(--site-padding);
-     } 
-    @include up-from(medium) {
-      & > h3 {
-        display: none;
-         margin: var(--site-padding) var(--site-padding) 0 var(--site-padding);
-    
-      }
-   }
-  
-.carousel-container {
+      display: none;
+      margin: var(--site-padding) var(--site-padding) 0 var(--site-padding);
+    }
+  }
+
+  .carousel-container {
     position: relative;
     max-height: 800px;
-    margin: 0 var(--site-padding);
     @include up-to(medium) {
-        margin: 0;
+      margin: 0;
     }
     picture {
-        display: block;
-        height: 100% !important;
-        width: 100% !important;
-        img {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-        }
+      display: block;
+      height: 100% !important;
+      width: 100% !important;
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
     }
-
-   
   }
   .carousel-after-content {
-    margin: var(--site-padding);
-    blockquote:after, blockquote:before {
-        background-color: var(--Primary);
+    margin: 1rem auto;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    blockquote {
+      max-width: 60ch;
+    }
+    blockquote:after,
+    blockquote:before {
+      background-color: var(--Primary);
     }
 
     h3 {
       padding-bottom: 1rem;
     }
- }
- .caption {
-     background: var(--Background);
-     color: var(--Text);
-     width: min(60%, 100vw);
-     margin: 0 auto;
-     border-radius: 1rem;
-     padding: 0.5rem 1rem;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin-bottom: 1rem;
+  }
+  .caption {
+    background: var(--Background);
+    color: var(--Text);
+    width: min(60%, 100vw);
+    margin: 0 auto;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
     h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0;
-      }
-      @include up-to(medium) {
-        display: none;
-        
-     }
- }
-  
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+    @include up-to(medium) {
+      display: none;
+    }
+  }
+
   .carousel {
     display: flex;
     scroll-snap-type: x mandatory;
@@ -76,18 +79,18 @@ margin: var(--site-padding);
     -ms-overflow-style: none;
     height: 100%;
   }
-  
+
   // Hide scrollbar in WebKit and Blink powered Browsers.
   .carousel::-webkit-scrollbar {
     display: none;
   }
-  
+
   .carousel__item {
     width: 100%;
     flex-shrink: 0;
     scroll-snap-align: start;
   }
-  
+
   .controls {
     position: absolute;
     right: 0;
@@ -96,15 +99,14 @@ margin: var(--site-padding);
     text-align: center;
   }
 
-  .carousel__next_prev {  
+  .carousel__next_prev {
     align-items: center;
     position: absolute;
-    top:0;
+    top: 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 100%;
-  
     button {
       cursor: pointer;
       font: inherit;
@@ -122,13 +124,15 @@ margin: var(--site-padding);
 
     .carousel__prev {
       transform: rotate(90deg);
+      margin-left: 1rem;
     }
 
     .carousel__next {
       transform: rotate(-90deg);
+      margin-right: 1rem;
     }
-  } 
-  
+  }
+
   .controls__dot {
     display: inline-block;
     width: 1.5em;
@@ -141,7 +145,7 @@ margin: var(--site-padding);
     opacity: 0.5;
     cursor: pointer;
     transition: opacity 0.2s;
-    
+
     &:not(:first-child) {
       margin-left: 0.5em;
     }

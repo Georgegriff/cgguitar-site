@@ -1,4 +1,5 @@
 require("dotenv").config();
+const eleventySass = require("eleventy-sass");
 const path = require("path");
 const { DateTime } = require("luxon");
 const pluginNavigation = require("@11ty/eleventy-navigation");
@@ -39,10 +40,13 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addNunjucksAsyncShortcode(
     "ImageUrl",
-    async (src, templateFn) => {
-      const img = await imageOptimizer(src, { urlOnly: true });
-      const val = templateFn ? templateFn(img) : img;
-      return val;
+    async (src, sizes, publicPath = "") => {
+      const img = await imageOptimizer(src, {
+        urlOnly: true,
+        widths: sizes,
+        publicPath,
+      });
+      return img;
     }
   );
 
@@ -89,12 +93,11 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  eleventyConfig.addPassthroughCopy({ "src/_includes/scripts": "scripts" });
-  eleventyConfig.addPassthroughCopy({ "src/_includes/scss": "css" });
-  eleventyConfig.addPassthroughCopy({ "src/_includes/images": "images" });
-  eleventyConfig.addWatchTarget("./src/includes/scripts/");
-  eleventyConfig.addWatchTarget("./src/includes/scss/");
-  eleventyConfig.addWatchTarget("./src/includes/images/");
+  eleventyConfig.addPassthroughCopy({ "./src/_includes/scripts": "scripts" });
+  eleventyConfig.addPassthroughCopy({ "./src/admin/scripts": "admin/scripts" });
+  eleventyConfig.addPassthroughCopy({ "./src/admin/css": "admin/css" });
+  eleventyConfig.addPassthroughCopy({ "./src/_includes/scss": "css" });
+  eleventyConfig.addPassthroughCopy({ "./src/images/svg": "images/svg" });
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addPlugin(pluginRss);
@@ -264,38 +267,34 @@ module.exports = (eleventyConfig) => {
     });
   }
 
-  // order matters
   eleventyConfig.addPlugin(EleventyVitePlugin, {
     viteOptions: {
+      tempFolderName: ".11ty-vite",
+      build: {
+        emptyOutDir: false,
+      },
+      publicDir:
+        process.env.NODE_ENV === "production"
+          ? path.resolve(__dirname, ".11ty-vite/public")
+          : path.resolve(__dirname, "./public"),
+      esbuild: {
+        jsxFactory: "h",
+        jsxFragment: "Fragment",
+      },
       resolve: {
         alias: {
-          images: path.resolve(__dirname, "src/_includes/images"),
+          images: path.resolve(__dirname, "../images"),
         },
       },
     },
   });
 
-  // cms css - public important. is needed so vite doesn't delete the files.
   eleventyConfig.addPassthroughCopy({
-    admin: "public/admin",
-  });
-  eleventyConfig.addPassthroughCopy({
-    "src/_includes/images": "public/admin/images",
-  });
-  eleventyConfig.addPassthroughCopy({
-    "src/_includes/css": "public/admin/css",
-  });
-  eleventyConfig.addPassthroughCopy({
-    "src/_includes/partials": "public/admin/partials",
-  });
-  eleventyConfig.addPassthroughCopy({
-    "src/_includes/images/manifest": "public/images/manifest",
-  });
-  eleventyConfig.addPassthroughCopy({
-    "src/_includes/images": "public/images",
-  });
-  eleventyConfig.addPassthroughCopy({
-    "src/_includes/scripts/service-worker.js": "public/service-worker.js",
+    "./public": "public",
+    "./src/_includes/images": "public/admin/images",
+    "./src/_includes/partials": "public/admin/partials",
+    "./src/_includes/layouts": "public/admin/layouts",
+    "./src/images": "public/admin/images",
   });
 
   return {

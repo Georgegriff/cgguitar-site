@@ -20,23 +20,14 @@ carousel:
       alt: "Charlie showing his picking hand for his multi-cam HD Guitar lessons setup"
 ---
 
-Check for lesson pricing and availability.
+- Check for lesson pricing and availability.
+- Signing up also provides you with access to the online CG Guitar member community.
 
-Signing up also provides you with access to the online CG Guitar member community.
+If you are looking to buy a Lesson voucher, or purchase a Video lesson, head to the [store](/store/).
 
 <div class="flex flex-cl">
-
 
 <div class="iframe-container embed">
 <iframe src="/book-a-lesson/" class="iframe" scrolling="auto" frameborder="0"></iframe>
 </div>
-
-<div class="card-footer">
-
-  Want to have a chat first?
-  <a class="action-button cta-primary" href="/contact/">Get in touch</a>
-  <br/>
-  Already a member? [Log in here](/login/).
-</div>
-
 </div>
