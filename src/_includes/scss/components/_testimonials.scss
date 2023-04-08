@@ -1,11 +1,10 @@
 .testimonial-levels {
   color: var(--SecondaryText);
   padding: 0;
-  background: var(--Background50);
 }
 
 .level {
-  padding: calc(1.5 * var(--site-padding)) var(--site-padding) !important;
+  padding: calc(2 * var(--site-padding)) calc(2 * var(--site-padding)) !important;
   h3 {
     margin-bottom: 2rem;
   }

@@ -162,8 +162,7 @@
 
 #sign-up .content {
   margin: 0;
-  padding-bottom: 1rem;
-
+  padding-bottom: calc(2 * var(--site-padding));
   p {
     margin: var(--site-padding);
   }
@@ -174,7 +173,6 @@
 }
 .card-dark-wrapper {
   border-top: solid 3px var(--Primary50);
-  border-bottom: solid 3px var(--SecondaryText);
 }
 .card-dark {
   background-color: var(--Secondary);
@@ -191,4 +189,15 @@
 
 .icons-card {
   padding: var(--site-padding) !important;
+}
+
+.levels-card {
+  .testimonial-levels {
+    padding: calc(1 * var(--site-padding)) 0;
+    gap: var(--site-padding);
+  }
+}
+
+.card-with-img {
+  border-top: solid 3px var(--Secondary);
 }

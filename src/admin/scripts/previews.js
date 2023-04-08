@@ -148,4 +148,3 @@ CMS.registerPreviewStyle(
   new URL("../../css/critical.css", import.meta.url).href
 );
 CMS.registerPreviewStyle(new URL("../../css/media.css", import.meta.url).href);
-CMS.registerPreviewStyle(new URL("../cms-overrides.css", import.meta.url).href);

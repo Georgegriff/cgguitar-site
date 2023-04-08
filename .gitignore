@@ -13,10 +13,11 @@ Thumbs.db
 node_modules
 dist
 public/fonts
-public/css
+src/admin/css
 src/_includes/manifest.json
 admin/partials
-admin/css
+public/css
+admin/scripts/templates.js
 .11ty-vite
 
 # Local Netlify folder

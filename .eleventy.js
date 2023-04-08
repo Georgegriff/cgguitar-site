@@ -1,5 +1,5 @@
 require("dotenv").config();
-const eleventySass = require("eleventy-sass");
+const nunjucks = require("./nunjucks-plugin");
 const path = require("path");
 const { DateTime } = require("luxon");
 const pluginNavigation = require("@11ty/eleventy-navigation");
@@ -92,10 +92,11 @@ module.exports = (eleventyConfig) => {
   };
 
   eleventyConfig.setLibrary("md", markdownLibrary);
-
+  // cms stuff
   eleventyConfig.addPassthroughCopy({ "./src/_includes/scripts": "scripts" });
   eleventyConfig.addPassthroughCopy({ "./src/admin/scripts": "admin/scripts" });
-  eleventyConfig.addPassthroughCopy({ "./src/admin/css": "admin/css" });
+  // eleventyConfig.addPassthroughCopy({ "./public/css": "css" });
+
   eleventyConfig.addPassthroughCopy({ "./src/_includes/scss": "css" });
   eleventyConfig.addPassthroughCopy({ "./src/images/svg": "images/svg" });
 
@@ -286,15 +287,38 @@ module.exports = (eleventyConfig) => {
           images: path.resolve(__dirname, "../images"),
         },
       },
+      plugins: [
+        nunjucks({
+          env: (env) =>
+            import("./src/admin/scripts/nunjucks/env.mjs").then(({ create }) =>
+              create(env)
+            ),
+          precompile: {
+            include: [/\.(njk|css|svg|html)$/],
+            exclude: [/scripts/, /scss/],
+          },
+        }),
+      ],
     },
   });
 
+  // more cms stuff
   eleventyConfig.addPassthroughCopy({
-    "./public": "public",
-    "./src/_includes/images": "public/admin/images",
-    "./src/_includes/partials": "public/admin/partials",
-    "./src/_includes/layouts": "public/admin/layouts",
-    "./src/images": "public/admin/images",
+    // weird but needed to bend vite and 11ty public folders together
+    // a long with my own public folder overrides in vite config
+    public: "public",
+    "./src/_includes/images":
+      process.env.NODE_ENV === "production"
+        ? "public/admin/images"
+        : "admin/images",
+    "./src/images/svg":
+      process.env.NODE_ENV === "production"
+        ? "public/images/svg"
+        : "/images/svg",
+    "./src/images":
+      process.env.NODE_ENV === "production"
+        ? "public/admin/images"
+        : "admin/images",
   });
 
   return {

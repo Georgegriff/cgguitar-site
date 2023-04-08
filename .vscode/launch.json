@@ -12,14 +12,12 @@
       "console": "internalConsole"
     },
     {
-      "name": "Nunjucks compile",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceRoot}/admin/nunjucks-compile.js",
-      "stopOnEntry": false,
-      "args": ["--watch"],
-      "cwd": "${workspaceRoot}",
-      "console": "internalConsole"
+      "name": "Debug Nunjucks.js file",
+      "program": "${workspaceFolder}/tasks/nunjucks.js",
+      "cwd": "${workspaceFolder}",
+      "protocol": "inspector"
     }
   ]
 }
