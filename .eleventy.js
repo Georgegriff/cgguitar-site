@@ -95,7 +95,9 @@ module.exports = (eleventyConfig) => {
   // cms stuff
   eleventyConfig.addPassthroughCopy({ "./src/_includes/scripts": "scripts" });
   eleventyConfig.addPassthroughCopy({ "./src/admin/scripts": "admin/scripts" });
-  // eleventyConfig.addPassthroughCopy({ "./public/css": "css" });
+  if (process.env.NODE_ENV === "production") {
+    eleventyConfig.addPassthroughCopy({ "./public/css": "css" });
+  }
 
   eleventyConfig.addPassthroughCopy({ "./src/_includes/scss": "css" });
   eleventyConfig.addPassthroughCopy({ "./src/images/svg": "images/svg" });
