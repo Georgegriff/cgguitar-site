@@ -1,0 +1,29 @@
+{% set pageCriticalStyles = pageCriticalStyles or['/css/index.scss'] %}
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        {% include 'partials/fonts.njk' %}
+        <link rel="stylesheet" href="/css/reset.scss" />
+        <link rel="stylesheet" href="/css/critical.scss" />
+        <style>
+            :root { 
+                --quote-image-start: url(/images/svg/start-quote.svg);
+                --quote-image-end: url(/images/svg/end-quote.svg);
+            }
+        </style>
+
+        {# Add facility for pages to declare an array of critical styles #}
+        {% if pageCriticalStyles %}
+            {% for item in pageCriticalStyles %}
+                 <link rel="stylesheet" href="{{ item }}" />
+            {% endfor %}
+        {% endif %}
+       
+    </head>
+    <body>
+        {{ content | safe }}
+    </body>
+</html>

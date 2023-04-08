@@ -91,8 +91,16 @@ main {
   background: var(--Background);
   position: relative;
   z-index: 3;
-  p {
-    margin-bottom: 0.5rem;
+  p:not([class]) {
+    margin: 0.5rem 0;
+  }
+
+  li:not([class]) {
+    padding-left: 0.5rem;
+    list-style-type: square;
+    &::marker {
+      color: var(--Primary);
+    }
   }
 
   article {
@@ -191,7 +199,7 @@ h2 {
 
 h3 {
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .bottom-section {
@@ -307,14 +315,13 @@ h2 + .login-widget {
   padding-top: 0rem;
 }
 .login-widget {
-
   .subtitle {
     margin-top: 1rem;
     color: var(--SecondaryText50);
   }
   padding-top: 3rem;
   @include up-from(medium) {
-    padding-top: 10vh ;
+    padding-top: 10vh;
   }
   display: flex;
   justify-content: center;
@@ -345,30 +352,29 @@ h2 + .login-widget {
       background: var(--Secondary) !important;
       min-height: 500px;
       @include up-from(medium) {
-        margin:0;
+        margin: 0;
       }
     }
-
   }
   .login-container {
     min-width: 300px;
     min-height: 350px;
     .tz-form-login-admin * {
-      font-family: Poppins,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
+      font-family: Poppins, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        sans-serif !important;
     }
 
     .tz-form-login-admin {
-
       .btn-primary {
         border-radius: 1rem;
         font-weight: normal;
-        font-style:normal;
+        font-style: normal;
         text-transform: uppercase;
       }
 
       h3.title span {
         font-weight: normal;
-        font-style:normal;
+        font-style: normal;
       }
     }
   }
@@ -398,17 +404,16 @@ h2 + .login-widget {
     img {
       position: absolute;
       object-fit: cover;
-      right:0;
-      top:0;
-      bottom:0;
+      right: 0;
+      top: 0;
+      bottom: 0;
       width: 68%;
       z-index: -1;
       @include up-to(medium) {
         width: auto;
         height: 150%;
-        opacity:0.5;
+        opacity: 0.5;
       }
     }
   }
 }
-

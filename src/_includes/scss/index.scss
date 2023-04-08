@@ -2,74 +2,79 @@
 @import "mixins";
 
 .star-card {
-    padding: calc(2 * var(--site-padding)) 0;
-    .content-card {
-        background: transparent;
-    }
+  padding: calc(1 * var(--site-padding)) 0;
+  .content-card {
+    background: transparent;
+  }
 
-    background: var(--Background50);
+  background: var(--Background50);
 }
 @include up-from(small) {
-    .star-card {
-        --min-column-size:480px;
-    }
+  .star-card {
+    --min-column-size: 480px;
+  }
 }
 
 .embed {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    &::after {
-        content: "";
-        display: inline-block;
-        margin-bottom: 1rem;
-        width: 90%;
-        height: 5px;
-        background: var(--Primary);
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &::after {
+    content: "";
+    display: inline-block;
+    margin-bottom: 1rem;
+    width: 90%;
+    height: 5px;
+    background: var(--Primary);
+  }
 }
 
 .book-page .signup-card {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    h2 {
-        display: none;
-    }
+  h2 {
+    display: none;
+  }
 
-    .carousel-container {
-        margin: var(--site-padding) var(--site-padding) 0 var(--site-padding);
-    }
+  .carousel-container {
+    margin: var(--site-padding) var(--site-padding) 0 var(--site-padding);
+  }
 
-    .content p {
-        margin-bottom: 1rem;
-    }
+  .content p {
+    margin-bottom: 1rem;
+  }
 }
 
 .signup-card {
-    .image-carousel {
-        flex-basis: 60%;
-        flex-grow: 1;
-    }
-    blockquote:after, blockquote:before {
-        background-color: var(--SecondaryText);
-    }
-    h2 {
-        margin-bottom: 2rem;
-    }
-    .content {
-        flex-basis: min(100vw, 400px);
-        flex-shrink: 0;
-        flex-grow: 1;
-    }
+  .image-carousel {
+    flex-basis: 60%;
     @include up-to(medium) {
-        .content-card {
-            flex-wrap: wrap-reverse;
-        }
-     }
-    /* teacher zone stuff */
-.iframe-container {
+      flex-basis: 100%;
+    }
+    flex-grow: 1;
+  }
+  blockquote:after,
+  blockquote:before {
+    background-color: var(--SecondaryText);
+  }
+  h2 {
+    margin-bottom: 2rem;
+  }
+  .content {
+    flex-basis: min(100vw, 400px);
+    flex-shrink: 0;
+    flex-grow: 1;
+  }
+
+  @include up-to(medium) {
+    .content-card {
+      flex-wrap: wrap-reverse;
+    }
+  }
+  /* teacher zone stuff */
+  .iframe-container {
     overflow: hidden;
     position: relative;
     aspect-ratio: 3/4;
@@ -79,33 +84,29 @@
 
     @media screen and (min-width: 40em) {
       margin: var(--site-padding);
-      margin-top:0;
-  
+      margin-top: 0;
     }
   }
   .iframe-container iframe {
-     border: 0;
-     height: 100%;
-     left: 0;
-     position: absolute;
-     top: 0;
-     width: 100%;
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
-    .learn-more {
-        margin-right: 1rem !important;
-    }
-    /* size of teacher-zone card when in desktop mode*/
-    --min-column-size: 480px;
-    @media screen and (max-width: 35em) {
-        --min-column-size: 300px;
-    
-      }
-    .grid-content {
-        color: var(--SecondaryText);
-    }
-    a.action-button.cta-primary {
-        color: var(--SecondaryText);
-    }
-
-
+  .learn-more {
+    margin-right: 1rem !important;
+  }
+  /* size of teacher-zone card when in desktop mode*/
+  --min-column-size: 480px;
+  @media screen and (max-width: 35em) {
+    --min-column-size: 300px;
+  }
+  .grid-content {
+    color: var(--SecondaryText);
+  }
+  a.action-button.cta-primary {
+    color: var(--SecondaryText);
+  }
 }

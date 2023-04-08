@@ -1,169 +1,168 @@
 .icondesc {
-    --min-column-size: 18em;
+  --min-column-size: 18em;
 
-    svg {
-        margin-bottom:2rem;
-        * {
-            fill: currentColor;
-        }
+  svg {
+    margin-bottom: 2rem;
+    * {
+      fill: currentColor;
     }
+  }
 
-    gap: 1rem;
+  gap: 1rem;
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-height: 180px;
+    justify-content: space-evenly;
+  }
+  @include up-to(small) {
     li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        min-height: 180px;
-        justify-content: space-evenly;
+      padding: 1rem 0;
     }
-    @include up-to(small) {
-        li {
-            padding: 1rem 0;
-        }
-    }
+  }
 
-    h2 {
-        margin: 0.75rem 0.75rem 1.5rem 0.75rem;
-        font-weight: 600;
-        font-size: 0.95rem;
-    }
+  h2 {
+    margin: 0.75rem 0.75rem 1.5rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
 
+  p {
+    font-size: 0.85rem;
+    margin: 0 1rem;
+    max-width: 40ch;
+  }
+
+  @include up-to(medium) {
     p {
-        font-size: 0.85rem;
-        margin:0 1rem;
-        max-width: 40ch;
+      max-width: initial;
     }
-
-    @include up-to(medium) {
-        p {
-            max-width: initial;
-        }
-    }
+  }
 }
 
 .slogan {
-    background: var(--Background50);
-    color: var(--Text);
-    --grid-ish-size: 15em;
-    @include up-to(large) {
-        --grid-ish-size: 21em;
-    }
-    padding: var(--site-padding);
-    padding-bottom: calc(3 * var(--site-padding));
+  background: var(--Background50);
+  color: var(--Text);
+  --grid-ish-size: 15em;
+  @include up-to(large) {
+    --grid-ish-size: 21em;
+  }
+  padding: var(--site-padding);
+  padding-bottom: calc(2 * var(--site-padding));
 
-    ol {
-        margin:0;
-        padding:0;
-        gap:var(--site-padding);
-    }
+  ol {
+    margin: 0;
+    padding: 0;
+    gap: var(--site-padding);
+  }
 
-    li {
-        background: var(--Background);
-    }
+  li {
+    background: var(--Background);
+  }
 }
 
 .dark-grid {
-    li:nth-child(4n - 7) {
-        background: var(--Secondary50);
-    }
-    
-    li:nth-child(4n - 6) {
-        background: var(--Secondary90);
-    }
-    
-    li:nth-child(4n - 5) {
-        background: var(--Secondary70);
-    }
-    
-    li:nth-child(4n - 4) {
-        background: var(--Secondary30);
-    }
+  li:nth-child(4n - 7) {
+    background: var(--Secondary50);
+  }
+
+  li:nth-child(4n - 6) {
+    background: var(--Secondary90);
+  }
+
+  li:nth-child(4n - 5) {
+    background: var(--Secondary70);
+  }
+
+  li:nth-child(4n - 4) {
+    background: var(--Secondary30);
+  }
 }
 
 .icon-link {
-    a {
-        display: flex;
-        align-items: center;
-    }
-    svg {
-        fill: var(--PrmaryText);
-        height: auto;
-        width: 2rem;
-        margin-right: 1rem;
-    }
+  a {
     display: flex;
     align-items: center;
+  }
+  svg {
+    fill: var(--PrmaryText);
+    height: auto;
+    width: 2rem;
+    margin-right: 1rem;
+  }
+  display: flex;
+  align-items: center;
 }
 
 .grid-icons {
-    svg {
-        height: 3.5rem;
-        width: auto;
-    }
-    --min-column-size:14em;
-    padding:0;
-    height: 100%;
-    place-items: center;
-    margin: 0;
+  svg {
+    height: 3.5rem;
+    width: auto;
+  }
+  --min-column-size: 14em;
+  padding: 0;
+  height: 100%;
+  place-items: center;
+  margin: 0;
 
-    @include up-to(small) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        svg {
-            height: 3rem;
-        }
+  @include up-to(small) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    svg {
+      height: 3rem;
     }
+  }
 }
 
 .grid {
-   .card-grid {
-       display: grid;
-   }
+  .card-grid {
+    display: grid;
+  }
 }
 
 .grid-small {
-    @include up-to(medium) {
-        .card-grid {
-            display: flex;
-            justify-content: center;
-        }
-        .grid-icons {
-            gap: 2rem;
-            grid-template-columns: 1fr 1fr 1fr;
-            flex-direction: column;
-            li {
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-
-                svg {
-                    flex:1;
-                }
-
-                p {
-                    margin-left:1rem;
-                    flex:4;
-                    text-align: left;
-                }
-            }
-        }
+  @include up-to(medium) {
+    .card-grid {
+      display: flex;
+      justify-content: center;
     }
+    .grid-icons {
+      gap: 2rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      flex-direction: column;
+      li {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          flex: 1;
+        }
+
+        p {
+          margin-left: 1rem;
+          flex: 4;
+          text-align: left;
+        }
+      }
+    }
+  }
 }
 
-.small-list  {
-    .icondesc{
-        @include up-to(medium) {
-            svg {
-                margin-bottom: 0;
-                height: 30px;
-            }
-        }
-        li {
-            min-height: auto;
-            padding: 1rem;
-        }
-        
+.small-list {
+  .icondesc {
+    @include up-to(medium) {
+      svg {
+        margin-bottom: 0;
+        height: 30px;
+      }
     }
+    li {
+      min-height: auto;
+      padding: 1rem;
+    }
+  }
 }

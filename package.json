@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tasks": "npm run tasks:fonts",
+    "tasks:cms": "npm run tasks:cms-scss",
+    "tasks": "npm run tasks:fonts && npm run tasks:cms",
+    "tasks:cms-scss": "sass src/_includes/scss:public/css",
     "tasks:fonts": "node ./tasks/font.mjs",
-    "start": "npm run tasks && npx eleventy --serve",
+    "start": "npm run tasks && rm -rf dist && npx eleventy --serve",
     "build": "rm -rf dist && npm run tasks && NODE_ENV=production npx eleventy",
     "11ty": "NODE_ENV=production npx eleventy",
     "netlify": "netlify dev",
@@ -29,7 +31,7 @@
     "markdown-it-anchor": "^7.1.0",
     "netlify-plugin-cache": "^1.0.3",
     "node-fetch": "^2.6.1",
-    "nunjucks": "^3.2.2",
+    "nunjucks": "^3.2.3",
     "sass": "^1.60.0",
     "terser": "^5.5.1"
   },
@@ -40,7 +42,9 @@
     "lit-element": "^2.4.0",
     "lit-html": "^1.3.0",
     "lite-youtube-embed": "0.1.2",
+    "marked": "^4.3.0",
     "nunjucks-parser": "^1.1.0",
-    "sharp": "^0.32.0"
+    "sharp": "^0.32.0",
+    "vite-plugin-nunjucks": "^0.1.10"
   }
 }

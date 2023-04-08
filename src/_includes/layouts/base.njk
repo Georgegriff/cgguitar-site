@@ -22,9 +22,10 @@
         <link rel="stylesheet" href="/css/reset.scss" />
         <link rel="stylesheet" href="/css/critical.scss" />
         <style>
-            {%- ImageUrl "/images/start-quote.svg", helpers.quoteStartTemplate %}
-
-            {%- ImageUrl "/images/end-quote.svg", helpers.quoteEndTemplate %}
+            :root { 
+                --quote-image-start: url(/images/svg/start-quote.svg);
+                --quote-image-end: url(/images/svg/end-quote.svg);
+            }
         </style>
 
         {# Add facility for pages to declare an array of critical styles #}

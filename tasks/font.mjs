@@ -13,7 +13,7 @@ const fonts = async () => {
   });
 
   const instanceCssFile = new GetGoogleFonts({
-    outputDir: "./src/_includes/fonts",
+    outputDir: "./public/fonts",
     path: "/fonts/",
     overwriting: true,
     cssFile: "./fonts.css",

@@ -1,52 +1,23 @@
-
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "GulpTester",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
-            "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "runtimeArgs": [
-                "--nolazy"
-            ],
-            "console": "internalConsole",
-        },
-        {
-            "name": "ESDevServer",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/node_modules/.bin/web-dev-server",
-            "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "runtimeArgs": [
-                "--nolazy"
-            ],
-            "console": "internalConsole",
-        },
-        {
-            "name": "11ty",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/node_modules/.bin/eleventy",
-            "stopOnEntry": false,
-            "args": ["--watch"],
-            "cwd": "${workspaceRoot}",
-            "console": "internalConsole",
-        },
-        {
-            "name": "Nunjucks compile",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/admin/nunjucks-compile.js",
-            "stopOnEntry": false,
-            "args": ["--watch"],
-            "cwd": "${workspaceRoot}",
-            "console": "internalConsole",
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "11ty",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/.bin/eleventy",
+      "stopOnEntry": false,
+      "args": ["--watch"],
+      "cwd": "${workspaceRoot}",
+      "console": "internalConsole"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Nunjucks.js file",
+      "program": "${workspaceFolder}/tasks/nunjucks.js",
+      "cwd": "${workspaceFolder}",
+      "protocol": "inspector"
+    }
+  ]
 }

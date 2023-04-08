@@ -1,91 +1,90 @@
-@import "lite-youtube-embed/src/lite-yt-embed.css";
-
 lite-youtube {
-    max-width: initial !important;
+  max-width: initial !important;
 }
 
 .video-size {
-    margin-bottom: 2rem;
-    max-width:var(--video-size,  100%);
-    @include up-to-height($height-small) {
-        --video-size: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+  max-width: var(--video-size, 100%);
+  @include up-to-height($height-small) {
+    --video-size: 400px;
+  }
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .lty-playbtn {
+    display: none;
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+      transform: scale(1);
     }
-    position: relative;
+    100% {
+      opacity: 0;
+      transform: scale(1.3);
+    }
+  }
+  a.no-js {
     width: 100%;
     height: 100%;
-    .lty-playbtn {
-        display: none;
-    }
-    @keyframes pulse {
-        0% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        100% {
-            opacity: 0;
-            transform: scale(1.3);
-        }
-    }
-    a.no-js {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        position: absolute;
-        justify-content: center;
-        align-items: center;
-        transform: scale(1);
-        transition: opacity 250ms linear, transform  100ms ease-in-out;
-        opacity: 0.8;
-        --play-button-size: 15%;
-        &:focus, &:hover {
-            opacity: 1;
-            transform: scale(1.1);
-            &:after {
-                animation: pulse 1s 4 ease-in-out;
-            }
-        }
-        svg {
-            width: var(--play-button-size);
-            height:auto;
-            z-index:3;
-        }
-        &:after {
-            content: "";
-            background: var(--Primary50);
-            position: absolute;
-            width:var(--play-button-size);
-            border-radius: 50%;
-            padding-top:var(--play-button-size);
-            z-index: 1;
-            opacity: 0;
-        }
-
-    }
-
-    lite-youtube {
-       background: none !important;
-       &::before {
-           height: 110px;
-       }
-    }
-    .video-wrapper {
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        padding-top: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
-        @supports(aspect-ratio: 16 / 9) {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            padding-top: initial;
-        }
-      
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    transition: opacity 250ms linear, transform 100ms ease-in-out;
+    opacity: 0.8;
+    --play-button-size: 15%;
+    &:focus,
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+      &:after {
+        animation: pulse 1s 4 ease-in-out;
       }
-      .video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      
+    }
+    svg {
+      width: var(--play-button-size);
+      height: auto;
+      z-index: 3;
+    }
+    &:after {
+      content: "";
+      background: var(--Primary50);
+      position: absolute;
+      width: var(--play-button-size);
+      border-radius: 50%;
+      padding-top: var(--play-button-size);
+      z-index: 1;
+      opacity: 0;
+    }
+  }
+
+  lite-youtube {
+    background: none !important;
+    &::before {
+      height: 110px;
+    }
+  }
+  .video-wrapper {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
+    @supports (aspect-ratio: 16 / 9) {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      padding-top: initial;
+    }
+  }
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }

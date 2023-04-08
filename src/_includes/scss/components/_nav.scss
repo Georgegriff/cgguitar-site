@@ -1,119 +1,120 @@
 nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .nav {
-    color: var(--SecondaryText);
-    background: var(--Secondary);
-    display: flex;
-    z-index: 4;
-    position: sticky;
-    top:0;
+  color: var(--SecondaryText);
+  background: var(--Secondary);
+  display: flex;
+  z-index: 4;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: var(--site-padding);
+  background: var(--Secondary);
+  min-height: var(--site-header);
+  @include up-to-height($height-small) {
+    position: relative;
+  }
+  a {
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: var(--site-padding);
-    background: var(--Secondary);
-    min-height: var(--site-header);
-    @include up-to-height($height-small) {
-        position: relative;
-    }
-    a {
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-    }
+  }
 
+  a[data-link-key="members"] {
+    &::after {
+      background-image: url(/images/svg/person-nav.svg);
+      margin-left: 0.5rem;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 1.3rem;
+      width: 1.3rem;
+      display: inline-block;
+      content: "";
+    }
+  }
+
+  li.active {
     a[data-link-key="members"] {
-        &::after {
-            background-image: url(/images/person-nav.svg);
-            margin-left: 0.5rem;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 1.3rem;
-            width: 1.3rem;
-            display: inline-block;
-            content: "";
-        }
+      &::after {
+        opacity: 0.4;
+      }
     }
+  }
 
-    li.active {
-        a[data-link-key="members"] {
-            &::after {
-                opacity: 0.4;
-            }
-        }
+  a.more-link {
+    display: flex;
+    align-items: center;
+    margin-left: 0.3rem;
+    &:hover,
+    &:focus {
+      border-color: transparent;
     }
+    svg {
+      fill: currentColor;
+      width: 0.875rem;
+    }
+  }
+  ul {
+    text-transform: uppercase;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.nav-links {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 1.1rem;
+    @include up-to(small) {
+      justify-content: center;
+    }
+    @include up-from(xxlarge) {
+      font-size: 1.5rem;
+    }
+  }
 
-    a.more-link {
-        display: flex;
-        align-items: center;
-        margin-left: 0.3rem;
-        &:hover, &:focus {
-            border-color: transparent;
-        }
-        svg {
-            fill: currentColor;
-            width: 0.875rem;
-        }
-    }
-    ul {
-        text-transform: uppercase;
-        list-style-type: none;
-        padding:0;
-        margin: 0;
-    }
-    ul.nav-links {
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        font-size: 1.1rem;
-        @include up-to (small) {
-            justify-content: center;
-        }
-        @include up-from(xxlarge) {
-            font-size: 1.5rem;
-        }
+  .burger-list {
+    height: auto;
+    flex-direction: column;
+    align-items: initial;
+    justify-content: initial;
+  }
 
+  li {
+    margin: 0 0.5rem;
+    a {
+      border-bottom: solid 5px transparent;
+      &:hover,
+      &:active {
+        border-bottom: solid 5px currentColor;
+      }
     }
+  }
+  li:last-of-type {
+    margin-right: 0;
+  }
 
-    .burger-list {
-        height: auto;
-        flex-direction: column;
-        align-items: initial;
-        justify-content: initial;
+  .active {
+    a {
+      color: var(--SecondaryText50);
     }
-
-    li {
-        margin: 0 0.5rem;
-        a {
-            border-bottom: solid 5px transparent;
-            &:hover, &:active {
-                border-bottom: solid 5px currentColor;
-            }
-        }
-    }
-    li:last-of-type {
-        margin-right: 0;
-    }
-
-    .active {
-        a {
-            color: var(--SecondaryText50);
-        }
-    }
+  }
 }
 
 .list-scroll-wrap {
-    position: relative;
-    overflow: hidden;
-    .abs-list {
-        position: absolute;
-        top:0;
-    }
+  position: relative;
+  overflow: hidden;
+  .abs-list {
+    position: absolute;
+    top: 0;
+  }
 }

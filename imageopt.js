@@ -4,7 +4,13 @@ const Image = require("@11ty/eleventy-img");
 
 const imageOptimizer = async (
   src,
-  { alt, ariaHidden, urlOnly, widths = [320, 640, 960, 1200, 1800, 2400] }
+  {
+    alt,
+    ariaHidden,
+    urlOnly,
+    widths = [320, 640, 960, 1200, 1800, 2400],
+    publicPath = "",
+  }
 ) => {
   const formats = src.endsWith("svg") ? ["svg"] : ["jpeg", "webp"];
   const imgPath = src.startsWith("http")
@@ -14,7 +20,7 @@ const imageOptimizer = async (
     widths,
     formats,
     urlPath: "/images/",
-    outputDir: "./dist/images/",
+    outputDir: `./dist/${publicPath}images/`,
   });
   if (urlOnly && Object.keys(stats).length) {
     const format = Object.keys(stats)[0];
