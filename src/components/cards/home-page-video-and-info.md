@@ -19,8 +19,8 @@ Whether you're looking to start guitar lessons for the first time or you need he
 
 ### CG Guitar can help, no matter your skill level.
 
-* 1:1, group classes and workshops available Monday to Friday.
-* Multi-Cam set up, lighting rig and HD Professional Audio - *"It sounds like Charlie and his guitar are in the room with you!"*
+* Online 1:1, group classes & workshops available Monday to Friday.
+* Multi-Cam set up, lighting rig & HD Professional Audio - *"It sounds like Charlie and his guitar are in the room with you!"*
 * Exclusive access to an amazing online learning management system & app!
 * F﻿or Rock & Metal Guitarists - Beginners, Intermediate & Advance
 
