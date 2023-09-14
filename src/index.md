@@ -31,13 +31,13 @@ pagination:
 hero:
   title: Kick-Start Your Guitar Lessons Today
   subtitle: Available Monday to Friday
-  description: HD Online Guitar Lessons - Like you've never experienced before!
+  description: Online Lessons For Rock & Metal Guitarists
   heroLink:
     description: Already a member?
     text: Log in here.
     href: /login/
   image:
-    src: images/hero.jpg
+    src: images/harbinger-birmingham-36.jpg
     alt: CG Guitars' Charlie Griffiths playing guitar on stage
   callToAction:
     - type: primary
