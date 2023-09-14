@@ -4,11 +4,11 @@ tags:
   - footerData
 templateEngineOverride: md,njk
 callToAction:
-  title: Talk to me about lessons today
-  description: HD Online Guitar Lessons - Like you've never experienced before!
+  title: Chat to me about lessons today
+  description: HD Online Lessons for Rock & Metal Guitarists
   subtitle:
     - CG Guitar is ready to help you!
-    - 1:1 - Group Classes - Workshops
+    - Online 1:1 - Group Classes - Workshops
   link:
     text: Book a lesson
     url: /book/
