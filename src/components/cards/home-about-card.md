@@ -1,8 +1,8 @@
 ---
-label: Home page - Who Is CG Guitar
+label: Home page - Who is CG Guitar
 name: home-about-card
 type: card
-heading: Who Is CG Guitar ?
+heading: Who is CG Guitar ?
 direction: normal
 class: card-with-img
 image:
