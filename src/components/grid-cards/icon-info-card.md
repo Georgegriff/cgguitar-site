@@ -3,7 +3,7 @@ title: Start learning today
 class: ""
 name: icon-info-card
 icons:
-  - text: My students have found success in both online and in person lessons.
+  - text: My students have found a lot of success in their online lessons.
     image: images/student.svg
   - text: I provide extra value though free online demonstrations and tutorials.
     image: images/video.svg
