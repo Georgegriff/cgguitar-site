@@ -405,16 +405,22 @@ h2 + .login-widget {
   position: relative;
   z-index: 2;
   overflow: hidden;
+  background: var(--Secondary);
   picture {
     flex: initial;
     img {
       position: absolute;
       object-fit: cover;
+      object-position: right;
+      opacity: 0.5;
       right: 0;
       top: 0;
       bottom: 0;
-      width: 68%;
+      width: 100%;
       z-index: -1;
+      mix-blend-mode: lighten;
+      background-blend-mode: lighten;
+      filter: grayscale(30%);
       @include up-to(medium) {
         width: auto;
         height: 150%;

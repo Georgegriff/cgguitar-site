@@ -13,5 +13,9 @@
   },
   "manifest": {
     "path": "/manifest.json"
+  },
+  "defaultHero": {
+    "src": "/images/harbinger-birmingham-36.jpg",
+    "alt": "CG Guitars' Charlie Griffiths playing guitar on stage"
   }
 }

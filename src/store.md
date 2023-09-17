@@ -1,17 +1,20 @@
 ---
-title: 'Store'
+title: "Store"
 templateEngineOverride: md,njk
-layout: 'layouts/plain.njk'
-headerClassName: 'none'
+layout: "layouts/plain.njk"
+headerClassName: "none"
 eleventyNavigation:
   key: Store
   order: 4
 ---
-{% set image = hero.image or {src: "images/hero.jpg", "alt": "CG Guitars' Charlie playing guitar on stage"} %}
-<h1 class="visually-hidden">Store</h1>
-<div class="login-wrapper"> 
 
-  ## Purchase video lessons or vouchers
+{% set image = hero.image or metadata.defaultHero %}
+
+<h1 class="visually-hidden">Store</h1>
+<div class="login-wrapper">
+
+## Purchase video lessons or vouchers
+
   <div class="login-widget relative">
       <div class="login-container flex-widget-container">
           <div class="login-title-wrap">

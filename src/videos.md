@@ -48,9 +48,6 @@ hero:
   title: Check out my latest videos
   description: Find demonstrations, tutorials and other musical content.
   subtitle: Enjoy and please share!
-  image:
-    src: images/hero.jpg
-    alt: CG Guitars' Charlie playing guitar on stage
   callToAction:
     - type: primary
       text: Book a lesson

@@ -1054,6 +1054,16 @@ collections:
         delete: false
         file: "src/_data/metadata.json"
         fields:
+          - {
+              label: "Default Hero Image",
+              name: "defaultHero",
+              "widget": "object",
+              fields:
+                [
+                  { "label": "Source", "name": "src", "widget": "image" },
+                  { "label": "Description", "name": "alt" },
+                ],
+            }
           - { label: "Site Name", name: "title", widget: "string" }
           - { label: "Site Url", name: "url", widget: "string" }
           - {

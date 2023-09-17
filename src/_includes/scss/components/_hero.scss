@@ -86,14 +86,14 @@
     top: 0;
     right: 0;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
     --hero-opacity: 0.5;
     opacity: 0;
     animation: herofadein 1500ms ease-in forwards;
     animation-delay: 600ms;
     mix-blend-mode: lighten;
     background-blend-mode: lighten;
-    filter: grayscale(70%);
+    filter: grayscale(30%);
     @include up-to(small) {
       --hero-opacity: 0.2;
       left: 8rem;

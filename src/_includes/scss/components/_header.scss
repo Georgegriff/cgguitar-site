@@ -60,6 +60,9 @@ header {
     position: relative;
     overflow: hidden;
     min-height: calc(100vh - (var(--site-header)));
+    .hero img {
+      object-position: top;
+    }
   }
 }
 

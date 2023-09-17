@@ -19,9 +19,6 @@ hero:
       link: /book/#sign-up
   title: I'd love to hear from you, please get in touch!
   description: or, contact me using the options below.
-  image:
-    src: images/hero.jpg
-    alt: CG Guitars' Charlie playing guitar on stage
 footerSettings:
   callToAction: false
 ---
