@@ -31,7 +31,7 @@ pagination:
 hero:
   title: Kick-Start Your Guitar Lessons Today
   subtitle: Available Monday to Friday
-  description: HD Online Guitar Lessons - Like you've never experienced before!
+  description: Online Lessons For Rock & Metal Guitarists
   heroLink:
     description: Already a member?
     text: Log in here.
