@@ -17,10 +17,20 @@ const goToSlideByLink = (link) => {
 };
 window.imageCarousel = {
   init: () => {
-    const carouselImgs = document.querySelectorAll(".image-carousel img");
-    carouselImgs.forEach((img) => {
-      img.loading = "eager";
+    const carousel = document.querySelector(".image-carousel");
+
+    // intersection observer to load images when carousel is in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          carousel.querySelectorAll("img").forEach((img) => {
+            img.loading = "eager";
+          });
+        }
+      });
     });
+
+    observer.observe(carousel);
   },
   onControls: (e) => {
     if (goToSlideByLink(e.target)) {
