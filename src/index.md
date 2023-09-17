@@ -16,6 +16,10 @@ components:
     name: levels
   - type: card
     name: home-about-card
+  - type: playlist
+    name: Shorts
+  - type: playlist
+    name: guitar-lessons
 pageJs: /scripts/index.js
 mypages:
   - lessons
