@@ -5,7 +5,7 @@ if video.thumbnail %} {%- set videoImage = video.thumbnail | imgmin %} {% else
 %} {%- set ytImg = "https://i.ytimg.com/vi/" + youtube.id +
 "/maxresdefault.jpg"%} {%- set videoImage = ytImg | imgmin %} {% endif %} {%-
 endif %}
-<div class="card-width-container">
+<div class="width-container">
   <article
     class="grid-content {%- if gridContent.class %} {{gridContent.class}}{%- endif -%}"
   >

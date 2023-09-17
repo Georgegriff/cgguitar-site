@@ -13,7 +13,7 @@ eleventyNavigation:
 <h1 class="visually-hidden">Store</h1>
 <div class="login-wrapper">
   <div class="login-widget relative store-widget">
-  <div class="card-width-container">
+  <div class="width-container">
       <div style="margin-right: auto;">
        <h2>Purchase video lessons or vouchers</h2>
         <p class="subtitle">Select from a category to purchase lessons.</p>

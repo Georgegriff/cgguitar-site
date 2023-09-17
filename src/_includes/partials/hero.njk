@@ -3,7 +3,7 @@
     {% set image = hero.image or metadata.defaultHero %}
     {% set callToAction = hero.callToAction %}
     <div class="hero{% if hero.size %} hero-{{hero.size}}{% endif %}">
-        <div class="card-width-container">
+        <div class="width-container">
         <div class="hero-text">
             <h1>{{hero.title}}</h1>
             {% if hero.subtitle %}

@@ -12,7 +12,7 @@ pagination:
   size: 1
 ---
 
-<div class="card-width-container">
+<div class="width-container">
 <section class="padded-around document">
 
 # Terms & Conditions

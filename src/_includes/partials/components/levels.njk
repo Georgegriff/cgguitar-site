@@ -1,5 +1,5 @@
 {%- set levels = levels or component %}
-<article style="--min-column-size:300px" class="levels-card card-width-container">
+<article style="--min-column-size:300px" class="levels-card width-container">
 {%- if levels %}
     <div style="--grid-ish-size: 20em;" class="grid-ish testimonial-levels">
     {%- asyncEach level in levels.data.items %}
