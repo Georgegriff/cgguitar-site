@@ -4,13 +4,14 @@ name: home-page-video-and-info
 type: card
 class: star-card
 video:
-  id: BWN45DJCCoQ
+  id: uhF1ak6UHIY
   channel: UCReQS8UwfrhDRGTowiXqVKg
   link:
     text: Watch some demonstrations and tutorials.
     url: /videos/#main-content
 direction: null
 ---
+
 {%- include "partials/components/starRating.njk" -%}
 
 <div>
@@ -19,10 +20,10 @@ Whether you're looking to start guitar lessons for the first time or you need he
 
 ### CG Guitar can help, no matter your skill level.
 
-* Online 1:1, group classes & workshops available Monday to Friday.
-* Multi-Cam set up, lighting rig & HD Professional Audio - *"It sounds like Charlie and his guitar are in the room with you!"*
-* Exclusive access to an amazing online learning management system & app!
-* F﻿or Rock & Metal Guitarists - Beginners, Intermediate & Advance
+- Online 1:1, group classes & workshops available Monday to Friday.
+- Multi-Cam set up, lighting rig & HD Professional Audio - _"It sounds like Charlie and his guitar are in the room with you!"_
+- Exclusive access to an amazing online learning management system & app!
+- F﻿or Rock & Metal Guitarists - Beginners, Intermediate & Advance
 
 <br/>
 Super convenient as well as effective - Have your guitar lessons from the comfort of your own home.
