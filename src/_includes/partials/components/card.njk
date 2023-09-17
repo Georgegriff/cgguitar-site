@@ -2,7 +2,8 @@
 {%- set video = card.data.video %}
 {%- set gridContent = card.data.gridContent %}
 {%- set carousel = card.data.carousel %}
-<section class="card-grid {{card.data.class}}">
+<div class="card-width-container {{card.data.class}}">
+<section class="card-grid">
 {%- if video %}
     {%- set youtube = {"id": video.id } %}
         {% if video.thumbnail %}
@@ -43,3 +44,4 @@
 {% endif %}
 
 </section>
+</div>

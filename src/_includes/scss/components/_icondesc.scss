@@ -54,9 +54,8 @@
   padding-bottom: calc(2 * var(--site-padding));
 
   ol {
-    margin: 0;
-    padding: 0;
     gap: var(--site-padding);
+    padding: 0;
   }
 
   li {
@@ -97,7 +96,18 @@
   align-items: center;
 }
 
+.logo-small {
+  p {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .grid-icons {
+  p {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   svg {
     height: 3.5rem;
     width: auto;

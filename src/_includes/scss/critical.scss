@@ -436,3 +436,24 @@ h2 + .login-widget {
     }
   }
 }
+
+.background-50 {
+  background: var(--Background50);
+}
+
+.card-width-container {
+  > * {
+    max-width: 80rem;
+    @include up-to(large) {
+      padding: 0 var(--site-padding);
+    }
+    @include up-from(xlarge) {
+      max-width: 120rem;
+    }
+    @include up-from(xxlarge) {
+      max-width: 140rem;
+    }
+
+    margin: 0 auto;
+  }
+}

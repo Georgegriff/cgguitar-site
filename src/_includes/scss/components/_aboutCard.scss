@@ -3,6 +3,8 @@
   flex-wrap: wrap;
   flex-direction: row-reverse;
   background: var(--Background);
+  gap: var(--site-padding);
+  padding: var(--site-padding) 0;
   ul {
     margin: 0.5rem 0;
   }
@@ -14,7 +16,6 @@
       max-width: 75ch;
     }
     min-width: 240px;
-    margin: var(--site-padding);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -57,7 +58,7 @@
   blockquote {
     max-width: 100ch;
     position: relative;
-    margin: 2rem;
+    margin: 0 auto;
 
     &:before {
       content: "";

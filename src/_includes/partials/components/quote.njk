@@ -1,7 +1,7 @@
 <section>
 {%- set quote = quote or component %}
 {%- if quote %}
-<div id="{{quote.data.name | slugify }}" class="quote-card">
+<div id="{{quote.data.name | slugify }}" class="quote-card card-width-container">
     <blockquote>{{quote.templateContent | safe}}</blockquote>
 </div>
 {%- endif %}

@@ -2,125 +2,128 @@
 @import "../mixins";
 
 youtube-playlist {
-    background: var(--Background, #1a1a1a);
-    color: var(--Text, #fff);
-    --text: var(--Text);
-    --secondary-text: var(--Text);
-    --background-active: var(--Background50);
-    --primary-color: var(--Primary);
-    --white: var(--PrimaryText);
-    min-height: 450px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 var(--site-padding) var(--site-padding) var(--site-padding);
-    min-width: 100%;
+  background: var(--Background, #1a1a1a);
+  color: var(--Text, #fff);
+  --text: var(--Text);
+  --secondary-text: var(--Text);
+  --background-active: var(--Background50);
+  --primary-color: var(--Primary);
+  --white: var(--PrimaryText);
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--site-padding) var(--site-padding) var(--site-padding);
+  min-width: 100%;
 
-    h2 {
-        margin: var(--site-padding) 0;
-    }
+  h2 {
+    margin: var(--site-padding) 0;
+  }
 
-    p[slot="description"] {
-        margin-bottom: 1rem;
-    }
+  p[slot="description"] {
+    margin-bottom: 1rem;
+  }
 }
 
 youtube-playlist:nth-child(even) {
-    background: var(--Secondary, #1a1a1a);
-    color: var(--SecondaryText);
-    --secondary-text: var(--SecondaryText50);
-    --text: var(--SecondaryText);
-    --background-active: var(--Secondary30);
-    --mask-color: rgba(26,26,26, 0.7);
+  background: var(--Secondary, #1a1a1a);
+  color: var(--SecondaryText);
+  --secondary-text: var(--SecondaryText50);
+  --text: var(--SecondaryText);
+  --background-active: var(--Secondary30);
+  --mask-color: rgba(26, 26, 26, 0.7);
 }
 
 youtube-playlist li {
-    display: none;
+  display: none;
 }
 
-
 .playbtn {
-    width: 100%;
-    height: 100%;
-    display: flex;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transition: opacity 250ms linear, transform 100ms ease-in-out;
+  opacity: 0.8;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  outline: none;
+}
+.playbtn:focus,
+.playbtn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.playbtn:focus:after,
+.playbtn:hover:after {
+  animation: pulse 1s 4 ease-in-out;
+}
+.playbtn svg {
+  width: 15%;
+  height: auto;
+  z-index: 3;
+  border: solid 2px transparent;
+  border-radius: 50%;
+}
+.playbtn:focus svg {
+  border: solid 2px var(--white, #fff);
+}
+.playbtn:after {
+  content: "";
+  background: var(--primary-color, #7f3232);
+  position: absolute;
+  width: 15%;
+  border-radius: 50%;
+  padding-top: 15%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.fallback {
+  max-width: 40.5%;
+  @include up-to(medium) {
+    max-width: 100%;
+  }
+  margin: 0 0 2rem 0;
+  position: relative;
+  height: auto;
+  display: flex;
+  a {
     position: absolute;
-    justify-content: center;
-    align-items: center;
-    transform: scale(1);
-    transition: opacity 250ms linear, transform 100ms ease-in-out;
-    opacity: 0.8;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  a:hover,
+  a:focus {
     outline: none;
   }
-  .playbtn:focus, .playbtn:hover {
-    opacity: 1;
-    transform: scale(1.1);
+}
+
+a[slot="more-link"] {
+  border-bottom: solid 5px var(--Primary);
+  max-width: 22ch;
+  &:hover,
+  &:active {
+    border-bottom: solid 5px currentColor;
   }
-  .playbtn:focus:after, .playbtn:hover:after {
-    animation: pulse 1s 4 ease-in-out;
-  }
-  .playbtn svg {
-    width: 15%;
-    height: auto;
-    z-index: 3;
-    border: solid 2px transparent;
-    border-radius: 50%;
-  }
-  .playbtn:focus svg {
-    border: solid 2px var(--white, #fff);
-  }
-  .playbtn:after {
-    content: "";
-    background: var(--primary-color, #7f3232);
+}
+
+.img-btn-wrapper {
+  height: auto;
+  width: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
     position: absolute;
     width: 15%;
-    border-radius: 50%;
-    padding-top: 15%;
-    z-index: 1;
-    opacity: 0;
   }
-
-  .fallback {
-      max-width: 40.5%;
-      @include up-to(medium) {
-        max-width: 100%;
-      }
-      margin: 0 0 2rem 0;
-      position: relative;
-      height: auto;
-      display: flex;
-      a {
-          position: absolute;
-          top:0;
-          left:0;
-          bottom:0;
-          right:0;
-      }
-      a:hover, a:focus {
-          outline: none;
-      }
-  }
-
-  a[slot="more-link"] {
-    border-bottom: solid 5px var(--Primary);
-    max-width: 22ch;
-    &:hover, &:active {
-        border-bottom: solid 5px currentColor;
-    }
-  }
-
-  .img-btn-wrapper {
-    height: auto;
-    width: auto;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    svg {
-      position: absolute;
-      width: 15%;
-    }
-  }
+}

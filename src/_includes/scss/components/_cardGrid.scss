@@ -33,7 +33,7 @@
 .video-section {
   --video-size: 95%;
   align-items: flex-end;
-  margin: var(--site-padding) var(--site-padding) 0 var(--site-padding);
+  margin: var(--site-padding) 0 var(--site-padding);
   display: flex;
   flex-direction: column;
   .section-title {
@@ -149,10 +149,12 @@
 .signup-card {
   .content-card {
     align-items: flex-start;
+    padding: 0;
+    gap: 0;
   }
   @include up-from(medium) {
     .content {
-      border-left: solid 3px var(--Primary50);
+      border-left: solid 2px var(--Primary50);
     }
   }
 }
@@ -172,10 +174,20 @@
   }
 }
 .card-dark-wrapper {
-  border-top: solid 3px var(--Primary50);
+  background: var(--Background50);
 }
 .card-dark {
-  background-color: var(--Secondary);
+  .grid-icons {
+    li {
+      background-color: var(--Secondary);
+      gap: var(--site-padding);
+      height: 100%;
+    }
+    p {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
 
   color: var(--SecondaryText);
   blockquote:after,
@@ -188,10 +200,11 @@
 }
 
 .icons-card {
-  padding: var(--site-padding) !important;
+  padding: 0;
 }
 
 .levels-card {
+  background: var(--Background50);
   .testimonial-levels {
     padding: calc(1 * var(--site-padding)) 0;
     gap: var(--site-padding);
@@ -199,5 +212,4 @@
 }
 
 .card-with-img {
-  border-top: solid 3px var(--Secondary);
 }
