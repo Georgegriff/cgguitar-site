@@ -1055,7 +1055,7 @@ collections:
         file: "src/_data/metadata.json"
         fields:
           - {
-              label: "Default Hero Image",
+              label: "Main Site Image",
               name: "defaultHero",
               "widget": "object",
               fields:
