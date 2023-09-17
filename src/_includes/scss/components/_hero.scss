@@ -31,7 +31,7 @@
 .hero {
   height: 100%;
   display: flex;
-  padding: var(--site-padding);
+  padding: var(--site-padding) 0;
   .hero-text {
     position: relative;
     z-index: 2;
@@ -46,7 +46,7 @@
     animation-delay: 600ms;
   }
   .description {
-    animation-delay: 2.5s;
+    animation-delay: 2s;
   }
   .call-to-action {
     margin-top: 3rem;

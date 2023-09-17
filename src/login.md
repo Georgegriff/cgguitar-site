@@ -20,7 +20,7 @@ eleventyNavigation:
     <div class="login-widget">
     <div class="login-container">
         <div class="tz-form-login-admin" rel="587340" id="tz-widget-form"></div>
-         <p style="margin:auto; max-width: 555px; padding-top:1rem;" class="site-padded">Not a member yet? <a class="dark-link" aria-label="Not a member yet?" href="/#sign-up">Sign up today!</a></p>
+         <p style="margin:auto; max-width: 555px; padding:1rem 0;" class="site-padded">Not a member yet? <a class="dark-link" aria-label="Not a member yet?" href="/#sign-up">Sign up today!</a></p>
     </div>
     {%- Image image.src, image.alt -%}
 </div>

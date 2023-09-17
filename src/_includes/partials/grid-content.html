@@ -7,7 +7,7 @@ if video.thumbnail %} {%- set videoImage = video.thumbnail | imgmin %} {% else
 endif %}
 <div class="card-width-container">
   <article
-    class="grid-content padded {%- if gridContent.class %} {{gridContent.class}}{%- endif -%}"
+    class="grid-content {%- if gridContent.class %} {{gridContent.class}}{%- endif -%}"
   >
     {%- if heading %}
     <h2 style="padding-top: 1rem">{{heading}}</h2>

@@ -24,7 +24,7 @@
         <div class="learn-more flex-end flex-push" ><a {% if helpers.isExternalLink(card.data.link.url) -%}target="_blank"{%-endif%} href="{{helpers.componentLink(card.data.link)}}">{{card.data.link.text}}</a></div>
         {%- endif -%}
     </div>
-    {% include "partials/components/image-carousel.njk" %}
+    {%- include "partials/components/image-carousel.njk" -%}
     {%- if card.data.image -%}{%- Image card.data.image.src, card.data.image.alt -%}{%- endif -%}
 </figure>
 {%- endif %}

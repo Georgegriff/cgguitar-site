@@ -194,6 +194,9 @@ h1 {
 }
 
 .document {
+  * {
+    max-width: 85ch;
+  }
   h1 {
     font-size: 3rem;
   }
@@ -312,7 +315,6 @@ a.dark-link {
 .login-wrapper {
   background: var(--Secondary);
   color: var(--SecondaryText);
-  padding: 1rem var(--site-padding);
   h2 {
     font-size: 3rem;
   }
@@ -442,6 +444,7 @@ h2 + .login-widget {
 }
 
 .card-width-container {
+  width: 100%;
   > * {
     max-width: 80rem;
     @include up-to(large) {
