@@ -699,8 +699,8 @@ collections:
         name: "policies"
         file: "src/policies.md"
         fields:
-          - {  label: Title, name: title, widget: string  }
-          - {  label: Body, name: body, widget: "markdown"  }
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: "markdown" }
       - label: "Contact success page"
         name: "success"
         file: "src/success.md"
@@ -830,6 +830,29 @@ collections:
               },
             ],
         }
+      - {
+          required: false,
+          "label": "Carousel",
+          name: "carousel",
+          "widget": "object",
+          "fields":
+            [
+              { label: "Heading", name: "heading", widget: "string" },
+              { label: "Quote", name: "quote", widget: "string" },
+              { label: "Caption", name: "caption", widget: "string" },
+              {
+                "label": "Images",
+                "name": "items",
+                "widget": "list",
+                required: false,
+                fields:
+                  [
+                    { label: "Source", name: "src", widget: "image" },
+                    { label: "Alt", name: "alt" },
+                  ],
+              },
+            ],
+        }
   - name: "quote"
     label: "Quote"
     folder: src/components/quote
@@ -852,58 +875,54 @@ collections:
     slug: "{{name}}" # Filename template
     fields:
       - {
-         
           label: Name,
-         
+
           name: name,
-         
+
           widget: string,
-         
+
           hint: "Don't change name once created",
         }
-      - { label: Date, name: date, widget: date  }
+      - { label: Date, name: date, widget: date }
       - {
-         
           label: Image,
-         
+
           name: image,
-         
+
           widget: image,
-         
+
           required: false,
-         
+
           media_folder: "/src/_includes/images/testimonials",
-         
+
           public_folder: "/images/testimonials",
         }
-      - {  label: "Body", name: "body", widget: "markdown"  }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: "playlist"
     label: "Playlist"
     folder: src/playlists
     slug: "{{name}}"
     create: true
     fields:
-      - { label: Title, name: title, widget: string  }
+      - { label: Title, name: title, widget: string }
       - {
-         
           label: Name,
-         
+
           name: name,
-         
+
           widget: string,
-         
-          hint: "Don't change name once created"
+
+          hint: "Don't change name once created",
         }
-      - { label: Playlist ID, name: id, widget: string  }
+      - { label: Playlist ID, name: id, widget: string }
       - {
-         
           label: Description,
-         
+
           name: description,
-         
+
           widget: markdown,
-         
-          required: false
+
+          required: false,
         }
   - name: "slogan"
     label: "Slogan"
@@ -1120,4 +1139,3 @@ collections:
                   { label: "Text", name: text, widget: "string" },
                 ],
             }
-
