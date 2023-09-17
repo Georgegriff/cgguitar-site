@@ -37,7 +37,7 @@ hero:
     text: Log in here.
     href: /login/
   image:
-    src: images/hero.jpg
+    src: images/harbinger-birmingham-36.jpg
     alt: CG Guitars' Charlie Griffiths playing guitar on stage
   callToAction:
     - type: primary
