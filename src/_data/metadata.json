@@ -1,7 +1,7 @@
 {
   "title": "CG Guitar",
   "url": "https://cgguitar.co.uk",
-  "description": "5 star rated Guitar lessons in Cranleigh, Godalming, Guildford. HD Online Guitar Lessons - Like you've never experienced before!",
+  "description": "5 star rated Online Guitar lessons. HD Online Guitar Lessons - For Rock & Metal Guitarists",
   "author": {
     "name": "CG Guitar",
     "email": "charlie@cgguitar.co.uk",
@@ -13,5 +13,9 @@
   },
   "manifest": {
     "path": "/manifest.json"
+  },
+  "defaultHero": {
+    "src": "/images/harbinger-birmingham-36.jpg",
+    "alt": "CG Guitars' Charlie Griffiths playing guitar on stage"
   }
 }

@@ -33,7 +33,7 @@
 .video-section {
   --video-size: 95%;
   align-items: flex-end;
-  margin: var(--site-padding) var(--site-padding) 0 var(--site-padding);
+  margin: var(--site-padding) 0 var(--site-padding);
   display: flex;
   flex-direction: column;
   .section-title {
@@ -149,17 +149,23 @@
 .signup-card {
   .content-card {
     align-items: flex-start;
+    padding: 0;
+    gap: 0;
   }
   @include up-from(medium) {
     .content {
-      border-left: solid 3px var(--Primary50);
+      border-left: solid 2px var(--Primary50);
     }
   }
 }
 .card-footer {
   margin: 0 var(--site-padding);
 }
-
+#sign-up {
+  .content-card {
+    flex-wrap: nowrap;
+  }
+}
 #sign-up .content {
   margin: 0;
   padding-bottom: calc(2 * var(--site-padding));
@@ -170,12 +176,22 @@
   h2 {
     margin: var(--site-padding);
   }
+  @include up-from(medium) {
+    height: 100%;
+  }
 }
 .card-dark-wrapper {
-  border-top: solid 3px var(--Primary50);
+  background: var(--Background50);
 }
 .card-dark {
-  background-color: var(--Secondary);
+  padding: 0 !important;
+  .grid-icons {
+    li {
+      background-color: var(--Secondary);
+      gap: var(--site-padding);
+      height: 100%;
+    }
+  }
 
   color: var(--SecondaryText);
   blockquote:after,
@@ -188,10 +204,11 @@
 }
 
 .icons-card {
-  padding: var(--site-padding) !important;
+  padding: 0;
 }
 
 .levels-card {
+  background: var(--Background50);
   .testimonial-levels {
     padding: calc(1 * var(--site-padding)) 0;
     gap: var(--site-padding);
@@ -199,5 +216,4 @@
 }
 
 .card-with-img {
-  border-top: solid 3px var(--Secondary);
 }

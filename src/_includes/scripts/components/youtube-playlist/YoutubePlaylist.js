@@ -282,6 +282,24 @@ export class YoutubePlaylist extends LitElement {
         min-width: 286px;
       }
 
+      .container {
+        width: 100%;
+        max-width: 80rem;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 120em) {
+        .container {
+          max-width: 120rem;
+        }
+      }
+
+      @media (min-width: 160em) {
+        .container {
+          max-width: 140rem;
+        }
+      }
+
       .heading {
         padding: 0;
         margin: 0;
@@ -781,13 +799,14 @@ export class YoutubePlaylist extends LitElement {
     const stats = getStats(videoObj);
     const thumbnail = _setThumbs(videoObj);
     return html`
-      <slot @slotchange=${this._onVideosSlotChange}></slot>
-      <div class="heading"><slot name="heading"></slot></div>
-      <div class="description"><slot name="description"></slot></div>
-      <div class="flex">
-        ${!videoObj
-          ? html`<slot name="fallback"></slot>`
-          : html`
+      <div class="container">
+        <slot @slotchange=${this._onVideosSlotChange}></slot>
+        <div class="heading"><slot name="heading"></slot></div>
+        <div class="description"><slot name="description"></slot></div>
+        <div class="flex">
+          ${!videoObj
+            ? html`<slot name="fallback"></slot>`
+            : html`
         <div class="video-size video-item">
           <div @click="${
             this._onPlay
@@ -807,13 +826,13 @@ export class YoutubePlaylist extends LitElement {
           <div class="mask"><button aria-hidden="${
             this.viewMore ? "true" : "false"
           }" @click="${
-              this._onViewMore
-            }" class="view-more" aria-label="Click to load more videos from the playlist">Watch next</button></div>
+                this._onViewMore
+              }" class="view-more" aria-label="Click to load more videos from the playlist">Watch next</button></div>
           <div aria-hidden="${
             !this.viewMore ? "true" : "false"
           }" class="playlist-scroll"><ul aria-hidden="${
-              !this.viewMore ? "true" : "false"
-            }" class="playlist-items">
+                !this.viewMore ? "true" : "false"
+              }" class="playlist-items">
             ${this.listNodes.map(
               (li, index) => html`${this._renderListItem(li, index)}`
             )}
@@ -828,6 +847,7 @@ export class YoutubePlaylist extends LitElement {
           </div>
         </div>
       `}
+        </div>
       </div>
     `;
   }

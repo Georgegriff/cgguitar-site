@@ -2,7 +2,8 @@
 {%- set video = card.data.video %}
 {%- set gridContent = card.data.gridContent %}
 {%- set carousel = card.data.carousel %}
-<section class="card-grid {{card.data.class}}">
+<div class="width-container {{card.data.class}}">
+<section class="card-grid">
 {%- if video %}
     {%- set youtube = {"id": video.id } %}
         {% if video.thumbnail %}
@@ -23,7 +24,7 @@
         <div class="learn-more flex-end flex-push" ><a {% if helpers.isExternalLink(card.data.link.url) -%}target="_blank"{%-endif%} href="{{helpers.componentLink(card.data.link)}}">{{card.data.link.text}}</a></div>
         {%- endif -%}
     </div>
-    {% include "partials/components/image-carousel.njk" %}
+    {%- include "partials/components/image-carousel.njk" -%}
     {%- if card.data.image -%}{%- Image card.data.image.src, card.data.image.alt -%}{%- endif -%}
 </figure>
 {%- endif %}
@@ -43,3 +44,4 @@
 {% endif %}
 
 </section>
+</div>

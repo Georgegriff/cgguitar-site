@@ -12,15 +12,10 @@ html {
   font-size: calc(0.875rem + 0.2vw);
 }
 
-
 @include up-to(medium) {
-
   :root {
-
     font-size: calc(1rem + 0.1vw);
-
   }
-
 }
 
 @include up-from(xxlarge) {
@@ -199,6 +194,9 @@ h1 {
 }
 
 .document {
+  * {
+    max-width: 85ch;
+  }
   h1 {
     font-size: 3rem;
   }
@@ -317,7 +315,6 @@ a.dark-link {
 .login-wrapper {
   background: var(--Secondary);
   color: var(--SecondaryText);
-  padding: 1rem var(--site-padding);
   h2 {
     font-size: 3rem;
   }
@@ -339,9 +336,6 @@ h2 + .login-widget {
   align-items: center;
   flex-wrap: wrap;
 
-  & > * {
-    flex: 1;
-  }
   .login-title-wrap {
     margin-bottom: 1rem;
   }
@@ -402,6 +396,16 @@ h2 + .login-widget {
   }
 }
 
+.store-widget {
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.store-container {
+  padding-bottom: 2rem;
+  flex-basis: 500px;
+}
+
 .tz-form-login-admin {
   min-height: 341px;
 }
@@ -410,21 +414,49 @@ h2 + .login-widget {
   position: relative;
   z-index: 2;
   overflow: hidden;
+  background: var(--Secondary);
   picture {
     flex: initial;
     img {
       position: absolute;
       object-fit: cover;
+      object-position: right;
+      opacity: 0.5;
       right: 0;
       top: 0;
       bottom: 0;
-      width: 68%;
+      width: 100%;
       z-index: -1;
+      mix-blend-mode: lighten;
+      background-blend-mode: lighten;
+      filter: grayscale(30%);
       @include up-to(medium) {
         width: auto;
         height: 150%;
         opacity: 0.5;
       }
     }
+  }
+}
+
+.background-50 {
+  background: var(--Background50);
+}
+
+.width-container {
+  width: 100%;
+  > * {
+    max-width: 80rem;
+    @include up-to(large) {
+      padding: 0 var(--site-padding);
+    }
+    @include up-from(xlarge) {
+      max-width: 120rem;
+    }
+    @include up-from(xxlarge) {
+      max-width: 140rem;
+    }
+
+    margin: 0 auto;
   }
 }

@@ -33,9 +33,6 @@ eleventyNavigation:
 hero:
   title: A little about CG Guitar
   subtitle: Continue reading if you'd like to know more
-  image:
-    src: images/hero.jpg
-    alt: CG Guitars' Charlie playing guitar on stage
   callToAction:
     - type: primary
       text: Book a lesson

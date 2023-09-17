@@ -1,8 +1,9 @@
 {%- set hero = heros[heroName] or hero -%}
 {% if hero %}
-    {% set image = hero.image or {src: "images/hero.jpg", "alt": "CG Guitars' Charlie playing guitar on stage"} %}
+    {% set image = hero.image or metadata.defaultHero %}
     {% set callToAction = hero.callToAction %}
     <div class="hero{% if hero.size %} hero-{{hero.size}}{% endif %}">
+        <div class="width-container">
         <div class="hero-text">
             <h1>{{hero.title}}</h1>
             {% if hero.subtitle %}
@@ -25,6 +26,7 @@
                     <a href="{{hero.heroLink.href}}">{{hero.heroLink.text}}</a>
                 </p>
             {% endif %}
+        </div>
         </div>
         {%- Image image.src, image.alt -%}
         <div class="hero-scroll-down">

@@ -8,9 +8,6 @@ eleventyNavigation:
 hero:
   title: Book a lesson today!
   subtitle: Check my availability on the sign up form.
-  image:
-    src: images/hero.jpg
-    alt: CG Guitars' Charlie playing guitar on stage
   callToAction:
     - type: primary
       text: Book a lesson

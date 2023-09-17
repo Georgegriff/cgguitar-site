@@ -12,6 +12,7 @@ pagination:
   size: 1
 ---
 
+<div class="width-container">
 <section class="padded-around document">
 
 # Terms & Conditions
@@ -126,3 +127,4 @@ Please contact Charlie at [charlie@cgguitar.co.uk](mailto:charlie@cgguitar.co.u
 Please see [PCI Compliant Documentation here](https://drive.google.com/drive/folders/1wDXw6238KgipDSuiOBxFLEsNDAQXqiuj?usp=sharing).
 
 </section>
+</div>

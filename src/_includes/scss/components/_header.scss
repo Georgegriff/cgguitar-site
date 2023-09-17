@@ -1,6 +1,6 @@
 header {
   color: var(--SecondaryText);
-  background: var(--Secondary);
+  background-color: var(--Secondary);
 }
 
 .hero-scroll-down {
@@ -60,6 +60,9 @@ header {
     position: relative;
     overflow: hidden;
     min-height: calc(100vh - (var(--site-header)));
+    .hero img {
+      object-position: top;
+    }
   }
 }
 

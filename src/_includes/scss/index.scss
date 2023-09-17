@@ -31,8 +31,18 @@
 }
 
 .book-page .signup-card {
+  background: var(--Background);
   display: flex;
   flex-direction: column;
+  padding-bottom: 0;
+
+  .content {
+    padding-top: var(--site-padding);
+
+    ul {
+      margin: 0;
+    }
+  }
 
   h2 {
     display: none;
@@ -48,6 +58,8 @@
 }
 
 .signup-card {
+  background: var(--Background50);
+  padding-bottom: var(--site-padding);
   .image-carousel {
     flex-basis: 60%;
     @include up-to(medium) {
@@ -63,7 +75,7 @@
     margin-bottom: 2rem;
   }
   .content {
-    flex-basis: min(100vw, 400px);
+    flex-basis: min(100%, 450px);
     flex-shrink: 0;
     flex-grow: 1;
   }
