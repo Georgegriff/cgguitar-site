@@ -16,6 +16,12 @@ const goToSlideByLink = (link) => {
   return false;
 };
 window.imageCarousel = {
+  init: () => {
+    const carouselImgs = document.querySelectorAll(".image-carousel img");
+    carouselImgs.forEach((img) => {
+      img.loading = "eager";
+    });
+  },
   onControls: (e) => {
     if (goToSlideByLink(e.target)) {
       e.preventDefault();
@@ -50,3 +56,5 @@ window.imageCarousel = {
     }
   },
 };
+
+window.addEventListener("DOMContentLoaded", () => window.imageCarousel.init());
