@@ -3,6 +3,9 @@ templateEngineOverride: md,njk
 layout: layouts/index.njk
 permalink: "{{ myurl }}/index.html"
 headerClassName: header-hero-full
+pageCriticalStyles:
+  - /css/index.scss
+  - /css/media.scss
 components:
   - type: card
     name: home-page-video-and-info
@@ -16,6 +19,10 @@ components:
     name: levels
   - type: card
     name: home-about-card
+  - type: playlist
+    name: Shorts
+  - type: playlist
+    name: guitar-lessons
 pageJs: /scripts/index.js
 mypages:
   - lessons
