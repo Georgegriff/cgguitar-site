@@ -6,7 +6,7 @@
 {% set siteTitle = metadata.title %}
 {% set currentUrl = metadata.url + page.url %}
 {%- if not socialImage -%}
-  {%- set socialImage = 'images/meta/default-social.jpeg' -%} 
+  {%- set socialImage = metadata.defaultHero.src -%} 
 {%- endif -%}
 {%- set socialImage = socialImage | imgmin -%} 
 {%- set socialImage = metadata.url + socialImage -%} 
