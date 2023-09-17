@@ -334,9 +334,6 @@ h2 + .login-widget {
   align-items: center;
   flex-wrap: wrap;
 
-  & > * {
-    flex: 1;
-  }
   .login-title-wrap {
     margin-bottom: 1rem;
   }
@@ -395,6 +392,16 @@ h2 + .login-widget {
     width: 100%;
     min-width: 350px;
   }
+}
+
+.store-widget {
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.store-container {
+  padding-bottom: 2rem;
+  flex-basis: 500px;
 }
 
 .tz-form-login-admin {
