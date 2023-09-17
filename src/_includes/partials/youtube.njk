@@ -1,7 +1,7 @@
 {%- if youtube -%}
 <div class="video-size">
     <div class="video-wrapper" style="background-image: url('{{videoImage}}');">
-    <lite-youtube class="video" params="autoplay=1" videoid="{{youtube.id}}">
+    <lite-youtube class="video" params="autoplay=0&controls=1" videoid="{{youtube.id}}">
         <a rel="noopener" onclick="('customElements' in window) && event.preventDefault()" title="Play Video" class="no-js" target="_blank" href="https://youtube.com?w={{youtube.id}}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                     <g transform="translate(-339 -150.484)">

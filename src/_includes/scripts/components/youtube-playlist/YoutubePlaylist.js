@@ -697,14 +697,72 @@ export class YoutubePlaylist extends LitElement {
     );
   }
 
-  _onPlay() {
+  _onPlay(e) {
     const iframe = this.shadowRoot.querySelector("iframe");
-    if (iframe) {
-      iframe.contentWindow.postMessage(
-        window.JSON.stringify({ event: "command", func: "startVideo" }),
-        "*"
+    // yt lite has annoying bug where adds multiple iframes when space bar pressed
+    this.shadowRoot.querySelector(".playbtn").addEventListener("click", (e) => {
+      console.log("click");
+      e.stopPropagation();
+      window.addEventListener(
+        "message",
+        (event) => {
+          try {
+            const data = JSON.parse(event.data);
+            console.log(data);
+            if (data.info) {
+              if (!this._playerState) {
+                iframe.contentWindow.postMessage(
+                  window.JSON.stringify({
+                    event: "command",
+                    func: "pauseVideo",
+                  }),
+                  "*"
+                );
+                this._playerState = "paused";
+              }
+            }
+          } catch (e) {
+            console.error(e);
+          }
+        },
+        {
+          once: true,
+        }
       );
-    }
+      console.log(this._playerState);
+      if (this._playerState === "paused") {
+        iframe.contentWindow.postMessage(
+          window.JSON.stringify({
+            event: "command",
+            func: "playVideo",
+          }),
+          "*"
+        );
+        this._playerState = "playing";
+      } else if (this._playerState === "playing") {
+        iframe.contentWindow.postMessage(
+          window.JSON.stringify({
+            event: "command",
+            func: "pauseVideo",
+          }),
+          "*"
+        );
+        this._playerState = "paused";
+      } else {
+        iframe.contentWindow.postMessage(
+          '{"event":"listening","id":1,"channel":"widget"}',
+          "*"
+        );
+        const message = JSON.stringify({
+          event: "command",
+          func: "addEventListener",
+          args: ["onStateChange"],
+          id: 1,
+          channel: "widget",
+        });
+        iframe.contentWindow.postMessage(message, "*");
+      }
+    });
   }
 
   _renderYt() {
