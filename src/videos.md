@@ -10,6 +10,8 @@ components:
   - type: playlist
     name: guitar-lessons
   - type: playlist
+    name: Shorts
+  - type: playlist
     name: beginner-guitar-lessons
   - type: playlist
     name: student-performance-night-2018
@@ -47,7 +49,7 @@ eleventyNavigation:
 hero:
   title: Check out my latest videos
   description: Find demonstrations, tutorials and other musical content.
-  subtitle: Enjoy and please share!
+  subtitle: Enjoy and please subscribe and share 🤘
   callToAction:
     - type: primary
       text: Book a lesson

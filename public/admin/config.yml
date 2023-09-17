@@ -57,12 +57,15 @@ collections:
                   - label: Description
                     name: description
                     widget: text
+                    required: false
                   - label: Text
                     name: text
                     widget: string
+                    required: false
                   - label: Link
                     name: href
                     widget: string
+                    required: false
               - label: Image
                 name: image
                 widget: object
@@ -70,9 +73,11 @@ collections:
                   - label: Source
                     name: src
                     widget: image
+                    required: false
                   - label: Description
                     name: alt
                     widget: string
+                    required: false
               - label: Call To Action
                 required: false
                 name: callToAction
@@ -202,12 +207,15 @@ collections:
                   - label: Description
                     name: description
                     widget: text
+                    required: false
                   - label: Text
                     name: text
                     widget: string
+                    required: false
                   - label: Link
                     name: href
                     widget: string
+                    required: false
               - label: Image
                 name: image
                 widget: object
@@ -215,9 +223,11 @@ collections:
                   - label: Source
                     name: src
                     widget: image
+                    required: false
                   - label: Description
                     name: alt
                     widget: string
+                    required: false
               - label: Call To Action
                 required: false
                 name: callToAction
@@ -314,12 +324,15 @@ collections:
                   - label: Description
                     name: description
                     widget: text
+                    required: false
                   - label: Text
                     name: text
                     widget: string
+                    required: false
                   - label: Link
                     name: href
                     widget: string
+                    required: false
               - label: Image
                 name: image
                 widget: object
@@ -327,9 +340,11 @@ collections:
                   - label: Source
                     name: src
                     widget: image
+                    required: false
                   - label: Description
                     name: alt
                     widget: string
+                    required: false
               - label: Call To Action
                 required: false
                 name: callToAction
@@ -432,12 +447,15 @@ collections:
                   - label: Description
                     name: description
                     widget: text
+                    required: false
                   - label: Text
                     name: text
                     widget: string
+                    required: false
                   - label: Link
                     name: href
                     widget: string
+                    required: false
               - label: Image
                 name: image
                 widget: object
@@ -445,9 +463,11 @@ collections:
                   - label: Source
                     name: src
                     widget: image
+                    required: false
                   - label: Description
                     name: alt
                     widget: string
+                    required: false
               - label: Call To Action
                 required: false
                 name: callToAction
@@ -544,12 +564,15 @@ collections:
                   - label: Description
                     name: description
                     widget: text
+                    required: false
                   - label: Text
                     name: text
                     widget: string
+                    required: false
                   - label: Link
                     name: href
                     widget: string
+                    required: false
               - label: Image
                 name: image
                 widget: object
@@ -557,9 +580,11 @@ collections:
                   - label: Source
                     name: src
                     widget: image
+                    required: false
                   - label: Description
                     name: alt
                     widget: string
+                    required: false
               - label: Call To Action
                 required: false
                 name: callToAction
@@ -634,22 +659,28 @@ collections:
                   - label: Description
                     name: description
                     widget: text
+                    required: false
                   - label: Text
                     name: text
                     widget: string
+                    required: false
                   - label: Link
                     name: href
                     widget: string
+                    required: false
               - label: Image
                 name: image
                 widget: object
+                required: false
                 fields:
                   - label: Source
                     name: src
                     widget: image
+                    required: false
                   - label: Description
                     name: alt
                     widget: string
+                    required: false
               - label: Call To Action
                 required: false
                 name: callToAction
@@ -730,22 +761,28 @@ collections:
                   - label: Description
                     name: description
                     widget: text
+                    required: false
                   - label: Text
                     name: text
                     widget: string
+                    required: false
                   - label: Link
                     name: href
                     widget: string
+                    required: false
               - label: Image
                 name: image
                 widget: object
+                required: false
                 fields:
                   - label: Source
                     name: src
                     widget: image
+                    required: false
                   - label: Description
                     name: alt
                     widget: string
+                    required: false
               - label: Call To Action
                 required: false
                 name: callToAction
