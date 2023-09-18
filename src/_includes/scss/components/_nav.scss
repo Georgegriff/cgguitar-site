@@ -13,7 +13,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: var(--site-padding);
+  padding: 1.5rem var(--site-padding);
   background: var(--Secondary);
   min-height: var(--site-header);
   @include up-to-height($height-small) {
