@@ -9,7 +9,8 @@
         {% if video.thumbnail %}
         {%- set videoImage = video.thumbnail | imgmin %}
         {% else %}
-        {%- set ytImg = "https://i.ytimg.com/vi/" + youtube.id + "/hqdefault.jpg"%}
+        {%- set thumbQuality = video.thumbnailQuality or "hqdefault" %}
+        {%- set ytImg = "https://i.ytimg.com/vi/" + youtube.id + "/" + thumbQuality + ".jpg"%}
         {%- set videoImage = ytImg | imgmin %}
     {% endif %}
 {%- endif %}

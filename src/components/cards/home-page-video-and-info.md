@@ -2,6 +2,7 @@
 label: Home page - Video and Info
 name: home-page-video-and-info
 type: card
+direction: null
 class: star-card
 video:
   id: uhF1ak6UHIY
@@ -9,7 +10,8 @@ video:
   link:
     text: Watch some demonstrations and tutorials.
     url: /videos/#main-content
-direction: null
+  thumbnail: images/website-full-shot.png
+  thumbnailQuality: hqdefault
 ---
 
 {%- include "partials/components/starRating.njk" -%}

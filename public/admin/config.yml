@@ -156,7 +156,7 @@ collections:
                     search_fields: ["name"]
                     value_field: "name"
                     display_fields: ["name"]
-              - label: "Media Cards"
+              - label: "Icon Cards"
                 widget: "object"
                 name: "gridCard"
                 summary: "Media Card: {{fields.name}}"
@@ -491,7 +491,7 @@ collections:
             allow_add: true
             collapsed: true
             types:
-              - label: "Media Cards"
+              - label: "Icon Cards"
                 widget: "object"
                 name: "gridCard"
                 summary: "Media Card: {{fields.name}}"
@@ -608,7 +608,7 @@ collections:
             allow_add: true
             collapsed: true
             types:
-              - label: "Media Cards"
+              - label: "Icon Cards"
                 widget: "object"
                 name: "gridCard"
                 summary: "Media Card: {{fields.name}}"
@@ -715,7 +715,7 @@ collections:
                     search_fields: ["title"]
                     value_field: "name"
                     display_fields: ["title"]
-              - label: "Media Cards"
+              - label: "Icon Cards"
                 widget: "object"
                 name: "gridCard"
                 summary: "Media Card: {{fields.name}}"
@@ -874,9 +874,24 @@ collections:
           "widget": "object",
           "fields":
             [
-              { label: "Heading", name: "heading", widget: "string" },
-              { label: "Quote", name: "quote", widget: "string" },
-              { label: "Caption", name: "caption", widget: "string" },
+              {
+                label: "Heading",
+                name: "heading",
+                widget: "string",
+                required: false,
+              },
+              {
+                label: "Quote",
+                name: "quote",
+                widget: "string",
+                required: false,
+              },
+              {
+                label: "Caption",
+                name: "caption",
+                widget: "string",
+                required: false,
+              },
               {
                 "label": "Images",
                 "name": "items",
@@ -886,6 +901,58 @@ collections:
                   [
                     { label: "Source", name: "src", widget: "image" },
                     { label: "Alt", name: "alt" },
+                  ],
+              },
+            ],
+        }
+      - {
+          required: false,
+          "label": "Video",
+          name: "video",
+          "widget": "object",
+          "fields":
+            [
+              {
+                label: "Video ID",
+                name: "id",
+                widget: "string",
+                required: false,
+              },
+              {
+                label: "Channel ID",
+                name: "channel",
+                widget: "string",
+                required: false,
+              },
+              {
+                label: "Default Thumbnail Quality",
+                hint: "If Max Res Quality is broken you may need to fix this on YouTube channel.",
+                name: "thumbnailQuality",
+                required: false,
+                widget: "select",
+                "default": ["hqdefault"],
+                options: ["hqdefault", "maxresdefault"],
+              },
+              {
+                label: "Custom Thumbnail",
+                name: "thumbnail",
+                widget: "image",
+                required: false,
+              },
+              {
+                "label": "Link",
+                "name": "link",
+                "widget": "object",
+                required: false,
+                fields:
+                  [
+                    {
+                      label: "Text",
+                      name: "text",
+                      widget: "string",
+                      required: false,
+                    },
+                    { label: "Url", name: "url", required: false },
                   ],
               },
             ],
@@ -1025,7 +1092,7 @@ collections:
                 ],
             }
   - name: "gridCard"
-    label: "Media Cards"
+    label: "Icon Cards"
     create: true
     folder: "src/components/grid-cards"
     slug: "{{name}}"

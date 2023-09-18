@@ -1,9 +1,5 @@
-{%- if gridContent %} {%- set items = gridContent.icons %} {%- set video =
-gridContent.video %} {%- set heading = gridContent.heading %} {%- set quote =
-gridContent.quote %} {%- if video %} {%- set youtube = {"id": video.id } %} {%
-if video.thumbnail %} {%- set videoImage = video.thumbnail | imgmin %} {% else
-%} {%- set ytImg = "https://i.ytimg.com/vi/" + youtube.id + "/hqdefault.jpg"%}
-{%- set videoImage = ytImg | imgmin %} {% endif %} {%- endif %}
+{%- if gridContent %} {%- set items = gridContent.icons %}{%- set heading =
+gridContent.heading %} {%- set quote = gridContent.quote %}
 <div class="width-container">
   <article
     class="grid-content {%- if gridContent.class %} {{gridContent.class}}{%- endif -%}"
