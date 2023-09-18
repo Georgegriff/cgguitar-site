@@ -1,63 +1,69 @@
-
 @use "sass:math";
 
 @function pixelOffset($em, $offset: 1) {
-    $default-pixel-size: 16;
-    @return math.div((($em * $default-pixel-size) - $offset),$default-pixel-size)
+  $default-pixel-size: 16;
+  @return math.div(
+    (($em * $default-pixel-size) - $offset),
+    $default-pixel-size
+  );
 }
 
-$up-from-size: ("small": $bp-small, "medium-small": $bp-medium-small, "medium": $bp-medium, "large": $bp-large, "xlarge": $bp-xl, "xxlarge": $bp-xxl);
+$up-from-size: (
+  "small": $bp-small,
+  "medium-small": $bp-medium-small,
+  "medium": $bp-medium,
+  "large": $bp-large,
+  "xlarge": $bp-xl,
+  "xxlarge": $bp-xxl,
+);
 $up-to-size: (
-    "xsmall": pixelOffset($bp-xsmall),
-    "small": pixelOffset($bp-small),
-    "medium-small": pixelOffset($bp-medium-small),
-    "medium": pixelOffset($bp-medium),
-    "large": pixelOffset($bp-large),
-    "xlarge":pixelOffset($bp-xl),
-    "xxlarge": pixelOffset($bp-xxl));
-
+  "xsmall": pixelOffset($bp-xsmall),
+  "small": pixelOffset($bp-small),
+  "medium-small": pixelOffset($bp-medium-small),
+  "medium": pixelOffset($bp-medium),
+  "large": pixelOffset($bp-large),
+  "xlarge": pixelOffset($bp-xl),
+  "xxlarge": pixelOffset($bp-xxl),
+);
 
 @mixin up-from($size) {
-    @media (min-width: map-get($up-from-size, $size)) {
-        @content;
-    }
+  @media (min-width: map-get($up-from-size, $size)) {
+    @content;
+  }
 }
 
 @mixin up-to($size) {
-    @media (max-width: map-get($up-to-size, $size)) {
-        @content;
-    }
+  @media (max-width: map-get($up-to-size, $size)) {
+    @content;
+  }
 }
 
-
 @mixin up-to-height($size) {
-    @media (max-height: $size) {
-        @content;
-    }
+  @media (max-height: $size) {
+    @content;
+  }
 }
 
 @mixin up-from-height($size) {
-    @media (min-height: $size) {
-        @content;
-    }
+  @media (min-height: $size) {
+    @content;
+  }
 }
 
 @include up-from(xxlarge) {
-    :root {
-        --site-padding: 3.5rem;
-    }
+  :root {
+    --site-padding: 2.5rem;
+  }
 }
 
 @include up-to(small) {
-    :root {
-        --site-padding: 1rem;
-    }
+  :root {
+    --site-padding: 1rem;
+  }
 }
 
 @include up-to-height($height-small) {
-    :root {
-        --site-padding:0.75rem;
-    }
+  :root {
+    --site-padding: 0.75rem;
+  }
 }
-
-
