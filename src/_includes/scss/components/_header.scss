@@ -62,6 +62,7 @@ header {
     min-height: calc(100vh - (var(--site-header)));
     .hero img {
       object-position: top;
+      background-position: top !important;
     }
   }
 }
