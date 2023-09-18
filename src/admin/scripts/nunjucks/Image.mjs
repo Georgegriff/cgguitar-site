@@ -10,6 +10,9 @@ export function Image() {
     return new nodes.CallExtension(this, "run", args);
   };
   this.run = function (context, url, alt) {
+    if (!url) {
+      return "";
+    }
     const image = new nunjucks.runtime.SafeString(
       `<picture><img src="${url}" alt="${alt}" /></picture>`
     );

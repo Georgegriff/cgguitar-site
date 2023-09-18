@@ -25,6 +25,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksAsyncShortcode(
     "Image",
     async (src, alt, ariaHidden) => {
+      if (!src) {
+        return "";
+      }
       if (!alt && !ariaHidden) {
         // work around until netlify-cms supports required fields inside of optional object
         console.error(
