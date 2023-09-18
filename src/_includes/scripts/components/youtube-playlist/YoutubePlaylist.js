@@ -290,13 +290,13 @@ export class YoutubePlaylist extends LitElement {
 
       @media (min-width: 120em) {
         .container {
-          max-width: 120rem;
+          max-width: 100rem;
         }
       }
 
       @media (min-width: 160em) {
         .container {
-          max-width: 140rem;
+          max-width: 120rem;
         }
       }
 
