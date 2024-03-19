@@ -10,4 +10,6 @@ image:
 ---
 I’m available to hire for Session Work.
 
+G﻿uest solo - get in touch!
+
 If you’re looking for a guitarist or bassist for your event or session please feel free to get in touch.
